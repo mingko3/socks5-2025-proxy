@@ -3,123 +3,153 @@ import base64
 import yaml
 import os
 import re
+import qrcode
 
-# 创建 docs 文件夹
-os.makedirs("docs", exist_ok=True)
+# 源地址（你可以改为任意包含节点的订阅地址）
+URL = "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
 
-# === 1. 处理 SS 链接 ===
-def parse_ss_link(link):
-    if not link.startswith("ss://"):
-        return None
-    encoded = link[len("ss://"):].split("#")[0]
+# 目标输出路径
+DOCS_DIR = "docs"
+YAML_PATH = os.path.join(DOCS_DIR, "proxy.yaml")
+SUB_PATH = os.path.join(DOCS_DIR, "sub")
+HTML_PATH = os.path.join(DOCS_DIR, "index.html")
+QRCODE_PATH = os.path.join(DOCS_DIR, "sub_qr.png")
+
+os.makedirs(DOCS_DIR, exist_ok=True)
+
+def parse_ss(link):
     try:
-        decoded = base64.b64decode(encoded + '=' * (-len(encoded) % 4)).decode('utf-8')
-    except:
-        return None
-    parts = decoded.split("@")
-    if len(parts) != 2:
-        return None
-    method_password, server_port = parts
-    method, password = method_password.split(":", 1)
-    server, port = server_port.split(":", 1)
-    return {
-        "name": f"SS_{server.replace('.', '-')}_{port}",
-        "type": "ss",
-        "server": server,
-        "port": int(port),
-        "cipher": method,
-        "password": password,
-        "udp": True
-    }
-
-# === 2. 处理 SOCKS5 链接 ===
-def parse_socks5_line(line):
-    match = re.search(r'(\d+\.\d+\.\d+\.\d+):(\d+)', line)
-    if not match:
-        return None
-    ip, port = match.groups()
-    return {
-        "name": f"SOCKS5_{ip.replace('.', '-')}_{port}",
-        "type": "socks5",
-        "server": ip,
-        "port": int(port),
-        "udp": True
-    }
-
-# === 3. 获取 SS 链接列表 ===
-ss_url = "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
-try:
-    ss_res = requests.get(ss_url)
-    ss_res.raise_for_status()
-    ss_links = ss_res.text.strip().splitlines()
-except:
-    ss_links = []
-
-# === 4. 获取 SOCKS5 列表 ===
-socks_url = "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt"
-try:
-    socks_res = requests.get(socks_url)
-    socks_res.raise_for_status()
-    socks_lines = socks_res.text.strip().splitlines()
-except:
-    socks_lines = []
-
-# === 5. 统一解析代理 ===
-proxies = []
-
-for link in ss_links:
-    proxy = parse_ss_link(link)
-    if proxy:
-        proxies.append(proxy)
-
-for line in socks_lines:
-    proxy = parse_socks5_line(line)
-    if proxy:
-        proxies.append(proxy)
-
-# === 6. 生成 Clash 配置 ===
-config = {
-    "proxies": proxies,
-    "proxy-groups": [
-        {
-            "name": "🚀 自动选择",
-            "type": "url-test",
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 300,
-            "tolerance": 50,
-            "proxies": [p["name"] for p in proxies]
+        data = link[5:]
+        if "#" in data:
+            data = data.split("#")[0]
+        missing_padding = len(data) % 4
+        if missing_padding:
+            data += '=' * (4 - missing_padding)
+        decoded = base64.urlsafe_b64decode(data).decode('utf-8')
+        method_password, server_port = decoded.split('@')
+        method, password = method_password.split(':', 1)
+        server, port = server_port.split(':')
+        return {
+            'name': f"SS_{server}_{port}",
+            'type': 'ss',
+            'server': server,
+            'port': int(port),
+            'cipher': method,
+            'password': password,
+            'udp': True
         }
-    ]
+    except Exception:
+        return None
+
+def parse_vmess(link):
+    try:
+        b64 = link[8:]
+        padded = b64 + '=' * (-len(b64) % 4)
+        decoded = base64.b64decode(padded).decode('utf-8')
+        data = eval(decoded.replace("null", "None"))
+        return {
+            'name': data.get('ps', f"VMess_{data['add']}_{data['port']}"),
+            'type': 'vmess',
+            'server': data['add'],
+            'port': int(data['port']),
+            'uuid': data['id'],
+            'alterId': int(data.get('aid', 0)),
+            'cipher': data.get('scy', 'auto'),
+            'tls': data.get('tls', ''),
+            'network': data.get('net', ''),
+            'ws-opts': {
+                'path': data.get('path', ''),
+                'headers': {'Host': data.get('host', '')}
+            } if data.get('net') == 'ws' else None
+        }
+    except Exception:
+        return None
+
+def parse_trojan(link):
+    try:
+        match = re.match(r"trojan://(.*?)@(.*?):(\d+)", link)
+        if not match:
+            return None
+        password, server, port = match.groups()
+        return {
+            'name': f"Trojan_{server}_{port}",
+            'type': 'trojan',
+            'server': server,
+            'port': int(port),
+            'password': password,
+            'udp': True
+        }
+    except Exception:
+        return None
+
+# 下载订阅数据
+try:
+    r = requests.get(URL)
+    r.raise_for_status()
+    raw = base64.b64decode(r.text).decode("utf-8")
+except Exception as e:
+    print(f"获取订阅失败：{e}")
+    raw = ""
+
+# 解析节点
+proxies = []
+for line in raw.strip().splitlines():
+    if line.startswith("ss://"):
+        p = parse_ss(line)
+    elif line.startswith("vmess://"):
+        p = parse_vmess(line)
+    elif line.startswith("trojan://"):
+        p = parse_trojan(line)
+    else:
+        p = None
+    if p:
+        proxies.append(p)
+
+# 写入 proxy.yaml
+clash_config = {
+    "proxies": proxies,
+    "proxy-groups": [{
+        "name": "🚀 节点选择",
+        "type": "url-test",
+        "url": "http://www.gstatic.com/generate_204",
+        "interval": 300,
+        "proxies": [p["name"] for p in proxies]
+    }]
 }
+with open(YAML_PATH, "w", encoding="utf-8") as f:
+    yaml.dump(clash_config, f, allow_unicode=True)
 
-# === 7. 保存 YAML 文件 ===
-with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
-    yaml.dump(config, f, default_flow_style=False, allow_unicode=True)
+# 写入 base64 订阅 sub
+with open(YAML_PATH, "rb") as f:
+    encoded = base64.b64encode(f.read()).decode("utf-8")
+with open(SUB_PATH, "w", encoding="utf-8") as f:
+    f.write(encoded)
 
-# === 8. 生成 base64 编码 sub 文件 ===
-with open("docs/proxy.yaml", "rb") as f:
-    content = f.read()
-    b64 = base64.b64encode(content).decode("utf-8")
+# 生成二维码
+qr = qrcode.make(f"https://mingko3.github.io/socks5-2025-proxy/sub")
+qr.save(QRCODE_PATH)
 
-with open("docs/sub", "w", encoding="utf-8") as f:
-    f.write(b64)
-
-# === 9. 创建 index.html 页面 ===
-with open("docs/index.html", "w", encoding="utf-8") as f:
-    f.write(f"""
-<!DOCTYPE html>
-<html>
+# 写入 index.html
+with open(HTML_PATH, "w", encoding="utf-8") as f:
+    f.write(f"""<!DOCTYPE html>
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>Clash 订阅链接</title>
+    <meta charset="UTF-8">
+    <title>订阅链接</title>
+    <style>
+        body {{ font-family: sans-serif; text-align: center; padding: 2em; }}
+        input {{ width: 90%; padding: 10px; font-size: 1em; }}
+        img {{ margin-top: 20px; width: 200px; }}
+    </style>
 </head>
 <body>
-  <h2>Clash 订阅（纯文本）</h2>
-  <p><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">proxy.yaml</a></p>
-  <h2>Clash 订阅（Base64）</h2>
-  <p><a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">sub</a></p>
+    <h1>Clash 订阅</h1>
+    <p>复制以下链接导入 Clash：</p>
+    <input type="text" readonly value="https://mingko3.github.io/socks5-2025-proxy/sub" onclick="this.select()">
+    <p>扫码订阅：</p>
+    <img src="sub_qr.png" alt="订阅二维码">
 </body>
 </html>
 """)
 
-print(f"✅ 已生成：{len(proxies)} 个节点。")
+print(f"生成完成，共 {len(proxies)} 个节点")
