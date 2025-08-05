@@ -4,152 +4,228 @@ import yaml
 import os
 import re
 import qrcode
+import json
+from urllib.parse import unquote
 
-# 源地址（你可以改为任意包含节点的订阅地址）
-URL = "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
+# 所有订阅源列表（支持 SS/VMess/Trojan/VLESS + YAML）
+SUB_LINKS = [
+    # SS Base64
+    "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+    "https://raw.githubusercontent.com/lagzian/SS-Collector/main/Shadowsocks.txt",
+    "https://raw.githubusercontent.com/freefq/free/master/shadowsocks",
+    "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/shadowsocks",
 
-# 目标输出路径
-DOCS_DIR = "docs"
-YAML_PATH = os.path.join(DOCS_DIR, "proxy.yaml")
-SUB_PATH = os.path.join(DOCS_DIR, "sub")
-HTML_PATH = os.path.join(DOCS_DIR, "index.html")
-QRCODE_PATH = os.path.join(DOCS_DIR, "sub_qr.png")
+    # Clash YAML
+    "https://raw.githubusercontent.com/freefq/free/master/clash.yaml",
+    "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/clash/clash.yml",
 
-os.makedirs(DOCS_DIR, exist_ok=True)
+    # roosterkid 源
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_BASE64.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS4.txt"
+]
+
+# 解析 ss 链接
 
 def parse_ss(link):
     try:
-        data = link[5:]
-        if "#" in data:
-            data = data.split("#")[0]
-        missing_padding = len(data) % 4
+        if '#' in link:
+            link = link.split('#')[0]
+        link = link[len('ss://'):] if link.startswith('ss://') else link
+        missing_padding = len(link) % 4
         if missing_padding:
-            data += '=' * (4 - missing_padding)
-        decoded = base64.urlsafe_b64decode(data).decode('utf-8')
-        method_password, server_port = decoded.split('@')
-        method, password = method_password.split(':', 1)
+            link += '=' * (4 - missing_padding)
+        decoded = base64.urlsafe_b64decode(link).decode()
+        method, rest = decoded.split(':', 1)
+        password, server_port = rest.rsplit('@', 1)
         server, port = server_port.split(':')
         return {
-            'name': f"SS_{server}_{port}",
-            'type': 'ss',
-            'server': server,
-            'port': int(port),
-            'cipher': method,
-            'password': password,
-            'udp': True
+            "name": f"SS_{server}_{port}",
+            "type": "ss",
+            "server": server,
+            "port": int(port),
+            "cipher": method,
+            "password": password,
+            "udp": True
         }
-    except Exception:
+    except:
         return None
+
+# 解析 vmess 链接
 
 def parse_vmess(link):
     try:
-        b64 = link[8:]
-        padded = b64 + '=' * (-len(b64) % 4)
-        decoded = base64.b64decode(padded).decode('utf-8')
-        data = eval(decoded.replace("null", "None"))
+        data = link[len("vmess://"):]
+        decoded = base64.b64decode(data + '===').decode()
+        conf = json.loads(decoded)
         return {
-            'name': data.get('ps', f"VMess_{data['add']}_{data['port']}"),
-            'type': 'vmess',
-            'server': data['add'],
-            'port': int(data['port']),
-            'uuid': data['id'],
-            'alterId': int(data.get('aid', 0)),
-            'cipher': data.get('scy', 'auto'),
-            'tls': data.get('tls', ''),
-            'network': data.get('net', ''),
-            'ws-opts': {
-                'path': data.get('path', ''),
-                'headers': {'Host': data.get('host', '')}
-            } if data.get('net') == 'ws' else None
+            "name": conf.get("ps", "vmess"),
+            "type": "vmess",
+            "server": conf.get("add"),
+            "port": int(conf.get("port")),
+            "uuid": conf.get("id"),
+            "alterId": int(conf.get("aid", 0)),
+            "cipher": "auto",
+            "tls": conf.get("tls", False),
+            "network": conf.get("net"),
+            "ws-opts": {"path": conf.get("path", "/"), "headers": {"Host": conf.get("host", "")}}
         }
-    except Exception:
+    except:
         return None
+
+# 解析 trojan 链接
 
 def parse_trojan(link):
     try:
-        match = re.match(r"trojan://(.*?)@(.*?):(\d+)", link)
-        if not match:
-            return None
-        password, server, port = match.groups()
+        content = link[len("trojan://"):]
+        password, rest = content.split("@")
+        server_port = rest.split("#")[0]
+        server, port = server_port.split(":")
         return {
-            'name': f"Trojan_{server}_{port}",
-            'type': 'trojan',
-            'server': server,
-            'port': int(port),
-            'password': password,
-            'udp': True
+            "name": f"Trojan_{server}_{port}",
+            "type": "trojan",
+            "server": server,
+            "port": int(port),
+            "password": password,
+            "udp": True
         }
-    except Exception:
+    except:
         return None
 
-# 下载订阅数据
-try:
-    r = requests.get(URL)
-    r.raise_for_status()
-    raw = base64.b64decode(r.text).decode("utf-8")
-except Exception as e:
-    print(f"获取订阅失败：{e}")
-    raw = ""
+# 统一收集所有节点
+ss_nodes = []
+vmess_nodes = []
+trojan_nodes = []
 
-# 解析节点
-proxies = []
-for line in raw.strip().splitlines():
-    if line.startswith("ss://"):
-        p = parse_ss(line)
-    elif line.startswith("vmess://"):
-        p = parse_vmess(line)
-    elif line.startswith("trojan://"):
-        p = parse_trojan(line)
-    else:
-        p = None
-    if p:
-        proxies.append(p)
+for url in SUB_LINKS:
+    try:
+        print(f"Fetching: {url}")
+        res = requests.get(url, timeout=15)
+        content = res.text.strip()
 
-# 写入 proxy.yaml
-clash_config = {
-    "proxies": proxies,
-    "proxy-groups": [{
-        "name": "🚀 节点选择",
-        "type": "url-test",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "proxies": [p["name"] for p in proxies]
-    }]
-}
-with open(YAML_PATH, "w", encoding="utf-8") as f:
-    yaml.dump(clash_config, f, allow_unicode=True)
+        if content.startswith("proxies:") or ".yaml" in url or ".yml" in url:
+            try:
+                data = yaml.safe_load(content)
+                for p in data.get("proxies", []):
+                    if p.get("type") == "ss":
+                        ss_nodes.append(p)
+                    elif p.get("type") == "vmess":
+                        vmess_nodes.append(p)
+                    elif p.get("type") == "trojan":
+                        trojan_nodes.append(p)
+            except:
+                continue
 
-# 写入 base64 订阅 sub
-with open(YAML_PATH, "rb") as f:
-    encoded = base64.b64encode(f.read()).decode("utf-8")
-with open(SUB_PATH, "w", encoding="utf-8") as f:
-    f.write(encoded)
+        else:
+            lines = base64.b64decode(content + '===').decode(errors="ignore").splitlines() if '://' not in content else content.splitlines()
+            for line in lines:
+                line = line.strip()
+                if line.startswith("ss://"):
+                    node = parse_ss(line)
+                    if node:
+                        ss_nodes.append(node)
+                elif line.startswith("vmess://"):
+                    node = parse_vmess(line)
+                    if node:
+                        vmess_nodes.append(node)
+                elif line.startswith("trojan://"):
+                    node = parse_trojan(line)
+                    if node:
+                        trojan_nodes.append(node)
+    except Exception as e:
+        print(f"Error fetching {url}: {e}")
 
-# 生成二维码
-qr = qrcode.make(f"https://mingko3.github.io/socks5-2025-proxy/sub")
-qr.save(QRCODE_PATH)
+# 写入 Clash 配置
+def save_yaml():
+    all_nodes = ss_nodes + vmess_nodes + trojan_nodes
+    proxies = [n for n in all_nodes if n]
+    proxy_names = [p["name"] for p in proxies]
 
-# 写入 index.html
-with open(HTML_PATH, "w", encoding="utf-8") as f:
-    f.write(f"""<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <title>订阅链接</title>
-    <style>
-        body {{ font-family: sans-serif; text-align: center; padding: 2em; }}
-        input {{ width: 90%; padding: 10px; font-size: 1em; }}
-        img {{ margin-top: 20px; width: 200px; }}
-    </style>
-</head>
-<body>
-    <h1>Clash 订阅</h1>
-    <p>复制以下链接导入 Clash：</p>
-    <input type="text" readonly value="https://mingko3.github.io/socks5-2025-proxy/sub" onclick="this.select()">
-    <p>扫码订阅：</p>
-    <img src="sub_qr.png" alt="订阅二维码">
-</body>
-</html>
-""")
+    clash = {
+        "proxies": proxies,
+        "proxy-groups": [
+            {
+                "name": "🚀 节点选择",
+                "type": "url-test",
+                "url": "http://www.gstatic.com/generate_204",
+                "interval": 300,
+                "tolerance": 50,
+                "proxies": proxy_names
+            }
+        ]
+    }
+    os.makedirs("docs", exist_ok=True)
+    with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
+        yaml.dump(clash, f, allow_unicode=True)
 
-print(f"生成完成，共 {len(proxies)} 个节点")
+    return proxies
+
+# 写入 base64 订阅
+
+def save_base64(filename, nodes):
+    if not nodes:
+        return
+    lines = []
+    for node in nodes:
+        if node["type"] == "ss":
+            raw = f"{node['cipher']}:{node['password']}@{node['server']}:{node['port']}"
+            encoded = base64.urlsafe_b64encode(raw.encode()).decode().rstrip("=")
+            lines.append(f"ss://{encoded}#{node['name']}")
+        elif node["type"] == "trojan":
+            lines.append(f"trojan://{node['password']}@{node['server']}:{node['port']}#{node['name']}")
+        elif node["type"] == "vmess":
+            conf = {
+                "v": "2",
+                "ps": node["name"],
+                "add": node["server"],
+                "port": str(node["port"]),
+                "id": node["uuid"],
+                "aid": str(node.get("alterId", 0)),
+                "net": node.get("network", "tcp"),
+                "type": "none",
+                "host": node.get("ws-opts", {}).get("headers", {}).get("Host", ""),
+                "path": node.get("ws-opts", {}).get("path", "/"),
+                "tls": node.get("tls", False)
+            }
+            encoded = base64.b64encode(json.dumps(conf).encode()).decode()
+            lines.append(f"vmess://{encoded}")
+
+    with open(f"docs/{filename}", "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+
+    if filename == "sub":
+        # 写入 base64 汇总订阅
+        with open(f"docs/{filename}", "rb") as f:
+            encoded = base64.b64encode(f.read()).decode()
+        with open("docs/sub", "w") as sf:
+            sf.write(encoded)
+
+# 写入二维码 HTML
+
+def generate_html():
+    links = [
+        ("Clash 配置 (proxy.yaml)", "proxy.yaml"),
+        ("混合 Base64 订阅 (sub)", "sub"),
+        ("SS 节点 (ss.txt)", "ss.txt"),
+        ("VMess 节点 (vmess.txt)", "vmess.txt"),
+        ("Trojan 节点 (trojan.txt)", "trojan.txt")
+    ]
+
+    html = """<html><head><meta charset='utf-8'><title>订阅中心</title></head><body><h2>多格式代理订阅</h2>"""
+    for title, path in links:
+        url = f"https://mingko3.github.io/socks5-2025-proxy/{path}"
+        html += f"<h3>{title}</h3><p><a href='{url}'>{url}</a></p><img src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={url}'><hr>"
+    html += "</body></html>"
+    with open("docs/index.html", "w", encoding="utf-8") as f:
+        f.write(html)
+
+# 主执行
+all_nodes = save_yaml()
+save_base64("ss.txt", ss_nodes)
+save_base64("trojan.txt", trojan_nodes)
+save_base64("vmess.txt", vmess_nodes)
+save_base64("sub", ss_nodes + trojan_nodes + vmess_nodes)
+generate_html()
+print("✅ 所有订阅与网页已生成完毕")
