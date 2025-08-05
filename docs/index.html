@@ -1,1 +1,112 @@
-<html><head><meta charset='utf-8'><title>订阅中心</title></head><body><h2>多格式代理订阅</h2><h3>Clash 配置 (proxy.yaml)</h3><p><a href='https://mingko3.github.io/socks5-2025-proxy/proxy.yaml'>https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</a><br><img src='proxy_qr.png' width='200'></p><h3>混合 Base64 订阅 (sub)</h3><p><a href='https://mingko3.github.io/socks5-2025-proxy/sub'>https://mingko3.github.io/socks5-2025-proxy/sub</a><br><img src='sub_qr.png' width='200'></p><h3>SS 节点 (ss.txt)</h3><p><a href='https://mingko3.github.io/socks5-2025-proxy/ss.txt'>https://mingko3.github.io/socks5-2025-proxy/ss.txt</a><br><img src='ss_qr.png' width='200'></p><h3>VMess 节点 (vmess.txt)</h3><p><a href='https://mingko3.github.io/socks5-2025-proxy/vmess.txt'>https://mingko3.github.io/socks5-2025-proxy/vmess.txt</a><br><img src='vmess_qr.png' width='200'></p><h3>Trojan 节点 (trojan.txt)</h3><p><a href='https://mingko3.github.io/socks5-2025-proxy/trojan.txt'>https://mingko3.github.io/socks5-2025-proxy/trojan.txt</a><br><img src='trojan_qr.png' width='200'></p><p>更新时间: 2025-08-05 19:03:04</p></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代理订阅中心</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .item {
+            background-color: #fff;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .item a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .item a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>多格式代理订阅</h2>
+
+    <div class="container">
+        <!-- Clash 配置 -->
+        <div class="item">
+            <h3>Clash 配置 (proxy.yaml)</h3>
+            <a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">点击复制链接</a><br>
+            <img src="proxy_qr.png" alt="Clash QR Code">
+        </div>
+
+        <!-- Base64 订阅 -->
+        <div class="item">
+            <h3>混合 Base64 订阅 (sub)</h3>
+            <a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">点击复制链接</a><br>
+            <img src="sub_qr.png" alt="Base64 QR Code">
+        </div>
+
+        <!-- SS 节点 -->
+        <div class="item">
+            <h3>SS 节点 (ss.txt)</h3>
+            <a href="https://mingko3.github.io/socks5-2025-proxy/ss.txt" target="_blank">点击复制链接</a><br>
+            <img src="ss_qr.png" alt="SS QR Code">
+        </div>
+
+        <!-- VMess 节点 -->
+        <div class="item">
+            <h3>VMess 节点 (vmess.txt)</h3>
+            <a href="https://mingko3.github.io/socks5-2025-proxy/vmess.txt" target="_blank">点击复制链接</a><br>
+            <img src="vmess_qr.png" alt="VMess QR Code">
+        </div>
+
+        <!-- Trojan 节点 -->
+        <div class="item">
+            <h3>Trojan 节点 (trojan.txt)</h3>
+            <a href="https://mingko3.github.io/socks5-2025-proxy/trojan.txt" target="_blank">点击复制链接</a><br>
+            <img src="trojan_qr.png" alt="Trojan QR Code">
+        </div>
+    </div>
+
+    <footer>
+        更新时间: <span id="timestamp"></span>
+    </footer>
+
+    <script>
+        document.getElementById("timestamp").innerText = new Date().toLocaleString();
+    </script>
+
+</body>
+</html>
