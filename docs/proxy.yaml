@@ -1,6 +1,19 @@
 proxies:
 - alterId: 0
   cipher: auto
+  name: 美国 CloudFlare节点
+  network: ws
+  port: 443
+  server: ip.sb
+  tls: tls
+  type: vmess
+  uuid: 28548ef7-983d-4ee8-8bd6-7d71d905b5a2
+  ws-opts:
+    headers:
+      Host: fr.atlen.dpdns.org
+    path: /28548ef7-983d-4ee8-8bd6-7d71d905b5a2-vmess
+- alterId: 0
+  cipher: auto
   name: 美国 惠普HP
   network: tcp
   port: 41100
@@ -14,17 +27,17 @@ proxies:
     path: ''
 - alterId: 0
   cipher: auto
-  name: 德国 V2CROSS.COM
-  network: tcp
-  port: 28011
-  server: 62.146.235.193
-  tls: ''
+  name: 美国 V2CROSS.COM
+  network: ws
+  port: 8880
+  server: 108.165.216.241
+  tls: false
   type: vmess
-  uuid: cfc5a87f-3c13-4e25-b556-176cdd6b5c6a
+  uuid: 248be52b-35d9-34cb-9b73-e12b78bc1301
   ws-opts:
     headers:
-      Host: ''
-    path: ''
+      Host: TG.WangCai2.s2.db-link02.top
+    path: /dabai.in
 - alterId: 0
   cipher: auto
   name: 加拿大 V2CROSS.COM
@@ -40,32 +53,6 @@ proxies:
     path: /dabai.in
 - alterId: 0
   cipher: auto
-  name: 丹麦 V2CROSS.COM
-  network: ws
-  port: 80
-  server: pubg.ac
-  tls: ''
-  type: vmess
-  uuid: 76414574-71e0-4706-89cc-c5b09c13445d
-  ws-opts:
-    headers:
-      Host: cdn-node-oss-99.paofu.de
-    path: /profile/telegram@ssrsub
-- alterId: 0
-  cipher: auto
-  name: 亚太地区 V2CROSS.COM
-  network: ws
-  port: 8880
-  server: 103.116.7.241
-  tls: false
-  type: vmess
-  uuid: 248be52b-35d9-34cb-9b73-e12b78bc1301
-  ws-opts:
-    headers:
-      Host: TG.WangCai2.s2.db-link02.top
-    path: /dabai.in
-- alterId: 0
-  cipher: auto
   name: 🇭🇰[openproxylist.com] vmess-HK
   network: ws
   port: 80
@@ -155,19 +142,6 @@ proxies:
     headers:
       Host: test13.huvicloud.com
     path: /djakjhahf3fg
-- alterId: 0
-  cipher: auto
-  name: 🇩🇪[openproxylist.com] vmess-DE
-  network: ws
-  port: 39130
-  server: 91.99.153.39
-  tls: ''
-  type: vmess
-  uuid: 985af489-fb16-491a-813c-fdd91b6b06ee
-  ws-opts:
-    headers:
-      Host: panel.arushasoft.com
-    path: /
 - alterId: 0
   cipher: auto
   name: 🇱🇻[openproxylist.com] vmess-LV
@@ -235,19 +209,6 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 🇹🇼[openproxylist.com] vmess-TW
-  network: ws
-  port: 20521
-  server: 103.61.139.137
-  tls: ''
-  type: vmess
-  uuid: f8d93cfb-3d5d-447c-a697-16496dd74697
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
-- alterId: 0
-  cipher: auto
   name: 🇩🇪[openproxylist.com] vmess-DE
   network: tcp
   port: 59956
@@ -258,7 +219,7 @@ proxies:
   ws-opts:
     headers:
       Host: ''
-    path: ''
+    path: /
 - alterId: 0
   cipher: auto
   name: 🇯🇵[openproxylist.com] vmess-JP
@@ -287,19 +248,6 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 🇳🇱[openproxylist.com] vmess-NL
-  network: ws
-  port: 25808
-  server: 46.243.3.42
-  tls: ''
-  type: vmess
-  uuid: 8fd16171-8c78-475c-80fe-a6f66b310bf3
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
-- alterId: 0
-  cipher: auto
   name: 🇺🇸[openproxylist.com] vmess-US
   network: ws
   port: 443
@@ -311,19 +259,6 @@ proxies:
     headers:
       Host: test13.huvicloud.com
     path: /djakjhahf3fg
-- alterId: 0
-  cipher: auto
-  name: 🇩🇪[openproxylist.com] vmess-DE
-  network: ws
-  port: 39130
-  server: 91.99.153.39
-  tls: ''
-  type: vmess
-  uuid: 985af489-fb16-491a-813c-fdd91b6b06ee
-  ws-opts:
-    headers:
-      Host: panel.arushasoft.com
-    path: /
 - alterId: 0
   cipher: auto
   name: 🇱🇻[openproxylist.com] vmess-LV
@@ -363,6 +298,19 @@ proxies:
     headers:
       Host: ''
     path: ''
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸[openproxylist.com] vmess-US
+  network: ws
+  port: 80
+  server: 104.21.112.1
+  tls: ''
+  type: vmess
+  uuid: 20e89a95-cedf-4fe3-9421-517ce66be170
+  ws-opts:
+    headers:
+      Host: ccvfgt.008880888.xyz
+    path: /SHToRcqfiraYkzOdf
 - alterId: 0
   cipher: auto
   name: 🇨🇦[openproxylist.com] vmess-CA
@@ -378,13 +326,12 @@ proxies:
     path: /
 proxy-groups:
 - interval: 300
-  name: 🚀 节点选择
+  name: 🚀 自动选择
   proxies:
+  - 美国 CloudFlare节点
   - 美国 惠普HP
-  - 德国 V2CROSS.COM
+  - 美国 V2CROSS.COM
   - 加拿大 V2CROSS.COM
-  - 丹麦 V2CROSS.COM
-  - 亚太地区 V2CROSS.COM
   - 🇭🇰[openproxylist.com] vmess-HK
   - 🇹🇼[openproxylist.com] vmess-TW
   - 🇩🇪[openproxylist.com] vmess-DE
@@ -392,23 +339,54 @@ proxy-groups:
   - 🇮🇷[openproxylist.com] vmess-IR
   - 🇳🇱[openproxylist.com] vmess-NL
   - 🇺🇸[openproxylist.com] vmess-US
-  - 🇩🇪[openproxylist.com] vmess-DE
   - 🇱🇻[openproxylist.com] vmess-LV
   - 🇫🇮[openproxylist.com] vmess-FI
   - 🇺🇸[openproxylist.com] vmess-US
   - 🇨🇦[openproxylist.com] vmess-CA
   - 🇭🇰[openproxylist.com] vmess-HK
-  - 🇹🇼[openproxylist.com] vmess-TW
   - 🇩🇪[openproxylist.com] vmess-DE
   - 🇯🇵[openproxylist.com] vmess-JP
   - 🇮🇷[openproxylist.com] vmess-IR
-  - 🇳🇱[openproxylist.com] vmess-NL
   - 🇺🇸[openproxylist.com] vmess-US
-  - 🇩🇪[openproxylist.com] vmess-DE
   - 🇱🇻[openproxylist.com] vmess-LV
   - 🇫🇮[openproxylist.com] vmess-FI
+  - 🇺🇸[openproxylist.com] vmess-US
   - 🇺🇸[openproxylist.com] vmess-US
   - 🇨🇦[openproxylist.com] vmess-CA
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
+- name: 🎯 全球直连
+  proxies:
+  - DIRECT
+  - 美国 CloudFlare节点
+  - 美国 惠普HP
+  - 美国 V2CROSS.COM
+  - 加拿大 V2CROSS.COM
+  - 🇭🇰[openproxylist.com] vmess-HK
+  - 🇹🇼[openproxylist.com] vmess-TW
+  - 🇩🇪[openproxylist.com] vmess-DE
+  - 🇯🇵[openproxylist.com] vmess-JP
+  - 🇮🇷[openproxylist.com] vmess-IR
+  - 🇳🇱[openproxylist.com] vmess-NL
+  - 🇺🇸[openproxylist.com] vmess-US
+  - 🇱🇻[openproxylist.com] vmess-LV
+  - 🇫🇮[openproxylist.com] vmess-FI
+  - 🇺🇸[openproxylist.com] vmess-US
+  - 🇨🇦[openproxylist.com] vmess-CA
+  - 🇭🇰[openproxylist.com] vmess-HK
+  - 🇩🇪[openproxylist.com] vmess-DE
+  - 🇯🇵[openproxylist.com] vmess-JP
+  - 🇮🇷[openproxylist.com] vmess-IR
+  - 🇺🇸[openproxylist.com] vmess-US
+  - 🇱🇻[openproxylist.com] vmess-LV
+  - 🇫🇮[openproxylist.com] vmess-FI
+  - 🇺🇸[openproxylist.com] vmess-US
+  - 🇺🇸[openproxylist.com] vmess-US
+  - 🇨🇦[openproxylist.com] vmess-CA
+  type: select
+- name: 🛑 拦截广告
+  proxies:
+  - REJECT
+  - DIRECT
+  type: select
