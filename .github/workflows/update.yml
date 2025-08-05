@@ -1,34 +1,33 @@
-name: Auto Generate Proxy Files
+name: Auto Update Proxy Subscription
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # 每 6 小时运行一次
-  workflow_dispatch:       # 手动触发支持
+    - cron: '0 */6 * * *'  # 每 6 小时执行一次（可自定义）
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          pip install requests pyyaml qrcode pillow
+          pip install requests pyyaml qrcode[pil]
 
-      - name: Run generate.py
+      - name: Run generate.py script
         run: python generate.py
 
-      - name: Commit and Push
+      - name: Commit and push changes
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@users.noreply.github.com"
-          git add docs/
-          git commit -m "🤖 自动更新订阅与二维码 $(date +'%Y-%m-%d %H:%M:%S')" || echo "Nothing to commit"
+          git config --global user.name github-actions
+          git config --global user.email github-actions@users.noreply.github.com
+          git add docs/*.yaml docs/*.txt docs/*.png docs/*.html || true
+          git commit -m "Auto update proxy subscriptions" || echo "No changes to commit"
           git push
