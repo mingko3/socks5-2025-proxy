@@ -1,41 +1,33 @@
-name: Update SOCKS5 Proxies and Generate Clash Config
+name: Auto Update Clash Proxies
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # 每 4 小时运行一次
-  workflow_dispatch:      # 允许手动触发
+    - cron: "0 0 * * *"  # 每天 UTC 0 点执行（北京时间早上 8 点）
+  workflow_dispatch:     # 支持手动触发
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests pyyaml beautifulsoup4
+        run: pip install requests pyyaml
 
-      - name: Run script to generate proxy.yaml and sub
+      - name: Run Python script
         run: python generate.py
 
       - name: Commit and push changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git add proxy.yaml sub
-          git commit -m "Auto update proxies and sub" || echo "Nothing to commit"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add docs/proxy.yaml
+          git commit -m "Auto update proxies" || echo "Nothing to commit"
           git push
-
-      - name: Show debug logs
-        if: always()
-        run: |
-          echo "Contents of proxy.yaml:"
-          cat proxy.yaml
-          echo "Contents of sub:"
-          cat sub
