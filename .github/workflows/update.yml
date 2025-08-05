@@ -1,33 +1,35 @@
-name: Auto Update Clash Proxies
+name: Auto Update Subscriptions
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # 每天 UTC 0 点执行
-  workflow_dispatch:     # 支持手动触发
+    - cron: "0 2 * * *"  # 每天 UTC 时间 2 点运行
+  workflow_dispatch:      # 允许手动触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          pip install requests pyyaml qrcode pillow
+    - name: Install dependencies
+      run: |
+        pip install requests pyyaml qrcode pillow
 
-      - name: Run generate.py
-        run: python generate.py
+    - name: Run generate.py
+      run: python generate.py
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@users.noreply.github.com"
-          git add docs/*
-          git commit -m "Auto update proxies" || echo "No changes to commit"
-          git push
+    - name: Commit and Push
+      run: |
+        git config --global user.name github-actions
+        git config --global user.email github-actions@users.noreply.github.com
+        git pull
+        git add docs/
+        git commit -m "📦 Auto update proxies and subs" || echo "No changes to commit"
+        git push
