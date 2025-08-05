@@ -1,74 +1,89 @@
-import requests
-import yaml
 import base64
+import yaml
 import os
-from datetime import datetime
 
-# 下载 SOCKS5 列表
-url = "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt"
-response = requests.get(url)
-lines = response.text.strip().splitlines()
-
-# 提取 IP:PORT
-proxies = []
-for line in lines:
-    if line.strip() == "" or line.startswith("SOCKS5 Proxy list updated") or "://" in line:
-        continue
+def parse_ss_link(link):
+    if not link.startswith("ss://"):
+        return None
+    # 移除 "ss://"
+    encoded = link[len("ss://"):]
+    # 处理可能包含 # 的部分
+    if "#" in encoded:
+        encoded = encoded.split("#")[0]
     try:
-        parts = line.split()
-        ip_port = parts[1]
-        ip, port = ip_port.split(":")
-        proxy = {
-            "name": ip.replace(".", "-") + "_" + port,
-            "type": "socks5",
-            "server": ip,
-            "port": int(port)
-        }
-        proxies.append(proxy)
-    except Exception as e:
-        print(f"跳过无效行：{line}")
-        continue
+        decoded = base64.b64decode(encoded).decode('utf-8')
+    except:
+        return None
+    # 分割为认证部分和主机端口部分
+    parts = decoded.split("@")
+    if len(parts) != 2:
+        return None
+    auth, hostport = parts
+    # 分割主机和端口
+    hp = hostport.split(":")
+    if len(hp) != 2:
+        return None
+    server, port = hp
+    try:
+        port = int(port)
+    except ValueError:
+        return None
+    # 分割认证部分
+    a = auth.split(":")
+    if len(a) < 2:
+        return None
+    method = a[0]
+    password = ":".join(a[1:])
+    return {
+        "name": f"SS_{server}_{port}",
+        "type": "ss",
+        "server": server,
+        "port": port,
+        "cipher": method,
+        "password": password,
+        "udp": True
+    }
 
-# 构建 Clash 配置
+# 假设附件内容已保存为 links.txt
+with open("links.txt", "r", encoding="utf-8") as f:
+    links = f.read().splitlines()
+
+proxies = []
+for link in links:
+    if link.startswith("ss://"):
+        proxy = parse_ss_link(link)
+        if proxy:
+            proxies.append(proxy)
+    # TODO: 添加 vmess:// 和 trojan:// 的解析逻辑
+
+# 生成 Clash 配置
 config = {
-    "port": 7890,
-    "socks-port": 7891,
-    "allow-lan": True,
-    "mode": "Rule",
-    "log-level": "info",
     "proxies": proxies,
     "proxy-groups": [
         {
-            "name": "自动选择",
+            "name": "Auto",
             "type": "url-test",
-            "proxies": [p["name"] for p in proxies],
             "url": "http://www.gstatic.com/generate_204",
-            "interval": 300
-        },
-        {
-            "name": "手动选择",
-            "type": "select",
-            "proxies": ["自动选择"] + [p["name"] for p in proxies]
+            "interval": 300,
+            "tolerance": 50,
+            "proxies": [p["name"] for p in proxies]
         }
-    ],
-    "rules": [
-        "MATCH,手动选择"
     ]
 }
 
 # 确保 docs 目录存在
 os.makedirs("docs", exist_ok=True)
 
-# 写入 proxy.yaml
-yaml_path = os.path.join("docs", "proxy.yaml")
-with open(yaml_path, "w", encoding="utf-8") as f:
-    yaml.dump(config, f, allow_unicode=True)
+# 保存为 YAML 文件
+with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
+    yaml.dump(config, f, default_flow_style=False, allow_unicode=True)
 
-# 写入 base64 格式的 sub 文件
-sub_path = os.path.join("docs", "sub")
-with open(yaml_path, "rb") as f:
-    encoded = base64.b64encode(f.read()).decode("utf-8")
-with open(sub_path, "w", encoding="utf-8") as subfile:
-    subfile.write(encoded)
+# 生成 base64 编码的 .sub 文件
+with open("docs/proxy.yaml", "rb") as f:
+    content = f.read()
+    b64 = base64.b64encode(content).decode("utf-8")
 
-print("✅ 配置文件生成成功：proxy.yaml 和 sub")
+with open("docs/sub", "w", encoding="utf-8") as f:
+    f.write(b64)
+
+print(f"生成完成，共 {len(proxies)} 个节点")
