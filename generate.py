@@ -68,4 +68,7 @@ with open(yaml_path, "w", encoding="utf-8") as f:
 sub_path = os.path.join("docs", "sub")
 with open(yaml_path, "rb") as f:
     encoded = base64.b64encode(f.read()).decode("utf-8")
-    with open(sub_path, "w", encoding="utf-8") as su_
+with open(sub_path, "w", encoding="utf-8") as subfile:
+    subfile.write(encoded)
+
+print("✅ 配置文件生成成功：proxy.yaml 和 sub")
