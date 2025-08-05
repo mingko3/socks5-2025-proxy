@@ -1,104 +1,77 @@
 proxies:
-- name: SOCKS5_187-63-9-62_63253
-  port: 63253
-  server: 187.63.9.62
-  type: socks5
+- alterId: 2
+  cipher: auto
+  name: 香港 电讯盈科有限公司
+  network: ws
+  port: 80
+  server: hkt.gotochinatown.net
+  tls: ''
+  type: vmess
+  uuid: 3085fcf8-a69c-11ec-bd7c-f23c913c8d2b
+  ws-opts:
+    headers:
+      Host: ''
+    path: ''
+- name: Trojan_36.156.102.125_447
+  password: d0d08cddacc3190ea81b1b792e1b5fde
+  port: 447
+  server: 36.156.102.125
+  type: trojan
   udp: true
-- name: SOCKS5_31-211-142-115_8192
-  port: 8192
-  server: 31.211.142.115
-  type: socks5
+- alterId: 2
+  cipher: auto
+  name: 江苏省 移动
+  network: ws
+  port: 30804
+  server: v4.heduian.link
+  tls: ''
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      Host: v4.heduian.link
+    path: /oooo
+- name: Trojan_36.156.102.125_472
+  password: d0d08cddacc3190ea81b1b792e1b5fde
+  port: 472
+  server: 36.156.102.125
+  type: trojan
   udp: true
-- name: SOCKS5_94-73-251-19_1080
-  port: 1080
-  server: 94.73.251.19
-  type: socks5
-  udp: true
-- name: SOCKS5_102-36-127-53_1080
-  port: 1080
-  server: 102.36.127.53
-  type: socks5
-  udp: true
-- name: SOCKS5_138-199-25-13_3909
-  port: 3909
-  server: 138.199.25.13
-  type: socks5
-  udp: true
-- name: SOCKS5_117-74-65-207_5441
-  port: 5441
-  server: 117.74.65.207
-  type: socks5
-  udp: true
-- name: SOCKS5_193-123-252-70_35973
-  port: 35973
-  server: 193.123.252.70
-  type: socks5
-  udp: true
-- name: SOCKS5_37-44-238-2_63617
-  port: 63617
-  server: 37.44.238.2
-  type: socks5
-  udp: true
-- name: SOCKS5_47-243-75-202_58853
-  port: 58853
-  server: 47.243.75.202
-  type: socks5
-  udp: true
-- name: SOCKS5_46-241-57-29_1080
-  port: 1080
-  server: 46.241.57.29
-  type: socks5
-  udp: true
-- name: SOCKS5_167-71-220-29_7497
-  port: 7497
-  server: 167.71.220.29
-  type: socks5
-  udp: true
-- name: SOCKS5_113-176-118-150_1080
-  port: 1080
-  server: 113.176.118.150
-  type: socks5
-  udp: true
-- name: SOCKS5_185-87-121-5_8975
-  port: 8975
-  server: 185.87.121.5
-  type: socks5
-  udp: true
-- name: SOCKS5_185-86-5-162_8975
-  port: 8975
-  server: 185.86.5.162
-  type: socks5
-  udp: true
-- name: SOCKS5_176-117-237-132_1080
-  port: 1080
-  server: 176.117.237.132
-  type: socks5
-  udp: true
-- name: SOCKS5_51-83-190-248_19050
-  port: 19050
-  server: 51.83.190.248
-  type: socks5
-  udp: true
+- alterId: 0
+  cipher: auto
+  name: 美国 CloudFlare节点
+  network: ws
+  port: 80
+  server: test.flha.ru
+  tls: ''
+  type: vmess
+  uuid: 2bab6b8f-8d6e-463a-8331-b9de3d56921d
+  ws-opts:
+    headers:
+      Host: test.flha.ru
+    path: /2bab6b8f-8d6e-463a-8331-b9de3d56921d-vmess
+- alterId: 0
+  cipher: auto
+  name: 印度 V2CROSS.COM
+  network: ws
+  port: 8880
+  server: 103.160.204.241
+  tls: ''
+  type: vmess
+  uuid: 248be52b-35d9-34cb-9b73-e12b78bc1301
+  ws-opts:
+    headers:
+      Host: TG.WangCai2.s2.db-link02.top
+    path: /dabai.in
 proxy-groups:
 - interval: 300
-  name: 🚀 自动选择
+  name: 🚀 节点选择
   proxies:
-  - SOCKS5_187-63-9-62_63253
-  - SOCKS5_31-211-142-115_8192
-  - SOCKS5_94-73-251-19_1080
-  - SOCKS5_102-36-127-53_1080
-  - SOCKS5_138-199-25-13_3909
-  - SOCKS5_117-74-65-207_5441
-  - SOCKS5_193-123-252-70_35973
-  - SOCKS5_37-44-238-2_63617
-  - SOCKS5_47-243-75-202_58853
-  - SOCKS5_46-241-57-29_1080
-  - SOCKS5_167-71-220-29_7497
-  - SOCKS5_113-176-118-150_1080
-  - SOCKS5_185-87-121-5_8975
-  - SOCKS5_185-86-5-162_8975
-  - SOCKS5_176-117-237-132_1080
-  - SOCKS5_51-83-190-248_19050
-  tolerance: 50
+  - 香港 电讯盈科有限公司
+  - Trojan_36.156.102.125_447
+  - 江苏省 移动
+  - Trojan_36.156.102.125_472
+  - 美国 CloudFlare节点
+  - 印度 V2CROSS.COM
   type: url-test
   url: http://www.gstatic.com/generate_204

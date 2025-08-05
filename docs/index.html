@@ -1,14 +1,19 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>Clash 订阅链接</title>
+    <meta charset="UTF-8">
+    <title>订阅链接</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 2em; }
+        input { width: 90%; padding: 10px; font-size: 1em; }
+        img { margin-top: 20px; width: 200px; }
+    </style>
 </head>
 <body>
-  <h2>Clash 订阅（纯文本）</h2>
-  <p><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">proxy.yaml</a></p>
-  <h2>Clash 订阅（Base64）</h2>
-  <p><a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">sub</a></p>
+    <h1>Clash 订阅</h1>
+    <p>复制以下链接导入 Clash：</p>
+    <input type="text" readonly value="https://mingko3.github.io/socks5-2025-proxy/sub" onclick="this.select()">
+    <p>扫码订阅：</p>
+    <img src="sub_qr.png" alt="订阅二维码">
 </body>
 </html>
