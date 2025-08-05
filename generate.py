@@ -1,63 +1,60 @@
 import requests
 import yaml
+import base64
 import os
 from datetime import datetime
 
-# 目标 URL
 url = "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt"
+response = requests.get(url)
+lines = response.text.strip().split("\n")
 
-# 发送请求并获取文本内容
-res = requests.get(url)
-lines = res.text.strip().split("\n")
-
-# 创建 Clash 配置的基本结构
-clash_config = {
-    "proxies": [],
-    "proxy-groups": [
-        {
-            "name": "auto",
-            "type": "url-test",
-            "proxies": [],
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 300
-        }
-    ]
-}
-
-# 逐行处理每个代理节点
+proxies = []
 for line in lines:
-    # 只处理包含 IP:PORT 的行
-    if ":" not in line or "[" not in line:
+    # 跳过无效行（如说明文字）
+    if not line or line.startswith("SOCKS5") or "://" in line or "Proxy list" in line or "Support us" in line or "Fromat" in line:
         continue
 
     try:
         parts = line.split()
-        ip_port = parts[1]  # IP:PORT 是第 2 个元素
+        ip_port = parts[1]  # 取第2部分是 IP:PORT
         ip, port = ip_port.split(":")
-        country = parts[3]  # 国家代码
+        country_flag = parts[0]
+        country = parts[2] if len(parts) > 2 else "??"
 
-        name = f"{country}_{ip.replace('.', '-')}_{port}"
-
-        clash_config["proxies"].append({
+        name = f"{country_flag}_{ip.replace('.', '-')}_{port}"
+        proxies.append({
             "name": name,
             "type": "socks5",
             "server": ip,
-            "port": int(port),
-            "udp": True
+            "port": int(port)
         })
-
-        clash_config["proxy-groups"][0]["proxies"].append(name)
-
     except Exception as e:
-        print(f"跳过行: {line}, 错误: {e}")
         continue
+
+clash_config = {
+    "proxies": proxies,
+    "proxy-groups": [
+        {
+            "name": "🚀 节点选择",
+            "type": "select",
+            "proxies": [proxy["name"] for proxy in proxies]
+        }
+    ]
+}
 
 # 确保 docs 目录存在
 os.makedirs("docs", exist_ok=True)
 
-# 输出到 docs/proxy.yaml 文件中
+# 写入 proxy.yaml
 with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
     yaml.dump(clash_config, f, allow_unicode=True)
 
-# 打印更新时间
-print("SOCKS5 Proxy list 已生成于", datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"))
+# 写入 proxy.yaml.sub（base64）
+with open("docs/proxy.yaml", "rb") as f:
+    content = f.read()
+    b64 = base64.b64encode(content).decode("utf-8")
+
+with open("docs/proxy.yaml.sub", "w", encoding="utf-8") as f:
+    f.write(b64)
+
+print(f"生成完成，共 {len(proxies)} 个节点")
