@@ -2,12 +2,13 @@ name: Auto Update Proxy Subscription
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # 每 6 小时执行一次（可自定义）
+    - cron: '0 */6 * * *'  # 每 6 小时执行一次
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -21,6 +22,10 @@ jobs:
         run: |
           pip install requests pyyaml qrcode[pil]
 
+      - name: Pull remote changes
+        run: |
+          git pull origin main --rebase
+          
       - name: Run generate.py script
         run: python generate.py
 
