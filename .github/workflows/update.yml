@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests pyyaml qrcode
+          pip install requests pyyaml qrcode pillow
 
       - name: Run generate.py
         run: python generate.py
