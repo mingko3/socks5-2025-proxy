@@ -1,43 +1,50 @@
 import requests
 import yaml
-import base64
+import os
 
-# 节点来源地址
 url = "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt"
+output_dir = "docs"
+output_file = os.path.join(output_dir, "proxy.yaml")
+
+# 创建输出目录
+os.makedirs(output_dir, exist_ok=True)
+
+# 请求 SOCKS5 列表
 response = requests.get(url)
-lines = response.text.strip().split('\n')
+proxies = response.text.strip().split("\n")
 
-# Clash 格式配置列表
-clash_proxies = []
-
-# 最多取前 20 条（你可改为 50 或更多）
-for index, line in enumerate(lines[:20]):
-    parts = line.strip().split(':')
-    if len(parts) != 2:
-        continue
-    ip, port = parts
-    proxy = {
-        'name': f"S5_{index + 1}",
-        'type': 'socks5',
-        'server': ip,
-        'port': int(port),
-        'udp': False
-    }
-    clash_proxies.append(proxy)
-
-# 保存为 proxy.yaml 文件
+# 构建 Clash 配置
 clash_config = {
-    'proxies': clash_proxies
+    "proxies": [],
+    "proxy-groups": [
+        {
+            "name": "auto",
+            "type": "url-test",
+            "proxies": [],
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 300
+        }
+    ]
 }
-with open("proxy.yaml", "w", encoding="utf-8") as f:
+
+# 添加每个代理
+for i, proxy in enumerate(proxies):
+    if not proxy or ":" not in proxy:
+        continue
+    host, port = proxy.strip().split(":")
+    name = f"socks5-{i}"
+    clash_proxy = {
+        "name": name,
+        "type": "socks5",
+        "server": host,
+        "port": int(port),
+        "udp": True
+    }
+    clash_config["proxies"].append(clash_proxy)
+    clash_config["proxy-groups"][0]["proxies"].append(name)
+
+# 保存到 YAML 文件
+with open(output_file, "w", encoding="utf-8") as f:
     yaml.dump(clash_config, f, allow_unicode=True)
 
-# 生成 base64 格式的订阅内容（普通节点列表）
-plain_text = '\n'.join([f'socks5://{p["server"]}:{p["port"]}' for p in clash_proxies])
-sub_encoded = base64.b64encode(plain_text.encode()).decode()
-
-# 写入 sub 文件
-with open("sub", "w", encoding="utf-8") as f:
-    f.write(sub_encoded)
-
-print("✅ proxy.yaml 和 sub 文件已生成！")
+print(f"已保存到 {output_file}")
