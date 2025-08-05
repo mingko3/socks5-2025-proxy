@@ -28,7 +28,6 @@ SUB_LINKS = [
 ]
 
 # 解析 ss 链接
-
 def parse_ss(link):
     try:
         if '#' in link:
@@ -54,7 +53,6 @@ def parse_ss(link):
         return None
 
 # 解析 vmess 链接
-
 def parse_vmess(link):
     try:
         data = link[len("vmess://"):]
@@ -76,7 +74,6 @@ def parse_vmess(link):
         return None
 
 # 解析 trojan 链接
-
 def parse_trojan(link):
     try:
         content = link[len("trojan://"):]
@@ -102,7 +99,7 @@ trojan_nodes = []
 for url in SUB_LINKS:
     try:
         print(f"Fetching: {url}")
-        res = requests.get(url, timeout=15)
+        res = requests.get(url, timeout=10)
         content = res.text.strip()
 
         if content.startswith("proxies:") or ".yaml" in url or ".yml" in url:
@@ -163,7 +160,6 @@ def save_yaml():
     return proxies
 
 # 写入 base64 订阅
-
 def save_base64(filename, nodes):
     if not nodes:
         return
@@ -196,15 +192,14 @@ def save_base64(filename, nodes):
         f.write("\n".join(lines))
 
     if filename == "sub":
-        # 写入 base64 汇总订阅
         with open(f"docs/{filename}", "rb") as f:
             encoded = base64.b64encode(f.read()).decode()
         with open("docs/sub", "w") as sf:
             sf.write(encoded)
 
-# 写入二维码 HTML
-
+# 写入二维码 HTML + 图片
 def generate_html():
+    os.makedirs("docs", exist_ok=True)
     links = [
         ("Clash 配置 (proxy.yaml)", "proxy.yaml"),
         ("混合 Base64 订阅 (sub)", "sub"),
@@ -216,7 +211,10 @@ def generate_html():
     html = """<html><head><meta charset='utf-8'><title>订阅中心</title></head><body><h2>多格式代理订阅</h2>"""
     for title, path in links:
         url = f"https://mingko3.github.io/socks5-2025-proxy/{path}"
-        html += f"<h3>{title}</h3><p><a href='{url}'>{url}</a></p><img src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={url}'><hr>"
+        qr_img = qrcode.make(url)
+        qr_path = f"docs/{path}.png"
+        qr_img.save(qr_path)
+        html += f"<h3>{title}</h3><p><a href='{url}'>{url}</a><br><img src='{path}.png' width='200'/></p>"
     html += "</body></html>"
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(html)
@@ -228,4 +226,4 @@ save_base64("trojan.txt", trojan_nodes)
 save_base64("vmess.txt", vmess_nodes)
 save_base64("sub", ss_nodes + trojan_nodes + vmess_nodes)
 generate_html()
-print("✅ 所有订阅与网页已生成完毕")
+print("✅ 所有订阅与二维码网页已生成完毕")
