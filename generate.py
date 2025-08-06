@@ -16,8 +16,19 @@ CLASH_URL = "https://mingko3.github.io/socks5-2025-proxy/proxy.yaml"
 BASE64_URL = "https://mingko3.github.io/socks5-2025-proxy/sub"
 
 # 创建主二维码（必须完整 URL，确保 Shadowrocket 可识别）
-main_qr = qrcode.make(BASE64_URL)
-main_qr.save("docs/qrcode.png")
+def make_strict_qrcode(data, filename):
+    qr = qrcode.QRCode(
+        version=5,
+        error_correction=qrcode.constants.ERROR_CORRECT_H,  # 使用高纠错等级
+        box_size=10,
+        border=4  # 添加足够边距，便于识别
+    )
+    qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image()
+    img.save(filename)
+
+make_strict_qrcode(BASE64_URL, "docs/qrcode.png")
 
 # 节点订阅源（示例）
 sources = [
