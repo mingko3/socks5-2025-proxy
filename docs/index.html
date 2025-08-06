@@ -1,127 +1,16 @@
+
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <title>多格式代理订阅</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #212529;
-            padding: 20px;
-            margin: 0;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #343a40;
-        }
-        .section {
-            margin: 40px auto;
-            padding: 20px;
-            max-width: 700px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        .qr-block {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        .qr-block img {
-            width: 120px;
-            height: 120px;
-            border: 1px solid #dee2e6;
-        }
-        .link {
-            flex: 1;
-            margin-left: 20px;
-            word-break: break-all;
-        }
-        .footer {
-            text-align: center;
-            color: #6c757d;
-            font-size: 14px;
-            margin-top: 40px;
-        }
-        @media screen and (max-width: 600px) {
-            .qr-block {
-                flex-direction: column;
-                align-items: center;
-            }
-            .link {
-                margin-left: 0;
-                margin-top: 10px;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
+<html>
+<head><meta charset="UTF-8"><title>多格式订阅</title></head>
 <body>
-    <h1>多格式代理订阅</h1>
-
-    <div class="section">
-        <h2>Clash 配置 (proxy.yaml)</h2>
-        <div class="qr-block">
-            <img src="sub_qr.png" alt="Clash QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/proxy.yaml
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>基础 Base64 订阅 (sub)</h2>
-        <div class="qr-block">
-            <img src="sub_qr.png" alt="Base64 QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/sub
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>SS 格式 (ss.txt)</h2>
-        <div class="qr-block">
-            <img src="ss_qr.png" alt="SS QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/ss.txt" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/ss.txt
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>VMess 格式 (vmess.txt)</h2>
-        <div class="qr-block">
-            <img src="vmess_qr.png" alt="VMess QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/vmess.txt" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/vmess.txt
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Trojan 格式 (trojan.txt)</h2>
-        <div class="qr-block">
-            <img src="trojan_qr.png" alt="Trojan QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/trojan.txt" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/trojan.txt
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">更新时间：2025-08-06 05:48:25</div>
+<h2>多格式代理订阅</h2>
+<p>更新时间：2025-08-06 06:23:46</p>
+<ul>
+<li>Clash 配置 (<a href='proxy.yaml'>proxy.yaml</a>)<br><img src='proxy_qr.png' width='150'></li>
+<li>混合 Base64 订阅 (<a href='sub'>sub</a>)<br><img src='sub_qr.png' width='150'></li>
+<li>SS 订阅 (<a href='ss.txt'>ss.txt</a>)<br><img src='ss_qr.png' width='150'></li>
+<li>VMess 订阅 (<a href='vmess.txt'>vmess.txt</a>)<br><img src='vmess_qr.png' width='150'></li>
+<li>Trojan 订阅 (<a href='trojan.txt'>trojan.txt</a>)<br><img src='trojan_qr.png' width='150'></li>
+</ul>
 </body>
 </html>
