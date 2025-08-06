@@ -1,26 +1,14 @@
-import requests
-import base64
-import yaml
-import os
-import re
-import qrcode
-import json
+import requests, base64, yaml, os, re, qrcode, json, socket
 from urllib.parse import unquote
 from datetime import datetime
 
-# 所有订阅源列表（支持 SS/VMess/Trojan/VLESS + YAML）
 SUB_LINKS = [
-    # SS Base64
     "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
     "https://raw.githubusercontent.com/lagzian/SS-Collector/main/Shadowsocks.txt",
     "https://raw.githubusercontent.com/freefq/free/master/shadowsocks",
     "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/shadowsocks",
-
-    # Clash YAML
     "https://raw.githubusercontent.com/freefq/free/master/clash.yaml",
     "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/clash/clash.yml",
-
-    # roosterkid 源
     "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_BASE64.txt",
     "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
     "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt",
@@ -28,47 +16,34 @@ SUB_LINKS = [
     "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS4.txt"
 ]
 
+def test_node(server, port):
+    try:
+        socket.create_connection((server, int(port)), timeout=1.5)
+        return True
+    except:
+        return False
+
 def parse_ss(link):
     try:
-        if '#' in link:
-            link = link.split('#')[0]
+        if '#' in link: link = link.split('#')[0]
         link = link[len('ss://'):] if link.startswith('ss://') else link
-        missing_padding = len(link) % 4
-        if missing_padding:
-            link += '=' * (4 - missing_padding)
+        link += '=' * (4 - len(link) % 4)
         decoded = base64.urlsafe_b64decode(link).decode()
         method, rest = decoded.split(':', 1)
         password, server_port = rest.rsplit('@', 1)
         server, port = server_port.split(':')
-        return {
-            "name": f"SS_{server}_{port}",
-            "type": "ss",
-            "server": server,
-            "port": int(port),
-            "cipher": method,
-            "password": password,
-            "udp": True
-        }
+        return {"name": f"SS_{server}_{port}", "type": "ss", "server": server, "port": int(port), "cipher": method, "password": password, "udp": True}
     except:
         return None
 
 def parse_vmess(link):
     try:
-        data = link[len("vmess://"):]
-        decoded = base64.b64decode(data + '===').decode()
+        decoded = base64.b64decode(link[len("vmess://"):] + '===').decode()
         conf = json.loads(decoded)
-        return {
-            "name": conf.get("ps", "vmess"),
-            "type": "vmess",
-            "server": conf.get("add"),
-            "port": int(conf.get("port")),
-            "uuid": conf.get("id"),
-            "alterId": int(conf.get("aid", 0)),
-            "cipher": "auto",
-            "tls": conf.get("tls", False),
-            "network": conf.get("net"),
-            "ws-opts": {"path": conf.get("path", "/"), "headers": {"Host": conf.get("host", "")}}
-        }
+        return {"name": conf.get("ps", "vmess"), "type": "vmess", "server": conf.get("add"),
+                "port": int(conf.get("port")), "uuid": conf.get("id"), "alterId": int(conf.get("aid", 0)),
+                "cipher": "auto", "tls": conf.get("tls", False), "network": conf.get("net"),
+                "ws-opts": {"path": conf.get("path", "/"), "headers": {"Host": conf.get("host", "")}}}
     except:
         return None
 
@@ -78,48 +53,25 @@ def parse_trojan(link):
         password, rest = content.split("@")
         server_port = rest.split("#")[0]
         server, port = server_port.split(":")
-        return {
-            "name": f"Trojan_{server}_{port}",
-            "type": "trojan",
-            "server": server,
-            "port": int(port),
-            "password": password,
-            "udp": True
-        }
+        return {"name": f"Trojan_{server}_{port}", "type": "trojan", "server": server, "port": int(port), "password": password, "udp": True}
     except:
         return None
 
-# 节点测速函数（简单 TCP 检测）
-def test_node(server, port):
-    import socket
-    try:
-        with socket.create_connection((server, int(port)), timeout=1.5):
-            return True
-    except:
-        return False
-
-ss_nodes = []
-vmess_nodes = []
-trojan_nodes = []
+ss_nodes, vmess_nodes, trojan_nodes = [], [], []
 
 for url in SUB_LINKS:
     try:
-        print(f"Fetching: {url}")
+        print(f"[+] Fetching: {url}")
         res = requests.get(url, timeout=10)
         content = res.text.strip()
-
         if content.startswith("proxies:") or ".yaml" in url or ".yml" in url:
             try:
                 data = yaml.safe_load(content)
                 for p in data.get("proxies", []):
-                    if p.get("type") == "ss" and test_node(p['server'], p['port']):
-                        ss_nodes.append(p)
-                    elif p.get("type") == "vmess" and test_node(p['server'], p['port']):
-                        vmess_nodes.append(p)
-                    elif p.get("type") == "trojan" and test_node(p['server'], p['port']):
-                        trojan_nodes.append(p)
-            except:
-                continue
+                    if p.get("type") == "ss" and test_node(p['server'], p['port']): ss_nodes.append(p)
+                    elif p.get("type") == "vmess" and test_node(p['server'], p['port']): vmess_nodes.append(p)
+                    elif p.get("type") == "trojan" and test_node(p['server'], p['port']): trojan_nodes.append(p)
+            except: continue
         else:
             lines = base64.b64decode(content + '===').decode(errors="ignore").splitlines() if '://' not in content else content.splitlines()
             for line in lines:
@@ -138,118 +90,74 @@ for url in SUB_LINKS:
                     if node and test_node(node['server'], node['port']):
                         trojan_nodes.append(node)
     except Exception as e:
-        print(f"Error fetching {url}: {e}")
+        print(f"[-] Error fetching {url}: {e}")
 
-print(f"Total: SS({len(ss_nodes)}), VMess({len(vmess_nodes)}), Trojan({len(trojan_nodes)})")
+print(f"[+] 总计节点：SS({len(ss_nodes)}), VMess({len(vmess_nodes)}), Trojan({len(trojan_nodes)})")
 
-# 保存到 YAML 和生成订阅链接
-def save_yaml():
-    all_nodes = ss_nodes + vmess_nodes + trojan_nodes
-    proxies = [n for n in all_nodes if n]
-    proxy_names = [p["name"] for p in proxies]
+# 写入文件
+os.makedirs("docs", exist_ok=True)
 
-    clash = {
-        "proxies": proxies,
-        "proxy-groups": [
-            {
-                "name": "🚀 自动选择",
-                "type": "url-test",
-                "url": "http://www.gstatic.com/generate_204",
-                "interval": 300,
-                "tolerance": 50,
-                "proxies": proxy_names
-            },
-            {
-                "name": "🎯 全球直连",
-                "type": "select",
-                "proxies": ["DIRECT"] + proxy_names
-            },
-            {
-                "name": "🛑 拦截广告",
-                "type": "select",
-                "proxies": ["REJECT", "DIRECT"]
-            }
-        ]
-    }
-    os.makedirs("docs", exist_ok=True)
-    with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
-        yaml.dump(clash, f, allow_unicode=True)
+with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
+    yaml.dump({"proxies": ss_nodes + vmess_nodes + trojan_nodes}, f, allow_unicode=True)
 
-    return proxies
-
-def save_base64(filename, nodes):
-    if not nodes:
-        return
+def encode_nodes(nodes, kind):
     lines = []
-    for node in nodes:
-        if node["type"] == "ss":
-            raw = f"{node['cipher']}:{node['password']}@{node['server']}:{node['port']}"
-            encoded = base64.urlsafe_b64encode(raw.encode()).decode().rstrip("=")
-            lines.append(f"ss://{encoded}#{node['name']}")
-        elif node["type"] == "trojan":
-            lines.append(f"trojan://{node['password']}@{node['server']}:{node['port']}#{node['name']}")
-        elif node["type"] == "vmess":
-            conf = {
-                "v": "2",
-                "ps": node["name"],
-                "add": node["server"],
-                "port": str(node["port"]),
-                "id": node["uuid"],
-                "aid": str(node.get("alterId", 0)),
-                "net": node.get("network", "tcp"),
-                "type": "none",
-                "host": node.get("ws-opts", {}).get("headers", {}).get("Host", ""),
-                "path": node.get("ws-opts", {}).get("path", "/"),
-                "tls": node.get("tls", False)
+    for n in nodes:
+        if kind == "ss":
+            info = f"{n['cipher']}:{n['password']}@{n['server']}:{n['port']}"
+            encoded = base64.urlsafe_b64encode(info.encode()).decode().rstrip("=")
+            lines.append("ss://" + encoded)
+        elif kind == "trojan":
+            lines.append(f"trojan://{n['password']}@{n['server']}:{n['port']}")
+        elif kind == "vmess":
+            vmess_conf = {
+                "v": "2", "ps": n["name"], "add": n["server"], "port": str(n["port"]), "id": n["uuid"],
+                "aid": str(n.get("alterId", 0)), "net": n.get("network", "tcp"), "type": "none",
+                "host": n.get("ws-opts", {}).get("headers", {}).get("Host", ""),
+                "path": n.get("ws-opts", {}).get("path", "/"),
+                "tls": "tls" if n.get("tls") else ""
             }
-            encoded = base64.b64encode(json.dumps(conf).encode()).decode()
-            lines.append(f"vmess://{encoded}")
+            encoded = base64.b64encode(json.dumps(vmess_conf).encode()).decode()
+            lines.append("vmess://" + encoded)
+    return lines
 
-    with open(f"docs/{filename}", "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+with open("docs/ss.txt", "w") as f: f.write("\n".join(encode_nodes(ss_nodes, "ss")))
+with open("docs/vmess.txt", "w") as f: f.write("\n".join(encode_nodes(vmess_nodes, "vmess")))
+with open("docs/trojan.txt", "w") as f: f.write("\n".join(encode_nodes(trojan_nodes, "trojan")))
 
-    if filename == "sub":
-        with open(f"docs/{filename}", "rb") as f:
-            encoded = base64.b64encode(f.read()).decode()
-        with open("docs/sub", "w") as sf:
-            sf.write(encoded)
+# Base64 综合订阅
+sub_content = encode_nodes(ss_nodes, "ss") + encode_nodes(vmess_nodes, "vmess") + encode_nodes(trojan_nodes, "trojan")
+with open("docs/sub", "w") as f: f.write(base64.b64encode("\n".join(sub_content).encode()).decode())
 
-def generate_html():
-    links = [
-        ("Clash 配置 (proxy.yaml)", "proxy.yaml"),
-        ("混合 Base64 订阅 (sub)", "sub"),
-        ("SS 节点 (ss.txt)", "ss.txt"),
-        ("VMess 节点 (vmess.txt)", "vmess.txt"),
-        ("Trojan 节点 (trojan.txt)", "trojan.txt")
-    ]
+# ✅ 修复后的二维码生成
+def make_qr(url, output):
+    qr = qrcode.QRCode(box_size=10, border=2)
+    qr.add_data(url)
+    qr.make(fit=True)
+    img = qr.make_image()
+    img.save(output)
 
-    html = """<html><head><meta charset='utf-8'><title>订阅中心</title></head><body><h2>多格式代理订阅</h2>"""
-    for title, path in links:
-        url = f"https://mingko3.github.io/socks5-2025-proxy/{path}"
-        html += f"<h3>{title}</h3><p><a href='{url}'>{url}</a><br><img src='{path.replace('.txt','_qr.png').replace('proxy.yaml','proxy_qr.png').replace('sub','sub_qr.png')}' width='200'></p>"
+make_qr("https://mingko3.github.io/socks5-2025-proxy/sub", "docs/sub_qr.png")
+make_qr("https://mingko3.github.io/socks5-2025-proxy/proxy.yaml", "docs/proxy_qr.png")
+make_qr("https://mingko3.github.io/socks5-2025-proxy/ss.txt", "docs/ss_qr.png")
+make_qr("https://mingko3.github.io/socks5-2025-proxy/vmess.txt", "docs/vmess_qr.png")
+make_qr("https://mingko3.github.io/socks5-2025-proxy/trojan.txt", "docs/trojan_qr.png")
 
-    html += f"<p>更新时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>"
-    html += "</body></html>"
-
-    with open("docs/index.html", "w", encoding="utf-8") as f:
-        f.write(html)
-
-def generate_qrcode(file, name):
-    url = f"https://mingko3.github.io/socks5-2025-proxy/{file}"
-    img = qrcode.make(url)
-    img.save(f"docs/{name}_qr.png")
-
-all_nodes = save_yaml()
-save_base64("ss.txt", ss_nodes)
-save_base64("trojan.txt", trojan_nodes)
-save_base64("vmess.txt", vmess_nodes)
-save_base64("sub", ss_nodes + trojan_nodes + vmess_nodes)
-
-generate_qrcode("proxy.yaml", "proxy")
-generate_qrcode("sub", "sub")
-generate_qrcode("ss.txt", "ss")
-generate_qrcode("vmess.txt", "vmess")
-generate_qrcode("trojan.txt", "trojan")
-generate_html()
-
-print("✅ 所有订阅与二维码网页生成完毕")
+with open("docs/index.html", "w", encoding="utf-8") as f:
+    f.write(f"""
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>多格式订阅</title></head>
+<body>
+<h2>多格式代理订阅</h2>
+<p>更新时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
+<ul>
+<li>Clash 配置 (<a href='proxy.yaml'>proxy.yaml</a>)<br><img src='proxy_qr.png' width='150'></li>
+<li>混合 Base64 订阅 (<a href='sub'>sub</a>)<br><img src='sub_qr.png' width='150'></li>
+<li>SS 订阅 (<a href='ss.txt'>ss.txt</a>)<br><img src='ss_qr.png' width='150'></li>
+<li>VMess 订阅 (<a href='vmess.txt'>vmess.txt</a>)<br><img src='vmess_qr.png' width='150'></li>
+<li>Trojan 订阅 (<a href='trojan.txt'>trojan.txt</a>)<br><img src='trojan_qr.png' width='150'></li>
+</ul>
+</body>
+</html>
+""")
