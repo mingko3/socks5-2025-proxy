@@ -1,41 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>订阅分享 - socks5-2025-proxy</title>
-    <style>
-        body {
-            font-family: Arial;
-            background-color: #f7f7f7;
-            text-align: center;
-            padding: 40px;
-        }
-        .card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: inline-block;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>订阅分享</title>
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; text-align: center; padding: 2em; }
+    h1 { color: #333; }
+    .link { margin: 1em 0; font-size: 18px; word-break: break-all; }
+    .qr { margin: 2em 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <h2>🌐 Clash 订阅地址</h2>
-        <p><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">proxy.yaml</a></p>
-        <h2>📦 Base64 订阅</h2>
-        <p><a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">sub</a></p>
-        <h2>📱 扫码导入（推荐 Shadowrocket）</h2>
-        <img src="sub_qr.png" alt="订阅二维码" width="200">
-        <p style="margin-top:10px;">扫码或长按识别订阅</p>
-        <p>更新时间：2025-08-06 11:06:07</p>
-    </div>
+  <h1>🛰️ 节点订阅分享</h1>
+  <div class="link">
+    📄 Clash 配置文件：<br>
+    <a href="proxy.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</a>
+  </div>
+  <div class="link">
+    📦 Base64 订阅链接：<br>
+    <a href="sub" target="_blank">https://mingko3.github.io/socks5-2025-proxy/sub</a>
+  </div>
+  <div class="qr">
+    <p>📷 扫码订阅链接</p>
+    <img src="sub_qr.png" width="180">
+  </div>
+  <h2>📍 每个节点二维码</h2>
+  <div class="grid">
+
+  </div>
+  <footer style="margin-top:2em; font-size:14px; color:#888;">
+    最后更新：2025-08-06 11:27:09（自动部署）
+  </footer>
 </body>
 </html>
