@@ -1,41 +1,32 @@
-name: Auto Generate Subscriptions
+name: Update Proxies
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # 每天 UTC 4 点运行一次（北京时间中午 12 点）
-  workflow_dispatch:     # 允许手动触发
+    - cron: '0 */4 * * *'  # 每 4 小时运行一次
+  workflow_dispatch:       # 允许手动运行
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: 🧾 拉取仓库
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: 🐍 安装 Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
-    - name: 📦 安装依赖
-      run: |
-        pip install requests PyYAML qrcode pillow
+      - name: 安装依赖
+        run: pip install requests pyyaml qrcode
 
-    - name: ⚙️ 运行 generate.py
-      run: python generate.py
+      - name: 运行 generate.py
+        run: python generate.py
 
-    - name: 🚀 提交更改
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add .
-        git commit -m "📦 Auto update subscriptions" || echo "No changes"
-        git pull --rebase
-        git push
-
-    - name: 🚀 部署 GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+      - name: 提交更改
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'actions@github.com'
+          git add docs/*
+          git commit -m "Auto update proxy subscriptions" || echo "No changes"
+          git pull --rebase
+          git push
