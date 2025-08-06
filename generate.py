@@ -1,138 +1,43 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <title>多格式代理订阅</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #212529;
-            padding: 20px;
-            margin: 0;
-        }
-        h1, h2 {
-            text-align: center;
-            color: #343a40;
-        }
-        .section {
-            margin: 40px auto;
-            padding: 20px;
-            max-width: 700px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        .qr-block {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        .qr-block img {
-            width: 120px;
-            height: 120px;
-            border: 1px solid #dee2e6;
-        }
-        .link {
-            flex: 1;
-            margin-left: 20px;
-            word-break: break-all;
-        }
-        .footer {
-            text-align: center;
-            color: #6c757d;
-            font-size: 14px;
-            margin-top: 40px;
-        }
-        @media screen and (max-width: 600px) {
-            .qr-block {
-                flex-direction: column;
-                align-items: center;
-            }
-            .link {
-                margin-left: 0;
-                margin-top: 10px;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>多格式代理订阅</h1>
+import requests
+import base64
+import yaml
+import os
+import re
+import qrcode
+import json
+import socket
+from urllib.parse import unquote
+from datetime import datetime
 
-    <div class="section">
-        <h2>Clash 配置 (proxy.yaml)</h2>
-        <div class="qr-block">
-            <img src="sub_qr.png" alt="Clash QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/proxy.yaml
-                </a>
-            </div>
-        </div>
-    </div>
+SUB_LINKS = [
+    # SS Base64 源
+    "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+    "https://raw.githubusercontent.com/lagzian/SS-Collector/main/Shadowsocks.txt",
+    "https://raw.githubusercontent.com/freefq/free/master/shadowsocks",
+    "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/shadowsocks",
+    # Clash YAML 源
+    "https://raw.githubusercontent.com/freefq/free/master/clash.yaml",
+    "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/clash/clash.yml",
+    # Roosterkid 源
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_BASE64.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt"
+]
 
-    <div class="section">
-        <h2>基础 Base64 订阅 (sub)</h2>
-        <div class="qr-block">
-            <img src="sub_qr.png" alt="Base64 QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/sub
-                </a>
-            </div>
-        </div>
-    </div>
+def test_node(server, port):
+    try:
+        with socket.create_connection((server, int(port)), timeout=1.5):
+            return True
+    except:
+        return False
 
-    <div class="section">
-        <h2>SS 格式 (ss.txt)</h2>
-        <div class="qr-block">
-            <img src="ss_qr.png" alt="SS QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/ss.txt" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/ss.txt
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>VMess 格式 (vmess.txt)</h2>
-        <div class="qr-block">
-            <img src="vmess_qr.png" alt="VMess QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/vmess.txt" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/vmess.txt
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Trojan 格式 (trojan.txt)</h2>
-        <div class="qr-block">
-            <img src="trojan_qr.png" alt="Trojan QR">
-            <div class="link">
-                <a href="https://mingko3.github.io/socks5-2025-proxy/trojan.txt" target="_blank">
-                    https://mingko3.github.io/socks5-2025-proxy/trojan.txt
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">更新时间：2025-08-06 05:48:25</div>
-</body>
-</html>
 def parse_ss(link):
     try:
         if '#' in link:
             link = link.split('#')[0]
         link = link[len('ss://'):] if link.startswith('ss://') else link
-        missing_padding = len(link) % 4
-        if missing_padding:
-            link += '=' * (4 - missing_padding)
+        padding = len(link) % 4
+        if padding: link += '=' * (4 - padding)
         decoded = base64.urlsafe_b64decode(link).decode()
         method, rest = decoded.split(':', 1)
         password, server_port = rest.rsplit('@', 1)
@@ -155,7 +60,7 @@ def parse_vmess(link):
         decoded = base64.b64decode(data + '===').decode()
         conf = json.loads(decoded)
         return {
-            "name": conf.get("ps", f"vmess_{conf.get('add')}"),
+            "name": conf.get("ps", "vmess"),
             "type": "vmess",
             "server": conf.get("add"),
             "port": int(conf.get("port")),
@@ -164,7 +69,10 @@ def parse_vmess(link):
             "cipher": "auto",
             "tls": conf.get("tls", False),
             "network": conf.get("net"),
-            "ws-opts": {"path": conf.get("path", "/"), "headers": {"Host": conf.get("host", "")}}
+            "ws-opts": {
+                "path": conf.get("path", "/"),
+                "headers": {"Host": conf.get("host", "")}
+            }
         }
     except:
         return None
@@ -173,8 +81,8 @@ def parse_trojan(link):
     try:
         content = link[len("trojan://"):]
         password, rest = content.split("@")
-        server_port = rest.split("#")[0]
-        server, port = server_port.split(":")
+        server, port = rest.split(":")
+        port = port.split("#")[0]
         return {
             "name": f"Trojan_{server}_{port}",
             "type": "trojan",
@@ -186,16 +94,7 @@ def parse_trojan(link):
     except:
         return None
 
-# 简单 TCP 测速函数
-def test_node(server, port):
-    try:
-        with socket.create_connection((server, int(port)), timeout=1.5):
-            return True
-    except:
-        return False
-ss_nodes = []
-vmess_nodes = []
-trojan_nodes = []
+ss_nodes, vmess_nodes, trojan_nodes = [], [], []
 
 for url in SUB_LINKS:
     try:
@@ -203,7 +102,6 @@ for url in SUB_LINKS:
         res = requests.get(url, timeout=10)
         content = res.text.strip()
 
-        # 处理 Clash YAML 类型订阅
         if content.startswith("proxies:") or ".yaml" in url or ".yml" in url:
             try:
                 data = yaml.safe_load(content)
@@ -217,149 +115,97 @@ for url in SUB_LINKS:
             except:
                 continue
         else:
-            # 普通 base64 或纯文本格式
             lines = base64.b64decode(content + '===').decode(errors="ignore").splitlines() if '://' not in content else content.splitlines()
             for line in lines:
                 line = line.strip()
-                node = None
                 if line.startswith("ss://"):
-                    node = parse_ss(line)
-                    if node and test_node(node['server'], node['port']):
-                        ss_nodes.append(node)
+                    n = parse_ss(line)
+                    if n and test_node(n['server'], n['port']):
+                        ss_nodes.append(n)
                 elif line.startswith("vmess://"):
-                    node = parse_vmess(line)
-                    if node and test_node(node['server'], node['port']):
-                        vmess_nodes.append(node)
+                    n = parse_vmess(line)
+                    if n and test_node(n['server'], n['port']):
+                        vmess_nodes.append(n)
                 elif line.startswith("trojan://"):
-                    node = parse_trojan(line)
-                    if node and test_node(node['server'], node['port']):
-                        trojan_nodes.append(node)
+                    n = parse_trojan(line)
+                    if n and test_node(n['server'], n['port']):
+                        trojan_nodes.append(n)
     except Exception as e:
-        print(f"Error fetching {url}: {e}")
+        print(f"Error: {e}")
 
-print(f"✅ 有效节点数：SS({len(ss_nodes)}), VMess({len(vmess_nodes)}), Trojan({len(trojan_nodes)})")
-# 创建 docs 和 docs/qrs 目录
+# 构建 clash.yaml
+all_nodes = ss_nodes + vmess_nodes + trojan_nodes
+config = {
+    "proxies": all_nodes,
+    "proxy-groups": [{
+        "name": "🚀 自动选择",
+        "type": "url-test",
+        "url": "http://www.gstatic.com/generate_204",
+        "interval": 300,
+        "tolerance": 50,
+        "proxies": [n["name"] for n in all_nodes]
+    }]
+}
+
+# 输出目录
 os.makedirs("docs/qrs", exist_ok=True)
 
-# 保存完整 Clash 配置
-clash_config = {
-    "proxies": ss_nodes + vmess_nodes + trojan_nodes,
-    "proxy-groups": [
-        {
-            "name": "🚀 节点选择",
-            "type": "url-test",
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 300,
-            "tolerance": 50,
-            "proxies": [p["name"] for p in ss_nodes + vmess_nodes + trojan_nodes]
-        }
-    ]
-}
+# 生成 proxy.yaml
 with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
-    yaml.dump(clash_config, f, allow_unicode=True)
+    yaml.dump(config, f, allow_unicode=True)
 
-# 生成 base64 订阅
+# 生成 base64 sub
 with open("docs/proxy.yaml", "rb") as f:
-    content = f.read()
-    b64 = base64.b64encode(content).decode("utf-8")
-with open("docs/sub", "w", encoding="utf-8") as f:
-    f.write(b64)
+    b64 = base64.b64encode(f.read()).decode()
+    with open("docs/sub", "w", encoding="utf-8") as o:
+        o.write(b64)
 
-# 生成主订阅二维码
+# 主订阅二维码
 img = qrcode.make("https://mingko3.github.io/socks5-2025-proxy/sub")
 img.save("docs/sub_qr.png")
 
-# 单独导出每个节点的二维码图片
-def save_qr(node, index):
-    if node["type"] == "ss":
-        uri = f"{node['cipher']}:{node['password']}@{node['server']}:{node['port']}"
-        b64_uri = base64.b64encode(uri.encode()).decode()
-        full = f"ss://{b64_uri}"
-    elif node["type"] == "vmess":
-        vmess_conf = {
-            "v": "2",
-            "ps": node.get("name", ""),
-            "add": node["server"],
-            "port": str(node["port"]),
-            "id": node["uuid"],
-            "aid": str(node.get("alterId", 0)),
-            "net": node.get("network", "ws"),
-            "type": "none",
-            "host": node.get("ws-opts", {}).get("headers", {}).get("Host", ""),
-            "path": node.get("ws-opts", {}).get("path", "/"),
-            "tls": node.get("tls", "")
-        }
-        b64_uri = base64.b64encode(json.dumps(vmess_conf).encode()).decode()
-        full = f"vmess://{b64_uri}"
-    elif node["type"] == "trojan":
-        full = f"trojan://{node['password']}@{node['server']}:{node['port']}"
-    else:
-        return
+# 单个节点二维码 + 收集 info
+card_html = ""
+for n in all_nodes:
+    info = f"{n['type']}://{n['server']}:{n['port']}"
+    qr_img = qrcode.make(info)
+    name = n['name'].replace(":", "_").replace("/", "_")
+    qr_path = f"docs/qrs/{name}.png"
+    qr_img.save(qr_path)
+    card_html += f'''
+    <div class="card">
+        <h4>{n["name"]}</h4>
+        <p>协议: {n["type"]}</p>
+        <img src="qrs/{name}.png" width="130"/><br/>
+        <code>{n["server"]}:{n["port"]}</code>
+    </div>
+    '''
 
-    img = qrcode.make(full)
-    filename = f"docs/qrs/{node['type']}_{index}.png"
-    img.save(filename)
-
-for idx, node in enumerate(ss_nodes + vmess_nodes + trojan_nodes):
-    save_qr(node, idx)
-# 获取当前更新时间
-update_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-# 生成 index.html 内容
-html_content = f"""<!DOCTYPE html>
-<html lang="zh-CN">
+# 生成 index.html
+html = f'''
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>节点订阅 - socks5-2025-proxy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>订阅信息</title>
     <style>
-        body {{ font-family: Arial, sans-serif; background: #f7f9fb; color: #333; padding: 20px; }}
-        h1 {{ color: #333; }}
-        .section {{ margin-bottom: 30px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }}
-        .copy-btn {{ padding: 6px 10px; margin-left: 10px; cursor: pointer; border: none; background: #007bff; color: #fff; border-radius: 5px; }}
-        .copy-btn:hover {{ background: #0056b3; }}
-        code {{ background: #eee; padding: 4px 6px; border-radius: 4px; }}
-        img.qr {{ width: 180px; margin-top: 10px; }}
+        body {{ font-family: Arial; background: #f4f4f4; color: #333; }}
+        h2 {{ color: #0066cc; }}
+        .card {{ display:inline-block; width:200px; padding:10px; margin:10px; background:#fff; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; }}
     </style>
 </head>
 <body>
-    <h1>🌐 节点订阅中心</h1>
-    <p>最近更新：{update_time}</p>
-
-    <div class="section">
-        <h2>📥 通用订阅链接（Clash 配置）</h2>
-        <code id="yaml">https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</code>
-        <button class="copy-btn" onclick="copy('yaml')">复制</button>
-
-        <h3>📦 Base64 编码订阅</h3>
-        <code id="b64">https://mingko3.github.io/socks5-2025-proxy/sub</code>
-        <button class="copy-btn" onclick="copy('b64')">复制</button>
-
-        <h3>📷 扫码订阅</h3>
-        <img src="sub_qr.png" class="qr" alt="订阅二维码">
-    </div>
-
-    <div class="section">
-        <h2>📊 节点分类统计</h2>
-        <p>SS 节点：{len(ss_nodes)} 个</p>
-        <p>VMess 节点：{len(vmess_nodes)} 个</p>
-        <p>Trojan 节点：{len(trojan_nodes)} 个</p>
-    </div>
-
-    <script>
-        function copy(id) {{
-            const text = document.getElementById(id).innerText;
-            navigator.clipboard.writeText(text).then(() => {{
-                alert("复制成功：" + text);
-            }});
-        }}
-    </script>
+    <h2>Clash 订阅链接</h2>
+    <p><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml">Clash 配置</a></p>
+    <p><a href="https://mingko3.github.io/socks5-2025-proxy/sub">Base64 Sub</a></p>
+    <p><img src="sub_qr.png" width="150"/></p>
+    <h3>全部节点二维码</h3>
+    {card_html}
 </body>
 </html>
-"""
+'''
 
-# 写入 index.html 页面
 with open("docs/index.html", "w", encoding="utf-8") as f:
-    f.write(html_content)
+    f.write(html)
 
-print("✅ 所有订阅文件、二维码与网页已生成完毕！")
+print("✅ 所有订阅内容与二维码生成完毕！")
