@@ -1,32 +1,36 @@
-name: Update Proxies
+name: Auto Generate Proxy Data
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # 每 4 小时运行一次
-  workflow_dispatch:       # 允许手动运行
+    - cron: '0 23 * * *'  # 每天 07:00 北京时间
+    - cron: '0 11 * * *'  # 每天 19:00 北京时间
+  workflow_dispatch:      # 支持手动触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: 设置 Python 环境
+    steps:
+      - name: ⬇️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: 安装依赖
-        run: pip install requests pyyaml qrcode
+      - name: 📦 Install dependencies
+        run: |
+          pip install -U requests pyyaml qrcode[pil]
 
-      - name: 运行 generate.py
+      - name: ⚙️ Run generate.py
         run: python generate.py
 
-      - name: 提交更改
+      - name: 🚀 Commit & Push
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'actions@github.com'
-          git add docs/*
-          git commit -m "Auto update proxy subscriptions" || echo "No changes"
+          git config --global user.email "actions@github.com"
+          git config --global user.name "github-actions"
           git pull --rebase
+          git add docs/
+          git commit -m "Auto update proxy subscriptions" || echo "No changes to commit"
           git push
