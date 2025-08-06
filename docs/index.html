@@ -1,37 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>订阅分享</title>
-  <style>
-    body { font-family: sans-serif; background: #f0f0f0; text-align: center; padding: 2em; }
-    h1 { color: #333; }
-    .link { margin: 1em 0; font-size: 18px; word-break: break-all; }
-    .qr { margin: 2em 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>订阅分享</title>
+    <style>
+        body { font-family: sans-serif; background: #f6f6f6; padding: 30px; }
+        h1 { text-align: center; }
+        .qr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+        .item { background: white; padding: 10px; border: 1px solid #ccc; text-align: center; }
+        img { max-width: 100%; }
+    </style>
 </head>
 <body>
-  <h1>🛰️ 节点订阅分享</h1>
-  <div class="link">
-    📄 Clash 配置文件：<br>
-    <a href="proxy.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</a>
-  </div>
-  <div class="link">
-    📦 Base64 订阅链接：<br>
-    <a href="sub" target="_blank">https://mingko3.github.io/socks5-2025-proxy/sub</a>
-  </div>
-  <div class="qr">
+    <h1>📡 节点订阅分享</h1>
+    <p>📄 Clash 配置文件：<br><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml">https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</a></p>
+    <p>📦 Base64 订阅链接：<br><a href="https://mingko3.github.io/socks5-2025-proxy/sub">https://mingko3.github.io/socks5-2025-proxy/sub</a></p>
     <p>📷 扫码订阅链接</p>
-    <img src="sub_qr.png" width="180">
-  </div>
-  <h2>📍 每个节点二维码</h2>
-  <div class="grid">
+    <img src="qrcode.png" width="200"><br>
+    <h2>📍 每个节点二维码</h2>
+    <div class="qr-grid">
+<div class="item"><img src="qrs/vmess_eyJ2IjogIjIiLCAicHMiOiAiXHU1M2YwXHU2ZTdl.png"><br>vmess_eyJ2IjogIjIiLCAicHMiOiAiXHU1M2YwXHU2ZTdl.png</div>
+<div class="item"><img src="qrs/vmess_eyJ2IjogIjIiLCAicHMiOiAiXHU5OTk5XHU2ZTJm.png"><br>vmess_eyJ2IjogIjIiLCAicHMiOiAiXHU5OTk5XHU2ZTJm.png</div>
+<div class="item"><img src="qrs/美国 RF Engineering.png"><br>美国 RF Engineering.png</div>
+<div class="item"><img src="qrs/🇩🇪[openproxylist.com] vmess-DE.png"><br>🇩🇪[openproxylist.com] vmess-DE.png</div>
+<div class="item"><img src="qrs/香港 电讯盈科有限公司.png"><br>香港 电讯盈科有限公司.png</div>
+<div class="item"><img src="qrs/🇺🇸[openproxylist.com] vmess-US.png"><br>🇺🇸[openproxylist.com] vmess-US.png</div>
+<div class="item"><img src="qrs/丹麦 V2CROSS.COM.png"><br>丹麦 V2CROSS.COM.png</div>
+<div class="item"><img src="qrs/美国 CloudFlare节点.png"><br>美国 CloudFlare节点.png</div>
+<div class="item"><img src="qrs/🇯🇵[openproxylist.com] vmess-JP.png"><br>🇯🇵[openproxylist.com] vmess-JP.png</div>
+<div class="item"><img src="qrs/vmess_eyJ2IjogIjIiLCAicHMiOiAiXHU3ZjhlXHU1NmZk.png"><br>vmess_eyJ2IjogIjIiLCAicHMiOiAiXHU3ZjhlXHU1NmZk.png</div>
+<div class="item"><img src="qrs/🇮🇷[openproxylist.com] vmess-IR.png"><br>🇮🇷[openproxylist.com] vmess-IR.png</div>
+<div class="item"><img src="qrs/🇭🇰[openproxylist.com] vmess-HK.png"><br>🇭🇰[openproxylist.com] vmess-HK.png</div>
 
-  </div>
-  <footer style="margin-top:2em; font-size:14px; color:#888;">
-    最后更新：2025-08-06 11:32:01（自动部署）
-  </footer>
+    </div>
+    <p style="text-align:center;margin-top:20px;">最后更新：2025-08-06 12:01:45（自动部署）</p>
 </body>
 </html>
