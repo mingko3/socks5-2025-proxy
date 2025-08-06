@@ -2,46 +2,33 @@ import requests
 import base64
 import yaml
 import os
-import re
 import qrcode
-import json
-import socket
-from urllib.parse import unquote
 from datetime import datetime
 
-SUB_LINKS = [
-    # SS Base64 源
+# 输出目录
+output_dir = "docs"
+os.makedirs(output_dir, exist_ok=True)
+
+# 订阅源（仅 SS 格式为例，可扩展）
+urls = [
     "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
     "https://raw.githubusercontent.com/lagzian/SS-Collector/main/Shadowsocks.txt",
     "https://raw.githubusercontent.com/freefq/free/master/shadowsocks",
     "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/shadowsocks",
-    # Clash YAML 源
-    "https://raw.githubusercontent.com/freefq/free/master/clash.yaml",
-    "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/clash/clash.yml",
-    # Roosterkid 源
-    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_BASE64.txt",
-    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
-    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt"
 ]
 
-def test_node(server, port):
+def parse_ss_link(link):
+    if not link.startswith("ss://"):
+        return None
+    encoded = link[5:].split("#")[0]
     try:
-        with socket.create_connection((server, int(port)), timeout=1.5):
-            return True
-    except:
-        return False
-
-def parse_ss(link):
-    try:
-        if '#' in link:
-            link = link.split('#')[0]
-        link = link[len('ss://'):] if link.startswith('ss://') else link
-        padding = len(link) % 4
-        if padding: link += '=' * (4 - padding)
-        decoded = base64.urlsafe_b64decode(link).decode()
-        method, rest = decoded.split(':', 1)
-        password, server_port = rest.rsplit('@', 1)
-        server, port = server_port.split(':')
+        missing_padding = len(encoded) % 4
+        if missing_padding:
+            encoded += "=" * (4 - missing_padding)
+        decoded = base64.urlsafe_b64decode(encoded).decode("utf-8")
+        method_password, server_port = decoded.rsplit("@", 1)
+        method, password = method_password.split(":", 1)
+        server, port = server_port.split(":")
         return {
             "name": f"SS_{server}_{port}",
             "type": "ss",
@@ -51,161 +38,108 @@ def parse_ss(link):
             "password": password,
             "udp": True
         }
-    except:
+    except Exception as e:
+        print(f"解析错误: {e}")
         return None
 
-def parse_vmess(link):
-    try:
-        data = link[len("vmess://"):]
-        decoded = base64.b64decode(data + '===').decode()
-        conf = json.loads(decoded)
-        return {
-            "name": conf.get("ps", "vmess"),
-            "type": "vmess",
-            "server": conf.get("add"),
-            "port": int(conf.get("port")),
-            "uuid": conf.get("id"),
-            "alterId": int(conf.get("aid", 0)),
-            "cipher": "auto",
-            "tls": conf.get("tls", False),
-            "network": conf.get("net"),
-            "ws-opts": {
-                "path": conf.get("path", "/"),
-                "headers": {"Host": conf.get("host", "")}
-            }
-        }
-    except:
-        return None
+# 收集节点
+proxies = []
 
-def parse_trojan(link):
+for url in urls:
     try:
-        content = link[len("trojan://"):]
-        password, rest = content.split("@")
-        server, port = rest.split(":")
-        port = port.split("#")[0]
-        return {
-            "name": f"Trojan_{server}_{port}",
-            "type": "trojan",
-            "server": server,
-            "port": int(port),
-            "password": password,
-            "udp": True
-        }
-    except:
-        return None
-
-ss_nodes, vmess_nodes, trojan_nodes = [], [], []
-
-for url in SUB_LINKS:
-    try:
-        print(f"Fetching: {url}")
         res = requests.get(url, timeout=10)
         content = res.text.strip()
+        lines = base64.b64decode(content + '===').decode(errors="ignore").splitlines() \
+            if "ss://" not in content and not content.startswith("ss://") else content.splitlines()
 
-        if content.startswith("proxies:") or ".yaml" in url or ".yml" in url:
-            try:
-                data = yaml.safe_load(content)
-                for p in data.get("proxies", []):
-                    if p.get("type") == "ss" and test_node(p['server'], p['port']):
-                        ss_nodes.append(p)
-                    elif p.get("type") == "vmess" and test_node(p['server'], p['port']):
-                        vmess_nodes.append(p)
-                    elif p.get("type") == "trojan" and test_node(p['server'], p['port']):
-                        trojan_nodes.append(p)
-            except:
-                continue
-        else:
-            lines = base64.b64decode(content + '===').decode(errors="ignore").splitlines() if '://' not in content else content.splitlines()
-            for line in lines:
-                line = line.strip()
-                if line.startswith("ss://"):
-                    n = parse_ss(line)
-                    if n and test_node(n['server'], n['port']):
-                        ss_nodes.append(n)
-                elif line.startswith("vmess://"):
-                    n = parse_vmess(line)
-                    if n and test_node(n['server'], n['port']):
-                        vmess_nodes.append(n)
-                elif line.startswith("trojan://"):
-                    n = parse_trojan(line)
-                    if n and test_node(n['server'], n['port']):
-                        trojan_nodes.append(n)
+        for line in lines:
+            line = line.strip()
+            if line.startswith("ss://"):
+                node = parse_ss_link(line)
+                if node:
+                    proxies.append(node)
+
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"获取失败: {url}\n{e}")
 
-# 构建 clash.yaml
-all_nodes = ss_nodes + vmess_nodes + trojan_nodes
-config = {
-    "proxies": all_nodes,
-    "proxy-groups": [{
-        "name": "🚀 自动选择",
-        "type": "url-test",
-        "url": "http://www.gstatic.com/generate_204",
-        "interval": 300,
-        "tolerance": 50,
-        "proxies": [n["name"] for n in all_nodes]
-    }]
+print(f"总共解析出 {len(proxies)} 个 SS 节点")
+
+# 生成 Clash 配置
+clash_config = {
+    "proxies": proxies,
+    "proxy-groups": [
+        {
+            "name": "🌀 自动选择",
+            "type": "url-test",
+            "proxies": [p["name"] for p in proxies],
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 300
+        }
+    ],
+    "rules": ["MATCH,🌀 自动选择"]
 }
 
-# 输出目录
-os.makedirs("docs/qrs", exist_ok=True)
-
-# 生成 proxy.yaml
-with open("docs/proxy.yaml", "w", encoding="utf-8") as f:
-    yaml.dump(config, f, allow_unicode=True)
+# 写入 proxy.yaml
+proxy_path = os.path.join(output_dir, "proxy.yaml")
+with open(proxy_path, "w", encoding="utf-8") as f:
+    yaml.dump(clash_config, f, allow_unicode=True)
 
 # 生成 base64 sub
-with open("docs/proxy.yaml", "rb") as f:
-    b64 = base64.b64encode(f.read()).decode()
-    with open("docs/sub", "w", encoding="utf-8") as o:
-        o.write(b64)
+with open(proxy_path, "rb") as f:
+    b64 = base64.b64encode(f.read()).decode("utf-8")
 
-# 主订阅二维码
-img = qrcode.make("https://mingko3.github.io/socks5-2025-proxy/sub")
-img.save("docs/sub_qr.png")
+sub_path = os.path.join(output_dir, "sub")
+with open(sub_path, "w", encoding="utf-8") as f:
+    f.write(b64)
 
-# 单个节点二维码 + 收集 info
-card_html = ""
-for n in all_nodes:
-    info = f"{n['type']}://{n['server']}:{n['port']}"
-    qr_img = qrcode.make(info)
-    name = n['name'].replace(":", "_").replace("/", "_")
-    qr_path = f"docs/qrs/{name}.png"
-    qr_img.save(qr_path)
-    card_html += f'''
-    <div class="card">
-        <h4>{n["name"]}</h4>
-        <p>协议: {n["type"]}</p>
-        <img src="qrs/{name}.png" width="130"/><br/>
-        <code>{n["server"]}:{n["port"]}</code>
-    </div>
-    '''
+# ✅ 修复二维码无效问题：使用完整订阅链接生成二维码
+qr_img = qrcode.make("https://mingko3.github.io/socks5-2025-proxy/sub")
+qr_path = os.path.join(output_dir, "sub_qr.png")
+qr_img.save(qr_path)
 
-# 生成 index.html
-html = f'''
-<!DOCTYPE html>
-<html>
+# 生成 index.html 网页
+html_path = os.path.join(output_dir, "index.html")
+with open(html_path, "w", encoding="utf-8") as f:
+    f.write(f"""<!DOCTYPE html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>订阅信息</title>
+    <title>订阅分享 - socks5-2025-proxy</title>
     <style>
-        body {{ font-family: Arial; background: #f4f4f4; color: #333; }}
-        h2 {{ color: #0066cc; }}
-        .card {{ display:inline-block; width:200px; padding:10px; margin:10px; background:#fff; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); text-align:center; }}
+        body {{
+            font-family: Arial;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 40px;
+        }}
+        .card {{
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+        }}
+        a {{
+            color: #007bff;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
     </style>
 </head>
 <body>
-    <h2>Clash 订阅链接</h2>
-    <p><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml">Clash 配置</a></p>
-    <p><a href="https://mingko3.github.io/socks5-2025-proxy/sub">Base64 Sub</a></p>
-    <p><img src="sub_qr.png" width="150"/></p>
-    <h3>全部节点二维码</h3>
-    {card_html}
+    <div class="card">
+        <h2>🌐 Clash 订阅地址</h2>
+        <p><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">proxy.yaml</a></p>
+        <h2>📦 Base64 订阅</h2>
+        <p><a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">sub</a></p>
+        <h2>📱 扫码导入（推荐 Shadowrocket）</h2>
+        <img src="sub_qr.png" alt="订阅二维码" width="200">
+        <p style="margin-top:10px;">扫码或长按识别订阅</p>
+        <p>更新时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
+    </div>
 </body>
-</html>
-'''
+</html>""")
 
-with open("docs/index.html", "w", encoding="utf-8") as f:
-    f.write(html)
-
-print("✅ 所有订阅内容与二维码生成完毕！")
+print("✅ 全部生成完成")
