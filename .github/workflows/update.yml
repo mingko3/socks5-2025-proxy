@@ -1,35 +1,40 @@
-name: Update Proxy List
+name: Auto Update Proxies (Full)
 
 on:
   schedule:
-    - cron: "0 */4 * * *"  # 每 4 小时运行一次
+    - cron: "0 */4 * * *"  # 每4小时运行一次
   workflow_dispatch:
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-    - name: Install dependencies
-      run: |
-        pip install requests pyyaml qrcode pillow
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pyyaml qrcode pillow
 
-    - name: Run script
-      run: python generate.py
+      - name: Run generate.py
+        run: |
+          python generate.py
 
-    - name: Commit and push changes
-      run: |
-        git config --global user.email "actions@github.com"
-        git config --global user.name "github-actions"
-        git add docs
-        git commit -m "Auto update proxy list" || echo "Nothing to commit"
-        git pull --rebase
-        git push
+      - name: Commit and push docs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "github-actions"
+          git add -A docs/
+          git commit -m "Auto update proxy subscriptions" || echo "No changes to commit"
+          # try pull rebase to reduce conflicts, but ignore failure
+          git pull --rebase || true
+          git push origin HEAD:main || true
