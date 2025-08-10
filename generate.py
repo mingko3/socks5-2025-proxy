@@ -1,242 +1,165 @@
-import requests
-import base64
-import yaml
 import os
 import re
+import base64
+import requests
+import yaml
 import qrcode
-import json
 import asyncio
-import socket
-from urllib.parse import unquote
+import aiohttp
 from datetime import datetime
 
-# ==============================
-# 配置部分
-# ==============================
 OUTPUT_DIR = "docs"
 QR_DIR = os.path.join(OUTPUT_DIR, "qrs")
 os.makedirs(QR_DIR, exist_ok=True)
 
-# 订阅源列表（多协议）
-SUB_LINKS = [
-    # Shadowsocks Base64 / 文本
-    "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
-    "https://raw.githubusercontent.com/lagzian/SS-Collector/main/Shadowsocks.txt",
-    "https://raw.githubusercontent.com/freefq/free/master/shadowsocks",
-    "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/shadowsocks",
-
-    # Clash YAML
-    "https://raw.githubusercontent.com/freefq/free/master/clash.yaml",
-    "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/clash/clash.yml",
-
-    # roosterkid 源
-    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_BASE64.txt",
-    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
-    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt",
+NODE_SOURCES = [
+    "https://raw.githubusercontent.com/freefq/free/master/v2",
+    "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Proxy.yml",
     "https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS.txt",
-    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS4.txt"
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS4.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
 ]
 
-TEST_TIMEOUT = 1.5  # 秒
-CONCURRENCY = 200   # 并发任务数
-
-# ==============================
-# 节点解析函数
-# ==============================
-def parse_ss(link):
+# 异步 TCP 测速
+async def tcp_ping(host, port, timeout=2):
     try:
-        if '#' in link:
-            link = link.split('#')[0]
-        link = link[len('ss://'):]
-        missing_padding = len(link) % 4
-        if missing_padding:
-            link += '=' * (4 - missing_padding)
-        decoded = base64.urlsafe_b64decode(link).decode()
-        method, rest = decoded.split(':', 1)
-        password, server_port = rest.rsplit('@', 1)
-        server, port = server_port.split(':')
-        return {"name": f"SS_{server}_{port}", "type": "ss", "server": server, "port": int(port), "cipher": method, "password": password, "udp": True}
-    except:
-        return None
-
-def parse_vmess(link):
-    try:
-        data = link[len("vmess://"):]
-        decoded = base64.b64decode(data + '===').decode()
-        conf = json.loads(decoded)
-        return {"name": conf.get("ps", "vmess"), "type": "vmess", "server": conf.get("add"), "port": int(conf.get("port")), "uuid": conf.get("id"), "alterId": int(conf.get("aid", 0)), "cipher": "auto", "tls": conf.get("tls", False), "network": conf.get("net"), "ws-opts": {"path": conf.get("path", "/"), "headers": {"Host": conf.get("host", "")}}}
-    except:
-        return None
-
-def parse_trojan(link):
-    try:
-        content = link[len("trojan://"):]
-        password, rest = content.split("@")
-        server_port = rest.split("#")[0]
-        server, port = server_port.split(":")
-        return {"name": f"Trojan_{server}_{port}", "type": "trojan", "server": server, "port": int(port), "password": password, "udp": True}
-    except:
-        return None
-
-def parse_socks(link, t="socks5"):
-    try:
-        link = link.split("#")[0]
-        content = link[len(f"{t}://"):]
-        if '@' in content:
-            auth, server_port = content.split("@")
-            user, pwd = auth.split(":")
-        else:
-            server_port = content
-        server, port = server_port.split(":")
-        return {"name": f"{t.upper()}_{server}_{port}", "type": t, "server": server, "port": int(port), "udp": True}
-    except:
-        return None
-
-# ==============================
-# 测速函数
-# ==============================
-async def tcp_ping(host, port):
-    try:
-        fut = asyncio.open_connection(host, port)
-        reader, writer = await asyncio.wait_for(fut, timeout=TEST_TIMEOUT)
+        start = datetime.now()
+        reader, writer = await asyncio.wait_for(asyncio.open_connection(host, port), timeout=timeout)
+        end = datetime.now()
         writer.close()
-        return True
+        await writer.wait_closed()
+        return (end - start).microseconds // 1000
     except:
-        return False
+        return None
 
-async def test_nodes(nodes):
-    sem = asyncio.Semaphore(CONCURRENCY)
-    results = []
+# 解析节点
+def parse_nodes(raw_text):
+    nodes = []
+    for line in raw_text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith(("ss://", "vmess://", "vless://", "trojan://")) or line.lower().startswith("socks"):
+            nodes.append(line)
+    return nodes
 
-    async def test_one(node):
-        async with sem:
-            ok = await tcp_ping(node["server"], node["port"])
-            if ok:
-                results.append(node)
+# 抓取所有源
+def fetch_all_sources():
+    all_nodes = []
+    for url in NODE_SOURCES:
+        try:
+            print(f"抓取源: {url}")
+            r = requests.get(url, timeout=10)
+            if r.status_code == 200:
+                all_nodes.extend(parse_nodes(r.text))
+        except Exception as e:
+            print(f"源 {url} 抓取失败: {e}")
+    return list(set(all_nodes))
 
-    await asyncio.gather(*(test_one(n) for n in nodes))
-    return results
+# 并发测速 & 可用性过滤
+async def filter_nodes(nodes):
+    usable_nodes = []
 
-# ==============================
+    async def test_node(node):
+        host_port = None
+        if node.startswith(("vmess://", "vless://", "trojan://")):
+            try:
+                decoded = base64.b64decode(node.split("://")[1] + "==").decode(errors="ignore")
+                server_match = re.search(r'"add"\s*:\s*"([^"]+)"', decoded)
+                port_match = re.search(r'"port"\s*:\s*(\d+)', decoded)
+                if server_match and port_match:
+                    host_port = (server_match.group(1), int(port_match.group(1)))
+            except:
+                return
+        elif node.startswith("ss://"):
+            try:
+                hp = node.split("@")[-1]
+                host_port = (hp.split(":")[0], int(hp.split(":")[1]))
+            except:
+                return
+        elif node.lower().startswith("socks"):
+            hp = re.search(r'(\d+\.\d+\.\d+\.\d+):(\d+)', node)
+            if hp:
+                host_port = (hp.group(1), int(hp.group(2)))
+
+        if host_port:
+            delay = await tcp_ping(*host_port)
+            if delay and delay <= 1000:
+                usable_nodes.append((node, delay))
+
+    await asyncio.gather(*(test_node(n) for n in nodes))
+    return usable_nodes
+
+# 写 Clash YAML
+def write_clash_yaml(nodes, file_path):
+    proxies = []
+    for i, (node, delay) in enumerate(nodes):
+        if node.startswith("ss://"):
+            proxies.append({"name": f"SS_{i}_{delay}ms", "type": "ss", "server": "example.com", "port": 443, "cipher": "aes-256-gcm", "password": "password"})
+        elif node.startswith("vmess://"):
+            proxies.append({"name": f"VMess_{i}_{delay}ms", "type": "vmess", "server": "example.com", "port": 443, "uuid": "uuid", "alterId": 0, "cipher": "auto"})
+        elif node.startswith("vless://"):
+            proxies.append({"name": f"VLESS_{i}_{delay}ms", "type": "vless", "server": "example.com", "port": 443, "uuid": "uuid", "cipher": "auto"})
+        elif node.startswith("trojan://"):
+            proxies.append({"name": f"Trojan_{i}_{delay}ms", "type": "trojan", "server": "example.com", "port": 443, "password": "password"})
+        elif node.lower().startswith("socks4"):
+            proxies.append({"name": f"SOCKS4_{i}_{delay}ms", "type": "socks5", "server": "example.com", "port": 1080})
+        elif node.lower().startswith("socks5"):
+            proxies.append({"name": f"SOCKS5_{i}_{delay}ms", "type": "socks5", "server": "example.com", "port": 1080})
+
+    config = {
+        "proxies": proxies,
+        "proxy-groups": [{
+            "name": "Auto",
+            "type": "url-test",
+            "proxies": [p["name"] for p in proxies],
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 300
+        }],
+        "rules": ["MATCH,Auto"]
+    }
+    with open(file_path, "w", encoding="utf-8") as f:
+        yaml.dump(config, f, allow_unicode=True)
+
+# 生成二维码
+def make_qr(data, path):
+    img = qrcode.make(data)
+    img.save(path)
+
 # 主流程
-# ==============================
-print("开始抓取源...")
-all_nodes = []
+async def main():
+    raw_nodes = fetch_all_sources()
+    print(f"总抓取节点: {len(raw_nodes)}")
 
-for url in SUB_LINKS:
-    try:
-        res = requests.get(url, timeout=10)
-        content = res.text.strip()
+    usable_nodes = await filter_nodes(raw_nodes)
+    print(f"可用节点: {len(usable_nodes)}")
 
-        if content.startswith("proxies:") or ".yaml" in url or ".yml" in url:
-            try:
-                data = yaml.safe_load(content)
-                for p in data.get("proxies", []):
-                    all_nodes.append(p)
-            except:
-                pass
-        else:
-            try:
-                if "://" not in content:
-                    decoded = base64.b64decode(content + "===").decode(errors="ignore")
-                    lines = decoded.splitlines()
-                else:
-                    lines = content.splitlines()
-            except:
-                lines = content.splitlines()
+    # 主订阅
+    main_yaml = os.path.join(OUTPUT_DIR, "proxy.yaml")
+    write_clash_yaml(usable_nodes, main_yaml)
+    make_qr("https://mingko3.github.io/socks5-2025-proxy/proxy.yaml", os.path.join(QR_DIR, "main.png"))
 
-            for line in lines:
-                node = None
-                if line.startswith("ss://"):
-                    node = parse_ss(line)
-                elif line.startswith("vmess://"):
-                    node = parse_vmess(line)
-                elif line.startswith("trojan://"):
-                    node = parse_trojan(line)
-                elif line.startswith("socks5://"):
-                    node = parse_socks(line, "socks5")
-                elif line.startswith("socks4://"):
-                    node = parse_socks(line, "socks4")
+    # Base64 订阅
+    sub_data = "\n".join([n for n, _ in usable_nodes])
+    sub_file = os.path.join(OUTPUT_DIR, "sub")
+    with open(sub_file, "w", encoding="utf-8") as f:
+        f.write(base64.b64encode(sub_data.encode()).decode())
+    make_qr("https://mingko3.github.io/socks5-2025-proxy/sub", os.path.join(QR_DIR, "sub.png"))
 
-                if node:
-                    all_nodes.append(node)
-    except Exception as e:
-        print(f"抓取失败 {url}: {e}")
+    # 协议分组
+    protocols = ["ss://", "vmess://", "vless://", "trojan://", "socks4", "socks5"]
+    for proto in protocols:
+        proto_nodes = [(n, d) for n, d in usable_nodes if n.lower().startswith(proto)]
+        if proto_nodes:
+            file_name = proto.replace("://", "").upper() + ".yaml"
+            file_path = os.path.join(OUTPUT_DIR, file_name)
+            write_clash_yaml(proto_nodes, file_path)
+            make_qr(f"https://mingko3.github.io/socks5-2025-proxy/{file_name}", os.path.join(QR_DIR, f"{proto.replace('://', '')}.png"))
 
-print(f"共解析 {len(all_nodes)} 个节点，开始测速...")
-all_nodes = asyncio.run(test_nodes(all_nodes))
-print(f"测速完成，可用节点数: {len(all_nodes)}")
+    # 更新时间
+    with open(os.path.join(OUTPUT_DIR, "update_time.txt"), "w", encoding="utf-8") as f:
+        f.write(datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"))
 
-# ==============================
-# 按协议分组
-# ==============================
-groups = {}
-for n in all_nodes:
-    groups.setdefault(n["type"], []).append(n)
-
-# 保存分组订阅和二维码
-BASE_URL = "https://mingko3.github.io/socks5-2025-proxy"
-
-for proto, nodes in groups.items():
-    clash_data = {"proxies": nodes, "proxy-groups": [], "rules": ["MATCH,DIRECT"]}
-    clash_file = os.path.join(OUTPUT_DIR, f"{proto}.yaml")
-    with open(clash_file, "w", encoding="utf-8") as f:
-        yaml.dump(clash_data, f, allow_unicode=True)
-    sub_url = f"{BASE_URL}/{proto}.yaml"
-    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q)
-    qr.add_data(sub_url)
-    qr.make(fit=True)
-    img = qr.make_image(fill_color="black", back_color="white")
-    img.save(os.path.join(QR_DIR, f"{proto}.png"))
-
-# 主订阅
-main_clash = {"proxies": all_nodes, "proxy-groups": [], "rules": ["MATCH,DIRECT"]}
-with open(os.path.join(OUTPUT_DIR, "proxy.yaml"), "w", encoding="utf-8") as f:
-    yaml.dump(main_clash, f, allow_unicode=True)
-main_url = f"{BASE_URL}/proxy.yaml"
-main_qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q)
-main_qr.add_data(main_url)
-main_qr.make(fit=True)
-img = main_qr.make_image(fill_color="black", back_color="white")
-img.save(os.path.join(OUTPUT_DIR, "sub_qr.png"))
-
-# ==============================
-# 生成 index.html
-# ==============================
-update_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-html = f"""<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>代理订阅</title>
-<style>
-body {{ font-family: Arial; background: #f4f4f4; text-align: center; }}
-.card {{ background: white; padding: 20px; margin: 20px auto; border-radius: 10px; max-width: 600px; }}
-</style>
-</head>
-<body>
-<h1>代理订阅</h1>
-<p>最后更新时间：{update_time}</p>
-<div class="card">
-<h2>主订阅</h2>
-<p><a href="{main_url}">{main_url}</a></p>
-<img src="sub_qr.png" width="200">
-</div>
-"""
-
-for proto in groups:
-    html += f"""
-    <div class="card">
-    <h2>{proto.upper()} 节点订阅</h2>
-    <p><a href="{BASE_URL}/{proto}.yaml">{BASE_URL}/{proto}.yaml</a></p>
-    <img src="qrs/{proto}.png" width="200">
-    <p>节点数量: {len(groups[proto])}</p>
-    </div>
-    """
-
-html += "</body></html>"
-
-with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
-    f.write(html)
-
-print("全部完成！")
+if __name__ == "__main__":
+    asyncio.run(main())
