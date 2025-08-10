@@ -1,40 +1,82 @@
-name: Update Proxy Subscriptions
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>多协议代理订阅中心</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+        h1 { text-align: center; }
+        .update-time { text-align: center; color: gray; margin-bottom: 20px; }
+        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+        .card img { max-width: 200px; }
+        a { text-decoration: none; color: #007BFF; }
+        a:hover { text-decoration: underline; }
+        .count { color: #555; margin-top: 8px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>订阅中心</h1>
+    <div class="update-time">
+        最后更新时间：
+        <span id="update-time">加载中...</span>
+    </div>
 
-on:
-  schedule:
-    - cron: "0 */6 * * *" # 每6小时运行一次
-  workflow_dispatch:
+    <div id="subscriptions"></div>
+</div>
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+<script>
+    const subs = [
+        { name: "主订阅 (Clash YAML)", file: "proxy.yaml", qr: "main.png" },
+        { name: "Base64 订阅", file: "sub", qr: "sub.png" },
+        { name: "SS 节点订阅", file: "SS.yaml", qr: "ss.png" },
+        { name: "VMess 节点订阅", file: "VMESS.yaml", qr: "vmess.png" },
+        { name: "VLESS 节点订阅", file: "VLESS.yaml", qr: "vless.png" },
+        { name: "Trojan 节点订阅", file: "TROJAN.yaml", qr: "trojan.png" },
+        { name: "SOCKS4 节点订阅", file: "SOCKS4.yaml", qr: "socks4.png" },
+        { name: "SOCKS5 节点订阅", file: "SOCKS5.yaml", qr: "socks5.png" }
+    ];
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # 保留完整历史以便 reset
+    function renderSubscriptions() {
+        const container = document.getElementById("subscriptions");
+        subs.forEach(sub => {
+            fetch(sub.file)
+                .then(r => r.text())
+                .then(data => {
+                    let count = 0;
+                    if (sub.file.endsWith(".yaml")) {
+                        count = (data.match(/name:/g) || []).length;
+                    } else {
+                        try {
+                            count = atob(data).split("\n").filter(l => l.trim()).length;
+                        } catch (e) {
+                            count = data.split("\n").filter(l => l.trim()).length;
+                        }
+                    }
+                    const div = document.createElement("div");
+                    div.className = "card";
+                    div.innerHTML = `
+                        <h3>${sub.name}</h3>
+                        <a href="${sub.file}" target="_blank">https://mingko3.github.io/socks5-2025-proxy/${sub.file}</a>
+                        <div><img src="qrs/${sub.qr}" alt="${sub.name} QR"></div>
+                        <div class="count">节点数量：${count}</div>
+                    `;
+                    container.appendChild(div);
+                })
+                .catch(() => {});
+        });
+    }
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+    function loadUpdateTime() {
+        fetch("update_time.txt")
+            .then(r => r.text())
+            .then(t => document.getElementById("update-time").textContent = t)
+            .catch(() => document.getElementById("update-time").textContent = "未知");
+    }
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests pyyaml qrcode[pil] Pillow aiohttp
-
-      - name: Run generate.py
-        run: |
-          python generate.py
-
-      - name: Commit and push changes (force overwrite)
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "actions@github.com"
-          git fetch origin main
-          git reset --hard origin/main
-          git add .
-          git commit -m "Auto update proxy subscriptions" || echo "No changes to commit"
-          git push --force
+    renderSubscriptions();
+    loadUpdateTime();
+</script>
+</body>
+</html>
