@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>代理订阅</title>
-<style>
-body { font-family: Arial; background: #f4f4f4; text-align: center; }
-.card { background: white; padding: 20px; margin: 20px auto; border-radius: 10px; max-width: 600px; }
-</style>
-</head>
-<body>
-<h1>代理订阅</h1>
-<p>最后更新时间：2025-08-10 09:57 UTC</p>
-<div class="card">
-<h2>主订阅</h2>
-<p><a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml">https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</a></p>
-<img src="sub_qr.png" width="200">
+<!doctype html><html lang='zh'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>订阅中心</title>
+<style>body{font-family:Arial,Helvetica,sans-serif;background:#f7f9fb;padding:18px} .card{background:#fff;padding:12px;border-radius:8px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,0.06)} .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px} .node{border:1px solid #eee;padding:8px;border-radius:6px;background:#fff;text-align:center} .node img{max-width:160px} .stat{display:inline-block;padding:6px 10px;background:#eef6ff;color:#0366d6;border-radius:12px;margin-right:8px}</style>
+</head><body>
+<div class='card'><h2>订阅中心</h2><p class='stat'>总节点: 1</p><p class='stat'>可用: 1</p><p class='stat'>平均延迟(ms): 165</p><p>更新时间: 2025-08-11 15:14:45 UTC</p></div>
+<div class='card'><h3>主要订阅</h3>
+<p>合并订阅(base64): <a href='sub'>https://mingko3.github.io/socks5-2025-proxy/sub</a></p>
+<p>Clash YAML: <a href='proxy.yaml'>https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</a></p>
+<p><img src='qrcode_sub.png' width='200'></p>
 </div>
-
-    <div class="card">
-    <h2>VMESS 节点订阅</h2>
-    <p><a href="https://mingko3.github.io/socks5-2025-proxy/vmess.yaml">https://mingko3.github.io/socks5-2025-proxy/vmess.yaml</a></p>
-    <img src="qrs/vmess.png" width="200">
-    <p>节点数量: 84</p>
-    </div>
-    </body></html>
+<div class='card'><h3>按协议分组订阅</h3><div class='grid'>
+<div class='node'>
+<h4>SOCKS5</h4>
+<p>数量: 1</p>
+<p><a href='sub_socks5'>https://mingko3.github.io/socks5-2025-proxy/sub_socks5</a></p>
+<img src='qrs/qrcode_socks5.png' width='160'/>
+</div>
+</div></div>
+<div class='card'><h3>节点（延迟排序，前200）</h3><div class='grid'>
+<div class='node'>
+<strong>socks5_37.18.73.60_5566</strong><br><small>socks5</small><br>
+<img src='qrs/socks5_37_18_73_60_5566.png' style='width:140px'><br>
+<div style='font-size:13px;color:#666'>地址: 37.18.73.60:5566<br>延迟: 165 ms<br>在线: 是<br>中国可用: 是</div>
+</div>
+</div></div>
+</body></html>
