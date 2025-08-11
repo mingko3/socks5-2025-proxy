@@ -1,16 +1,15 @@
-name: Update Proxies
+name: Update Proxy Subscriptions
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"  # 每6小时运行一次
+    - cron: "0 */6 * * *"  # 每 6 小时运行一次
+  workflow_dispatch:        # 手动触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -18,24 +17,21 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install aiohttp requests pyyaml qrcode pillow
+          python -m pip install --upgrade pip
+          pip install aiohttp requests pysocks PyYAML qrcode pillow
 
-      - name: Run generate.py (with error protection)
-        run: |
-          set +e  # 允许脚本出错不让工作流直接失败
-          python generate.py || echo "⚠ generate.py 运行出错，已跳过错误继续执行"
-          set -e
+      - name: Run generate.py
+        run: python generate.py
 
-      - name: Commit and push changes (force overwrite)
+      - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "Auto update proxy subscriptions" || echo "No changes to commit"
-          git pull --rebase --autostash || echo "No rebase needed"
+          git pull --rebase --autostash || echo "No changes to pull"
           git push origin main --force
