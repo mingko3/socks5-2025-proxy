@@ -3,31 +3,29 @@
 
 import os
 import re
-import io
-import ssl
 import sys
 import json
 import time
 import base64
 import socket
 import asyncio
-import textwrap
 import datetime
 import traceback
+import contextlib
 from typing import List, Dict, Tuple
 
 import requests
 import yaml
 import qrcode
-from PIL import Image
+from PIL import Image  # pillow
 import socks  # PySocks
 
-# ===================== 用户可调参数 =====================
-TIMEOUT_TCP = 2.0           # TCP 测速超时(秒)
-CONCURRENCY = 400           # 并发数量（Actions 机器可轻松承受）
-SOCKS_GOOGLE_TIMEOUT = 4.0  # 通过 SOCKS 代理连 Google 的超时(秒)
-KEEP_TOP_PER_TYPE = 2000    # 每种协议最多保留数量（避免极端膨胀）
-STRICT_CN_GOOGLE = True     # 生成 proxy_cn_google.yaml：仅保留可通过代理访问 Google 的 SOCKS/HTTP
+# ===================== 可调参数 =====================
+TIMEOUT_TCP = 2.0            # TCP 测速超时(秒)
+CONCURRENCY = 400            # 并发数量
+SOCKS_GOOGLE_TIMEOUT = 4.0   # SOCKS/HTTP 代理连 Google 的超时(秒)
+KEEP_TOP_PER_TYPE = 2000     # 每协议最多保留数量，避免极端膨胀
+STRICT_CN_GOOGLE = True      # 生成 proxy_cn_google.yaml：仅保留能通过代理连 Google:80 的 SOCKS/HTTP
 
 # ===================== 订阅源（含你新增的10个） =====================
 SOURCES = [
@@ -40,10 +38,11 @@ SOURCES = [
     # 你提供的中优先级（README/文本中混有 ss://）
     "https://raw.githubusercontent.com/general-vpn/FREE-Shadowsocks-Servers/main/README.md",
     "https://raw.githubusercontent.com/general-vpn/Free-VPN-Servers/main/README.md",
-    # nodefree（每日更新，含多协议）
+
+    # nodefree（每日更新，含多协议；此链接可能每日变动，手动更新日期）
     "https://nodefree.org/dy/2025/0812.txt",
 
-    # 你提供的网页类（尝试解析 HTML）
+    # 你提供的网页类（尝试解析 HTML 中的协议链接）
     "https://hidessh.com/shadowsocks",
     "https://linuxsss.com/latest/",
 
@@ -59,6 +58,7 @@ SOURCES = [
     "https://raw.githubusercontent.com/lagzian/SS-Collector/main/Shadowsocks.txt",
     "https://raw.githubusercontent.com/freefq/free/master/shadowsocks",
     "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/shadowsocks",
+
     # Clash YAML
     "https://raw.githubusercontent.com/freefq/free/master/clash.yaml",
     "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/clash/clash.yml",
@@ -68,12 +68,10 @@ SOURCES = [
 REPO = os.environ.get("GITHUB_REPOSITORY", "mingko3/socks5-2025-proxy")
 OWNER, REPO_NAME = REPO.split("/")
 SITE_BASE = f"https://{OWNER}.github.io/{REPO_NAME}"
-RAW_BASE  = f"https://raw.githubusercontent.com/{OWNER}/{REPO_NAME}/main/docs"
+RAW_BASE = f"https://raw.githubusercontent.com/{OWNER}/{REPO_NAME}/main/docs"
 
 DOCS_DIR = "docs"
-QRS_DIR  = os.path.join(DOCS_DIR, "qrs")
 os.makedirs(DOCS_DIR, exist_ok=True)
-os.makedirs(QRS_DIR, exist_ok=True)
 
 # ===================== 工具函数 =====================
 def b64pad(s: str) -> str:
@@ -83,21 +81,15 @@ def b64pad(s: str) -> str:
 def safe_int(v, default=None):
     try:
         return int(v)
-    except:
+    except Exception:
         return default
 
-def now_str():
-    # 北京时间显示
-    return datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc)\
-        .astimezone(datetime.timezone(datetime.timedelta(hours=8)))\
+def now_str_beijing():
+    return datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc) \
+        .astimezone(datetime.timezone(datetime.timedelta(hours=8))) \
         .strftime("%Y-%m-%d %H:%M:%S %Z%z")
 
-def strict_qr(url: str, out_path: str):
-    # 生成“完整 URL 严格模式”二维码（Shadowrocket 可扫）
-    img = qrcode.make(url)
-    img.save(out_path)
-
-def fetch_text(url: str, timeout=12) -> str:
+def fetch_text(url: str, timeout=15) -> str:
     try:
         r = requests.get(url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"})
         if r.status_code == 200:
@@ -106,32 +98,45 @@ def fetch_text(url: str, timeout=12) -> str:
         pass
     return ""
 
-# ===================== 解析各种格式 =====================
-SS_RE = re.compile(r"(ss://[A-Za-z0-9+/=_\-:%#@.]+)", re.IGNORECASE)
-VMESS_RE = re.compile(r"(vmess://[A-Za-z0-9+/=_\-:;{}\",.]+)", re.IGNORECASE)
-TROJAN_RE = re.compile(r"(trojan://[A-Za-z0-9+/=_\-:%#@.]+)", re.IGNORECASE)
-VLESS_RE = re.compile(r"(vless://[A-Za-z0-9+/=_\-:%#@.?&=]+)", re.IGNORECASE)
+def strict_qr(full_url: str, out_path: str):
+    """
+    生成“完整 URL + 严格模式”的二维码（Shadowrocket 可识别）。
+    """
+    qr = qrcode.QRCode(
+        version=None,  # 自动
+        error_correction=qrcode.constants.ERROR_CORRECT_M,  # 中等级纠错，减少过密
+        box_size=6,
+        border=2
+    )
+    qr.add_data(full_url)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="black", back_color="white")  # 高对比度
+    img.save(out_path)
 
+# ===================== 协议提取正则 =====================
+SS_RE     = re.compile(r"(ss://[A-Za-z0-9+/=_\-:%#@.]+)", re.IGNORECASE)
+VMESS_RE  = re.compile(r"(vmess://[A-Za-z0-9+/=_\-:;{}\",.]+)", re.IGNORECASE)
+TROJAN_RE = re.compile(r"(trojan://[A-Za-z0-9+/=_\-:%#@.]+)", re.IGNORECASE)
+VLESS_RE  = re.compile(r"(vless://[A-Za-z0-9+/=_\-:%#@.?&=]+)", re.IGNORECASE)
 IPPORT_RE = re.compile(r"\b((\d{1,3}\.){3}\d{1,3}):(\d{2,5})\b")
 
+# ===================== 各协议解析 =====================
 def parse_ss(link: str):
     try:
         if not link.startswith("ss://"):
             return None
         raw = link[5:]
-        # 可能包含 #name
         if "#" in raw:
             raw = raw.split("#")[0]
         raw = b64pad(raw)
         decoded = base64.urlsafe_b64decode(raw).decode("utf-8", "ignore")
-        # method:password@host:port
         if "@" not in decoded or ":" not in decoded:
             return None
         auth, hostport = decoded.split("@", 1)
         method, password = auth.split(":", 1)
         host, port = hostport.split(":", 1)
         port_i = safe_int(port)
-        if not port_i:
+        if not host or not port_i:
             return None
         return {
             "name": f"SS_{host}_{port_i}",
@@ -142,15 +147,14 @@ def parse_ss(link: str):
             "password": password,
             "udp": True
         }
-    except:
+    except Exception:
         return None
 
 def parse_vmess(link: str):
     try:
         if not link.startswith("vmess://"):
             return None
-        data = link[8:]
-        data = b64pad(data)
+        data = b64pad(link[8:])
         js = json.loads(base64.b64decode(data).decode("utf-8", "ignore"))
         host = js.get("add") or js.get("host")
         port_i = safe_int(js.get("port"))
@@ -164,11 +168,11 @@ def parse_vmess(link: str):
             "uuid": js.get("id"),
             "alterId": safe_int(js.get("aid"), 0),
             "cipher": "auto",
-            "tls": bool(js.get("tls")) or js.get("tls") == "tls",
+            "tls": (js.get("tls") in (True, "tls", "1")),
             "network": js.get("net") or "tcp",
             "ws-opts": {"path": js.get("path", "/"), "headers": {"Host": js.get("host", "")}}
         }
-    except:
+    except Exception:
         return None
 
 def parse_trojan(link: str):
@@ -180,7 +184,7 @@ def parse_trojan(link: str):
         addr = addr.split("#")[0]
         host, port = addr.split(":")
         port_i = safe_int(port)
-        if not port_i:
+        if not host or not port_i:
             return None
         return {
             "name": f"Trojan_{host}_{port_i}",
@@ -190,15 +194,14 @@ def parse_trojan(link: str):
             "password": password,
             "udp": True
         }
-    except:
+    except Exception:
         return None
 
 def parse_vless(link: str):
     try:
-        # 简单抽取 host/port（完整 VLESS 配置要更复杂，这里仅做基础支持）
         if not link.startswith("vless://"):
             return None
-        # vless://UUID@host:port?xxx#name
+        # vless://UUID@host:port?...
         temp = link[8:]
         if "@" not in temp or ":" not in temp:
             return None
@@ -206,7 +209,7 @@ def parse_vless(link: str):
         host_port = addr.split("?", 1)[0]
         host, port = host_port.split(":")
         port_i = safe_int(port)
-        if not port_i:
+        if not host or not port_i:
             return None
         return {
             "name": f"VLESS_{host}_{port_i}",
@@ -218,16 +221,17 @@ def parse_vless(link: str):
             "flow": "",
             "udp": True
         }
-    except:
+    except Exception:
         return None
 
+# ===================== 文本/网页中提取节点 =====================
 def extract_proto_links(text: str) -> List[str]:
     out = []
     out += SS_RE.findall(text)
     out += VMESS_RE.findall(text)
     out += TROJAN_RE.findall(text)
     out += VLESS_RE.findall(text)
-    return list(dict.fromkeys(out))  # 去重保持顺序
+    return list(dict.fromkeys(out))
 
 def extract_ipports(text: str) -> List[Tuple[str, int]]:
     ips = []
@@ -240,25 +244,24 @@ def extract_ipports(text: str) -> List[Tuple[str, int]]:
 
 # ===================== 抓取与初步解析 =====================
 def collect_nodes() -> List[Dict]:
-    nodes = []
+    nodes: List[Dict] = []
     seen = set()
+
     for url in SOURCES:
         print(f"[Fetch] {url}")
         text = fetch_text(url)
         if not text:
             continue
 
-        # Base64 批量列表（带换行）场景
-        if "://" not in text and re.search(r"^[A-Za-z0-9+/=\n\r]+$", text) and len(text) > 64:
+        # 可能是整段 Base64（sub 列表），先尝试整体解码
+        if "://" not in text and re.fullmatch(r"[A-Za-z0-9+/=\n\r]+", text or "") and len(text) > 64:
             try:
-                decoded = base64.b64decode(b64pad(text)).decode("utf-8", "ignore")
-                text = decoded
+                text = base64.b64decode(b64pad(text)).decode("utf-8", "ignore")
             except Exception:
                 pass
 
-        # 1) 协议链接直接提取
-        links = extract_proto_links(text)
-        for lk in links:
+        # 1) 直接从文本/HTML中提取协议链接
+        for lk in extract_proto_links(text):
             p = None
             if lk.startswith("ss://"):
                 p = parse_ss(lk)
@@ -274,24 +277,24 @@ def collect_nodes() -> List[Dict]:
                     seen.add(key)
                     nodes.append(p)
 
-        # 2) YAML 形式
+        # 2) YAML 场景（Clash）
         if "proxies:" in text or url.endswith(".yaml") or url.endswith(".yml"):
             try:
                 data = yaml.safe_load(text)
                 if isinstance(data, dict) and "proxies" in data:
-                    for p in data["proxies"]:
+                    for p in data.get("proxies", []):
                         t = p.get("type")
                         host = p.get("server")
                         port = safe_int(p.get("port"))
                         if t and host and port:
-                            key = (t, host, port)
+                            key = (t.lower(), host, port)
                             if key not in seen:
                                 seen.add(key)
                                 nodes.append(p)
             except Exception:
                 pass
 
-        # 3) IP:PORT（Socks4/5 或 HTTP）
+        # 3) IP:PORT 源（SOCKS/HTTP）
         for host, port in extract_ipports(text):
             for proto in ("socks5", "socks4", "http"):
                 key = (proto, host, port)
@@ -309,7 +312,7 @@ def collect_nodes() -> List[Dict]:
     print(f"[Collect] 初步收集：{len(nodes)}")
     return nodes
 
-# ===================== 并发测速（TCP） =====================
+# ===================== 并发 TCP 测速 =====================
 async def tcp_ping(host: str, port: int, timeout: float = TIMEOUT_TCP) -> float:
     start = time.perf_counter()
     try:
@@ -322,46 +325,47 @@ async def tcp_ping(host: str, port: int, timeout: float = TIMEOUT_TCP) -> float:
     except Exception:
         return -1.0
 
-import contextlib
 async def test_all_tcp(nodes: List[Dict]) -> List[Dict]:
     sem = asyncio.Semaphore(CONCURRENCY)
-    out = []
+    out: List[Dict] = []
 
-    async def test_one(n):
+    async def test_one(n: Dict):
         async with sem:
-            d = await tcp_ping(n["server"], n["port"])
+            d = await tcp_ping(n["server"], int(n["port"]), TIMEOUT_TCP)
             if d > 0:
-                n["delay"] = round(d, 1)
-                out.append(n)
+                item = dict(n)
+                item["delay"] = round(d, 1)
+                out.append(item)
 
     await asyncio.gather(*(test_one(n) for n in nodes))
     return out
 
-# ===================== Google 严格验证（SOCKS/HTTP） =====================
+# ===================== SOCKS/HTTP 严格 Google 验证 =====================
 def google_via_socks_http(n: Dict) -> bool:
     host, port = n["server"], int(n["port"])
     try:
         if n["type"].lower() in ("socks5", "socks4"):
             s = socks.socksocket()
-            s.set_proxy(socks.SOCKS5 if n["type"]=="socks5" else socks.SOCKS4, host, port)
+            s.set_proxy(socks.SOCKS5 if n["type"].lower()=="socks5" else socks.SOCKS4, host, port)
             s.settimeout(SOCKS_GOOGLE_TIMEOUT)
             s.connect(("www.google.com", 80))
+            s.sendall(b"HEAD / HTTP/1.1\r\nHost: www.google.com\r\nConnection: close\r\n\r\n")
+            _ = s.recv(1)
             s.close()
             return True
         elif n["type"].lower() == "http":
-            # 只做 TCP 直连验证（CONNECT 未实现），尽量保守：直接判 True 可能误报，这里我们要求连通 Google 80 端口
+            # 仅 TCP 到 google.com:80 简单验证
             s = socket.create_connection(("www.google.com", 80), timeout=SOCKS_GOOGLE_TIMEOUT)
+            s.sendall(b"HEAD / HTTP/1.1\r\nHost: www.google.com\r\nConnection: close\r\n\r\n")
+            _ = s.recv(1)
             s.close()
-            # 注意：这里没有通过代理 CONNECT，只能作为弱验证；若要强验证需实现 HTTP CONNECT 隧道
             return True
     except Exception:
         return False
     return False
 
-# ===================== 生成订阅与网页 =====================
+# ===================== 订阅与网页输出 =====================
 def to_clash_proxies(nodes: List[Dict]) -> List[Dict]:
-    # Clash 里各协议字段稍有差异，这里保留原字段
-    # 已经是接近 Clash 结构的字典，直接返回
     return nodes
 
 def write_yaml(path: str, proxies: List[Dict]):
@@ -375,12 +379,10 @@ def write_base64_sub(path: str, yaml_bytes: bytes):
         f.write(b64)
 
 def avg_delay(ms_list: List[float]) -> float:
-    if not ms_list:
-        return 0.0
-    return round(sum(ms_list)/len(ms_list), 1)
+    return round(sum(ms_list)/len(ms_list), 1) if ms_list else 0.0
 
 def build_index_html(summary: Dict, links: List[Tuple[str, str, str]]) -> str:
-    # links: (标题, URL, 对应二维码文件名)
+    # links: (标题, URL, 对应二维码 URL)
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -390,18 +392,19 @@ def build_index_html(summary: Dict, links: List[Tuple[str, str, str]]) -> str:
 <style>
 body{{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;background:#0b1220;color:#e6edf3}}
 a{{color:#6ea8fe;text-decoration:none}}
-.container{{max-width:980px;margin:0 auto;padding:24px}}
+.container{{max-width:1000px;margin:0 auto;padding:24px}}
 h1{{margin:0 0 8px}}
 .card{{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;margin:12px 0}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}}
 .small{{opacity:.8;font-size:13px}}
-.kpi{{display:flex;gap:16px;flex-wrap:wrap}}
+.kpi{{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}}
 .kpi .item{{background:#101826;border:1px solid #1f2937;border-radius:10px;padding:12px 14px}}
 .badge{{display:inline-block;background:#1d4ed8;color:#fff;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:6px}}
 .qr{{text-align:center;padding:12px}}
 .qr img{{width:160px;height:160px;image-rendering:pixelated}}
 .list a{{display:inline-block;margin:4px 8px 4px 0}}
 .footer{{margin-top:24px;opacity:.7;font-size:13px}}
+hr{{border:none;border-top:1px solid #1f2937;margin:16px 0}}
 </style>
 </head>
 <body>
@@ -460,8 +463,8 @@ h1{{margin:0 0 8px}}
   </div>
 
   <div class="footer">
-    说明：节点来自公开免费源，自动筛选 TCP 可用；Google 验证仅对 SOCKS/HTTP 做到“代理内连 Google.com:80”的快速校验，SS/VMess/Trojan/VLESS 不做真实 HTTP 校验。<br/>
-    若需更严格可用性验证（HTTP/HTTPS 真实拉取、DNS 分流、地区识别），可后续在 Actions 中增加对应客户端与测试脚本。
+    说明：节点来自公开免费源，已自动筛选 TCP 可用；“中国大陆可用”仅对 SOCKS/HTTP 做快速 Google:80 验证，SS/VMess/Trojan/VLESS 未做真实 HTTP 验证。<br/>
+    如需更严格的真实网页拉取验证，可在 Actions 中引入 sing-box / xray 进行二次校验。
   </div>
 </div>
 </body>
@@ -475,82 +478,74 @@ def main():
     nodes = collect_nodes()
     collected = len(nodes)
 
-    # 并发 TCP 测速
     print("并发 TCP 测速…")
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     tested = loop.run_until_complete(test_all_tcp(nodes))
-    # 每种协议截断
-    by_type = {}
+
+    # 按协议分桶并限量保留
+    by_type: Dict[str, List[Dict]] = {}
     for n in tested:
-        t = n.get("type","").lower()
+        t = (n.get("type") or "").lower()
         by_type.setdefault(t, []).append(n)
+
     for t, lst in by_type.items():
-        by_type[t] = sorted(lst, key=lambda x: x.get("delay", 999999))[:KEEP_TOP_PER_TYPE]
+        by_type[t] = sorted(lst, key=lambda x: x.get("delay", 9e9))[:KEEP_TOP_PER_TYPE]
 
-    tcp_ok_nodes = [x for lst in by_type.values() for x in lst]
-    avg_ms = avg_delay([n.get("delay",0) for n in tcp_ok_nodes])
+    tcp_ok_nodes = [x for v in by_type.values() for x in v]
+    avg_ms = avg_delay([n.get("delay", 0) for n in tcp_ok_nodes])
 
-    # 生成各协议 YAML
-    files = []
-    title_url_qr = []
-
+    # 输出各协议 YAML + 对应二维码（严格 URL）
     def save_group(name: str, lst: List[Dict]):
         path = os.path.join(DOCS_DIR, f"{name}.yaml")
         write_yaml(path, to_clash_proxies(lst))
         url = f"{SITE_BASE}/{name}.yaml"
-        qr_path = os.path.join(DOCS_DIR, f"qrcode_{name}.png")
-        strict_qr(url, qr_path)
-        files.append(path)
-        title_url_qr.append((f"{name}.yaml", url, f"{SITE_BASE}/qrcode_{name}.png"))
+        strict_qr(url, os.path.join(DOCS_DIR, f"qrcode_{name}.png"))
+        return (f"{name}.yaml", url, f"{SITE_BASE}/qrcode_{name}.png")
 
-    # 各协议分组
-    save_group("ss",     by_type.get("ss", []))
-    save_group("vmess",  by_type.get("vmess", []))
-    save_group("trojan", by_type.get("trojan", []))
-    save_group("vless",  by_type.get("vless", []))
-    save_group("socks4", by_type.get("socks4", []))
-    save_group("socks5", by_type.get("socks5", []))
-    save_group("http",   by_type.get("http", []))
+    group_links: List[Tuple[str, str, str]] = []
+    group_links.append(save_group("ss",     by_type.get("ss", [])))
+    group_links.append(save_group("vmess",  by_type.get("vmess", [])))
+    group_links.append(save_group("trojan", by_type.get("trojan", [])))
+    group_links.append(save_group("vless",  by_type.get("vless", [])))
+    group_links.append(save_group("socks4", by_type.get("socks4", [])))
+    group_links.append(save_group("socks5", by_type.get("socks5", [])))
+    group_links.append(save_group("http",   by_type.get("http", [])))
 
     # 主订阅（全部 TCP 可用）
     proxy_yaml_path = os.path.join(DOCS_DIR, "proxy.yaml")
     write_yaml(proxy_yaml_path, to_clash_proxies(tcp_ok_nodes))
-    files.append(proxy_yaml_path)
 
-    # Base64 订阅（主订阅）
+    # Base64 sub（用 proxy.yaml 内容编码）
     with open(proxy_yaml_path, "rb") as f:
         yb = f.read()
     write_base64_sub(os.path.join(DOCS_DIR, "sub"), yb)
 
-    # 生成主订阅二维码（完整 URL 严格模式）
-    main_url = f"{SITE_BASE}/sub"
-    strict_qr(main_url, os.path.join(DOCS_DIR, "qrcode_main.png"))
+    # 主订阅二维码（严格 URL）
+    strict_qr(f"{SITE_BASE}/sub", os.path.join(DOCS_DIR, "qrcode_main.png"))
 
-    # 生成“只保留 Socks/HTTP 严格 Google 可用”的订阅
+    # 中国大陆可用（SOCKS/HTTP 代理连 Google:80）
     google_ok = []
     if STRICT_CN_GOOGLE:
-        print("执行 SOCKS/HTTP Google 严格验证…（仅对 socks4/5/http）")
+        print("执行 SOCKS/HTTP Google 严格验证…")
         for n in by_type.get("socks4", []) + by_type.get("socks5", []) + by_type.get("http", []):
             if google_via_socks_http(n):
                 google_ok.append(n)
         write_yaml(os.path.join(DOCS_DIR, "proxy_cn_google.yaml"), to_clash_proxies(google_ok))
         strict_qr(f"{SITE_BASE}/proxy_cn_google.yaml", os.path.join(DOCS_DIR, "qrcode_cn_google.png"))
-        files.append(os.path.join(DOCS_DIR, "proxy_cn_google.yaml"))
 
-    # 输出 proxy_all.yaml（其实等同于 proxy.yaml，这里保留名以便你区分）
+    # 额外输出 proxy_all.yaml（等同于主订阅，便于区分命名）
     write_yaml(os.path.join(DOCS_DIR, "proxy_all.yaml"), to_clash_proxies(tcp_ok_nodes))
-    files.append(os.path.join(DOCS_DIR, "proxy_all.yaml"))
 
     # 统计 + 页面
     summary = {
-        "updated": now_str(),
+        "updated": now_str_beijing(),
         "collected": collected,
         "tcp_ok": len(tcp_ok_nodes),
         "google_ok": len(google_ok),
         "avg_delay": avg_ms
     }
-    html = build_index_html(summary, title_url_qr)
+    html = build_index_html(summary, group_links)
     with open(os.path.join(DOCS_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
 
