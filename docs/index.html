@@ -7,30 +7,31 @@
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;background:#0b1220;color:#e6edf3}
 a{color:#6ea8fe;text-decoration:none}
-.container{max-width:980px;margin:0 auto;padding:24px}
+.container{max-width:1000px;margin:0 auto;padding:24px}
 h1{margin:0 0 8px}
 .card{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;margin:12px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
 .small{opacity:.8;font-size:13px}
-.kpi{display:flex;gap:16px;flex-wrap:wrap}
+.kpi{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}
 .kpi .item{background:#101826;border:1px solid #1f2937;border-radius:10px;padding:12px 14px}
 .badge{display:inline-block;background:#1d4ed8;color:#fff;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:6px}
 .qr{text-align:center;padding:12px}
 .qr img{width:160px;height:160px;image-rendering:pixelated}
 .list a{display:inline-block;margin:4px 8px 4px 0}
 .footer{margin-top:24px;opacity:.7;font-size:13px}
+hr{border:none;border-top:1px solid #1f2937;margin:16px 0}
 </style>
 </head>
 <body>
 <div class="container">
   <h1>订阅聚合</h1>
   <div class="small">仓库：<a href="https://github.com/mingko3/socks5-2025-proxy" target="_blank">mingko3/socks5-2025-proxy</a></div>
-  <div class="small">更新时间（北京）: <b>2025-08-13 21:45:33 UTC+08:00+0800</b></div>
+  <div class="small">更新时间（北京）: <b>2025-08-14 02:06:25 UTC+08:00+0800</b></div>
   <div class="kpi">
-    <div class="item">初步收集：<b>1870</b></div>
-    <div class="item">TCP可用：<b>1032</b></div>
-    <div class="item">Google可用：<b>300</b></div>
-    <div class="item">平均延迟(ms)：<b>154.0</b></div>
+    <div class="item">初步收集：<b>1871</b></div>
+    <div class="item">TCP可用：<b>1085</b></div>
+    <div class="item">Google可用：<b>316</b></div>
+    <div class="item">平均延迟(ms)：<b>149.9</b></div>
   </div>
 
   <div class="card">
@@ -122,8 +123,8 @@ h1{margin:0 0 8px}
   </div>
 
   <div class="footer">
-    说明：节点来自公开免费源，自动筛选 TCP 可用；Google 验证仅对 SOCKS/HTTP 做到“代理内连 Google.com:80”的快速校验，SS/VMess/Trojan/VLESS 不做真实 HTTP 校验。<br/>
-    若需更严格可用性验证（HTTP/HTTPS 真实拉取、DNS 分流、地区识别），可后续在 Actions 中增加对应客户端与测试脚本。
+    说明：节点来自公开免费源，已自动筛选 TCP 可用；“中国大陆可用”仅对 SOCKS/HTTP 做快速 Google:80 验证，SS/VMess/Trojan/VLESS 未做真实 HTTP 验证。<br/>
+    如需更严格的真实网页拉取验证，可在 Actions 中引入 sing-box / xray 进行二次校验。
   </div>
 </div>
 </body>
