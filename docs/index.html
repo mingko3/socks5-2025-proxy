@@ -1,1 +1,130 @@
-<h2>订阅中心</h2><p>总节点: 150 | 可用: 150 | 平均延迟(ms): 0.0</p><p>更新时间: 2025-08-13 12:57:36 UTC</p><div style='margin:20px;padding:10px;border:1px solid #ccc'><h3>主订阅 (150)</h3><a href='https://mingko3.github.io/socks5-2025-proxy/proxy.yaml'>https://mingko3.github.io/socks5-2025-proxy/proxy.yaml</a><br><img src='proxy.png'><br></div><div style='margin:20px;padding:10px;border:1px solid #ccc'><h3>Base64 订阅 (150)</h3><a href='https://mingko3.github.io/socks5-2025-proxy/sub'>https://mingko3.github.io/socks5-2025-proxy/sub</a><br><img src='sub.png'><br></div><div style='margin:20px;padding:10px;border:1px solid #ccc'><h3>VLESS 节点订阅 (101)</h3><a href='https://mingko3.github.io/socks5-2025-proxy/vless.yaml'>https://mingko3.github.io/socks5-2025-proxy/vless.yaml</a><br><img src='vless.png'><br></div><div style='margin:20px;padding:10px;border:1px solid #ccc'><h3>SS 节点订阅 (23)</h3><a href='https://mingko3.github.io/socks5-2025-proxy/ss.yaml'>https://mingko3.github.io/socks5-2025-proxy/ss.yaml</a><br><img src='ss.png'><br></div><div style='margin:20px;padding:10px;border:1px solid #ccc'><h3>VMESS 节点订阅 (23)</h3><a href='https://mingko3.github.io/socks5-2025-proxy/vmess.yaml'>https://mingko3.github.io/socks5-2025-proxy/vmess.yaml</a><br><img src='vmess.png'><br></div><div style='margin:20px;padding:10px;border:1px solid #ccc'><h3>TROJAN 节点订阅 (3)</h3><a href='https://mingko3.github.io/socks5-2025-proxy/trojan.yaml'>https://mingko3.github.io/socks5-2025-proxy/trojan.yaml</a><br><img src='trojan.png'><br></div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>订阅聚合 - mingko3/socks5-2025-proxy</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;background:#0b1220;color:#e6edf3}
+a{color:#6ea8fe;text-decoration:none}
+.container{max-width:980px;margin:0 auto;padding:24px}
+h1{margin:0 0 8px}
+.card{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.small{opacity:.8;font-size:13px}
+.kpi{display:flex;gap:16px;flex-wrap:wrap}
+.kpi .item{background:#101826;border:1px solid #1f2937;border-radius:10px;padding:12px 14px}
+.badge{display:inline-block;background:#1d4ed8;color:#fff;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:6px}
+.qr{text-align:center;padding:12px}
+.qr img{width:160px;height:160px;image-rendering:pixelated}
+.list a{display:inline-block;margin:4px 8px 4px 0}
+.footer{margin-top:24px;opacity:.7;font-size:13px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>订阅聚合</h1>
+  <div class="small">仓库：<a href="https://github.com/mingko3/socks5-2025-proxy" target="_blank">mingko3/socks5-2025-proxy</a></div>
+  <div class="small">更新时间（北京）: <b>2025-08-13 21:45:33 UTC+08:00+0800</b></div>
+  <div class="kpi">
+    <div class="item">初步收集：<b>1870</b></div>
+    <div class="item">TCP可用：<b>1032</b></div>
+    <div class="item">Google可用：<b>300</b></div>
+    <div class="item">平均延迟(ms)：<b>154.0</b></div>
+  </div>
+
+  <div class="card">
+    <h3>主订阅（合并全部 TCP 可用）<span class="badge">Clash YAML</span></h3>
+    <div class="grid">
+      <div>
+        <div class="list">
+          <a href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">YAML（页面）</a>
+          <a href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/proxy.yaml" target="_blank">YAML（Raw）</a>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">Base64 Sub</a>
+        </div>
+      </div>
+      <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_main.png" alt="主订阅二维码"/></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>中国大陆可用（SOCKS/HTTP 严格 Google 验证）<span class="badge">精选</span></h3>
+    <div class="grid">
+      <div class="list">
+        <a href="https://mingko3.github.io/socks5-2025-proxy/proxy_cn_google.yaml" target="_blank">YAML（页面）</a>
+        <a href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/proxy_cn_google.yaml" target="_blank">YAML（Raw）</a>
+      </div>
+      <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_cn_google.png" alt="CN Google 二维码"/></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>按协议分组订阅</h3>
+    <div class="grid">
+
+      <div class="card">
+        <div class="list">
+          <b>ss.yaml</b><br/>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/ss.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/ss.yaml</a>
+        </div>
+        <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_ss.png" alt="ss.yaml"/></div>
+      </div>
+
+      <div class="card">
+        <div class="list">
+          <b>vmess.yaml</b><br/>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/vmess.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/vmess.yaml</a>
+        </div>
+        <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_vmess.png" alt="vmess.yaml"/></div>
+      </div>
+
+      <div class="card">
+        <div class="list">
+          <b>trojan.yaml</b><br/>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/trojan.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/trojan.yaml</a>
+        </div>
+        <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_trojan.png" alt="trojan.yaml"/></div>
+      </div>
+
+      <div class="card">
+        <div class="list">
+          <b>vless.yaml</b><br/>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/vless.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/vless.yaml</a>
+        </div>
+        <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_vless.png" alt="vless.yaml"/></div>
+      </div>
+
+      <div class="card">
+        <div class="list">
+          <b>socks4.yaml</b><br/>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/socks4.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/socks4.yaml</a>
+        </div>
+        <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4.png" alt="socks4.yaml"/></div>
+      </div>
+
+      <div class="card">
+        <div class="list">
+          <b>socks5.yaml</b><br/>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/socks5.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/socks5.yaml</a>
+        </div>
+        <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5.png" alt="socks5.yaml"/></div>
+      </div>
+
+      <div class="card">
+        <div class="list">
+          <b>http.yaml</b><br/>
+          <a href="https://mingko3.github.io/socks5-2025-proxy/http.yaml" target="_blank">https://mingko3.github.io/socks5-2025-proxy/http.yaml</a>
+        </div>
+        <div class="qr"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_http.png" alt="http.yaml"/></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    说明：节点来自公开免费源，自动筛选 TCP 可用；Google 验证仅对 SOCKS/HTTP 做到“代理内连 Google.com:80”的快速校验，SS/VMess/Trojan/VLESS 不做真实 HTTP 校验。<br/>
+    若需更严格可用性验证（HTTP/HTTPS 真实拉取、DNS 分流、地区识别），可后续在 Actions 中增加对应客户端与测试脚本。
+  </div>
+</div>
+</body>
+</html>
