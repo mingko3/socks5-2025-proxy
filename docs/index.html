@@ -1,24 +1,812 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>订阅聚合 - mingko3/socks5-2025-proxy</title>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;background:#0b1220;color:#e6edf3}
-a{color:#6ea8fe;text-decoration:none}
-.container{max-width:980px;margin:0 auto;padding:24px}
-.card{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;margin:12px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.qr img{width:160px;height:160px}
-.badge{background:#1d4ed8;color:#fff;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:6px}
+:root{--bg:#0b1220;--card:#111827;--line:#1f2937;--txt:#e6edf3;--link:#6ea8fe}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial;line-height:1.55}
+.container{max-width:1080px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{margin:8px 0 10px}
+a{color:var(--link);text-decoration:none}
+.small{opacity:.8;font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0}
+.kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 2px}
+.kpi .item{background:#101826;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.badge{display:inline-block;background:#1d4ed8;color:#fff;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:6px}
+.qrbox{text-align:center}
+.qrbox img{width:220px;height:220px;image-rendering:pixelated;border-radius:18px}
+.tag{display:inline-block;padding:2px 8px;border:1px solid var(--line);border-radius:8px;margin-right:6px;font-size:12px;opacity:.85}
+.note{font-size:12px;opacity:.7}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
 </style>
 </head>
 <body>
 <div class="container">
   <h1>订阅聚合</h1>
-  <p>更新时间：2025-08-14 20:42:52 UTC+08:00+0800</p>
-  <div>初步收集：1904 | TCP可用：1099 | Google可用：318 | 平均延迟(ms)：174.5</div>
-  <div class='card'><h3>vmess（共22节点，2批）</h3><div class='grid'><div><p>批次1</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vmess_part1.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vmess_part1.yaml' target='_blank'>YAML</a></div><div><p>批次2</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vmess_part2.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vmess_part2.yaml' target='_blank'>YAML</a></div></div></div><div class='card'><h3>trojan（共3节点，1批）</h3><div class='grid'><div><p>批次1</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_trojan_part1.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/trojan_part1.yaml' target='_blank'>YAML</a></div></div></div><div class='card'><h3>vless（共129节点，7批）</h3><div class='grid'><div><p>批次1</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vless_part1.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vless_part1.yaml' target='_blank'>YAML</a></div><div><p>批次2</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vless_part2.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vless_part2.yaml' target='_blank'>YAML</a></div><div><p>批次3</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vless_part3.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vless_part3.yaml' target='_blank'>YAML</a></div><div><p>批次4</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vless_part4.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vless_part4.yaml' target='_blank'>YAML</a></div><div><p>批次5</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vless_part5.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vless_part5.yaml' target='_blank'>YAML</a></div><div><p>批次6</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vless_part6.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vless_part6.yaml' target='_blank'>YAML</a></div><div><p>批次7</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_vless_part7.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/vless_part7.yaml' target='_blank'>YAML</a></div></div></div><div class='card'><h3>socks4（共316节点，16批）</h3><div class='grid'><div><p>批次1</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part1.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part1.yaml' target='_blank'>YAML</a></div><div><p>批次2</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part2.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part2.yaml' target='_blank'>YAML</a></div><div><p>批次3</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part3.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part3.yaml' target='_blank'>YAML</a></div><div><p>批次4</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part4.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part4.yaml' target='_blank'>YAML</a></div><div><p>批次5</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part5.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part5.yaml' target='_blank'>YAML</a></div><div><p>批次6</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part6.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part6.yaml' target='_blank'>YAML</a></div><div><p>批次7</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part7.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part7.yaml' target='_blank'>YAML</a></div><div><p>批次8</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part8.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part8.yaml' target='_blank'>YAML</a></div><div><p>批次9</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part9.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part9.yaml' target='_blank'>YAML</a></div><div><p>批次10</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part10.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part10.yaml' target='_blank'>YAML</a></div><div><p>批次11</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part11.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part11.yaml' target='_blank'>YAML</a></div><div><p>批次12</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part12.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part12.yaml' target='_blank'>YAML</a></div><div><p>批次13</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part13.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part13.yaml' target='_blank'>YAML</a></div><div><p>批次14</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part14.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part14.yaml' target='_blank'>YAML</a></div><div><p>批次15</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part15.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part15.yaml' target='_blank'>YAML</a></div><div><p>批次16</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks4_part16.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks4_part16.yaml' target='_blank'>YAML</a></div></div></div><div class='card'><h3>socks5（共318节点，16批）</h3><div class='grid'><div><p>批次1</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part1.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part1.yaml' target='_blank'>YAML</a></div><div><p>批次2</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part2.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part2.yaml' target='_blank'>YAML</a></div><div><p>批次3</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part3.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part3.yaml' target='_blank'>YAML</a></div><div><p>批次4</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part4.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part4.yaml' target='_blank'>YAML</a></div><div><p>批次5</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part5.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part5.yaml' target='_blank'>YAML</a></div><div><p>批次6</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part6.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part6.yaml' target='_blank'>YAML</a></div><div><p>批次7</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part7.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part7.yaml' target='_blank'>YAML</a></div><div><p>批次8</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part8.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part8.yaml' target='_blank'>YAML</a></div><div><p>批次9</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part9.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part9.yaml' target='_blank'>YAML</a></div><div><p>批次10</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part10.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part10.yaml' target='_blank'>YAML</a></div><div><p>批次11</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part11.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part11.yaml' target='_blank'>YAML</a></div><div><p>批次12</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part12.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part12.yaml' target='_blank'>YAML</a></div><div><p>批次13</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part13.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part13.yaml' target='_blank'>YAML</a></div><div><p>批次14</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part14.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part14.yaml' target='_blank'>YAML</a></div><div><p>批次15</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part15.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part15.yaml' target='_blank'>YAML</a></div><div><p>批次16</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_socks5_part16.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/socks5_part16.yaml' target='_blank'>YAML</a></div></div></div><div class='card'><h3>http（共311节点，16批）</h3><div class='grid'><div><p>批次1</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part1.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part1.yaml' target='_blank'>YAML</a></div><div><p>批次2</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part2.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part2.yaml' target='_blank'>YAML</a></div><div><p>批次3</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part3.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part3.yaml' target='_blank'>YAML</a></div><div><p>批次4</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part4.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part4.yaml' target='_blank'>YAML</a></div><div><p>批次5</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part5.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part5.yaml' target='_blank'>YAML</a></div><div><p>批次6</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part6.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part6.yaml' target='_blank'>YAML</a></div><div><p>批次7</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part7.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part7.yaml' target='_blank'>YAML</a></div><div><p>批次8</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part8.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part8.yaml' target='_blank'>YAML</a></div><div><p>批次9</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part9.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part9.yaml' target='_blank'>YAML</a></div><div><p>批次10</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part10.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part10.yaml' target='_blank'>YAML</a></div><div><p>批次11</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part11.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part11.yaml' target='_blank'>YAML</a></div><div><p>批次12</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part12.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part12.yaml' target='_blank'>YAML</a></div><div><p>批次13</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part13.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part13.yaml' target='_blank'>YAML</a></div><div><p>批次14</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part14.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part14.yaml' target='_blank'>YAML</a></div><div><p>批次15</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part15.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part15.yaml' target='_blank'>YAML</a></div><div><p>批次16</p><div class='qr'><img src='https://mingko3.github.io/socks5-2025-proxy/qrcode_http_part16.png'/></div><a href='https://mingko3.github.io/socks5-2025-proxy/http_part16.yaml' target='_blank'>YAML</a></div></div></div>
+  <div class="small">仓库：<a href="https://github.com/mingko3/socks5-2025-proxy" target="_blank">mingko3/socks5-2025-proxy</a></div>
+  <div class="small">更新时间（北京）: <b>2025-08-15 01:00:26 UTC+08:00+0800</b></div>
+  
+<div class="kpi">
+  <div class="item">初步收集：<b>1955</b></div>
+  <div class="item">TCP可用：<b>1081</b></div>
+  <div class="item">Google可用：<b>314</b></div>
+  <div class="item">平均延迟(ms)：<b>180.8</b></div>
+</div>
+
+  <div class="card">
+    <h3>主订阅（合并全部 TCP 可用）<span class="badge">Clash YAML</span></h3>
+    <div class="grid">
+      <div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/proxy.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/proxy.yaml" target="_blank">YAML（Raw）</a>
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/sub" target="_blank">Base64 Sub</a>
+        </div>
+        <div class="note">推荐扫码右侧蓝边二维码；若客户端支持“扫码打开链接”即会导入订阅。</div>
+      </div>
+      <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_main.png" alt="主订阅 QR"/></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>中国大陆可用（SOCKS/HTTP 严格 Google 验证）<span class="badge">精选</span></h3>
+    <div class="grid">
+      <div class="row">
+        <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/proxy_cn_google.yaml" target="_blank">YAML（页面）</a>
+        <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/proxy_cn_google.yaml" target="_blank">YAML（Raw）</a>
+      </div>
+      <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrcode_cn_google.png" alt="CN-Google QR"/></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>按协议整包订阅（每类全部，可较大）</h3>
+    <div class="grid">
+
+      <div class="card">
+        <div><b>ss.yaml</b> <span class="note">共 0 节点</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/ss.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/ss.yaml" target="_blank">YAML（Raw）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="grid">
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_all_embed.png" alt="Embed QR"/></div></div>
+      </div>
+      <div class="card">
+        <div><b>vmess.yaml</b> <span class="note">共 24 节点</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/vmess.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/vmess.yaml" target="_blank">YAML（Raw）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="grid">
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+      </div>
+      <div class="card">
+        <div><b>trojan.yaml</b> <span class="note">共 3 节点</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/trojan.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/trojan.yaml" target="_blank">YAML（Raw）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="grid">
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_all_embed.png" alt="Embed QR"/></div></div>
+      </div>
+      <div class="card">
+        <div><b>vless.yaml</b> <span class="note">共 126 节点</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/vless.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/vless.yaml" target="_blank">YAML（Raw）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="grid">
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+      </div>
+      <div class="card">
+        <div><b>socks4.yaml</b> <span class="note">共 304 节点</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/socks4.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/socks4.yaml" target="_blank">YAML（Raw）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="grid">
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+      </div>
+      <div class="card">
+        <div><b>socks5.yaml</b> <span class="note">共 317 节点</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/socks5.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/socks5.yaml" target="_blank">YAML（Raw）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="grid">
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+      </div>
+      <div class="card">
+        <div><b>http.yaml</b> <span class="note">共 307 节点</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/http.yaml" target="_blank">YAML（页面）</a>
+          <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/http.yaml" target="_blank">YAML（Raw）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="grid">
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>按协议分批订阅（每批 20 个，推荐）</h3>
+<h4 style="margin:8px 0 6px">VMESS</h4>
+        <div class="grid">
+          <div class="card">
+            <div><b>批次 #1</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vmess/vmess_batch_1.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vmess/vmess_batch_1.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #2</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vmess/vmess_batch_2.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vmess/vmess_batch_2.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_2_embed.png" alt="Embed QR"/></div></div>
+          </div></div><h4 style="margin:8px 0 6px">TROJAN</h4>
+        <div class="grid">
+          <div class="card">
+            <div><b>批次 #1</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/trojan/trojan_batch_1.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/trojan/trojan_batch_1.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_1_embed.png" alt="Embed QR"/></div></div>
+          </div></div><h4 style="margin:8px 0 6px">VLESS</h4>
+        <div class="grid">
+          <div class="card">
+            <div><b>批次 #1</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vless/vless_batch_1.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vless/vless_batch_1.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #2</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vless/vless_batch_2.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vless/vless_batch_2.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #3</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vless/vless_batch_3.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vless/vless_batch_3.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #4</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vless/vless_batch_4.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vless/vless_batch_4.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #5</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vless/vless_batch_5.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vless/vless_batch_5.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #6</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vless/vless_batch_6.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vless/vless_batch_6.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #7</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vless/vless_batch_7.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vless/vless_batch_7.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_7_embed.png" alt="Embed QR"/></div></div>
+          </div></div><h4 style="margin:8px 0 6px">SOCKS4</h4>
+        <div class="grid">
+          <div class="card">
+            <div><b>批次 #1</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_1.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_1.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #2</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_2.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_2.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #3</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_3.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_3.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #4</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_4.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_4.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #5</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_5.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_5.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #6</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_6.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_6.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #7</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_7.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_7.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #8</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_8.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_8.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_8_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #9</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_9.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_9.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_9_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #10</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_10.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_10.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_10_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #11</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_11.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_11.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_11_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #12</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_12.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_12.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_12_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #13</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_13.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_13.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_13_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #14</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_14.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_14.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_14_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #15</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_15.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_15.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_15_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #16</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_16.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_16.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_16_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_16_embed.png" alt="Embed QR"/></div></div>
+          </div></div><h4 style="margin:8px 0 6px">SOCKS5</h4>
+        <div class="grid">
+          <div class="card">
+            <div><b>批次 #1</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_1.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_1.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #2</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_2.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_2.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #3</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_3.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_3.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #4</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_4.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_4.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #5</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_5.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_5.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #6</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_6.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_6.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #7</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_7.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_7.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #8</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_8.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_8.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_8_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #9</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_9.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_9.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_9_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #10</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_10.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_10.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_10_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #11</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_11.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_11.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_11_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #12</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_12.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_12.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_12_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #13</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_13.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_13.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_13_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #14</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_14.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_14.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_14_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #15</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_15.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_15.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_15_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #16</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks5/socks5_batch_16.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks5/socks5_batch_16.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_16_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div></div><h4 style="margin:8px 0 6px">HTTP</h4>
+        <div class="grid">
+          <div class="card">
+            <div><b>批次 #1</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_1.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_1.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #2</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_2.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_2.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #3</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_3.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_3.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #4</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_4.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_4.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #5</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_5.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_5.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #6</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_6.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_6.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #7</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_7.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_7.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #8</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_8.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_8.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_8_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #9</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_9.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_9.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_9_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #10</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_10.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_10.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_10_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #11</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_11.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_11.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_11_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #12</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_12.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_12.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_12_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #13</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_13.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_13.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_13_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #14</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_14.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_14.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_14_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #15</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_15.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_15.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_15_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #16</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_16.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_16.yaml" target="_blank">YAML（Raw）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_16_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_16_embed.png" alt="Embed QR"/></div></div>
+          </div></div>
+  </div>
+
+  <div class="card">
+    <h3>说明</h3>
+    <div class="small">
+    1) 节点来自公开免费源，先并发 TCP 存活筛选，再按每协议保留前 2000 个。<br/>
+    2) “中国大陆可用”仅对 SOCKS/HTTP 做了 <code>代理内连 Google.com:80</code> 的快速校验，SS/VMess/Trojan/VLESS 未做真实 HTTP 验证。<br/>
+    3) 二维码：蓝边=URL 型（最稳），绿边=内嵌型（离线导入，容量有限，超限将自动降级为 URL 型）。<br/>
+    4) 若扫码“无效”，请先用系统相机或浏览器扫码“打开链接”再交由客户端导入（部分客户端只识别 URL）。<br/>
+    更新时间：2025-08-15 01:00:26 UTC+08:00+0800
+    </div>
+  </div>
 </div>
 </body>
 </html>
