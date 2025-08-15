@@ -1,66 +1,52 @@
-name: Update Proxy Lists
+name: Update Subscriptions
 
 on:
+  # 每天北京时间早上 08:00 自动运行（UTC 00:00）
   schedule:
-    - cron: "0 2 * * *"     # 每天北京时间 10:00 自动运行
-  workflow_dispatch:        # 支持手动触发
-    inputs:
-      force_refresh:
-        description: "是否强制刷新（忽略缓存）"
-        required: false
-        default: "false"
+    - cron: '0 0 * * *'
+  # 手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 1
 
     steps:
-      - name: Checkout repository
+      - name: 检出仓库
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python
+      - name: 设置 Python 环境
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.x'
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
-          pip install requests pyyaml qrcode[pil] Pillow pysocks
+          pip install requests pyyaml qrcode pillow pysocks
 
-      - name: Show force refresh option
-        run: |
-          echo "force_refresh = ${{ github.event.inputs.force_refresh }}"
+      - name: 运行 generate.py
+        run: python generate.py
 
-      - name: Run generate.py (with retry)
-        run: |
-          if [ "${{ github.event.inputs.force_refresh }}" = "true" ]; then
-            echo "Force refresh enabled — ignoring cache."
-            export FORCE_REFRESH=1
-          else
-            export FORCE_REFRESH=0
-          fi
-          for i in 1 2 3; do
-            echo "Attempt $i..."
-            if python generate.py; then
-              echo "Success on attempt $i"
-              break
-            elif [ $i -lt 3 ]; then
-              echo "Failed on attempt $i, retrying in 15 seconds..."
-              sleep 15
-            else
-              echo "All attempts failed."
-              exit 1
-            fi
-          done
-
-      - name: Commit and push changes
+      - name: 提交并推送更新
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/
-          git commit -m "Auto update $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-          git push || echo "No changes pushed"
+          git add -A
+          git commit -m "Auto update subscriptions $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push
+
+    # 出错自动重试（最多 3 次，每次间隔 5 分钟）
+    continue-on-error: false
+    retry:
+      max-attempts: 3
+      delay-seconds: 300
