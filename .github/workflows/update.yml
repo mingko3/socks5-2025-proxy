@@ -1,38 +1,66 @@
-name: Update Proxy Subscriptions
+name: Update Proxy Lists
 
 on:
   schedule:
-    - cron: "0 */4 * * *"   # 每 4 小时运行一次
-  workflow_dispatch:       # 支持手动触发
+    - cron: "0 2 * * *"     # 每天北京时间 10:00 自动运行
+  workflow_dispatch:        # 支持手动触发
+    inputs:
+      force_refresh:
+        description: "是否强制刷新（忽略缓存）"
+        required: false
+        default: "false"
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests pyyaml qrcode[pil] Pillow PySocks
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pyyaml qrcode[pil] Pillow pysocks
 
-    - name: Run generate.py
-      run: |
-        python generate.py
+      - name: Show force refresh option
+        run: |
+          echo "force_refresh = ${{ github.event.inputs.force_refresh }}"
 
-    - name: Commit and push changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add docs
-        git commit -m "Auto update subscriptions $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-        git push origin main --force
+      - name: Run generate.py (with retry)
+        run: |
+          if [ "${{ github.event.inputs.force_refresh }}" = "true" ]; then
+            echo "Force refresh enabled — ignoring cache."
+            export FORCE_REFRESH=1
+          else
+            export FORCE_REFRESH=0
+          fi
+          for i in 1 2 3; do
+            echo "Attempt $i..."
+            if python generate.py; then
+              echo "Success on attempt $i"
+              break
+            elif [ $i -lt 3 ]; then
+              echo "Failed on attempt $i, retrying in 15 seconds..."
+              sleep 15
+            else
+              echo "All attempts failed."
+              exit 1
+            fi
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git commit -m "Auto update $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push || echo "No changes pushed"
