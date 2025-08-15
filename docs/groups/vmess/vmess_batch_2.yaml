@@ -1,18 +1,4 @@
 proxies:
-- name: 🇳🇱[openproxylist.com] vmess-NL
-  type: vmess
-  server: test3.flha.ru
-  port: 80
-  uuid: 9a81340d-f81b-4c76-8abb-f4d305c535c0
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /9a81340d-f81b-4c76-8abb-f4d305c535c0-vmess
-    headers:
-      Host: test3.flha.ru
-  delay: 181.4
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: 172.111.146.64
@@ -26,12 +12,12 @@ proxies:
     path: /vmess/
     headers:
       Host: ''
-  delay: 201.8
-- name: 🇯🇵[openproxylist.com] vmess-JP
+  delay: 148.6
+- name: 🇬🇧[openproxylist.com] vmess-GB
   type: vmess
-  server: tls.95.node-for-bigairport.win
-  port: 19682
-  uuid: c69374da-2208-4cbd-b81e-cdf88b5e7f53
+  server: 173.208.51.193
+  port: 20086
+  uuid: b1726eb2-271b-4cb6-bae8-37647e78b776
   alterId: 0
   cipher: auto
   tls: false
@@ -39,8 +25,36 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: tls.95.node-for-bigairport.win
-  delay: 205.5
+      Host: ''
+  delay: 156.4
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: test2.flha.ru
+  port: 80
+  uuid: 15f62abf-8cc9-4598-8d57-e4df7b499a84
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /15f62abf-8cc9-4598-8d57-e4df7b499a84-vmess
+    headers:
+      Host: test2.flha.ru
+  delay: 156.7
+- name: 🇷🇺[openproxylist.com] vmess-RU
+  type: vmess
+  server: 62.60.187.28
+  port: 20086
+  uuid: 570b4cfc-80d5-4277-8c97-8444ba0689b9
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 181.9
 - name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
   server: 47.84.62.1
@@ -54,35 +68,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 205.9
-- name: 英国 V2CROSS.COM
-  type: vmess
-  server: 82.197.69.131
-  port: 39674
-  uuid: 5a89386a-827b-4f54-8778-2f1b5122c6ef
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 209.0
-- name: 🇮🇩[openproxylist.com] vmess-ID
-  type: vmess
-  server: 119.235.249.154
-  port: 20086
-  uuid: a067283b-3d00-4b0a-9ffb-3c184c83c089
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 227.2
+  delay: 203.2
 - name: 🇻🇳[openproxylist.com] vmess-VN
   type: vmess
   server: 161.248.30.3
@@ -96,21 +82,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 250.1
-- name: 香港 电讯盈科有限公司
+  delay: 243.2
+- name: 美国 CloudFlare节点
   type: vmess
-  server: hkt.gotochinatown.net
-  port: 80
-  uuid: adbd0a82-3336-11ed-bd7c-f23c913c8d2b
-  alterId: 2
+  server: v36.emoyes.top
+  port: 443
+  uuid: 08b24d8d-10ab-4c5a-990e-4e0e194870af
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: ''
-  delay: 265.3
+      Host: v36.emoyes.top
+  delay: 279.6
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: 4b9d07b6-sz8sg0-t0o6k2-6gn6.hkt.tcpbbr.net
@@ -124,32 +110,60 @@ proxies:
     path: /
     headers:
       Host: 4b9d07b6-sz8sg0-t0o6k2-6gn6.hkt.tcpbbr.net
-  delay: 302.0
-- name: 🇫🇮[openproxylist.com] vmess-FI
+  delay: 302.1
+- name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
-  server: panel3.ipyar.org
-  port: 32017
-  uuid: c0ccdeb9-784c-4d67-b904-20dcaac9902a
+  server: tls.95.node-for-bigairport.win
+  port: 19682
+  uuid: c69374da-2208-4cbd-b81e-cdf88b5e7f53
   alterId: 0
   cipher: auto
   tls: false
-  network: tcp
+  network: ws
   ws-opts:
-    path: ''
+    path: /
     headers:
-      Host: ''
-  delay: 308.4
-- name: 美国 CloudFlare节点
+      Host: tls.95.node-for-bigairport.win
+  delay: 416.9
+- name: 🇫🇷[openproxylist.com] vmess-FR
   type: vmess
-  server: cf.fovi.tk
+  server: www.speedtest.net
   port: 443
-  uuid: bf67437e-6c90-45ca-abc2-c7240a5ce2aa
+  uuid: b7acf44f-3c3a-430c-8ed0-fb64ccc9a13a
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
-    path: /eisasqa
+    path: /linkvkwss
     headers:
-      Host: foxpol.fovi.tk
-  delay: 347.7
+      Host: BLaZE-fRA-64.BLaZECLOuD.sitE
+  delay: 601.6
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: cf.090227.xyz
+  port: 8080
+  uuid: e9123cce-e4bd-46cf-8466-708b363a9807
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: gyde.aifjj.asia
+  delay: 676.6
+- name: 🏳[openproxylist.com] vmess-
+  type: vmess
+  server: planb.mojcn.com
+  port: 16617
+  uuid: 0c0fdaa9-da2e-42c0-b38e-25d54ec1e6d4
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: b37048544d083a503188d38c53d6e4f2.mobgslb.tbcache.com
+  delay: 1026.7
