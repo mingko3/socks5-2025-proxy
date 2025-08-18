@@ -4,8 +4,9 @@
 """
 最终融合版 generate.py
 - 保留原有所有功能
-- 新增：纯链接列表“内嵌型二维码”（容量受限自动回退 URL 型）
-- 新增：每协议取最快 3 个“单节点二维码”（极大概率可被 Shadowrocket/V2RayN 扫出）
+- 纯链接列表“内嵌型二维码”（容量受限自动回退 URL 型）
+- 每协议取最快 3 个“单节点二维码”（紫色，最大兼容）
+- 新增：每协议取最快 ≤5 个“合集二维码”（黄色，内嵌纯链接列表，去重）
 """
 
 import os
@@ -22,6 +23,7 @@ import textwrap
 import datetime
 import traceback
 import contextlib
+import hashlib
 from typing import List, Dict, Tuple
 
 import requests
@@ -41,10 +43,13 @@ EMBED_MAX_BYTES = 1800       # 内嵌二维码最大 data: 内容字节数（超
 QR_SIZE = 660                # 生成二维码图像像素
 QR_BORDER = 24               # 外围彩色圆角边框宽度（像素）
 
-TOPN_SINGLE_NODE_QR = 3      # 每协议“单节点二维码”数量
-SINGLE_QR_COLOR = (168, 85, 247)  # 紫色：单节点二维码边框颜色
+TOPN_SINGLE_NODE_QR = 3             # 每协议“单节点二维码”数量（紫色）
+SINGLE_QR_COLOR = (168, 85, 247)    # 紫色：单节点二维码边框颜色
 
-# ===================== 订阅源（含你新增的） =====================
+TOPN_BUNDLE_QR = 5                  # 每协议“合集二维码”数量上限（黄色，<=5 条链接合并）
+BUNDLE_QR_COLOR = (234, 179, 8)     # 黄色边框（Tailwind amber-400 近似）
+
+# ===================== 订阅源（可继续增补） =====================
 SOURCES = [
     # 高优先级/稳定（SS）
     "https://raw.githubusercontent.com/xyfqzy/free-nodes/main/nodes/shadowsocks.txt",
@@ -56,7 +61,7 @@ SOURCES = [
     "https://raw.githubusercontent.com/general-vpn/FREE-Shadowsocks-Servers/main/README.md",
     "https://raw.githubusercontent.com/general-vpn/Free-VPN-Servers/main/README.md",
 
-    # nodefree（示例日更页，你也可以换成当天的）
+    # nodefree（示例日更页）
     "https://nodefree.org/dy/2025/0812.txt",
 
     # HTML 类
@@ -85,14 +90,16 @@ OWNER, REPO_NAME = REPO.split("/")
 SITE_BASE = f"https://{OWNER}.github.io/{REPO_NAME}"
 RAW_BASE  = f"https://raw.githubusercontent.com/{OWNER}/{REPO_NAME}/main/docs"
 
-DOCS_DIR   = "docs"
-QRS_DIR    = os.path.join(DOCS_DIR, "qrs")
-GROUPS_DIR = os.path.join(DOCS_DIR, "groups")
-SINGLES_DIR= os.path.join(DOCS_DIR, "singles")
+DOCS_DIR    = "docs"
+QRS_DIR     = os.path.join(DOCS_DIR, "qrs")
+GROUPS_DIR  = os.path.join(DOCS_DIR, "groups")
+SINGLES_DIR = os.path.join(DOCS_DIR, "singles")
+BUNDLES_DIR = os.path.join(DOCS_DIR, "bundles")
 os.makedirs(DOCS_DIR, exist_ok=True)
 os.makedirs(QRS_DIR, exist_ok=True)
 os.makedirs(GROUPS_DIR, exist_ok=True)
 os.makedirs(SINGLES_DIR, exist_ok=True)
+os.makedirs(BUNDLES_DIR, exist_ok=True)
 
 # ===================== 工具函数 =====================
 def b64pad(s: str) -> str:
@@ -119,7 +126,7 @@ def fetch_text(url: str, timeout=12) -> str:
         pass
     return ""
 
-# —— QR：带彩色圆角边框（URL=蓝色、内嵌=绿色、单节点=紫色） ——
+# —— QR：带彩色圆角边框（URL=蓝、内嵌=绿、单节点=紫、合集=黄） ——
 def _rounded_rect(img: Image.Image, radius: int, border_px: int, color: tuple):
     w, h = img.size
     canvas = Image.new("RGBA", (w + border_px*2, h + border_px*2), (0,0,0,0))
@@ -267,7 +274,7 @@ def extract_ipports(text: str) -> List[Tuple[str, int]]:
             ips.append((host, port))
     return list(dict.fromkeys(ips))
 
-# —— 从 node 结构反推“协议原始链接”（用于“纯链接列表 / 单节点二维码”） ——
+# —— 从 node 结构反推“协议原始链接”（用于“纯链接列表 / 单节点 / 合集二维码”） ——
 def to_proto_link(n: Dict) -> str:
     t = (n.get("type") or "").lower()
     host = n.get("server"); port = n.get("port")
@@ -316,7 +323,7 @@ def collect_nodes() -> List[Dict]:
     for url in SOURCES:
         print(f"[Fetch] {url}")
         text = fetch_text(url)
-        if not text: 
+        if not text:
             continue
 
         # Base64 列表（纯订阅体）
@@ -356,7 +363,7 @@ def collect_nodes() -> List[Dict]:
         for host, port in extract_ipports(text):
             for proto in ("socks5","socks4","http"):
                 key = (proto, host, port)
-                if key in seen: 
+                if key in seen:
                     continue
                 seen.add(key)
                 nodes.append({
@@ -464,7 +471,6 @@ def export_batches(proto: str, nodes: List[Dict]) -> List[Dict]:
 
         # —— 内嵌型二维码（绿）：纯链接列表，超限降级 ——
         txt_links = build_pure_link_list(batch)
-        # 顺手保存一个 txt 预览
         txt_path = os.path.join(subdir, f"{proto}_batch_{idx}_links.txt")
         write_text(txt_path, txt_links)
 
@@ -503,7 +509,6 @@ def export_whole_proto(proto: str, nodes: List[Dict]) -> Dict:
 
     # 纯链接列表内嵌
     txt_links = build_pure_link_list(nodes)
-    # 保存预览
     write_text(os.path.join(DOCS_DIR, f"{proto}_links.txt"), txt_links)
 
     data_bytes = txt_links.encode("utf-8")
@@ -551,11 +556,76 @@ def export_single_fast_nodes(proto: str, nodes: List[Dict]) -> List[Dict]:
         })
     return out
 
+# —— 每协议“Top5（或不足5）合集”黄色二维码（内嵌纯链接列表） + 去重 ——
+def export_bundle_fast_links(proto: str, nodes: List[Dict], seen_sha1: set) -> Dict:
+    """
+    返回：
+      {
+        "count": 实际合并的链接条数(1~5),
+        "txt_url": txt 预览链接,
+        "qr_img":  黄色二维码图片 URL,
+        "sha1":    内容哈希
+      } 或 {}
+    """
+    if not nodes:
+        return {}
+
+    top = sorted(nodes, key=lambda x: x.get("delay", 9e9))[:TOPN_BUNDLE_QR]
+    links = []
+    for n in top:
+        lk = to_proto_link(n)
+        if lk:
+            links.append(lk)
+
+    # 若全部无法反推原始链接，则不生成
+    if not links:
+        return {}
+
+    # 内容去重（跨协议/跨次运行都能复用同一内容名称）
+    content = "\n".join(links).strip()
+    digest = hashlib.sha1(content.encode("utf-8")).hexdigest()
+    if digest in seen_sha1:
+        # 已有同样的合集，不再重复生成
+        return {}
+
+    seen_sha1.add(digest)
+
+    # 导出 txt
+    subdir = os.path.join(BUNDLES_DIR, proto)
+    os.makedirs(subdir, exist_ok=True)
+    fn_txt = f"{proto}_top{min(len(links),TOPN_BUNDLE_QR)}_{digest[:8]}.txt"
+    p_txt = os.path.join(subdir, fn_txt)
+    write_text(p_txt, content)
+
+    # 生成内嵌 data: 的黄色二维码（尽量短内容，成功率高）
+    data_uri = f"data:text/plain;base64,{base64.b64encode(content.encode('utf-8')).decode('utf-8')}"
+    # 通常 1~5 条纯链接 <= EMBED_MAX_BYTES，仍留超限保护
+    if len(data_uri.encode("utf-8")) > EMBED_MAX_BYTES:
+        # 超限则不生成二维码（极少见），只保留 txt 文件
+        return {
+            "count": len(links),
+            "txt_url": f"{SITE_BASE}/bundles/{proto}/{fn_txt}",
+            "qr_img": None,
+            "sha1": digest
+        }
+
+    fn_qr = f"{proto}_top_bundle_{digest[:8]}.png"
+    p_qr = os.path.join(QRS_DIR, fn_qr)
+    save_qr_to(p_qr, data_uri, color=BUNDLE_QR_COLOR)
+
+    return {
+        "count": len(links),
+        "txt_url": f"{SITE_BASE}/bundles/{proto}/{fn_txt}",
+        "qr_img": f"{SITE_BASE}/qrs/{fn_qr}",
+        "sha1": digest
+    }
+
 # —— 页面构建（保留原风格 + 新区块） ——
 def build_index_html(summary: Dict,
                      per_proto_all: List[Dict],
                      per_proto_batches: Dict[str, List[Dict]],
-                     per_proto_singles: Dict[str, List[Dict]]) -> str:
+                     per_proto_singles: Dict[str, List[Dict]],
+                     per_proto_bundles: Dict[str, Dict]) -> str:
     def chips_kpi():
         return f"""
 <div class="kpi">
@@ -591,6 +661,10 @@ a{{color:var(--link);text-decoration:none}}
 .row{{display:flex;align-items:center;gap:10px;flex-wrap:wrap}}
 hr.sep{{border:0;border-top:1px dashed #263043;margin:8px 0}}
 .section-title{{margin-top:8px}}
+.yellow-note{{color:#facc15;}}
+.purple-note{{color:#a855f7;}}
+.green-note{{color:#10b981;}}
+.blue-note{{color:#60a5fa;}}
 </style>
 </head>
 <body>
@@ -641,10 +715,10 @@ hr.sep{{border:0;border-top:1px dashed #263043;margin:8px 0}}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="{item['qr_url_img']}" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="{item['qr_url_img']}" alt="URL QR"/></div>
           <div class="qrbox">"""
         if item["qr_embed_img"]:
-            html += f"""<div class="note">内嵌型（绿边）</div><img src="{item['qr_embed_img']}" alt="Embed QR"/>"""
+            html += f"""<div class="note green-note">内嵌型（绿边）</div><img src="{item['qr_embed_img']}" alt="Embed QR"/>"""
         else:
             html += f"""<div class="note">内嵌超限 → 使用 URL</div>"""
         html += """</div></div>
@@ -663,7 +737,6 @@ hr.sep{{border:0;border-top:1px dashed #263043;margin:8px 0}}
         html += f"""<h4 style="margin:8px 0 6px">{proto.upper()}</h4>
         <div class="grid">"""
         for b in batches:
-            # 批次的 txt 链接文件名
             txt_url = b["page_url"].replace(".yaml","_links.txt")
             html += f"""
           <div class="card">
@@ -675,17 +748,17 @@ hr.sep{{border:0;border-top:1px dashed #263043;margin:8px 0}}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="{b['qr_url_img']}" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="{b['qr_url_img']}" alt="URL QR"/></div>
               <div class="qrbox">"""
             if b["qr_embed_img"]:
-                html += f"""<div class="note">内嵌型（绿边）</div><img src="{b['qr_embed_img']}" alt="Embed QR"/>"""
+                html += f"""<div class="note green-note">内嵌型（绿边）</div><img src="{b['qr_embed_img']}" alt="Embed QR"/>"""
             else:
                 html += f"""<div class="note">内嵌超限 → 使用 URL</div>"""
             html += """</div></div>
           </div>"""
         html += "</div>"
 
-    # 单节点
+    # 单节点（紫色）
     html += """
   </div>
 
@@ -703,7 +776,7 @@ hr.sep{{border:0;border-top:1px dashed #263043;margin:8px 0}}
             d = f"{s['delay']}ms" if s["delay"] is not None else "-"
             html += f"""
     <div class="card">
-      <div class="note"># {s['rank']} · 延迟 {d}</div>
+      <div class="note purple-note"># {s['rank']} · 延迟 {d}</div>
       <div class="row">
         <a class="tag" href="{s['link_txt']}" target="_blank">查看原始链接</a>
       </div>
@@ -711,7 +784,36 @@ hr.sep{{border:0;border-top:1px dashed #263043;margin:8px 0}}
     </div>"""
         html += "</div></div>"
 
+    # 合集（黄色）
+    html += """
+  </div>
+
+  <div class="card">
+    <h3 class="section-title">每协议“Top5（或不足5）合集”二维码（内嵌纯链接，黄色边框）</h3>
+    <div class="grid">
+"""
+    for proto, bundle in per_proto_bundles.items():
+        if not bundle:
+            continue
+        cnt = bundle.get("count", 0)
+        txt = bundle.get("txt_url")
+        qr  = bundle.get("qr_img")
+        html += f"""
+      <div class="card">
+        <div><b>{proto.upper()}</b> <span class="note">合并 {cnt} 条</span></div>
+        <div class="row">
+          <a class="tag" href="{txt}" target="_blank">纯链接（txt）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="qrbox">"""
+        if qr:
+            html += f"""<div class="note yellow-note">合集内嵌（黄边）</div><img src="{qr}" alt="Bundle QR"/>"""
+        else:
+            html += f"""<div class="note">内容过大未生成二维码，请使用上方 txt</div>"""
+        html += """</div>
+      </div>"""
     html += f"""
+    </div>
   </div>
 
   <div class="card">
@@ -719,7 +821,7 @@ hr.sep{{border:0;border-top:1px dashed #263043;margin:8px 0}}
     <div class="small">
     1) 节点来自公开免费源，先并发 TCP 存活筛选，再按每协议保留前 {KEEP_TOP_PER_TYPE} 个。<br/>
     2) “中国大陆可用”仅对 SOCKS/HTTP 做了 <code>代理内连 Google.com:80</code> 的快速校验，SS/VMess/Trojan/VLESS 未做真实 HTTP 验证。<br/>
-    3) 二维码：蓝边=URL 型（最稳），绿边=内嵌型（纯链接列表，离线导入，容量有限，超限自动回退），紫边=单节点（最大兼容）。<br/>
+    3) 二维码：<span class="blue-note">蓝边=URL 型（最稳）</span>，<span class="green-note">绿边=内嵌型（纯链接列表，容量有限，超限自动回退）</span>，<span class="purple-note">紫边=单节点（最大兼容）</span>，<span class="yellow-note">黄边=Top5 合集（内嵌纯链接，便于快速试用）</span>。<br/>
     4) 若扫码“无效”，请使用系统相机/浏览器扫码“打开链接”再交由客户端导入（部分客户端只识别 URL 型）。<br/>
     更新时间：{summary.get('updated','')}
     </div>
@@ -791,6 +893,12 @@ def main():
     for proto in ("ss","vmess","trojan","vless","socks4","socks5","http"):
         per_proto_singles[proto] = export_single_fast_nodes(proto, by_type.get(proto, []))
 
+    # —— 每协议“Top5 合集（黄色）” + 去重
+    seen_sha1 = set()
+    per_proto_bundles = {}
+    for proto in ("ss","vmess","trojan","vless","socks4","socks5","http"):
+        per_proto_bundles[proto] = export_bundle_fast_links(proto, by_type.get(proto, []), seen_sha1)
+
     # —— 另存一份 proxy_all.yaml（别名）
     write_yaml(os.path.join(DOCS_DIR, "proxy_all.yaml"), to_clash_proxies(tcp_ok_nodes))
 
@@ -802,11 +910,11 @@ def main():
         "google_ok": len(google_ok),
         "avg_delay": avg_ms
     }
-    html = build_index_html(summary, per_proto_all_cards, per_proto_batches, per_proto_singles)
+    html = build_index_html(summary, per_proto_all_cards, per_proto_batches, per_proto_singles, per_proto_bundles)
     write_text(os.path.join(DOCS_DIR, "index.html"), html)
 
     print(f"完成：初步收集 {collected}，TCP可用 {len(tcp_ok_nodes)}，Google可用 {len(google_ok)}，平均延迟 {avg_ms}ms")
-    print("已生成：主订阅/子订阅、各协议整包 + 批次 YAML、纯链接列表、双二维码、单节点二维码、统计页。")
+    print("已生成：主订阅/子订阅、各协议整包 + 批次 YAML、纯链接列表、双二维码、单节点紫色二维码、Top5 合集黄色二维码、统计页。")
 
 if __name__ == "__main__":
     try:
