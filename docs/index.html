@@ -16,7 +16,11 @@ a{color:var(--link);text-decoration:none}
 .kpi{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 2px}
 .kpi .item{background:#101826;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-.badge{display:inline-block;background:#1d4ed8;color:#fff;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:6px}
+.badge{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:6px;color:#fff}
+.badge.blue{background:#1d4ed8}
+.badge.green{background:#10b981}
+.badge.purple{background:#a855f7}
+.badge.yellow{background:#f59e0b}
 .qrbox{text-align:center}
 .qrbox img{width:220px;height:220px;image-rendering:pixelated;border-radius:18px}
 .tag{display:inline-block;padding:2px 8px;border:1px solid var(--line);border-radius:8px;margin-right:6px;font-size:12px;opacity:.85}
@@ -24,27 +28,23 @@ a{color:var(--link);text-decoration:none}
 .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
 .section-title{margin-top:8px}
-.yellow-note{color:#facc15;}
-.purple-note{color:#a855f7;}
-.green-note{color:#10b981;}
-.blue-note{color:#60a5fa;}
 </style>
 </head>
 <body>
 <div class="container">
   <h1>订阅聚合</h1>
   <div class="small">仓库：<a href="https://github.com/mingko3/socks5-2025-proxy" target="_blank">mingko3/socks5-2025-proxy</a></div>
-  <div class="small">更新时间（北京）: <b>2025-08-19 11:30:50 UTC+08:00+0800</b></div>
+  <div class="small">更新时间（北京）: <b>2025-08-19 19:26:39 UTC+08:00+0800</b></div>
   
 <div class="kpi">
-  <div class="item">初步收集：<b>1797</b></div>
-  <div class="item">TCP可用：<b>1052</b></div>
-  <div class="item">Google可用：<b>314</b></div>
-  <div class="item">平均延迟(ms)：<b>149.3</b></div>
+  <div class="item">初步收集：<b>2136</b></div>
+  <div class="item">TCP可用：<b>1330</b></div>
+  <div class="item">Google可用：<b>331</b></div>
+  <div class="item">平均延迟(ms)：<b>179.9</b></div>
 </div>
 
   <div class="card">
-    <h3>主订阅（合并全部 TCP 可用）<span class="badge">Clash YAML</span></h3>
+    <h3>主订阅（合并全部 TCP 可用）<span class="badge blue">Clash YAML</span></h3>
     <div class="grid">
       <div>
         <div class="row">
@@ -59,7 +59,7 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
   </div>
 
   <div class="card">
-    <h3>中国大陆可用（SOCKS/HTTP 严格 Google 验证）<span class="badge">精选</span></h3>
+    <h3>中国大陆可用（SOCKS/HTTP 严格 Google 验证）<span class="badge blue">精选</span></h3>
     <div class="grid">
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/proxy_cn_google.yaml" target="_blank">YAML（页面）</a>
@@ -70,11 +70,11 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
   </div>
 
   <div class="card">
-    <h3 class="section-title">按协议整包订阅（每类全部，可较大）</h3>
+    <h3 class="section-title">按协议整包订阅（每类全部，可较大）<span class="badge blue">URL</span> <span class="badge green">纯链接内嵌</span></h3>
     <div class="grid">
 
       <div class="card">
-        <div><b>ss.yaml</b> <span class="note">共 0 节点</span></div>
+        <div><b>ss.yaml</b> <span class="note">共 148 节点</span></div>
         <div class="row">
           <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/ss.yaml" target="_blank">YAML（页面）</a>
           <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/ss.yaml" target="_blank">YAML（Raw）</a>
@@ -82,11 +82,11 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_all_url.png" alt="URL QR"/></div>
           <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
       </div>
       <div class="card">
-        <div><b>vmess.yaml</b> <span class="note">共 23 节点</span></div>
+        <div><b>vmess.yaml</b> <span class="note">共 51 节点</span></div>
         <div class="row">
           <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/vmess.yaml" target="_blank">YAML（页面）</a>
           <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/vmess.yaml" target="_blank">YAML（Raw）</a>
@@ -94,11 +94,11 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_all_url.png" alt="URL QR"/></div>
           <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
       </div>
       <div class="card">
-        <div><b>trojan.yaml</b> <span class="note">共 1 节点</span></div>
+        <div><b>trojan.yaml</b> <span class="note">共 30 节点</span></div>
         <div class="row">
           <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/trojan.yaml" target="_blank">YAML（页面）</a>
           <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/trojan.yaml" target="_blank">YAML（Raw）</a>
@@ -106,11 +106,11 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_all_url.png" alt="URL QR"/></div>
-          <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_all_embed.png" alt="Embed QR"/></div></div>
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
       </div>
       <div class="card">
-        <div><b>vless.yaml</b> <span class="note">共 122 节点</span></div>
+        <div><b>vless.yaml</b> <span class="note">共 133 节点</span></div>
         <div class="row">
           <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/vless.yaml" target="_blank">YAML（页面）</a>
           <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/vless.yaml" target="_blank">YAML（Raw）</a>
@@ -118,11 +118,11 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_all_url.png" alt="URL QR"/></div>
           <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
       </div>
       <div class="card">
-        <div><b>socks4.yaml</b> <span class="note">共 298 节点</span></div>
+        <div><b>socks4.yaml</b> <span class="note">共 322 节点</span></div>
         <div class="row">
           <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/socks4.yaml" target="_blank">YAML（页面）</a>
           <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/socks4.yaml" target="_blank">YAML（Raw）</a>
@@ -130,11 +130,11 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_all_url.png" alt="URL QR"/></div>
           <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
       </div>
       <div class="card">
-        <div><b>socks5.yaml</b> <span class="note">共 303 节点</span></div>
+        <div><b>socks5.yaml</b> <span class="note">共 319 节点</span></div>
         <div class="row">
           <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/socks5.yaml" target="_blank">YAML（页面）</a>
           <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/socks5.yaml" target="_blank">YAML（Raw）</a>
@@ -142,11 +142,11 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_all_url.png" alt="URL QR"/></div>
           <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
       </div>
       <div class="card">
-        <div><b>http.yaml</b> <span class="note">共 305 节点</span></div>
+        <div><b>http.yaml</b> <span class="note">共 327 节点</span></div>
         <div class="row">
           <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/http.yaml" target="_blank">YAML（页面）</a>
           <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/http.yaml" target="_blank">YAML（Raw）</a>
@@ -154,15 +154,112 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
         </div>
         <hr class="sep"/>
         <div class="grid">
-          <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_all_url.png" alt="URL QR"/></div>
+          <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_all_url.png" alt="URL QR"/></div>
           <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <h3 class="section-title">按协议分批订阅（每批 20 个，推荐）</h3>
-<h4 style="margin:8px 0 6px">VMESS</h4>
+    <h3 class="section-title">按协议分批订阅（每批 20 个，推荐）<span class="badge blue">URL</span> <span class="badge green">纯链接内嵌</span></h3>
+<h4 style="margin:8px 0 6px">SS</h4>
+        <div class="grid">
+          <div class="card">
+            <div><b>批次 #1</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_1.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_1.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_1_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #2</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_2.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_2.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_2_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #3</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_3.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_3.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_3_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #4</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_4.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_4.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_4_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #5</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_5.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_5.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_5_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #6</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_6.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_6.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_6_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #7</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_7.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_7.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_7_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #8</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_8.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/ss/ss_batch_8.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/ss/ss_batch_8_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_8_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_batch_8_embed.png" alt="Embed QR"/></div></div>
+          </div></div><h4 style="margin:8px 0 6px">VMESS</h4>
         <div class="grid">
           <div class="card">
             <div><b>批次 #1</b></div>
@@ -173,7 +270,7 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_1_url.png" alt="URL QR"/></div>
               <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
           </div>
           <div class="card">
@@ -185,8 +282,20 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_2_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_2_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #3</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vmess/vmess_batch_3.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/vmess/vmess_batch_3.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/vmess/vmess_batch_3_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
           </div></div><h4 style="margin:8px 0 6px">TROJAN</h4>
         <div class="grid">
           <div class="card">
@@ -198,8 +307,20 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_1_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_1_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_1_embed.png" alt="Embed QR"/></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #2</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/trojan/trojan_batch_2.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/trojan/trojan_batch_2.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/trojan/trojan_batch_2_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_batch_2_embed.png" alt="Embed QR"/></div></div>
           </div></div><h4 style="margin:8px 0 6px">VLESS</h4>
         <div class="grid">
           <div class="card">
@@ -211,8 +332,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_1_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_1_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_1_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #2</b></div>
@@ -223,8 +344,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_2_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_2_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_2_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #3</b></div>
@@ -235,8 +356,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_3_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_3_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_3_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #4</b></div>
@@ -247,8 +368,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_4_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_4_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_4_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #5</b></div>
@@ -259,8 +380,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_5_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_5_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_5_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #6</b></div>
@@ -271,7 +392,7 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_6_url.png" alt="URL QR"/></div>
               <div class="qrbox"><div class="note">内嵌超限 → 使用 URL</div></div></div>
           </div>
           <div class="card">
@@ -283,8 +404,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_7_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_7_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_batch_7_embed.png" alt="Embed QR"/></div></div>
           </div></div><h4 style="margin:8px 0 6px">SOCKS4</h4>
         <div class="grid">
           <div class="card">
@@ -296,8 +417,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_1_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_1_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_1_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #2</b></div>
@@ -308,8 +429,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_2_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_2_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_2_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #3</b></div>
@@ -320,8 +441,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_3_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_3_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_3_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #4</b></div>
@@ -332,8 +453,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_4_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_4_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_4_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #5</b></div>
@@ -344,8 +465,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_5_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_5_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_5_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #6</b></div>
@@ -356,8 +477,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_6_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_6_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_6_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #7</b></div>
@@ -368,8 +489,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_7_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_7_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_7_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #8</b></div>
@@ -380,8 +501,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_8_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_8_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_8_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_8_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #9</b></div>
@@ -392,8 +513,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_9_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_9_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_9_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_9_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #10</b></div>
@@ -404,8 +525,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_10_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_10_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_10_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_10_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #11</b></div>
@@ -416,8 +537,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_11_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_11_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_11_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_11_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #12</b></div>
@@ -428,8 +549,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_12_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_12_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_12_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_12_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #13</b></div>
@@ -440,8 +561,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_13_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_13_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_13_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_13_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #14</b></div>
@@ -452,8 +573,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_14_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_14_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_14_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_14_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #15</b></div>
@@ -464,8 +585,32 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_15_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_15_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_15_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_15_embed.png" alt="Embed QR"/></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #16</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_16.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_16.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_16_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_16_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_16_embed.png" alt="Embed QR"/></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #17</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_17.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/socks4/socks4_batch_17.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/socks4/socks4_batch_17_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_17_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_batch_17_embed.png" alt="Embed QR"/></div></div>
           </div></div><h4 style="margin:8px 0 6px">SOCKS5</h4>
         <div class="grid">
           <div class="card">
@@ -477,8 +622,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_1_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_1_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_1_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #2</b></div>
@@ -489,8 +634,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_2_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_2_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_2_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #3</b></div>
@@ -501,8 +646,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_3_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_3_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_3_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #4</b></div>
@@ -513,8 +658,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_4_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_4_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_4_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #5</b></div>
@@ -525,8 +670,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_5_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_5_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_5_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #6</b></div>
@@ -537,8 +682,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_6_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_6_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_6_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #7</b></div>
@@ -549,8 +694,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_7_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_7_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_7_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #8</b></div>
@@ -561,8 +706,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_8_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_8_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_8_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_8_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #9</b></div>
@@ -573,8 +718,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_9_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_9_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_9_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_9_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #10</b></div>
@@ -585,8 +730,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_10_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_10_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_10_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_10_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #11</b></div>
@@ -597,8 +742,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_11_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_11_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_11_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_11_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #12</b></div>
@@ -609,8 +754,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_12_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_12_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_12_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_12_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #13</b></div>
@@ -621,8 +766,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_13_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_13_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_13_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_13_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #14</b></div>
@@ -633,8 +778,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_14_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_14_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_14_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_14_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #15</b></div>
@@ -645,8 +790,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_15_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_15_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_15_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_15_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #16</b></div>
@@ -657,8 +802,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_16_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_16_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_16_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_batch_16_embed.png" alt="Embed QR"/></div></div>
           </div></div><h4 style="margin:8px 0 6px">HTTP</h4>
         <div class="grid">
           <div class="card">
@@ -670,8 +815,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_1_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_1_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_1_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_1_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #2</b></div>
@@ -682,8 +827,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_2_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_2_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_2_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_2_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #3</b></div>
@@ -694,8 +839,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_3_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_3_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_3_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_3_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #4</b></div>
@@ -706,8 +851,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_4_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_4_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_4_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_4_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #5</b></div>
@@ -718,8 +863,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_5_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_5_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_5_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_5_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #6</b></div>
@@ -730,8 +875,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_6_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_6_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_6_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_6_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #7</b></div>
@@ -742,8 +887,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_7_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_7_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_7_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_7_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #8</b></div>
@@ -754,8 +899,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_8_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_8_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_8_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_8_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #9</b></div>
@@ -766,8 +911,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_9_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_9_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_9_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_9_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #10</b></div>
@@ -778,8 +923,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_10_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_10_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_10_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_10_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #11</b></div>
@@ -790,8 +935,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_11_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_11_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_11_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_11_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #12</b></div>
@@ -802,8 +947,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_12_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_12_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_12_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_12_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #13</b></div>
@@ -814,8 +959,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_13_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_13_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_13_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_13_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #14</b></div>
@@ -826,8 +971,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_14_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_14_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_14_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_14_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #15</b></div>
@@ -838,8 +983,8 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_15_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_15_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_15_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_15_embed.png" alt="Embed QR"/></div></div>
           </div>
           <div class="card">
             <div><b>批次 #16</b></div>
@@ -850,33 +995,68 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
             </div>
             <hr class="sep"/>
             <div class="grid">
-              <div class="qrbox"><div class="note blue-note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_16_url.png" alt="URL QR"/></div>
-              <div class="qrbox"><div class="note green-note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_16_embed.png" alt="Embed QR"/></div></div>
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_16_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_16_embed.png" alt="Embed QR"/></div></div>
+          </div>
+          <div class="card">
+            <div><b>批次 #17</b></div>
+            <div class="row">
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_17.yaml" target="_blank">YAML（页面）</a>
+              <a class="tag" href="https://raw.githubusercontent.com/mingko3/socks5-2025-proxy/main/docs/groups/http/http_batch_17.yaml" target="_blank">YAML（Raw）</a>
+              <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/groups/http/http_batch_17_links.txt" target="_blank">纯链接列表（txt）</a>
+            </div>
+            <hr class="sep"/>
+            <div class="grid">
+              <div class="qrbox"><div class="note">URL 型（蓝边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_17_url.png" alt="URL QR"/></div>
+              <div class="qrbox"><div class="note">内嵌型（绿边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_batch_17_embed.png" alt="Embed QR"/></div></div>
           </div></div>
   </div>
 
   <div class="card">
-    <h3 class="section-title">每协议“单节点”快速测试（延迟最小的 3 个）</h3>
+    <h3 class="section-title">每协议“单节点”快速测试（延迟最小的 3 个）<span class="badge purple">单节点</span></h3>
     <div class="grid">
 <div class="card">
+  <div><b>SS</b></div>
+  <div class="grid">
+    <div class="card">
+      <div class="note"># 1 · 延迟 22.4ms</div>
+      <div class="row">
+        <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/ss/ss_single_1.txt" target="_blank">查看原始链接</a>
+      </div>
+      <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_single_1.png" alt="Single Node QR"/></div>
+    </div>
+    <div class="card">
+      <div class="note"># 2 · 延迟 25.1ms</div>
+      <div class="row">
+        <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/ss/ss_single_2.txt" target="_blank">查看原始链接</a>
+      </div>
+      <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_single_2.png" alt="Single Node QR"/></div>
+    </div>
+    <div class="card">
+      <div class="note"># 3 · 延迟 29.8ms</div>
+      <div class="row">
+        <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/ss/ss_single_3.txt" target="_blank">查看原始链接</a>
+      </div>
+      <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_single_3.png" alt="Single Node QR"/></div>
+    </div></div></div><div class="card">
   <div><b>VMESS</b></div>
   <div class="grid">
     <div class="card">
-      <div class="note purple-note"># 1 · 延迟 9.1ms</div>
+      <div class="note"># 1 · 延迟 9.6ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/vmess/vmess_single_1.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_single_1.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 2 · 延迟 17.1ms</div>
+      <div class="note"># 2 · 延迟 14.3ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/vmess/vmess_single_2.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_single_2.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 3 · 延迟 44.0ms</div>
+      <div class="note"># 3 · 延迟 29.7ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/vmess/vmess_single_3.txt" target="_blank">查看原始链接</a>
       </div>
@@ -885,30 +1065,44 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
   <div><b>TROJAN</b></div>
   <div class="grid">
     <div class="card">
-      <div class="note purple-note"># 1 · 延迟 229.0ms</div>
+      <div class="note"># 1 · 延迟 14.1ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/trojan/trojan_single_1.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_single_1.png" alt="Single Node QR"/></div>
+    </div>
+    <div class="card">
+      <div class="note"># 2 · 延迟 14.2ms</div>
+      <div class="row">
+        <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/trojan/trojan_single_2.txt" target="_blank">查看原始链接</a>
+      </div>
+      <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_single_2.png" alt="Single Node QR"/></div>
+    </div>
+    <div class="card">
+      <div class="note"># 3 · 延迟 14.4ms</div>
+      <div class="row">
+        <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/trojan/trojan_single_3.txt" target="_blank">查看原始链接</a>
+      </div>
+      <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_single_3.png" alt="Single Node QR"/></div>
     </div></div></div><div class="card">
   <div><b>VLESS</b></div>
   <div class="grid">
     <div class="card">
-      <div class="note purple-note"># 1 · 延迟 8.6ms</div>
+      <div class="note"># 1 · 延迟 12.7ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/vless/vless_single_1.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_single_1.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 2 · 延迟 8.7ms</div>
+      <div class="note"># 2 · 延迟 14.0ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/vless/vless_single_2.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_single_2.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 3 · 延迟 8.8ms</div>
+      <div class="note"># 3 · 延迟 14.1ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/vless/vless_single_3.txt" target="_blank">查看原始链接</a>
       </div>
@@ -917,21 +1111,21 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
   <div><b>SOCKS4</b></div>
   <div class="grid">
     <div class="card">
-      <div class="note purple-note"># 1 · 延迟 8.7ms</div>
+      <div class="note"># 1 · 延迟 14.0ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/socks4/socks4_single_1.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_single_1.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 2 · 延迟 8.9ms</div>
+      <div class="note"># 2 · 延迟 14.0ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/socks4/socks4_single_2.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_single_2.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 3 · 延迟 8.9ms</div>
+      <div class="note"># 3 · 延迟 14.0ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/socks4/socks4_single_3.txt" target="_blank">查看原始链接</a>
       </div>
@@ -940,21 +1134,21 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
   <div><b>SOCKS5</b></div>
   <div class="grid">
     <div class="card">
-      <div class="note purple-note"># 1 · 延迟 8.9ms</div>
+      <div class="note"># 1 · 延迟 14.1ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/socks5/socks5_single_1.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_single_1.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 2 · 延迟 9.0ms</div>
+      <div class="note"># 2 · 延迟 14.2ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/socks5/socks5_single_2.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_single_2.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 3 · 延迟 9.1ms</div>
+      <div class="note"># 3 · 延迟 14.2ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/socks5/socks5_single_3.txt" target="_blank">查看原始链接</a>
       </div>
@@ -963,21 +1157,21 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
   <div><b>HTTP</b></div>
   <div class="grid">
     <div class="card">
-      <div class="note purple-note"># 1 · 延迟 8.8ms</div>
+      <div class="note"># 1 · 延迟 12.9ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/http/http_single_1.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_single_1.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 2 · 延迟 8.9ms</div>
+      <div class="note"># 2 · 延迟 14.1ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/http/http_single_2.txt" target="_blank">查看原始链接</a>
       </div>
       <div class="qrbox"><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_single_2.png" alt="Single Node QR"/></div>
     </div>
     <div class="card">
-      <div class="note purple-note"># 3 · 延迟 9.0ms</div>
+      <div class="note"># 3 · 延迟 14.2ms</div>
       <div class="row">
         <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/singles/http/http_single_3.txt" target="_blank">查看原始链接</a>
       </div>
@@ -986,58 +1180,65 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
   </div>
 
   <div class="card">
-    <h3 class="section-title">每协议“Top5（或不足5）合集”二维码（内嵌纯链接，黄色边框）</h3>
+    <h3 class="section-title">每协议 Top-5 紧凑列表（多链接内嵌）<span class="badge yellow">Top-5</span></h3>
     <div class="grid">
 
       <div class="card">
-        <div><b>VMESS</b> <span class="note">合并 5 条</span></div>
+        <div><b>SS</b> <span class="note">共 5 链接</span></div>
         <div class="row">
-          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/bundles/vmess/vmess_top5_998a234c.txt" target="_blank">纯链接（txt）</a>
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/top5/ss/ss_top5_links.txt" target="_blank">纯链接列表（txt）</a>
         </div>
         <hr class="sep"/>
-        <div class="qrbox"><div class="note">内容过大未生成二维码，请使用上方 txt</div></div>
+        <div class="qrbox"><div class="note">Top-5 内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/ss_top5_embed.png" alt="Top5 QR"/></div>
       </div>
       <div class="card">
-        <div><b>TROJAN</b> <span class="note">合并 1 条</span></div>
+        <div><b>VMESS</b> <span class="note">共 5 链接</span></div>
         <div class="row">
-          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/bundles/trojan/trojan_top1_a3c4a4a4.txt" target="_blank">纯链接（txt）</a>
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/top5/vmess/vmess_top5_links.txt" target="_blank">纯链接列表（txt）</a>
         </div>
         <hr class="sep"/>
-        <div class="qrbox"><div class="note yellow-note">合集内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_top_bundle_a3c4a4a4.png" alt="Bundle QR"/></div>
+        <div class="qrbox"><div class="note">Top-5 内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vmess_top5_embed.png" alt="Top5 QR"/></div>
       </div>
       <div class="card">
-        <div><b>VLESS</b> <span class="note">合并 5 条</span></div>
+        <div><b>TROJAN</b> <span class="note">共 5 链接</span></div>
         <div class="row">
-          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/bundles/vless/vless_top5_3dfc270e.txt" target="_blank">纯链接（txt）</a>
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/top5/trojan/trojan_top5_links.txt" target="_blank">纯链接列表（txt）</a>
         </div>
         <hr class="sep"/>
-        <div class="qrbox"><div class="note yellow-note">合集内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_top_bundle_3dfc270e.png" alt="Bundle QR"/></div>
+        <div class="qrbox"><div class="note">Top-5 内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/trojan_top5_embed.png" alt="Top5 QR"/></div>
       </div>
       <div class="card">
-        <div><b>SOCKS4</b> <span class="note">合并 5 条</span></div>
+        <div><b>VLESS</b> <span class="note">共 5 链接</span></div>
         <div class="row">
-          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/bundles/socks4/socks4_top5_bba431d3.txt" target="_blank">纯链接（txt）</a>
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/top5/vless/vless_top5_links.txt" target="_blank">纯链接列表（txt）</a>
         </div>
         <hr class="sep"/>
-        <div class="qrbox"><div class="note yellow-note">合集内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_top_bundle_bba431d3.png" alt="Bundle QR"/></div>
+        <div class="qrbox"><div class="note">Top-5 内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/vless_top5_embed.png" alt="Top5 QR"/></div>
       </div>
       <div class="card">
-        <div><b>SOCKS5</b> <span class="note">合并 5 条</span></div>
+        <div><b>SOCKS4</b> <span class="note">共 5 链接</span></div>
         <div class="row">
-          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/bundles/socks5/socks5_top5_37c03372.txt" target="_blank">纯链接（txt）</a>
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/top5/socks4/socks4_top5_links.txt" target="_blank">纯链接列表（txt）</a>
         </div>
         <hr class="sep"/>
-        <div class="qrbox"><div class="note yellow-note">合集内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_top_bundle_37c03372.png" alt="Bundle QR"/></div>
+        <div class="qrbox"><div class="note">Top-5 内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks4_top5_embed.png" alt="Top5 QR"/></div>
       </div>
       <div class="card">
-        <div><b>HTTP</b> <span class="note">合并 5 条</span></div>
+        <div><b>SOCKS5</b> <span class="note">共 5 链接</span></div>
         <div class="row">
-          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/bundles/http/http_top5_82c25f76.txt" target="_blank">纯链接（txt）</a>
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/top5/socks5/socks5_top5_links.txt" target="_blank">纯链接列表（txt）</a>
         </div>
         <hr class="sep"/>
-        <div class="qrbox"><div class="note yellow-note">合集内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_top_bundle_82c25f76.png" alt="Bundle QR"/></div>
+        <div class="qrbox"><div class="note">Top-5 内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/socks5_top5_embed.png" alt="Top5 QR"/></div>
       </div>
-    </div>
+      <div class="card">
+        <div><b>HTTP</b> <span class="note">共 5 链接</span></div>
+        <div class="row">
+          <a class="tag" href="https://mingko3.github.io/socks5-2025-proxy/top5/http/http_top5_links.txt" target="_blank">纯链接列表（txt）</a>
+        </div>
+        <hr class="sep"/>
+        <div class="qrbox"><div class="note">Top-5 内嵌（黄边）</div><img src="https://mingko3.github.io/socks5-2025-proxy/qrs/http_top5_embed.png" alt="Top5 QR"/></div>
+      </div>
   </div>
 
   <div class="card">
@@ -1045,9 +1246,9 @@ hr.sep{border:0;border-top:1px dashed #263043;margin:8px 0}
     <div class="small">
     1) 节点来自公开免费源，先并发 TCP 存活筛选，再按每协议保留前 2000 个。<br/>
     2) “中国大陆可用”仅对 SOCKS/HTTP 做了 <code>代理内连 Google.com:80</code> 的快速校验，SS/VMess/Trojan/VLESS 未做真实 HTTP 验证。<br/>
-    3) 二维码：<span class="blue-note">蓝边=URL 型（最稳）</span>，<span class="green-note">绿边=内嵌型（纯链接列表，容量有限，超限自动回退）</span>，<span class="purple-note">紫边=单节点（最大兼容）</span>，<span class="yellow-note">黄边=Top5 合集（内嵌纯链接，便于快速试用）</span>。<br/>
+    3) 二维码：蓝边=URL 型（最稳），绿边=内嵌型（纯链接列表，离线导入，容量有限，超限自动回退），紫边=单节点（最大兼容），黄边=Top-5 紧凑列表（极小，成功率高）。<br/>
     4) 若扫码“无效”，请使用系统相机/浏览器扫码“打开链接”再交由客户端导入（部分客户端只识别 URL 型）。<br/>
-    更新时间：2025-08-19 11:30:50 UTC+08:00+0800
+    更新时间：2025-08-19 19:26:39 UTC+08:00+0800
     </div>
   </div>
 </div>
