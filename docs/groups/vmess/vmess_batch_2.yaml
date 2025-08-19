@@ -1,9 +1,23 @@
 proxies:
-- name: 🇻🇳[openproxylist.com] vmess-VN
+- name: 🇫🇮[openproxylist.com] vmess-FI
   type: vmess
-  server: 161.248.30.3
-  port: 20086
-  uuid: 1006a928-2021-4a3b-beb5-d5853c6281c5
+  server: panel3.ipyar.org
+  port: 32017
+  uuid: c0ccdeb9-784c-4d67-b904-20dcaac9902a
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 297.7
+- name: 🇹🇼[openproxylist.com] vmess-TW
+  type: vmess
+  server: 103.61.139.137
+  port: 20521
+  uuid: f8d93cfb-3d5d-447c-a697-16496dd74697
   alterId: 0
   cipher: auto
   tls: false
@@ -12,52 +26,10 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 235.6
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 137.175.124.167
-  port: 20086
-  uuid: b4bce500-11fe-4f8f-a344-01ac247af9bd
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 251.8
-- name: 丹麦 V2CROSS.COM
-  type: vmess
-  server: fastcup.net
-  port: 80
-  uuid: 7577254b-c576-48cd-bbd0-69872aa3a9c9
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /profile/telegram@ssrsub
-    headers:
-      Host: cdn-node-oss-99.paofu.de
-  delay: 473.2
-- name: 香港 电讯盈科有限公司
-  type: vmess
-  server: 8685e774-sv2sg0-svq7uu-1gevg.hk3.p5pv.com
-  port: 80
-  uuid: f02ee2b4-d760-11ec-bd7c-f23c913c8d2b
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 519.9
+  delay: 332.7
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: cf.090227.xyz
+  server: 1000ip.yangmie.online
   port: 8080
   uuid: e9123cce-e4bd-46cf-8466-708b363a9807
   alterId: 0
@@ -68,32 +40,4 @@ proxies:
     path: /
     headers:
       Host: gyde.aifjj.asia
-  delay: 593.0
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: test.flha.ru
-  port: 80
-  uuid: 2bab6b8f-8d6e-463a-8331-b9de3d56921d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /2bab6b8f-8d6e-463a-8331-b9de3d56921d-vmess
-    headers:
-      Host: test.flha.ru
-  delay: 645.8
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 64.81.39.212
-  port: 20086
-  uuid: a3efc510-c175-4b74-bc04-fe1d110a62bc
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 712.3
+  delay: 1117.1
