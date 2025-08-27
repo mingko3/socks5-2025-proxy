@@ -1,12 +1,4 @@
 proxies:
-- name: SS_64.74.163.130_990
-  type: ss
-  server: 64.74.163.130
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 15.7
 - name: SS_142.4.216.225_80
   type: ss
   server: 142.4.216.225
@@ -14,7 +6,15 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: JIhN6rBKkaEboLNXVSv5rq
   udp: true
-  delay: 19.6
+  delay: 25.0
+- name: SS_64.74.163.130_990
+  type: ss
+  server: 64.74.163.130
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 25.0
 - name: SS_38.180.211.126_443
   type: ss
   server: 38.180.211.126
@@ -22,7 +22,7 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: Kuiqk2cP0BMWrgme9IfEvp
   udp: true
-  delay: 24.6
+  delay: 28.3
 - name: SS_104.167.197.25_57456
   type: ss
   server: 104.167.197.25
@@ -30,31 +30,7 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: 360e21d21977dc11
   udp: true
-  delay: 30.5
-- name: SS_23.154.136.247_2376
-  type: ss
-  server: 23.154.136.247
-  port: 2376
-  cipher: aes-256-gcm
-  password: faBAoD54k87UJG7
-  udp: true
-  delay: 32.3
-- name: SSR_ssca.irundns.net_443
-  type: ss
-  server: ssca.irundns.net
-  port: 443
-  cipher: aes-128-cfb
-  password: $$Turb0VPN$$
-  udp: true
-  delay: 32.6
-- name: SS_156.146.38.167_443
-  type: ss
-  server: 156.146.38.167
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 36.2
+  delay: 30.1
 - name: SS_156.146.38.170_443
   type: ss
   server: 156.146.38.170
@@ -62,15 +38,23 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 38.6
-- name: SS_45.55.2.232_14293
+  delay: 34.7
+- name: SS_156.146.38.167_443
   type: ss
-  server: 45.55.2.232
-  port: 14293
-  cipher: aes-256-cfb
-  password: 2170f8
+  server: 156.146.38.167
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 64.7
+  delay: 34.8
+- name: SSR_ssca.irundns.net_443
+  type: ss
+  server: ssca.irundns.net
+  port: 443
+  cipher: aes-128-cfb
+  password: $$Turb0VPN$$
+  udp: true
+  delay: 51.4
 - name: SS_104.192.226.106_990
   type: ss
   server: 104.192.226.106
@@ -78,31 +62,7 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 67.2
-- name: SS_154.223.16.212_989
-  type: ss
-  server: 154.223.16.212
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 68.1
-- name: SS_185.47.255.22_990
-  type: ss
-  server: 185.47.255.22
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 73.2
-- name: SS_212.102.47.130_443
-  type: ss
-  server: 212.102.47.130
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 73.9
+  delay: 58.7
 - name: SS_2.58.87.221_16899
   type: ss
   server: 2.58.87.221
@@ -110,7 +70,15 @@ proxies:
   cipher: aes-128-gcm
   password: Yc2CtrIz8L
   udp: true
-  delay: 74.8
+  delay: 63.7
+- name: SS_45.55.2.232_14293
+  type: ss
+  server: 45.55.2.232
+  port: 14293
+  cipher: aes-256-cfb
+  password: 2170f8
+  udp: true
+  delay: 72.9
 - name: SS_79.127.233.170_990
   type: ss
   server: 79.127.233.170
@@ -118,15 +86,31 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 75.3
-- name: SS_85.210.120.237_443
+  delay: 73.4
+- name: SS_5.188.181.201_9000
   type: ss
-  server: 85.210.120.237
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: Bog0ELmMM9DSxDdQ
+  server: 5.188.181.201
+  port: 9000
+  cipher: aes-256-cfb
+  password: a3GFYt36Sm82Vys9
   udp: true
-  delay: 75.9
+  delay: 74.1
+- name: SS_154.223.16.212_989
+  type: ss
+  server: 154.223.16.212
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 75.3
+- name: SS_212.102.47.130_443
+  type: ss
+  server: 212.102.47.130
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 79.2
 - name: SSR_62.100.205.48_989
   type: ss
   server: 62.100.205.48
@@ -134,15 +118,23 @@ proxies:
   cipher: aes-256-cfb
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 77.9
-- name: SS_212.102.53.194_443
+  delay: 80.5
+- name: SS_185.47.255.22_990
   type: ss
-  server: 212.102.53.194
+  server: 185.47.255.22
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 82.0
+- name: SS_212.102.53.198_443
+  type: ss
+  server: 212.102.53.198
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 80.4
+  delay: 83.8
 - name: SS_212.102.53.80_443
   type: ss
   server: 212.102.53.80
@@ -150,12 +142,20 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 80.4
-- name: SS_212.102.53.195_443
+  delay: 83.9
+- name: SS_212.102.53.79_443
   type: ss
-  server: 212.102.53.195
+  server: 212.102.53.79
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 80.5
+  delay: 84.0
+- name: SS_212.102.53.81_443
+  type: ss
+  server: 212.102.53.81
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 84.1
