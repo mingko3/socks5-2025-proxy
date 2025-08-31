@@ -1,8 +1,8 @@
 proxies:
-- name: 🇺🇸 US_189
+- name: 🇷🇺 RU_152
   type: vmess
-  server: lt.fxlcn.com
-  port: 45294
+  server: ye.fxlcn.com
+  port: 45245
   uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
@@ -11,51 +11,23 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: ''
-  delay: 213.3
-- name: 🇺🇸 US_188
+      Host: ye.fxlcn.com
+  delay: 230.8
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: lt.fxlcn.com
-  port: 45288
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  server: v2ray.codefyinc.com
+  port: 443
+  uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
   alterId: 0
   cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: lt.fxlcn.com
-  delay: 214.5
-- name: 🇻🇳[openproxylist.com] vmess-VN
-  type: vmess
-  server: 161.248.30.3
-  port: 20086
-  uuid: 1006a928-2021-4a3b-beb5-d5853c6281c5
-  alterId: 0
-  cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
-    path: /
+    path: /vmessws
     headers:
-      Host: ''
-  delay: 215.1
-- name: 🇺🇸 US_187
-  type: vmess
-  server: lt.fxlcn.com
-  port: 45258
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: lt.fxlcn.com
-  delay: 219.0
-- name: 香港 电讯盈科有限公司
+      Host: v2ray.codefyinc.com
+  delay: 274.4
+- name: 🇭🇰 HK_74
   type: vmess
   server: hkt.gotochinatown.net
   port: 80
@@ -65,24 +37,10 @@ proxies:
   tls: false
   network: ws
   ws-opts:
-    path: ''
+    path: /
     headers:
       Host: ''
-  delay: 221.3
-- name: 🇨🇳 CN_45
-  type: vmess
-  server: 202.79.161.188
-  port: 443
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /path/170733132233
-    headers:
-      Host: www.32278117.xyz
-  delay: 226.5
+  delay: 302.7
 - name: 🇹🇼[openproxylist.com] vmess-TW
   type: vmess
   server: 103.61.139.137
@@ -96,8 +54,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 262.7
-- name: 🇺🇸 US_197
+  delay: 380.5
+- name: 🇺🇸 US_188
   type: vmess
   server: fa.fxlcn.com
   port: 45247
@@ -110,8 +68,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 271.4
-- name: 🇺🇸 US_192
+  delay: 460.3
+- name: 🇺🇸 US_183
   type: vmess
   server: fa.fxlcn.com
   port: 45237
@@ -124,32 +82,46 @@ proxies:
     path: /
     headers:
       Host: fa.fxlcn.com
-  delay: 274.7
-- name: 🇷🇺 RU_152
+  delay: 465.1
+- name: 美国 CloudFlare节点
   type: vmess
-  server: fa.fxlcn.com
-  port: 45215
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  server: baota.me
+  port: 80
+  uuid: 2f38f848-a899-4c87-9807-207a41615e3c
   alterId: 0
   cipher: auto
   tls: false
+  network: ws
+  ws-opts:
+    path: /rongseven?ed=2048
+    headers:
+      Host: us.freeyyds.dpdns.org
+  delay: 526.5
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: cloudflare-ip.mofashi.ltd
+  port: 80
+  uuid: 2f38f848-a899-4c87-9807-207a41615e3c
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /rongseven?ed=2048
+    headers:
+      Host: us.freeyyds.dpdns.org
+  delay: 652.3
+- name: 🇫🇮[openproxylist.com] vmess-FI
+  type: vmess
+  server: bokolafas.attarisamadi.ir
+  port: 8090
+  uuid: 54920b5c-399c-4789-8dcf-0f6704016922
+  alterId: 0
+  cipher: auto
+  tls: true
   network: tcp
   ws-opts:
     path: /
     headers:
-      Host: ''
-  delay: 293.7
-- name: 🇷🇺 RU_151
-  type: vmess
-  server: ye.fxlcn.com
-  port: 45245
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ye.fxlcn.com
-  delay: 294.2
+      Host: canva.com
+  delay: 770.0

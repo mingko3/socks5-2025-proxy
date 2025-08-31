@@ -1,20 +1,68 @@
 proxies:
+- name: SS_103.186.155.20_38388
+  type: ss
+  server: 103.186.155.20
+  port: 38388
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 213.1
+- name: SS_103.186.154.21_38388
+  type: ss
+  server: 103.186.154.21
+  port: 38388
+  cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+  udp: true
+  delay: 213.5
+- name: SS_46.183.185.15_989
+  type: ss
+  server: 46.183.185.15
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 214.7
+- name: SS_181.119.30.20_990
+  type: ss
+  server: 181.119.30.20
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 215.4
+- name: SS_ca225.vpnbook.com_80
+  type: ss
+  server: ca225.vpnbook.com
+  port: 80
+  cipher: chacha20-ietf-poly1305
+  password: JIhN6rBKkaEboLNXVSv5rq
+  udp: true
+  delay: 220.8
+- name: SS_arxfw2b78fi2q9hzylhn.freesocks.work_443
+  type: ss
+  server: arxfw2b78fi2q9hzylhn.freesocks.work
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: Nk9asglDzHzjktVzTkvhaA
+  udp: true
+  delay: 222.4
+- name: SS_134.255.210.49_990
+  type: ss
+  server: 134.255.210.49
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 225.4
 - name: SS_beesyar.org_8080
   type: ss
   server: beesyar.org
   port: 8080
   cipher: chacha20-ietf-poly1305
-  password: cvII85TrW6n0OGyfpHVS1u
+  password: QCXDxuDlTTMD7jtgHUjIoj
   udp: true
-  delay: 268.0
-- name: SS_185.231.233.112_989
-  type: ss
-  server: 185.231.233.112
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 273.2
+  delay: 262.7
 - name: SS_134.209.147.198_990
   type: ss
   server: 134.209.147.198
@@ -22,7 +70,7 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 309.7
+  delay: 264.3
 - name: SS_exchange.gameaurela.click_52952
   type: ss
   server: exchange.gameaurela.click
@@ -30,15 +78,15 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: LMSNh21TrXjR2ok25Q2nE8ENT2zoBmPvka3RCCUAHZELCnWoekVjvaf89qwcRkdbxEfep2bc2aUtmnxqvF1ayQRez1JHjULj
   udp: true
-  delay: 383.2
-- name: SS_uk-dc1.yangon.club_443
+  delay: 351.9
+- name: SS_193.108.119.230_8080
   type: ss
-  server: uk-dc1.yangon.club
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
+  server: 193.108.119.230
+  port: 8080
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
   udp: true
-  delay: 407.7
+  delay: 374.7
 - name: SS_beta.mattenadene.org_54075
   type: ss
   server: beta.mattenadene.org
@@ -46,44 +94,4 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: o38yuvzSe3m5aDNpHtUPH1zGwbGEXXMDsGwVaub2SYEmHUa2WGZUjiezX3Vvva9CCzpjxYtuJLgKsSnsyKBf9ciPVba3y4o3
   udp: true
-  delay: 425.2
-- name: SS_23.157.40.101_8000
-  type: ss
-  server: 23.157.40.101
-  port: 8000
-  cipher: aes-256-gcm
-  password: KixLvKzwjekG00rm
-  udp: true
-  delay: 558.1
-- name: SS_23.157.40.101_7307
-  type: ss
-  server: 23.157.40.101
-  port: 7307
-  cipher: aes-256-gcm
-  password: FoOiGlkAA9yPEGP
-  udp: true
-  delay: 565.1
-- name: SS_23.157.40.101_8009
-  type: ss
-  server: 23.157.40.101
-  port: 8009
-  cipher: aes-256-gcm
-  password: XKFKl2rULjIp74
-  udp: true
-  delay: 565.2
-- name: SS_23.157.40.101_8008
-  type: ss
-  server: 23.157.40.101
-  port: 8008
-  cipher: aes-256-gcm
-  password: XKFKl2rULjIp74
-  udp: true
-  delay: 565.7
-- name: SS_91.132.94.200_989
-  type: ss
-  server: 91.132.94.200
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 1251.4
+  delay: 450.1
