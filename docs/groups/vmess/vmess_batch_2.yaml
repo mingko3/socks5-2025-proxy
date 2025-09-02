@@ -1,60 +1,18 @@
 proxies:
-- name: 🇧🇪 BE_37
-  type: vmess
-  server: 57.129.24.125
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: aveiror.com
-  delay: 91.2
-- name: 🇧🇪 BE_41
-  type: vmess
-  server: 57.129.28.69
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: baradiha.com
-  delay: 91.2
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: 91.99.185.216
-  port: 20086
-  uuid: 7bd6a1ea-a220-4f1c-afed-6cfb8ab96ad9
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 95.7
-- name: 🇳🇴 NO_146
-  type: vmess
-  server: 146.59.55.50
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  server: npmjs.com
+  port: 8080
+  uuid: nasnet
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
-    path: /linkvws
+    path: /NASNET/cdn
     headers:
-      Host: o.metuji.com
-  delay: 107.5
+      Host: nasnet-4515017475.mashallahbet.com
+  delay: 120.4
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: v2ray.codefyinc.com
@@ -68,49 +26,21 @@ proxies:
     path: /vmessws
     headers:
       Host: v2ray.codefyinc.com
-  delay: 154.2
-- name: 🇯🇵[openproxylist.com] vmess-JP
+  delay: 129.7
+- name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
-  server: 172.111.146.64
-  port: 80
-  uuid: 05b8c783-7f59-47f9-9923-06a465679f6a
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /vmess/
-    headers:
-      Host: ''
-  delay: 160.0
-- name: 🇮🇳[openproxylist.com] vmess-IN
-  type: vmess
-  server: 152.67.8.205
-  port: 80
-  uuid: 9db4c708-aef8-4359-821b-38e47990be0d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 198.7
-- name: 🇨🇳 CN_44
-  type: vmess
-  server: 112.132.215.34
-  port: 50007
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  server: 62.146.235.193
+  port: 28011
+  uuid: cfc5a87f-3c13-4e25-b556-176cdd6b5c6a
   alterId: 0
   cipher: auto
   tls: false
   network: tcp
   ws-opts:
-    path: /
+    path: ''
     headers:
       Host: ''
-  delay: 235.6
+  delay: 232.5
 - name: 🇮🇩[openproxylist.com] vmess-ID
   type: vmess
   server: 154.90.49.57
@@ -124,50 +54,22 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 236.3
-- name: 🇨🇳 CN_43
+  delay: 237.7
+- name: 🇨🇳 CN_44
   type: vmess
-  server: 112.132.215.12
-  port: 50002
+  server: 112.132.215.34
+  port: 50007
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
+  alterId: 0
   cipher: auto
   tls: false
   network: tcp
   ws-opts:
-    path: /ivideos.sbs/linkws
-    headers:
-      Host: ury-unit-c030ehei8.poget71138.workers.dev
-  delay: 237.7
-- name: 🇨🇳 CN_46
-  type: vmess
-  server: 202.79.161.188
-  port: 443
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /path/170733132233
-    headers:
-      Host: www.32278117.xyz
-  delay: 242.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: c004e6fe-t1i9s0-tm53cm-1ol97.hkt.tcpbbr.net
-  port: 80
-  uuid: 93fb69fc-77cf-11ee-85ee-f23c91369f2d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
     path: /
     headers:
-      Host: c004e6fe-t1i9s0-tm53cm-1ol97.hkt.tcpbbr.net
-  delay: 247.1
-- name: 🇨🇳 CN_45
+      Host: ''
+  delay: 240.1
+- name: 🇨🇳 CN_42
   type: vmess
   server: 47.104.186.133
   port: 50002
@@ -180,8 +82,22 @@ proxies:
     path: /afrhms16v.bestxray.buzz/linkws
     headers:
       Host: ''
-  delay: 251.6
-- name: 🇨🇳 CN_47
+  delay: 250.3
+- name: 🇰🇷[openproxylist.com] vmess-KR
+  type: vmess
+  server: 202.79.161.188
+  port: 443
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /path/170733132233
+    headers:
+      Host: www.32278117.xyz
+  delay: 252.4
+- name: 🇨🇳 CN_43
   type: vmess
   server: 47.92.152.169
   port: 50002
@@ -194,21 +110,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 258.0
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: sssssssxxxx.2032.pp.ua
-  port: 443
-  uuid: 4174b95d-115e-4d39-add6-1f8db95bb860
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /6We3U9Df1WGxgFnoFPw1
-    headers:
-      Host: sssssssxxxx.2032.pp.ua
-  delay: 266.0
+  delay: 255.4
 - name: 🇻🇳[openproxylist.com] vmess-VN
   type: vmess
   server: 161.248.30.3
@@ -222,8 +124,50 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 269.4
-- name: 🇭🇰 HK_74
+  delay: 265.8
+- name: 🇹🇼[openproxylist.com] vmess-TW
+  type: vmess
+  server: 103.61.139.137
+  port: 20521
+  uuid: f8d93cfb-3d5d-447c-a697-16496dd74697
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 272.2
+- name: 🇨🇳 CN_45
+  type: vmess
+  server: 112.132.215.12
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /ivideos.sbs/linkws
+    headers:
+      Host: ury-unit-c030ehei8.poget71138.workers.dev
+  delay: 309.8
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: c004e6fe-t1i9s0-tm53cm-1ol97.hkt.tcpbbr.net
+  port: 80
+  uuid: 93fb69fc-77cf-11ee-85ee-f23c91369f2d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: c004e6fe-t1i9s0-tm53cm-1ol97.hkt.tcpbbr.net
+  delay: 317.1
+- name: 香港 电讯盈科有限公司
   type: vmess
   server: 1e426046-t0fds0-t12cnj-1ol97.hk.p5pv.com
   port: 80
@@ -236,8 +180,22 @@ proxies:
     path: /
     headers:
       Host: broadcastlv.chat.bilibili.com
-  delay: 293.4
-- name: 香港 电讯盈科有限公司
+  delay: 462.3
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: ssssssssssssfffffffgh.2032.pp.ua
+  port: 443
+  uuid: 4174b95d-115e-4d39-add6-1f8db95bb860
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /6We3U9Df1WGxgFnoFPw1
+    headers:
+      Host: ssssssssssssfffffffgh.2032.pp.ua
+  delay: 483.3
+- name: 🇭🇰 HK_73
   type: vmess
   server: v10.heduian.link
   port: 30807
@@ -250,8 +208,8 @@ proxies:
     path: /oooo
     headers:
       Host: baidu.com
-  delay: 294.3
-- name: 香港 电讯盈科有限公司
+  delay: 559.5
+- name: 🇭🇰 HK_76
   type: vmess
   server: hkt.gotochinatown.net
   port: 80
@@ -263,12 +221,12 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: hkt.gotochinatown.net
-  delay: 304.2
-- name: 🇺🇸 US_190
+      Host: ''
+  delay: 591.7
+- name: 🇺🇸 US_182
   type: vmess
   server: lt.fxlcn.com
-  port: 45417
+  port: 45235
   uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
@@ -278,4 +236,46 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 385.3
+  delay: 822.2
+- name: 🇺🇸 US_180
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45247
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 822.4
+- name: 🇺🇸 US_181
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45237
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fa.fxlcn.com
+  delay: 822.8
+- name: 🇺🇸 US_179
+  type: vmess
+  server: lt.fxlcn.com
+  port: 45258
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: lt.fxlcn.com
+  delay: 824.9
