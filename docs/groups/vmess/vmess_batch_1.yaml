@@ -1,5 +1,19 @@
 proxies:
-- name: 🇺🇸 US_185
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 104.21.69.41
+  port: 443
+  uuid: 82bf928e-3d9f-4f3f-bf93-3abf3d288497
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /wnRgXmVLutezmbQdnCw
+    headers:
+      Host: f996030b-5aac-9594-4482-db411c3ef8a2.890602.xyz
+  delay: 14.7
+- name: 🇺🇸 US_193
   type: vmess
   server: 15.204.234.200
   port: 41100
@@ -12,36 +26,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 2.9
-- name: 🇺🇸 US_175
-  type: vmess
-  server: 38.99.82.193
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: tilebani.com
-  delay: 18.5
-- name: 🇺🇸 US_177
-  type: vmess
-  server: 15.235.83.228
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  delay: 20.9
-- name: 🇺🇸 US_192
+  delay: 27.0
+- name: 🇺🇸 US_194
   type: vmess
   server: 15.235.83.227
   port: 443
@@ -54,50 +40,8 @@ proxies:
     path: /linkvws
     headers:
       Host: mankadmu.com
-  delay: 20.9
+  delay: 40.4
 - name: 🇺🇸 US_180
-  type: vmess
-  server: 15.235.50.172
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: baradiha.com
-  delay: 21.1
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: api.jquery.com
-  port: 443
-  uuid: de94cc0a-0592-4969-b1fc-97ea8f0ea0b3
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /us.kkp.me.eu.org/aa
-    headers:
-      Host: admin.kasrax.ir
-  delay: 51.8
-- name: 🇨🇦[openproxylist.com] vmess-CA
-  type: vmess
-  server: 51.79.102.253
-  port: 80
-  uuid: 58fe1542-5290-40ad-815a-77707a81afe5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /IOebhLMhl1CTbFHbL95myfRX2
-    headers:
-      Host: ''
-  delay: 55.1
-- name: 🇺🇸 US_182
   type: vmess
   server: 216.227.168.157
   port: 45417
@@ -110,35 +54,49 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 68.1
-- name: 🇺🇸 US_176
+  delay: 41.9
+- name: 🇺🇸 US_191
   type: vmess
-  server: 38.12.83.217
-  port: 30002
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: loosely.freetrade.link
-  delay: 68.6
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 15.204.11.190
-  port: 15361
-  uuid: 5d7bf9e3-415c-40f3-c66d-a54ea0fd860e
+  server: 15.235.50.172
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
   cipher: auto
-  tls: false
-  network: tcp
+  tls: true
+  network: ws
   ws-opts:
-    path: ''
+    path: /linkvws
     headers:
-      Host: ''
-  delay: 70.5
+      Host: baradiha.com
+  delay: 45.9
+- name: 🇺🇸 US_183
+  type: vmess
+  server: 15.235.83.228
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  delay: 46.0
+- name: 🇺🇸 US_179
+  type: vmess
+  server: 38.99.82.193
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: tilebani.com
+  delay: 47.1
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 137.175.124.167
@@ -152,7 +110,35 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 72.2
+  delay: 48.8
+- name: 🇺🇸 US_192
+  type: vmess
+  server: 38.12.83.217
+  port: 30002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: loosely.freetrade.link
+  delay: 49.3
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 15.204.11.190
+  port: 15361
+  uuid: 5d7bf9e3-415c-40f3-c66d-a54ea0fd860e
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 51.1
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 206.206.80.227
@@ -166,50 +152,36 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 78.0
-- name: 美国 CloudFlare节点
+  delay: 57.7
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: u1.huvicloud.com
-  port: 443
-  uuid: 04ddf6fd-2d5c-46ae-aa6c-6983a8c73725
+  server: bBbbbbbBb.222769.XYZ
+  port: 80
+  uuid: 2e65577e-8fdb-4bb1-a495-96f3122099a7
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   network: ws
   ws-opts:
-    path: /04ddf6fd-2d5c-46ae-aa6c-6983a8c73725
+    path: /f6taOMcOSZb9TPR
     headers:
-      Host: u1.huvicloud.com
-  delay: 83.7
-- name: 🇧🇪 BE_34
+      Host: bbbbbbbbb.222769.xyz
+  delay: 78.3
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: 57.129.24.124
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  server: OOoOOOooOp.222769.XYZ
+  port: 80
+  uuid: ce921385-2b31-45fe-84c5-1843e8ae845b
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   network: ws
   ws-opts:
-    path: /linkvws
+    path: /VaaSEfNLHdW3I98dxLkez
     headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  delay: 89.4
-- name: 🇧🇪 BE_37
-  type: vmess
-  server: 57.129.25.22
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  delay: 89.5
-- name: 🇧🇪 BE_35
+      Host: OOoOOOooOp.222769.XYZ
+  delay: 93.4
+- name: 🇧🇪 BE_38
   type: vmess
   server: 57.129.25.20
   port: 443
@@ -222,8 +194,50 @@ proxies:
     path: linkvws
     headers:
       Host: 57.129.25.20
-  delay: 89.6
-- name: 🇧🇪 BE_36
+  delay: 120.3
+- name: 🇧🇪 BE_37
+  type: vmess
+  server: 57.129.24.124
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  delay: 123.9
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: 91.99.185.216
+  port: 20086
+  uuid: 7bd6a1ea-a220-4f1c-afed-6cfb8ab96ad9
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 125.6
+- name: 🇨🇦[openproxylist.com] vmess-CA
+  type: vmess
+  server: 51.79.102.253
+  port: 80
+  uuid: 58fe1542-5290-40ad-815a-77707a81afe5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /IOebhLMhl1CTbFHbL95myfRX2
+    headers:
+      Host: ''
+  delay: 125.9
+- name: 🇧🇪 BE_39
   type: vmess
   server: 57.129.28.69
   port: 443
@@ -236,8 +250,8 @@ proxies:
     path: /linkvws
     headers:
       Host: baradiha.com
-  delay: 89.6
-- name: 🇧🇪 BE_39
+  delay: 127.7
+- name: 🇧🇪 BE_40
   type: vmess
   server: 57.129.24.125
   port: 443
@@ -250,10 +264,10 @@ proxies:
     path: /linkvws
     headers:
       Host: aveiror.com
-  delay: 90.3
-- name: 🇧🇪 BE_38
+  delay: 128.7
+- name: 🇧🇪 BE_35
   type: vmess
-  server: 57.129.25.25
+  server: 57.129.25.22
   port: 443
   uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
@@ -263,19 +277,5 @@ proxies:
   ws-opts:
     path: /linkvws
     headers:
-      Host: f.khilei.com
-  delay: 91.8
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: pubg.ac
-  port: 80
-  uuid: 457f64d5-cc68-4911-82ee-636ebb568a46
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /profile/telegram@ssrsub
-    headers:
-      Host: cdn-node-oss-99.paofu.de
-  delay: 92.9
+      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  delay: 131.6
