@@ -1,5 +1,47 @@
 proxies:
-- name: 🇷🇺 RU_159
+- name: 🇷🇺 RU_145
+  type: vmess
+  server: ye.fxlcn.com
+  port: 45245
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ye.fxlcn.com
+  delay: 375.0
+- name: 🇺🇸 US_190
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45247
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 424.9
+- name: 🇺🇸 US_182
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45237
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fa.fxlcn.com
+  delay: 458.9
+- name: 🇷🇺 RU_144
   type: vmess
   server: fa.fxlcn.com
   port: 45215
@@ -12,4 +54,18 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 543.1
+  delay: 469.2
+- name: 🇨🇳 CN_48
+  type: vmess
+  server: 202.79.161.192
+  port: 443
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: path/170733132233
+    headers:
+      Host: ''
+  delay: 1301.1
