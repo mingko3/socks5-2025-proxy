@@ -1,4 +1,32 @@
 proxies:
+- name: 🇺🇸 US_186
+  type: vmess
+  server: 38.99.82.193
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: tilebani.com
+  delay: 11.7
+- name: 🇺🇸 US_189
+  type: vmess
+  server: 15.204.234.200
+  port: 41100
+  uuid: c7f169a3-2e9a-4894-ba53-7b2fa6fd08b4
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 14.7
 - name: 🇺🇸 US_196
   type: vmess
   server: 148.113.176.192
@@ -12,8 +40,8 @@ proxies:
     path: linkvws
     headers:
       Host: fapeng.org
-  delay: 19.9
-- name: 🇺🇸 US_178
+  delay: 24.7
+- name: 🇺🇸 US_188
   type: vmess
   server: 15.235.83.227
   port: 443
@@ -26,36 +54,8 @@ proxies:
     path: /linkvws
     headers:
       Host: mankadmu.com
-  delay: 20.2
-- name: 🇺🇸 US_186
-  type: vmess
-  server: 15.235.83.228
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  delay: 20.3
-- name: 🇺🇸 US_184
-  type: vmess
-  server: 38.99.82.193
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: tilebani.com
-  delay: 20.7
-- name: 🇺🇸 US_197
+  delay: 24.8
+- name: 🇺🇸 US_192
   type: vmess
   server: 15.235.50.172
   port: 443
@@ -68,40 +68,12 @@ proxies:
     path: /linkvws
     headers:
       Host: baradiha.com
-  delay: 21.9
-- name: 🇺🇸 US_177
+  delay: 24.9
+- name: 🇨🇦[openproxylist.com] vmess-CA
   type: vmess
-  server: 15.204.234.200
-  port: 41100
-  uuid: c7f169a3-2e9a-4894-ba53-7b2fa6fd08b4
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 24.2
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 193.124.24.247
-  port: 6502
-  uuid: 242f22a3-29d9-4a94-d8ba-88043f2e1921
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 25.5
-- name: 英国 社会保险安全部
-  type: vmess
-  server: ov-canada3.09vpn.com
+  server: 51.222.158.243
   port: 8443
-  uuid: 1a06fe60-0933-4b66-b927-937a5e015c50
+  uuid: 4b0df213-0e59-4c16-b391-e0d97686bfa9
   alterId: 0
   cipher: auto
   tls: true
@@ -109,27 +81,27 @@ proxies:
   ws-opts:
     path: /vmess/
     headers:
-      Host: ov-canada3.09vpn.com
-  delay: 34.3
-- name: 🇳🇱[openproxylist.com] vmess-NL
+      Host: ''
+  delay: 25.0
+- name: 🇺🇸 US_193
   type: vmess
-  server: test3.flha.ru
-  port: 80
-  uuid: 9a81340d-f81b-4c76-8abb-f4d305c535c0
+  server: 15.235.83.228
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
-    path: /9a81340d-f81b-4c76-8abb-f4d305c535c0-vmess
+    path: /linkvws
     headers:
-      Host: test3.flha.ru
-  delay: 37.4
+      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  delay: 25.2
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: 165.140.216.141
-  port: 443
-  uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
+  server: 193.124.24.247
+  port: 6506
+  uuid: c53d41d1-7d56-43ce-9994-408780c6476a
   alterId: 0
   cipher: auto
   tls: false
@@ -138,7 +110,35 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 48.6
+  delay: 34.4
+- name: 🇺🇸 US_187
+  type: vmess
+  server: 154.9.254.63
+  port: 20521
+  uuid: d824764a-954e-4c75-9116-f6e5eba944a9
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 56.1
+- name: 🇮🇳 IN_82
+  type: vmess
+  server: 103.124.107.144
+  port: 29800
+  uuid: cc31ddfc-d92e-4dab-cd06-00dfb84af8ac
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 57.4
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 206.206.80.227
@@ -152,21 +152,35 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 49.6
-- name: 🇺🇸[openproxylist.com] vmess-US
+  delay: 65.8
+- name: 🇺🇸 US_190
   type: vmess
-  server: 154.64.228.5
-  port: 12155
-  uuid: afdb5bde-3bb4-413a-e353-cbbe12ea4f04
-  alterId: 0
+  server: 38.12.83.217
+  port: 30002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
   cipher: auto
   tls: false
   network: tcp
   ws-opts:
     path: /
     headers:
+      Host: loosely.freetrade.link
+  delay: 72.2
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 15.204.11.190
+  port: 15361
+  uuid: 5d7bf9e3-415c-40f3-c66d-a54ea0fd860e
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
       Host: ''
-  delay: 52.2
+  delay: 73.2
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 137.175.124.167
@@ -180,22 +194,22 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 65.5
-- name: 🇺🇸 US_185
+  delay: 73.9
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: 38.12.83.217
-  port: 30002
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
+  server: bBbbbbbBb.222769.XYZ
+  port: 80
+  uuid: 2e65577e-8fdb-4bb1-a495-96f3122099a7
+  alterId: 0
   cipher: auto
   tls: false
-  network: tcp
+  network: ws
   ws-opts:
-    path: /
+    path: /f6taOMcOSZb9TPR
     headers:
-      Host: loosely.freetrade.link
-  delay: 66.3
-- name: 🇧🇪 BE_36
+      Host: bbbbbbbbb.222769.xyz
+  delay: 88.0
+- name: 🇧🇪 BE_40
   type: vmess
   server: 57.129.25.25
   port: 443
@@ -208,8 +222,8 @@ proxies:
     path: /linkvws
     headers:
       Host: f.khilei.com
-  delay: 104.7
-- name: 🇧🇪 BE_38
+  delay: 89.2
+- name: 🇧🇪 BE_41
   type: vmess
   server: 57.129.24.125
   port: 443
@@ -222,50 +236,8 @@ proxies:
     path: /linkvws
     headers:
       Host: aveiror.com
-  delay: 104.7
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: codepen.io
-  port: 443
-  uuid: de94cc0a-0592-4969-b1fc-97ea8f0ea0b3
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /us.kkp.me.eu.org/aa
-    headers:
-      Host: farid.1.berozha.ir
-  delay: 106.0
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: 91.99.185.216
-  port: 20086
-  uuid: 7bd6a1ea-a220-4f1c-afed-6cfb8ab96ad9
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 108.8
-- name: 🇧🇪 BE_34
-  type: vmess
-  server: 57.129.28.213
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: fapeng.org
-  delay: 109.0
-- name: 🇧🇪 BE_41
+  delay: 90.1
+- name: 🇧🇪 BE_37
   type: vmess
   server: 57.129.28.69
   port: 443
@@ -278,4 +250,32 @@ proxies:
     path: /linkvws
     headers:
       Host: baradiha.com
-  delay: 109.2
+  delay: 90.6
+- name: 🇧🇪 BE_36
+  type: vmess
+  server: 57.129.28.213
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: linkvws
+    headers:
+      Host: fapeng.org
+  delay: 90.7
+- name: 🏳[openproxylist.com] vmess-
+  type: vmess
+  server: 51.68.191.233
+  port: 80
+  uuid: f0eda072-9ae8-494c-a495-215fa5729467
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /vmess/
+    headers:
+      Host: ''
+  delay: 90.8
