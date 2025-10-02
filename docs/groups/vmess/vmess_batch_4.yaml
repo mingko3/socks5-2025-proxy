@@ -1,8 +1,8 @@
 proxies:
-- name: 🇺🇸 US_189
+- name: 🇺🇸 US_178
   type: vmess
   server: lt.fxlcn.com
-  port: 45288
+  port: 45271
   uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
@@ -11,9 +11,51 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: lt.fxlcn.com
-  delay: 727.0
-- name: 🇺🇸 US_188
+      Host: ''
+  delay: 500.1
+- name: 🇺🇸 US_171
+  type: vmess
+  server: lt.fxlcn.com
+  port: 45294
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 502.8
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: ssssssssssssfffffffgh.2032.pp.ua
+  port: 443
+  uuid: 4174b95d-115e-4d39-add6-1f8db95bb860
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /6We3U9Df1WGxgFnoFPw1
+    headers:
+      Host: ssssssssssssfffffffgh.2032.pp.ua
+  delay: 598.8
+- name: 🇺🇸 US_170
+  type: vmess
+  server: jamekk.org
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 1
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: linkvws
+    headers:
+      Host: jamekk.org
+  delay: 639.0
+- name: 🇺🇸 US_183
   type: vmess
   server: fa.fxlcn.com
   port: 45247
@@ -26,8 +68,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 872.0
-- name: 🇷🇺 RU_139
+  delay: 968.2
+- name: 🇷🇺 RU_132
   type: vmess
   server: fa.fxlcn.com
   port: 45215
@@ -40,18 +82,4 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 889.0
-- name: 🇺🇸 US_174
-  type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 52512
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /564dfa20/
-    headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 909.1
+  delay: 978.5
