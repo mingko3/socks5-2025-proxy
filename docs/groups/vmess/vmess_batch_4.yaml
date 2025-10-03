@@ -1,61 +1,19 @@
 proxies:
-- name: 🇺🇸 US_178
+- name: 🇭🇰 HK_49
   type: vmess
-  server: lt.fxlcn.com
-  port: 45271
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
+  server: v10.heduian.link
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
   tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 500.1
-- name: 🇺🇸 US_171
-  type: vmess
-  server: lt.fxlcn.com
-  port: 45294
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 502.8
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: ssssssssssssfffffffgh.2032.pp.ua
-  port: 443
-  uuid: 4174b95d-115e-4d39-add6-1f8db95bb860
-  alterId: 0
-  cipher: auto
-  tls: true
   network: ws
   ws-opts:
-    path: /6We3U9Df1WGxgFnoFPw1
+    path: /oooo
     headers:
-      Host: ssssssssssssfffffffgh.2032.pp.ua
-  delay: 598.8
-- name: 🇺🇸 US_170
-  type: vmess
-  server: jamekk.org
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 1
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: jamekk.org
-  delay: 639.0
-- name: 🇺🇸 US_183
+      Host: baidu.com
+  delay: 478.9
+- name: 🇺🇸 US_134
   type: vmess
   server: fa.fxlcn.com
   port: 45247
@@ -68,8 +26,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 968.2
-- name: 🇷🇺 RU_132
+  delay: 499.4
+- name: 🇷🇺 RU_117
   type: vmess
   server: fa.fxlcn.com
   port: 45215
@@ -82,4 +40,18 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 978.5
+  delay: 499.8
+- name: 🇺🇸 US_144
+  type: vmess
+  server: 47.238.252.154
+  port: 20521
+  uuid: 87bb9d49-6345-42d4-9ee4-91dd8a6ca544
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 1231.6
