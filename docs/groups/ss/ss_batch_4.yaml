@@ -1,12 +1,12 @@
 proxies:
-- name: SS_192.36.27.94_989
+- name: SS_45.87.175.65_8080
   type: ss
-  server: 192.36.27.94
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
+  server: 45.87.175.65
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  delay: 93.8
+  delay: 131.3
 - name: SS_195.181.160.6_990
   type: ss
   server: 195.181.160.6
@@ -14,7 +14,15 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 96.2
+  delay: 132.7
+- name: SS_192.71.249.78_989
+  type: ss
+  server: 192.71.249.78
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 133.3
 - name: SS_217.30.10.18_9019
   type: ss
   server: 217.30.10.18
@@ -22,15 +30,7 @@ proxies:
   cipher: aes-256-cfb
   password: GA9KzeEgvfxNrgmM
   udp: true
-  delay: 98.0
-- name: SS_217.30.10.18_9033
-  type: ss
-  server: 217.30.10.18
-  port: 9033
-  cipher: aes-256-cfb
-  password: UTJA57ypk2XKQpnm
-  udp: true
-  delay: 98.2
+  delay: 133.7
 - name: SS_217.30.10.18_9060
   type: ss
   server: 217.30.10.18
@@ -38,31 +38,7 @@ proxies:
   cipher: aes-256-cfb
   password: ueLXVkvh4hckhErQ
   udp: true
-  delay: 98.6
-- name: SS_95.163.176.37_8506
-  type: ss
-  server: 95.163.176.37
-  port: 8506
-  cipher: chacha20-ietf-poly1305
-  password: eUh4lSpi7nOYj0vSrqLUh0
-  udp: true
-  delay: 98.7
-- name: SS_212.102.54.45_990
-  type: ss
-  server: 212.102.54.45
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-  udp: true
-  delay: 100.9
-- name: SS_156.146.40.194_989
-  type: ss
-  server: 156.146.40.194
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 101.4
+  delay: 134.6
 - name: SS_37.143.129.230_989
   type: ss
   server: 37.143.129.230
@@ -70,23 +46,23 @@ proxies:
   cipher: aes-256-cfb
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 101.6
-- name: SS_46.183.184.60_989
+  delay: 138.1
+- name: SS_156.146.40.194_989
   type: ss
-  server: 46.183.184.60
+  server: 156.146.40.194
   port: 989
   cipher: aes-256-cfb
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 101.6
-- name: SS_92.118.205.228_990
+  delay: 138.2
+- name: SS_89.46.238.35_989
   type: ss
-  server: 92.118.205.228
-  port: 990
-  cipher: chacha20-ietf-poly1305
+  server: 89.46.238.35
+  port: 989
+  cipher: aes-256-cfb
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 103.6
+  delay: 138.3
 - name: SS_46.183.217.204_990
   type: ss
   server: 46.183.217.204
@@ -94,15 +70,71 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   udp: true
-  delay: 107.9
-- name: SS_185.195.67.178_990
+  delay: 139.2
+- name: SS_46.183.184.60_989
   type: ss
-  server: 185.195.67.178
+  server: 46.183.184.60
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 139.6
+- name: SS_95.163.176.37_8506
+  type: ss
+  server: 95.163.176.37
+  port: 8506
+  cipher: chacha20-ietf-poly1305
+  password: eUh4lSpi7nOYj0vSrqLUh0
+  udp: true
+  delay: 139.9
+- name: SS_154.90.63.177_989
+  type: ss
+  server: 154.90.63.177
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 141.1
+- name: SS_154.90.62.168_989
+  type: ss
+  server: 154.90.62.168
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 142.2
+- name: SS_217.30.10.18_9033
+  type: ss
+  server: 217.30.10.18
+  port: 9033
+  cipher: aes-256-cfb
+  password: UTJA57ypk2XKQpnm
+  udp: true
+  delay: 142.3
+- name: SS_92.118.205.228_990
+  type: ss
+  server: 92.118.205.228
   port: 990
   cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+  password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 111.0
+  delay: 143.7
+- name: SS_171.22.254.17_989
+  type: ss
+  server: 171.22.254.17
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 144.8
+- name: SS_ca225.vpnbook.com_80
+  type: ss
+  server: ca225.vpnbook.com
+  port: 80
+  cipher: chacha20-ietf-poly1305
+  password: JIhN6rBKkaEboLNXVSv5rq
+  udp: true
+  delay: 149.6
 - name: SS_193.135.174.135_990
   type: ss
   server: 193.135.174.135
@@ -110,39 +142,15 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   udp: true
-  delay: 113.3
-- name: SS_185.126.237.38_990
+  delay: 149.6
+- name: SS_192.71.244.150_989
   type: ss
-  server: 185.126.237.38
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 114.1
-- name: SS_38.54.57.90_989
-  type: ss
-  server: 38.54.57.90
+  server: 192.71.244.150
   port: 989
   cipher: aes-256-cfb
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 115.0
-- name: SS_46.183.185.15_989
-  type: ss
-  server: 46.183.185.15
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 116.7
-- name: SS_185.47.253.227_990
-  type: ss
-  server: 185.47.253.227
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: f8f7aCzcPKbsF8p3
-  udp: true
-  delay: 118.5
+  delay: 149.9
 - name: SS_45.139.24.24_57456
   type: ss
   server: 45.139.24.24
@@ -150,12 +158,4 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: 360e21d21977dc11
   udp: true
-  delay: 119.8
-- name: SS_45.89.52.66_9001
-  type: ss
-  server: 45.89.52.66
-  port: 9001
-  cipher: aes-256-cfb
-  password: UkXRsXvR6buDMG2Y
-  udp: true
-  delay: 120.7
+  delay: 150.8
