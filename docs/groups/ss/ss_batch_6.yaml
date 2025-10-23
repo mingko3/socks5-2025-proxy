@@ -1,12 +1,28 @@
 proxies:
-- name: SS_154.223.20.79_989
+- name: SS_89.46.238.35_989
   type: ss
-  server: 154.223.20.79
+  server: 89.46.238.35
   port: 989
   cipher: aes-256-cfb
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 189.2
+  delay: 172.0
+- name: SS_45.159.250.190_990
+  type: ss
+  server: 45.159.250.190
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+  udp: true
+  delay: 176.1
+- name: SS_beesyar.org_8080
+  type: ss
+  server: beesyar.org
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 1RWwXhwfAB5gAEozU4G2Pg
+  udp: true
+  delay: 179.2
 - name: SS_109.61.39.28_990
   type: ss
   server: 109.61.39.28
@@ -14,15 +30,39 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   udp: true
-  delay: 191.3
-- name: SS_103.149.182.191_8388
+  delay: 180.3
+- name: SS_154.90.63.177_989
   type: ss
-  server: 103.149.182.191
-  port: 8388
-  cipher: chacha20-ietf
-  password: asd123456
+  server: 154.90.63.177
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 195.0
+  delay: 185.3
+- name: SS_154.90.62.168_989
+  type: ss
+  server: 154.90.62.168
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 188.2
+- name: SS_223.165.4.173_990
+  type: ss
+  server: 223.165.4.173
+  port: 990
+  cipher: chacha20-ietf-poly1305
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 192.0
+- name: SS_103.111.114.29_57456
+  type: ss
+  server: 103.111.114.29
+  port: 57456
+  cipher: chacha20-ietf-poly1305
+  password: 360e21d21977dc11
+  udp: true
+  delay: 197.8
 - name: SS_203.23.128.33_990
   type: ss
   server: 203.23.128.33
@@ -30,31 +70,23 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 205.6
-- name: SS_167.71.205.112_80
+  delay: 206.8
+- name: SS_134.209.147.198_990
   type: ss
-  server: 167.71.205.112
-  port: 80
+  server: 134.209.147.198
+  port: 990
   cipher: chacha20-ietf-poly1305
-  password: GjUtzQIjhyYSzhdN2ZMRft
+  password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 206.3
-- name: SS_beesyar.org_8080
+  delay: 207.6
+- name: SS_154.223.20.79_989
   type: ss
-  server: beesyar.org
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: cvII85TrW6n0OGyfpHVS1u
+  server: 154.223.20.79
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 218.8
-- name: SS_103.36.91.23_8388
-  type: ss
-  server: 103.36.91.23
-  port: 8388
-  cipher: chacha20-ietf
-  password: asd123456
-  udp: true
-  delay: 231.3
+  delay: 208.1
 - name: SS_156.38.168.58_990
   type: ss
   server: 156.38.168.58
@@ -62,7 +94,31 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
   udp: true
-  delay: 236.7
+  delay: 215.1
+- name: SS_185.231.233.112_989
+  type: ss
+  server: 185.231.233.112
+  port: 989
+  cipher: aes-256-cfb
+  password: f8f7aCzcPKbsF8p3
+  udp: true
+  delay: 215.1
+- name: SS_167.71.205.112_80
+  type: ss
+  server: 167.71.205.112
+  port: 80
+  cipher: chacha20-ietf-poly1305
+  password: GjUtzQIjhyYSzhdN2ZMRft
+  udp: true
+  delay: 224.5
+- name: SS_103.36.91.23_8388
+  type: ss
+  server: 103.36.91.23
+  port: 8388
+  cipher: chacha20-ietf
+  password: asd123456
+  udp: true
+  delay: 235.0
 - name: SS_154.205.159.100_990
   type: ss
   server: 154.205.159.100
@@ -70,92 +126,36 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
   udp: true
-  delay: 253.2
-- name: SS_103.186.154.26_38388
+  delay: 238.8
+- name: SS_103.186.154.35_38388
   type: ss
-  server: 103.186.154.26
+  server: 103.186.154.35
   port: 38388
   cipher: aes-256-cfb
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   udp: true
-  delay: 253.6
-- name: SS_103.186.154.28_38388
+  delay: 249.7
+- name: SS_103.186.154.36_38388
   type: ss
-  server: 103.186.154.28
+  server: 103.186.154.36
   port: 38388
   cipher: aes-256-cfb
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   udp: true
-  delay: 253.8
-- name: SS_103.186.154.19_38388
+  delay: 249.9
+- name: SS_103.186.155.20_38388
   type: ss
-  server: 103.186.154.19
+  server: 103.186.155.20
   port: 38388
   cipher: aes-256-cfb
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   udp: true
-  delay: 255.2
-- name: SS_103.186.154.24_38388
+  delay: 250.4
+- name: SS_103.186.155.19_38388
   type: ss
-  server: 103.186.154.24
+  server: 103.186.155.19
   port: 38388
   cipher: aes-256-cfb
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   udp: true
-  delay: 255.2
-- name: SS_103.186.154.29_38388
-  type: ss
-  server: 103.186.154.29
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-  delay: 257.1
-- name: SS_103.186.155.21_38388
-  type: ss
-  server: 103.186.155.21
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-  delay: 257.6
-- name: SS_103.186.154.30_38388
-  type: ss
-  server: 103.186.154.30
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-  delay: 257.9
-- name: SS_103.186.154.31_38388
-  type: ss
-  server: 103.186.154.31
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-  delay: 258.7
-- name: SS_103.186.154.33_38388
-  type: ss
-  server: 103.186.154.33
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-  delay: 259.3
-- name: SS_160.19.78.75_443
-  type: ss
-  server: 160.19.78.75
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: Nk9asglDzHzjktVzTkvhaA
-  udp: true
-  delay: 259.3
-- name: SS_103.186.155.133_38388
-  type: ss
-  server: 103.186.155.133
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-  udp: true
-  delay: 259.7
+  delay: 251.0
