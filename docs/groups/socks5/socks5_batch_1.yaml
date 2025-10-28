@@ -1,14 +1,26 @@
 proxies:
+- name: SOCKS5_104.21.56.44_80
+  type: socks5
+  server: 104.21.56.44
+  port: 80
+  udp: false
+  delay: 1.6
+- name: SOCKS5_104.21.30.167_443
+  type: socks5
+  server: 104.21.30.167
+  port: 443
+  udp: false
+  delay: 1.7
+- name: SOCKS5_104.19.50.238_2096
+  type: socks5
+  server: 104.19.50.238
+  port: 2096
+  udp: false
+  delay: 1.8
 - name: SOCKS5_104.21.112.1_443
   type: socks5
   server: 104.21.112.1
   port: 443
-  udp: false
-  delay: 1.7
-- name: SOCKS5_173.245.59.132_2053
-  type: socks5
-  server: 173.245.59.132
-  port: 2053
   udp: false
   delay: 1.8
 - name: SOCKS5_104.21.44.185_2053
@@ -23,99 +35,87 @@ proxies:
   port: 443
   udp: false
   delay: 1.8
-- name: SOCKS5_104.21.56.44_80
+- name: SOCKS5_172.67.160.44_443
   type: socks5
-  server: 104.21.56.44
-  port: 80
-  udp: false
-  delay: 2.1
-- name: SOCKS5_104.21.3.219_8443
-  type: socks5
-  server: 104.21.3.219
-  port: 8443
-  udp: false
-  delay: 2.4
-- name: SOCKS5_104.21.30.167_443
-  type: socks5
-  server: 104.21.30.167
+  server: 172.67.160.44
   port: 443
   udp: false
-  delay: 2.4
+  delay: 1.9
+- name: SOCKS5_173.245.59.132_2053
+  type: socks5
+  server: 173.245.59.132
+  port: 2053
+  udp: false
+  delay: 2.1
+- name: SOCKS5_104.21.9.71_443
+  type: socks5
+  server: 104.21.9.71
+  port: 443
+  udp: false
+  delay: 2.1
+- name: SOCKS5_5.182.85.253_2096
+  type: socks5
+  server: 5.182.85.253
+  port: 2096
+  udp: false
+  delay: 2.2
 - name: SOCKS5_104.129.194.44_10336
   type: socks5
   server: 104.129.194.44
   port: 10336
   udp: false
-  delay: 17.2
+  delay: 2.4
 - name: SOCKS5_104.129.194.43_10336
   type: socks5
   server: 104.129.194.43
   port: 10336
   udp: false
-  delay: 17.6
-- name: SOCKS5_185.236.232.100_80
-  type: socks5
-  server: 185.236.232.100
-  port: 80
-  udp: false
-  delay: 19.6
-- name: SOCKS5_51.222.158.206_80
-  type: socks5
-  server: 51.222.158.206
-  port: 80
-  udp: false
-  delay: 19.6
-- name: SOCKS5_37.19.198.244_443
-  type: socks5
-  server: 37.19.198.244
-  port: 443
-  udp: false
-  delay: 20.0
-- name: SOCKS5_185.236.232.98_80
-  type: socks5
-  server: 185.236.232.98
-  port: 80
-  udp: false
-  delay: 20.1
-- name: SOCKS5_54.81.226.31_80
-  type: socks5
-  server: 54.81.226.31
-  port: 80
-  udp: false
-  delay: 20.2
-- name: SOCKS5_185.236.232.82_80
-  type: socks5
-  server: 185.236.232.82
-  port: 80
-  udp: false
-  delay: 20.2
+  delay: 2.8
 - name: SOCKS5_45.8.146.207_80
   type: socks5
   server: 45.8.146.207
   port: 80
   udp: false
-  delay: 20.2
-- name: SOCKS5_67.43.228.253_3767
+  delay: 7.0
+- name: SOCKS5_37.19.198.244_443
   type: socks5
-  server: 67.43.228.253
-  port: 3767
+  server: 37.19.198.244
+  port: 443
   udp: false
-  delay: 22.3
+  delay: 7.2
+- name: SOCKS5_77.110.109.72_443
+  type: socks5
+  server: 77.110.109.72
+  port: 443
+  udp: false
+  delay: 10.9
 - name: SOCKS5_92.118.112.101_9483
   type: socks5
   server: 92.118.112.101
   port: 9483
   udp: false
-  delay: 22.8
-- name: SOCKS5_103.35.189.146_8880
+  delay: 16.6
+- name: SOCKS5_64.74.163.130_990
   type: socks5
-  server: 103.35.189.146
-  port: 8880
+  server: 64.74.163.130
+  port: 990
   udp: false
-  delay: 22.9
-- name: SOCKS5_38.68.135.123_443
+  delay: 17.3
+- name: SOCKS5_51.222.158.206_80
   type: socks5
-  server: 38.68.135.123
+  server: 51.222.158.206
+  port: 80
+  udp: false
+  delay: 20.7
+- name: SOCKS5_38.110.1.252_443
+  type: socks5
+  server: 38.110.1.252
   port: 443
   udp: false
-  delay: 24.8
+  delay: 28.9
+- name: SOCKS5_104.167.199.95_80
+  type: socks5
+  server: 104.167.199.95
+  port: 80
+  udp: false
+  delay: 30.8
