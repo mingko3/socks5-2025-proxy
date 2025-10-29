@@ -1,9 +1,9 @@
 proxies:
-- name: VLESS_104.21.9.71_443
+- name: VLESS_172.67.160.44_443
   type: vless
-  server: 104.21.9.71
+  server: 172.67.160.44
   port: 443
-  uuid: c226ac5d-65e9-4379-95c3-fb542bc242d8
+  uuid: 086c655d-0c12-47dd-9d5a-2670089201ee
   tls: true
   flow: ''
   udp: true
@@ -16,25 +16,34 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 1.7
-- name: VLESS_172.67.160.44_443
+  delay: 1.8
+- name: VLESS_172.67.131.76_443
   type: vless
-  server: 172.67.160.44
+  server: 172.67.131.76
   port: 443
-  uuid: 086c655d-0c12-47dd-9d5a-2670089201ee
+  uuid: afc9d688-520a-46fa-a98d-4511d1198cdd
   tls: true
   flow: ''
   udp: true
-  delay: 1.8
-- name: VLESS_104.19.50.238_2096
+  delay: 1.9
+- name: VLESS_104.21.9.71_443
   type: vless
-  server: 104.19.50.238
-  port: 2096
-  uuid: f61a4285-7264-4d07-9408-7b9ba1922c26
+  server: 104.21.9.71
+  port: 443
+  uuid: c226ac5d-65e9-4379-95c3-fb542bc242d8
   tls: true
   flow: ''
   udp: true
-  delay: 1.8
+  delay: 2.0
+- name: VLESS_172.66.156.81_80
+  type: vless
+  server: 172.66.156.81
+  port: 80
+  uuid: 1c7dd901-c84b-45a3-ba61-2823d6336fc7
+  tls: true
+  flow: ''
+  udp: true
+  delay: 2.1
 - name: VLESS_45.8.146.207_80
   type: vless
   server: 45.8.146.207
@@ -43,25 +52,34 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 6.7
-- name: VLESS_77.110.109.72_443
+  delay: 7.7
+- name: VLESS_185.236.232.100_80
   type: vless
-  server: 77.110.109.72
-  port: 443
-  uuid: 045eb821-bdae-43c5-8945-9cb181e65dcb
-  tls: true
-  flow: ''
-  udp: true
-  delay: 10.5
-- name: VLESS_51.222.158.206_80
-  type: vless
-  server: 51.222.158.206
+  server: 185.236.232.100
   port: 80
-  uuid: cef1e956-e92b-4dbb-999a-6524679f8a40
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
   tls: true
   flow: ''
   udp: true
-  delay: 20.3
+  delay: 7.9
+- name: VLESS_185.236.232.98_80
+  type: vless
+  server: 185.236.232.98
+  port: 80
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+  tls: true
+  flow: ''
+  udp: true
+  delay: 8.8
+- name: VLESS_103.35.189.146_8880
+  type: vless
+  server: 103.35.189.146
+  port: 8880
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
+  tls: true
+  flow: ''
+  udp: true
+  delay: 9.9
 - name: VLESS_104.167.199.95_80
   type: vless
   server: 104.167.199.95
@@ -70,16 +88,7 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 30.3
-- name: VLESS_cdnjs.com_443
-  type: vless
-  server: cdnjs.com
-  port: 443
-  uuid: 7d18fc67-1994-4f7e-8ff8-c024223f33bb
-  tls: true
-  flow: ''
-  udp: true
-  delay: 35.4
+  delay: 30.6
 - name: VLESS_57.129.132.223_80
   type: vless
   server: 57.129.132.223
@@ -88,16 +97,25 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 76.1
-- name: VLESS_146.19.230.249_8880
+  delay: 74.8
+- name: VLESS_185.231.205.181_8880
   type: vless
-  server: 146.19.230.249
+  server: 185.231.205.181
   port: 8880
   uuid: df0680ca-e43c-498d-ed86-8e196eedd012
   tls: true
   flow: ''
   udp: true
-  delay: 83.2
+  delay: 82.4
+- name: VLESS_195.42.233.124_8880
+  type: vless
+  server: 195.42.233.124
+  port: 8880
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
+  tls: true
+  flow: ''
+  udp: true
+  delay: 82.8
 - name: VLESS_45.159.248.108_8880
   type: vless
   server: 45.159.248.108
@@ -106,76 +124,58 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 83.5
-- name: VLESS_185.231.205.167_8880
+  delay: 83.4
+- name: VLESS_95.164.37.43_8880
   type: vless
-  server: 185.231.205.167
+  server: 95.164.37.43
   port: 8880
   uuid: df0680ca-e43c-498d-ed86-8e196eedd012
   tls: true
   flow: ''
   udp: true
-  delay: 84.1
-- name: VLESS_179.61.219.170_22934
+  delay: 83.7
+- name: VLESS_146.19.230.247_8880
   type: vless
-  server: 179.61.219.170
-  port: 22934
-  uuid: 0cd276a5-4501-413a-acf8-b51c54894f02
+  server: 146.19.230.247
+  port: 8880
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
+  tls: true
+  flow: ''
+  udp: true
+  delay: 83.8
+- name: VLESS_185.231.205.234_8880
+  type: vless
+  server: 185.231.205.234
+  port: 8880
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
+  tls: true
+  flow: ''
+  udp: true
+  delay: 83.9
+- name: VLESS_146.19.230.249_8880
+  type: vless
+  server: 146.19.230.249
+  port: 8880
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
+  tls: true
+  flow: ''
+  udp: true
+  delay: 84.4
+- name: VLESS_95.164.6.156_8880
+  type: vless
+  server: 95.164.6.156
+  port: 8880
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
   tls: true
   flow: ''
   udp: true
   delay: 84.6
-- name: VLESS_95.164.85.109_59374
+- name: VLESS_185.231.205.246_8880
   type: vless
-  server: 95.164.85.109
-  port: 59374
-  uuid: bfc78cd8-5951-4803-8d6c-4cedef8cd420
-  tls: true
-  flow: ''
-  udp: true
-  delay: 84.8
-- name: VLESS_51.38.232.101_80
-  type: vless
-  server: 51.38.232.101
-  port: 80
-  uuid: f0758892-f40c-412d-9fab-88103bad1fd8
-  tls: true
-  flow: ''
-  udp: true
-  delay: 85.9
-- name: VLESS_185.33.24.229_28495
-  type: vless
-  server: 185.33.24.229
-  port: 28495
-  uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1
-  tls: true
-  flow: ''
-  udp: true
-  delay: 85.9
-- name: VLESS_72.56.73.240_443
-  type: vless
-  server: 72.56.73.240
-  port: 443
-  uuid: b7437f7a-783f-4e6f-a555-a2a589f42b5a
-  tls: true
-  flow: ''
-  udp: true
-  delay: 87.9
-- name: VLESS_50.7.85.221_443
-  type: vless
-  server: 50.7.85.221
-  port: 443
-  uuid: 3af3a0f3-28ea-407c-a3df-2ae3b33fc174
-  tls: true
-  flow: ''
-  udp: true
-  delay: 90.8
-- name: VLESS_45.12.142.89_8880
-  type: vless
-  server: 45.12.142.89
+  server: 185.231.205.246
   port: 8880
   uuid: df0680ca-e43c-498d-ed86-8e196eedd012
   tls: true
   flow: ''
   udp: true
-  delay: 92.0
+  delay: 85.2
