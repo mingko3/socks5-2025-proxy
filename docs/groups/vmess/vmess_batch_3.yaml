@@ -1,19 +1,33 @@
 proxies:
-- name: 日本 东京rackip.com
+- name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: 137.220.150.40
-  port: 20297
-  uuid: 692c1141-f196-4ac4-8af6-7a3b67304b90
+  server: mci.yektanet.info
+  port: 55555
+  uuid: a4b41dc8-b684-49e4-b3db-ade382c113d3
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 226.7
+- name: 🇸🇬 SG_162
+  type: vmess
+  server: 66.42.63.36
+  port: 37189
+  uuid: 3bd93acb-71bb-4088-88d4-09638ed9febd
   alterId: 0
   cipher: auto
   tls: false
   network: none
   ws-opts:
-    path: ''
+    path: /
     headers:
       Host: ''
-  delay: 225.2
-- name: 🇺🇸 US_184
+  delay: 228.0
+- name: 🇺🇸 US_188
   type: vmess
   server: 47.245.106.193
   port: 56536
@@ -26,12 +40,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 225.4
-- name: 🇸🇬 SG_161
+  delay: 228.8
+- name: 🇯🇵 JP_86
   type: vmess
-  server: 66.42.63.36
-  port: 43158
-  uuid: 63a77789-8d8f-46f0-b00a-7ef1dbdea6f1
+  server: 137.220.150.40
+  port: 20297
+  uuid: 692c1141-f196-4ac4-8af6-7a3b67304b90
   alterId: 0
   cipher: auto
   tls: false
@@ -40,35 +54,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 226.2
-- name: 🇭🇰 HK_70
-  type: vmess
-  server: 25109257-sv4n40-t5qfe2-1khwf.hk3.p5pv.com
-  port: 80
-  uuid: 92bd8c68-6434-11ee-b644-f23c91cfbbc9
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 229.3
-- name: 🇺🇸 US_183
-  type: vmess
-  server: 45.89.107.51
-  port: 20521
-  uuid: 3dbaa5c3-f493-4ad1-9c5d-8525f4962a6c
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 229.9
+  delay: 229.2
 - name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
   server: 66.42.63.36
@@ -82,106 +68,22 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 231.1
-- name: 美国 CloudFlare节点
+  delay: 229.8
+- name: 🇭🇰 HK_71
   type: vmess
-  server: cf.fovi.tk
-  port: 443
-  uuid: bf67437e-6c90-45ca-abc2-c7240a5ce2aa
-  alterId: 0
+  server: f42f46ca-sv0xs0-sv37gm-81nv.hk3.p5pv.com
+  port: 80
+  uuid: 47e91fb6-25b8-df52-bc18-3cdc8548192f
+  alterId: 2
   cipher: auto
-  tls: true
+  tls: false
   network: ws
   ws-opts:
-    path: /eisasqa
-    headers:
-      Host: foxpol.fovi.tk
-  delay: 350.0
-- name: 🇷🇺 RU_154
-  type: vmess
-  server: ye.fxlcn.com
-  port: 45245
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
     path: /
     headers:
-      Host: ye.fxlcn.com
-  delay: 353.9
-- name: 🇺🇸 US_181
-  type: vmess
-  server: fa.fxlcn.com
-  port: 45237
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: fa.fxlcn.com
-  delay: 506.6
-- name: 🇺🇸 US_191
-  type: vmess
-  server: lt.fxlcn.com
-  port: 45271
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 573.4
-- name: 🇺🇸 US_190
-  type: vmess
-  server: lt.fxlcn.com
-  port: 45276
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 578.9
-- name: 🇺🇸 US_188
-  type: vmess
-  server: lt.fxlcn.com
-  port: 45294
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 587.5
-- name: 🇺🇸 US_185
-  type: vmess
-  server: lt.fxlcn.com
-  port: 45258
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: lt.fxlcn.com
-  delay: 598.5
-- name: 🇺🇸 US_178
+      Host: broadcastlv.chat.bilibili.com
+  delay: 236.6
+- name: 🇺🇸 US_194
   type: vmess
   server: lt.fxlcn.com
   port: 45288
@@ -194,8 +96,22 @@ proxies:
     path: /
     headers:
       Host: lt.fxlcn.com
-  delay: 598.8
-- name: 🇺🇸 US_182
+  delay: 319.9
+- name: 🇭🇰 HK_69
+  type: vmess
+  server: v10.heduian.link
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /oooo
+    headers:
+      Host: baidu.com
+  delay: 325.1
+- name: 🇺🇸 US_190
   type: vmess
   server: lt.fxlcn.com
   port: 45287
@@ -208,11 +124,11 @@ proxies:
     path: /
     headers:
       Host: lt.fxlcn.com
-  delay: 601.8
-- name: 🇺🇸 US_193
+  delay: 328.1
+- name: 🇺🇸 US_200
   type: vmess
   server: lt.fxlcn.com
-  port: 45235
+  port: 45271
   uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
@@ -222,11 +138,11 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 636.9
-- name: 🇺🇸 US_196
+  delay: 330.1
+- name: 🇺🇸 US_198
   type: vmess
-  server: fa.fxlcn.com
-  port: 45247
+  server: lt.fxlcn.com
+  port: 45294
   uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
@@ -236,8 +152,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 639.8
-- name: 🇺🇸 US_194
+  delay: 330.8
+- name: 🇺🇸 US_196
   type: vmess
   server: lt.fxlcn.com
   port: 45291
@@ -250,18 +166,116 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 641.7
-- name: 🇭🇰[openproxylist.com] vmess-HK
+  delay: 335.2
+- name: 🇺🇸 US_189
   type: vmess
-  server: n1744453320.lie5d.cyou
-  port: 443
-  uuid: 8889a08a-09f8-4c97-bed2-df31b62fcf23
+  server: lt.fxlcn.com
+  port: 45235
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 343.9
+- name: 🇺🇸 US_187
+  type: vmess
+  server: lt.fxlcn.com
+  port: 45258
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: lt.fxlcn.com
+  delay: 346.3
+- name: 🇺🇸 US_181
+  type: vmess
+  server: lt.fxlcn.com
+  port: 45276
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 349.0
+- name: 🇷🇺 RU_157
+  type: vmess
+  server: ye.fxlcn.com
+  port: 45245
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ye.fxlcn.com
+  delay: 350.6
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 66.253.7.178
+  port: 20521
+  uuid: d24c499b-3b25-441e-9c6e-b12421a91041
+  alterId: 0
+  cipher: auto
+  tls: false
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: n1744453320.lie5d.cyou
-  delay: 729.3
+      Host: ''
+  delay: 388.6
+- name: 🇺🇸 US_197
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45247
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 650.7
+- name: 🇺🇸 US_193
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45237
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fa.fxlcn.com
+  delay: 658.6
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: 47.239.252.30
+  port: 8849
+  uuid: 4244267d-52b3-4ae2-9926-da2b07de889b
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /arki?ed=2048
+    headers:
+      Host: ''
+  delay: 1261.0
