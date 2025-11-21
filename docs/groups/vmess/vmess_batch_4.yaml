@@ -1,5 +1,19 @@
 proxies:
-- name: 🇺🇸 US_198
+- name: 🇺🇸 US_195
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45247
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 636.4
+- name: 🇺🇸 US_174
   type: vmess
   server: fa.fxlcn.com
   port: 45237
@@ -12,46 +26,60 @@ proxies:
     path: /
     headers:
       Host: fa.fxlcn.com
-  delay: 553.8
-- name: 🇺🇸 US_197
+  delay: 658.5
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: lt.fxlcn.com
-  port: 45287
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  server: 8.218.17.136
+  port: 3721
+  uuid: 33755eb3-5c12-4ca7-b86e-6f1aa6e7ce27
   alterId: 0
   cipher: auto
   tls: false
-  network: tcp
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: lt.fxlcn.com
-  delay: 556.5
-- name: 🇺🇸 US_195
+      Host: ''
+  delay: 1166.9
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: lt.fxlcn.com
-  port: 45258
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  server: 47.238.71.166
+  port: 3721
+  uuid: 0b3da6e0-2a41-49e4-8bee-cfa705d448fc
   alterId: 0
   cipher: auto
   tls: false
-  network: tcp
+  network: ws
   ws-opts:
-    path: /
+    path: ''
     headers:
-      Host: lt.fxlcn.com
-  delay: 558.7
-- name: 🇷🇺 RU_154
+      Host: ''
+  delay: 1167.6
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: ye.fxlcn.com
-  port: 45245
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  server: 8.217.176.108
+  port: 3721
+  uuid: 7836c516-70be-4cde-a4bd-7e225989241a
   alterId: 0
   cipher: auto
   tls: false
-  network: tcp
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: ye.fxlcn.com
-  delay: 851.9
+      Host: ''
+  delay: 1168.4
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 66.253.7.178
+  port: 20521
+  uuid: d24c499b-3b25-441e-9c6e-b12421a91041
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 1196.4
