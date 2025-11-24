@@ -1,22 +1,4 @@
 proxies:
-- name: VLESS_104.25.123.80_2096
-  type: vless
-  server: 104.25.123.80
-  port: 2096
-  uuid: fa93e643-ed01-40c4-b82b-f38e9c2a841c
-  tls: true
-  flow: ''
-  udp: true
-  delay: 9.2
-- name: VLESS_104.234.4.120_8080
-  type: vless
-  server: 104.234.4.120
-  port: 8080
-  uuid: 1e503e46-5ab8-4f79-8cd1-73bac4bcd102
-  tls: true
-  flow: ''
-  udp: true
-  delay: 17.9
 - name: VLESS_104.26.1.221_443
   type: vless
   server: 104.26.1.221
@@ -25,16 +7,43 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 49.2
-- name: VLESS_81.19.140.202_60552
+  delay: 9.4
+- name: VLESS_104.234.4.120_8080
   type: vless
-  server: 81.19.140.202
-  port: 60552
-  uuid: ad6b2d75-1973-4c0d-8a5f-739f22628ffd
+  server: 104.234.4.120
+  port: 8080
+  uuid: 1e503e46-5ab8-4f79-8cd1-73bac4bcd102
   tls: true
   flow: ''
   udp: true
-  delay: 66.1
+  delay: 17.4
+- name: VLESS_138.124.183.227_8080
+  type: vless
+  server: 138.124.183.227
+  port: 8080
+  uuid: 9dc11620-987c-4344-9088-f46fdfae4054
+  tls: true
+  flow: ''
+  udp: true
+  delay: 60.0
+- name: VLESS_69.28.82.253_443
+  type: vless
+  server: 69.28.82.253
+  port: 443
+  uuid: 0930fe32-e429-4f37-b8ec-92ac52b40f6e
+  tls: true
+  flow: ''
+  udp: true
+  delay: 60.8
+- name: VLESS_40.160.4.118_8080
+  type: vless
+  server: 40.160.4.118
+  port: 8080
+  uuid: 9dc11620-987c-4344-9088-f46fdfae4054
+  tls: true
+  flow: ''
+  udp: true
+  delay: 64.0
 - name: VLESS_40.160.4.211_8080
   type: vless
   server: 40.160.4.211
@@ -43,7 +52,7 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 75.9
+  delay: 64.3
 - name: VLESS_40.160.4.106_8080
   type: vless
   server: 40.160.4.106
@@ -52,16 +61,16 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 103.8
-- name: VLESS_38.60.212.251_29059
+  delay: 64.3
+- name: VLESS_147.135.77.76_8080
   type: vless
-  server: 38.60.212.251
-  port: 29059
-  uuid: d706bf16-124a-417b-aaa0-0d6d5efd58fd
+  server: 147.135.77.76
+  port: 8080
+  uuid: 9dc11620-987c-4344-9088-f46fdfae4054
   tls: true
   flow: ''
   udp: true
-  delay: 108.5
+  delay: 64.6
 - name: VLESS_178.239.125.31_39735
   type: vless
   server: 178.239.125.31
@@ -70,79 +79,43 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 110.1
-- name: VLESS_91.98.153.140_443
+  delay: 107.4
+- name: VLESS_139.162.83.82_32225
   type: vless
-  server: 91.98.153.140
+  server: 139.162.83.82
+  port: 32225
+  uuid: aa7f42cc-616f-4550-9a87-4b85bb409121
+  tls: true
+  flow: ''
+  udp: true
+  delay: 108.2
+- name: VLESS_38.60.212.251_29059
+  type: vless
+  server: 38.60.212.251
+  port: 29059
+  uuid: d706bf16-124a-417b-aaa0-0d6d5efd58fd
+  tls: true
+  flow: ''
+  udp: true
+  delay: 108.3
+- name: VLESS_160.16.203.210_443
+  type: vless
+  server: 160.16.203.210
   port: 443
-  uuid: Warpi-Free-Vpn-In-GooglePlay
+  uuid: f61a4285-7264-4d07-9408-7b9ba1922c26
   tls: true
   flow: ''
   udp: true
-  delay: 137.0
-- name: VLESS_92.118.232.161_8080
+  delay: 108.8
+- name: VLESS_153.121.45.101_443
   type: vless
-  server: 92.118.232.161
-  port: 8080
-  uuid: 9dc11620-987c-4344-9088-f46fdfae4054
-  tls: true
-  flow: ''
-  udp: true
-  delay: 137.2
-- name: VLESS_77.110.100.60_443
-  type: vless
-  server: 77.110.100.60
+  server: 153.121.45.101
   port: 443
-  uuid: dd52e17b-72cd-4bf7-bb33-2a0118c553d3
+  uuid: f61a4285-7264-4d07-9408-7b9ba1922c26
   tls: true
   flow: ''
   udp: true
-  delay: 137.4
-- name: VLESS_185.140.14.166_8443
-  type: vless
-  server: 185.140.14.166
-  port: 8443
-  uuid: 9e460075-dcb2-504a-b3d9-aab5c3095442
-  tls: true
-  flow: ''
-  udp: true
-  delay: 137.4
-- name: VLESS_45.88.182.24_25380
-  type: vless
-  server: 45.88.182.24
-  port: 25380
-  uuid: 237120d4-6f8e-47de-b50c-2c8218a720df
-  tls: true
-  flow: ''
-  udp: true
-  delay: 138.0
-- name: VLESS_91.98.203.226_443
-  type: vless
-  server: 91.98.203.226
-  port: 443
-  uuid: 6967a7f2-e8a7-497e-f72e-c989e9f896d7
-  tls: true
-  flow: ''
-  udp: true
-  delay: 138.1
-- name: VLESS_91.98.155.220_443
-  type: vless
-  server: 91.98.155.220
-  port: 443
-  uuid: 6967a7f2-e8a7-497e-f72e-c989e9f896d7
-  tls: true
-  flow: ''
-  udp: true
-  delay: 139.5
-- name: VLESS_212.95.34.97_21551
-  type: vless
-  server: 212.95.34.97
-  port: 21551
-  uuid: 3f8cac1e-b25a-4254-866d-3c2f8ca3b2dd
-  tls: true
-  flow: ''
-  udp: true
-  delay: 140.0
+  delay: 111.4
 - name: VLESS_5.181.21.72_443
   type: vless
   server: 5.181.21.72
@@ -151,31 +124,58 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 141.4
-- name: VLESS_104.238.159.218_443
+  delay: 137.0
+- name: VLESS_45.88.182.24_25380
   type: vless
-  server: 104.238.159.218
-  port: 443
-  uuid: 40f6058d-6cc1-4e4e-8c00-a5df8b7a8b58
+  server: 45.88.182.24
+  port: 25380
+  uuid: 237120d4-6f8e-47de-b50c-2c8218a720df
   tls: true
   flow: ''
   udp: true
-  delay: 142.0
-- name: VLESS_91.98.33.242_443
+  delay: 137.5
+- name: VLESS_92.118.232.161_8080
   type: vless
-  server: 91.98.33.242
-  port: 443
-  uuid: 95b1344a-2b59-419f-ab7d-2ff7e5c6aa34
+  server: 92.118.232.161
+  port: 8080
+  uuid: 9dc11620-987c-4344-9088-f46fdfae4054
   tls: true
   flow: ''
   udp: true
-  delay: 143.6
-- name: VLESS_91.99.216.175_443
+  delay: 138.1
+- name: VLESS_46.20.111.246_3035
   type: vless
-  server: 91.99.216.175
+  server: 46.20.111.246
+  port: 3035
+  uuid: d42223ff-aace-4c18-bacf-18d6abb9314f
+  tls: true
+  flow: ''
+  udp: true
+  delay: 138.6
+- name: VLESS_78.47.80.152_443
+  type: vless
+  server: 78.47.80.152
   port: 443
   uuid: Warpi-Free-Vpn-In-GooglePlay
   tls: true
   flow: ''
   udp: true
-  delay: 143.9
+  delay: 138.9
+- name: VLESS_49.13.10.207_443
+  type: vless
+  server: 49.13.10.207
+  port: 443
+  uuid: Warpi-Free-Vpn-In-GooglePlay
+  tls: true
+  flow: ''
+  udp: true
+  delay: 139.3
+- name: VLESS_164.92.143.135_47542
+  type: vless
+  server: 164.92.143.135
+  port: 47542
+  uuid: 02529660-52bf-4896-951a-1857c88d1dba
+  tls: true
+  flow: ''
+  udp: true
+  delay: 139.9
