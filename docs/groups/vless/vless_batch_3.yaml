@@ -1,31 +1,49 @@
 proxies:
-- name: VLESS_87.242.101.33_8443
+- name: VLESS_betty.ns.cloudflare.com_443
   type: vless
-  server: 87.242.101.33
-  port: 8443
-  uuid: 2a2a6062-003c-0001-b293-ee0d0416afee
+  server: betty.ns.cloudflare.com
+  port: 443
+  uuid: 94daa8ad-75ed-4dbf-a6de-d05036d98df5
   tls: true
   flow: ''
   udp: true
-  delay: 119.6
-- name: VLESS_217.16.24.170_8443
+  delay: 129.5
+- name: VLESS_45.92.176.55_1243
   type: vless
-  server: 217.16.24.170
-  port: 8443
-  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
+  server: 45.92.176.55
+  port: 1243
+  uuid: d29bde62-daa4-4804-9c69-6e23a4150006
   tls: true
   flow: ''
   udp: true
-  delay: 120.3
-- name: VLESS_204.216.216.23_1114
+  delay: 129.7
+- name: VLESS_norman.ns.cloudflare.com_443
   type: vless
-  server: 204.216.216.23
-  port: 1114
-  uuid: 6ba2eac6-0ec9-44ca-a42b-a8e23aafb530
+  server: norman.ns.cloudflare.com
+  port: 443
+  uuid: ee122f13-9b54-49b6-abc5-aa47b464fdb3
   tls: true
   flow: ''
   udp: true
-  delay: 120.4
+  delay: 130.6
+- name: VLESS_65.21.240.236_443
+  type: vless
+  server: 65.21.240.236
+  port: 443
+  uuid: 22948aee-4981-4ba1-b8df-7a2b494a8a28
+  tls: true
+  flow: ''
+  udp: true
+  delay: 131.2
+- name: VLESS_www.speedtest.net_2096
+  type: vless
+  server: www.speedtest.net
+  port: 2096
+  uuid: e999db7a-1b17-4da6-bc37-c9fa24af2e93
+  tls: true
+  flow: ''
+  udp: true
+  delay: 133.5
 - name: VLESS_5.180.45.176_4443
   type: vless
   server: 5.180.45.176
@@ -34,16 +52,25 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 121.5
-- name: VLESS_87.242.101.25_8443
+  delay: 137.3
+- name: VLESS_94.141.161.204_4443
   type: vless
-  server: 87.242.101.25
-  port: 8443
-  uuid: 2a2a6062-003c-0012-b293-ee0d0416afee
+  server: 94.141.161.204
+  port: 4443
+  uuid: 3121850a-24aa-41f9-936d-dbdf10a3b31f
   tls: true
   flow: ''
   udp: true
-  delay: 121.7
+  delay: 137.8
+- name: VLESS_51.250.109.47_1488
+  type: vless
+  server: 51.250.109.47
+  port: 1488
+  uuid: 4a6de183-2ad3-456c-b420-feeac81f6257
+  tls: true
+  flow: ''
+  udp: true
+  delay: 143.5
 - name: VLESS_217.16.24.170_443
   type: vless
   server: 217.16.24.170
@@ -52,7 +79,7 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 121.7
+  delay: 143.8
 - name: VLESS_89.144.20.173_12146
   type: vless
   server: 89.144.20.173
@@ -61,88 +88,16 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 125.2
-- name: VLESS_norman.ns.cloudflare.com_443
+  delay: 145.2
+- name: VLESS_217.16.24.170_8443
   type: vless
-  server: norman.ns.cloudflare.com
-  port: 443
-  uuid: 70c591a6-c871-422b-a5ac-5ef7df467dea
-  tls: true
-  flow: ''
-  udp: true
-  delay: 127.9
-- name: VLESS_87.242.100.24_8443
-  type: vless
-  server: 87.242.100.24
+  server: 217.16.24.170
   port: 8443
-  uuid: 2a2a6062-003c-0012-b293-ee0d0416afee
+  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
   tls: true
   flow: ''
   udp: true
-  delay: 128.2
-- name: VLESS_130.193.42.234_443
-  type: vless
-  server: 130.193.42.234
-  port: 443
-  uuid: 7e281f58-63b0-4e9a-a3fe-537e33e374b9
-  tls: true
-  flow: ''
-  udp: true
-  delay: 130.3
-- name: VLESS_brenna.ns.cloudflare.com_443
-  type: vless
-  server: brenna.ns.cloudflare.com
-  port: 443
-  uuid: 2fd8bc88-ec5e-4de6-8545-b5cbfc08e965
-  tls: true
-  flow: ''
-  udp: true
-  delay: 130.6
-- name: VLESS_betty.ns.cloudflare.com_443
-  type: vless
-  server: betty.ns.cloudflare.com
-  port: 443
-  uuid: d64fbcef-f032-48ae-8f52-d73976cb0c57
-  tls: true
-  flow: ''
-  udp: true
-  delay: 131.6
-- name: VLESS_87.242.103.47_8443
-  type: vless
-  server: 87.242.103.47
-  port: 8443
-  uuid: 2a2a6062-003c-0012-b293-ee0d0416afee
-  tls: true
-  flow: ''
-  udp: true
-  delay: 132.3
-- name: VLESS_31.44.0.63_58349
-  type: vless
-  server: 31.44.0.63
-  port: 58349
-  uuid: 48a8cab5-ce75-4c8a-90f5-dcd020c89b4b
-  tls: true
-  flow: ''
-  udp: true
-  delay: 142.6
-- name: VLESS_ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz_443
-  type: vless
-  server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
-  port: 443
-  uuid: 0e8a6896-ad90-4a3b-89a3-77d64aa409e2
-  tls: true
-  flow: ''
-  udp: true
-  delay: 158.3
-- name: VLESS_154.31.113.124_443
-  type: vless
-  server: 154.31.113.124
-  port: 443
-  uuid: b964cfbe-5f8a-47ae-9f14-4a6e36bfed2b
-  tls: true
-  flow: ''
-  udp: true
-  delay: 159.8
+  delay: 145.8
 - name: VLESS_138.2.50.155_38487
   type: vless
   server: 138.2.50.155
@@ -151,31 +106,76 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 164.6
-- name: VLESS_t18.qifei.app_443
+  delay: 147.6
+- name: VLESS_51.250.99.190_1488
   type: vless
-  server: t18.qifei.app
-  port: 443
-  uuid: b98d4c6e-6770-4a31-8256-a4750cdea0e7
+  server: 51.250.99.190
+  port: 1488
+  uuid: 4a6de183-2ad3-456c-b420-feeac81f6257
   tls: true
   flow: ''
   udp: true
-  delay: 192.8
-- name: VLESS_clyde.ns.cloudflare.com_443
+  delay: 148.7
+- name: VLESS_cosmin.ns.cloudflare.com_443
   type: vless
-  server: clyde.ns.cloudflare.com
+  server: cosmin.ns.cloudflare.com
   port: 443
-  uuid: fae01ea6-1fc4-44fa-90c6-e2e8f5f16b44
+  uuid: 7270612b-49f6-4b04-999c-34d8263da767
   tls: true
   flow: ''
   udp: true
-  delay: 206.2
-- name: VLESS_dl.huskar.fonixapp.org_443
+  delay: 151.2
+- name: VLESS_m42a.vip784.com_33801
   type: vless
-  server: dl.huskar.fonixapp.org
-  port: 443
-  uuid: 6526d72e-95b3-460d-a2e6-1b0b66d18b60
+  server: m42a.vip784.com
+  port: 33801
+  uuid: 5f5d90b3-1fdd-4b29-bddc-586c6d3e220e
   tls: true
   flow: ''
   udp: true
-  delay: 218.0
+  delay: 153.7
+- name: VLESS_m37a.vip784.com_33801
+  type: vless
+  server: m37a.vip784.com
+  port: 33801
+  uuid: 0a06d540-6fdd-416c-bdc3-54686f1f3659
+  tls: true
+  flow: ''
+  udp: true
+  delay: 153.8
+- name: VLESS_ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz_443
+  type: vless
+  server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
+  port: 443
+  uuid: 0e8a6896-ad90-4a3b-89a3-77d64aa409e2
+  tls: true
+  flow: ''
+  udp: true
+  delay: 157.2
+- name: VLESS_delilah.ns.cloudflare.com_443
+  type: vless
+  server: delilah.ns.cloudflare.com
+  port: 443
+  uuid: d37d61da-e50d-4f7f-9969-7f0136f97953
+  tls: true
+  flow: ''
+  udp: true
+  delay: 157.3
+- name: VLESS_m35a.vip784.com_33801
+  type: vless
+  server: m35a.vip784.com
+  port: 33801
+  uuid: a959f004-f691-4a6a-80e8-d1b5d4d85e12
+  tls: true
+  flow: ''
+  udp: true
+  delay: 167.2
+- name: VLESS_pol-0001-xr.packet-drop-society.net_443
+  type: vless
+  server: pol-0001-xr.packet-drop-society.net
+  port: 443
+  uuid: ee9b2135-b149-437e-995a-bfadfad342f5
+  tls: true
+  flow: ''
+  udp: true
+  delay: 173.8
