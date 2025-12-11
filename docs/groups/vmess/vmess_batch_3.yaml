@@ -1,18 +1,32 @@
 proxies:
-- name: 🇫🇷 FR_49
+- name: 🇸🇬 SG_185
   type: vmess
-  server: 45.136.12.37
-  port: 20521
-  uuid: 090d0bd9-f9c4-4c3b-8aae-ffa678765935
+  server: 68.183.178.131
+  port: 58607
+  uuid: c11c32cb-27b3-4afa-c0f3-fb250aa4959e
   alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
     path: /
     headers:
+      Host: www.12333.monster
+  delay: 173.3
+- name: 🇧🇷[openproxylist.com] vmess-BR
+  type: vmess
+  server: 38.180.16.86
+  port: 36236
+  uuid: a58bc1a5-8c18-49ff-9453-c331b52f45dc
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
       Host: ''
-  delay: 190.4
+  delay: 184.7
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: 156.238.238.194
@@ -26,40 +40,26 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 192.1
+  delay: 189.4
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: 47.243.213.247
-  port: 53860
-  uuid: 63f2dca7-434c-444c-a9a1-130b377218c5
+  server: 8.218.199.111
+  port: 8080
+  uuid: f55db42d-ee52-4a47-880b-6f7b123ab222
   alterId: 0
   cipher: auto
   tls: false
   network: ws
   ws-opts:
-    path: /arki
+    path: /
     headers:
       Host: ''
-  delay: 195.7
-- name: 🇭🇰[openproxylist.com] vmess-HK
+  delay: 194.6
+- name: 🇹🇷[openproxylist.com] vmess-TR
   type: vmess
-  server: 47.242.140.52
-  port: 48219
-  uuid: 006893c6-79b1-4c44-94ff-b8bbea065f1f
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: ''
-  delay: 196.0
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 8.218.116.26
-  port: 32228
-  uuid: e4767e9f-ed00-4f31-a984-a918bdd9b09c
+  server: 45.89.52.207
+  port: 39651
+  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
   alterId: 0
   cipher: auto
   tls: false
@@ -68,162 +68,8 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 196.5
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 47.243.51.237
-  port: 27165
-  uuid: be5f65df-e104-4e2a-9391-d10454da7df1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /arki
-    headers:
-      Host: ''
-  delay: 201.2
-- name: 🇰🇷[openproxylist.com] vmess-KR
-  type: vmess
-  server: 49.128.204.85
-  port: 16629
-  uuid: 2c78877c-6472-45da-ae89-9b9d6e3ec5e6
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /sfgjmero45
-    headers:
-      Host: ''
-  delay: 204.3
-- name: 🇸🇬 SG_263
-  type: vmess
-  server: 68.183.178.131
-  port: 58607
-  uuid: c11c32cb-27b3-4afa-c0f3-fb250aa4959e
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: www.12333.monster
-  delay: 214.8
-- name: _11
-  type: vmess
-  server: c92d9037-sunz40-suqjqq-1pr35.hk3.p5pv.com
-  port: 80
-  uuid: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 240.0
-- name: 🇰🇷[openproxylist.com] vmess-KR
-  type: vmess
-  server: seoul03.zgjok.com
-  port: 443
-  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: seoul03.zgjok.com
-  delay: 246.2
-- name: 🇭🇰 HK_69
-  type: vmess
-  server: 9d27188f-t00kg0-t9byd7-1jfvb.hk3.p5pv.com
-  port: 80
-  uuid: 06b2ac52-fcc6-11ec-bb74-f23c9164ca5d
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 258.5
-- name: 🇭🇰 HK_70
-  type: vmess
-  server: hkt.gotochinatown.net
-  port: 80
-  uuid: 384d1b42-655f-11ed-a8bf-f23c91cfbbc9
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 263.9
-- name: 🇭🇰 HK_162
-  type: vmess
-  server: 8546e833-sv4n40-t4v3jz-1k8ga.hk3.p5pv.com
-  port: 80
-  uuid: f860f2da-5035-11ed-bb74-f23c9164ca5d
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 265.7
-- name: 🇭🇰 HK_160
-  type: vmess
-  server: 865c5c01-sv4n40-t65a3e-tqgz.hk3.p5pv.com
-  port: 80
-  uuid: 88da0d21-b25d-11ec-b9f7-f23c91cfbbc9
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 266.5
-- name: 🇭🇰 HK_167
-  type: vmess
-  server: f92a4a6b-sv2sg0-swkmdk-1imi4.hk3.p5pv.com
-  port: 80
-  uuid: 40fb1315-191a-11ed-b0ca-f23c91cfbbc9
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 267.5
-- name: 🇭🇰 HK_174
-  type: vmess
-  server: 272ffc58-sv2sg0-t4v3jz-1k8ga.hk3.p5pv.com
-  port: 80
-  uuid: f860f2da-5035-11ed-bb74-f23c9164ca5d
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 269.6
-- name: _13
+  delay: 219.2
+- name: _14
   type: vmess
   server: 580abbb4-suvds0-sv5llu-1ldl3.hk3.p5pv.com
   port: 80
@@ -236,12 +82,12 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 269.7
-- name: 🇭🇰 HK_71
+  delay: 338.9
+- name: 🇭🇰 HK_69
   type: vmess
-  server: 5bf9e2f8-t15b40-t6eg6k-1pckg.hk3.p5pv.com
+  server: hkt.gotochinatown.net
   port: 80
-  uuid: 526a1128-7487-11ee-9bca-f23c913c8d2b
+  uuid: e1dee7c0-cff7-11eb-a8bf-f23c91cfbbc9
   alterId: 2
   cipher: auto
   tls: false
@@ -250,12 +96,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 269.7
-- name: 🇭🇰 HK_161
+  delay: 339.0
+- name: 🇭🇰 HK_74
   type: vmess
-  server: 2e3ac5d1-sv2sg0-t7udc0-1pqhp.hk3.p5pv.com
+  server: 3a0b963a-t02f40-tiuovf-v3c2.hk3.p5pv.com
   port: 80
-  uuid: b02327ac-a49a-11ef-a673-f23c913c8d2b
+  uuid: 5f091cbe-fb34-11ea-9777-f23c9164ca5d
   alterId: 2
   cipher: auto
   tls: false
@@ -264,8 +110,64 @@ proxies:
     path: /
     headers:
       Host: broadcastlv.chat.bilibili.com
-  delay: 270.0
-- name: 🇭🇰 HK_158
+  delay: 345.9
+- name: 🇭🇰 HK_73
+  type: vmess
+  server: 24671c5a-sv4n40-swjbgr-1kcpe.hk3.p5pv.com
+  port: 80
+  uuid: 3f514ea2-4662-11ed-a8bf-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 352.6
+- name: 🇭🇰 HK_78
+  type: vmess
+  server: 548481b2-sv2sg0-t2hqlr-1s3mx.hk3.p5pv.com
+  port: 80
+  uuid: b58095f0-52dc-11ef-bc74-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 357.1
+- name: 🇭🇰 HK_80
+  type: vmess
+  server: f0364aea-t13gg0-t1rksu-1ssud.hk3.p5pv.com
+  port: 80
+  uuid: e6aa39b6-f0b5-11ef-bca1-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 371.2
+- name: 🇭🇰 HK_90
+  type: vmess
+  server: eb1539c9-sv0xs0-ta5i1s-1j61y.hk3.p5pv.com
+  port: 80
+  uuid: f13f964e-f06c-11ec-a858-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 392.3
+- name: 🇭🇰 HK_89
   type: vmess
   server: 61fc54d4-sv4n40-ta5i1s-1j61y.hk3.p5pv.com
   port: 80
@@ -278,4 +180,102 @@ proxies:
     path: /
     headers:
       Host: broadcastlv.chat.bilibili.com
-  delay: 271.4
+  delay: 394.1
+- name: 🇭🇰 HK_87
+  type: vmess
+  server: fb6f1580-sv2sg0-svpmdc-nx3b.hk3.p5pv.com
+  port: 80
+  uuid: 32315324-cf6b-11ed-979b-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 400.4
+- name: 🇭🇰 HK_94
+  type: vmess
+  server: 4f8acdc9-sv0xs0-sw5wi7-ufc0.hk3.p5pv.com
+  port: 80
+  uuid: 22308988-8548-11ea-a22e-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 401.5
+- name: 🇭🇰 HK_92
+  type: vmess
+  server: e507f11c-sv2sg0-sv7gs8-1lkbs.hk3.p5pv.com
+  port: 80
+  uuid: 5a4c13ae-6673-11ee-a149-f23c9164ca5d
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 402.9
+- name: 🇭🇰 HK_95
+  type: vmess
+  server: dfed4efb-t4n8g0-t636g9-luwe.hk3.p5pv.com
+  port: 80
+  uuid: a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: broadcastlv.chat.bilibili.com
+  delay: 408.9
+- name: 🇺🇸 US_213
+  type: vmess
+  server: lt.fxlcn.com
+  port: 45288
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: lt.fxlcn.com
+  delay: 668.9
+- name: 🇺🇸 US_211
+  type: vmess
+  server: lt.fxlcn.com
+  port: 45294
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 669.3
+- name: 🇺🇸 US_210
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45237
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fa.fxlcn.com
+  delay: 669.8
