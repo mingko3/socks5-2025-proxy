@@ -1,4 +1,22 @@
 proxies:
+- name: VLESS_89.144.20.173_12146
+  type: vless
+  server: 89.144.20.173
+  port: 12146
+  uuid: 7b379ab3-6402-4d32-84e1-3abe074ed1c4
+  tls: true
+  flow: ''
+  udp: true
+  delay: 139.1
+- name: VLESS_norman.ns.cloudflare.com_443
+  type: vless
+  server: norman.ns.cloudflare.com
+  port: 443
+  uuid: 53f0bca8-f170-4ef7-8031-c7d441189dbf
+  tls: true
+  flow: ''
+  udp: true
+  delay: 145.6
 - name: VLESS_167.17.70.16_8443
   type: vless
   server: 167.17.70.16
@@ -7,7 +25,16 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 147.5
+  delay: 147.4
+- name: VLESS_www.speedtest.net_443
+  type: vless
+  server: www.speedtest.net
+  port: 443
+  uuid: 73856b73-19d2-47e6-b991-5eaa421161ea
+  tls: true
+  flow: ''
+  udp: true
+  delay: 152.6
 - name: VLESS_138.2.50.155_38487
   type: vless
   server: 138.2.50.155
@@ -16,70 +43,16 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 147.5
-- name: VLESS_147.45.234.51_443
+  delay: 163.6
+- name: VLESS_zula.ir_443
   type: vless
-  server: 147.45.234.51
+  server: zula.ir
   port: 443
-  uuid: fd0718a1-c463-4297-8ba9-a7f4b93ce436
+  uuid: 73856b73-19d2-47e6-b991-5eaa421161ea
   tls: true
   flow: ''
   udp: true
-  delay: 147.5
-- name: VLESS_51.250.99.190_1488
-  type: vless
-  server: 51.250.99.190
-  port: 1488
-  uuid: 4a6de183-2ad3-456c-b420-feeac81f6257
-  tls: true
-  flow: ''
-  udp: true
-  delay: 147.7
-- name: VLESS_51.250.24.245_4249
-  type: vless
-  server: 51.250.24.245
-  port: 4249
-  uuid: 4a6de183-2ad3-456c-b420-feeac81f6257
-  tls: true
-  flow: ''
-  udp: true
-  delay: 148.2
-- name: VLESS_51.250.109.47_1488
-  type: vless
-  server: 51.250.109.47
-  port: 1488
-  uuid: 4a6de183-2ad3-456c-b420-feeac81f6257
-  tls: true
-  flow: ''
-  udp: true
-  delay: 148.3
-- name: VLESS_217.16.24.170_8443
-  type: vless
-  server: 217.16.24.170
-  port: 8443
-  uuid: a91e64f0-9295-499d-bf4a-661ad99d4938
-  tls: true
-  flow: ''
-  udp: true
-  delay: 148.8
-- name: VLESS_51.250.25.11_1488
-  type: vless
-  server: 51.250.25.11
-  port: 1488
-  uuid: 4a6de183-2ad3-456c-b420-feeac81f6257
-  tls: true
-  flow: ''
-  udp: true
-  delay: 152.7
-- name: VLESS_51.250.20.121_443
-  type: vless
-  server: 51.250.20.121
-  port: 443
-  uuid: 20cf5921-f7fa-47c5-81ae-947fbef83a4d
-  tls: true
-  flow: ''
-  udp: true
-  delay: 182.5
+  delay: 164.0
 - name: VLESS_ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz_443
   type: vless
   server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
@@ -88,25 +61,25 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 184.7
-- name: VLESS_brenna.ns.cloudflare.com_443
+  delay: 178.7
+- name: VLESS_sinabigo.ir_443
   type: vless
-  server: brenna.ns.cloudflare.com
+  server: sinabigo.ir
   port: 443
-  uuid: 1b2c91ab-f6c9-42f8-b2c6-8de0ac133d63
+  uuid: fa6cdf9f-cfac-4ca8-9b91-555a1d2eb0ba
   tls: true
   flow: ''
   udp: true
-  delay: 192.1
-- name: VLESS_m80a.vip784.com_33801
+  delay: 190.7
+- name: VLESS_newsletter.mydailynews.info_443
   type: vless
-  server: m80a.vip784.com
-  port: 33801
-  uuid: 0945839b-113a-4272-a67c-1852b990abf5
+  server: newsletter.mydailynews.info
+  port: 443
+  uuid: 7578f457-0f1f-416d-b136-f833f4544e24
   tls: true
   flow: ''
   udp: true
-  delay: 214.1
+  delay: 225.3
 - name: VLESS_38.134.189.186_443
   type: vless
   server: 38.134.189.186
@@ -115,52 +88,43 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 215.6
-- name: VLESS_m90a.vip784.com_33801
+  delay: 227.0
+- name: VLESS_serena.ns.cloudflare.com_443
   type: vless
-  server: m90a.vip784.com
-  port: 33801
-  uuid: 7d9223e9-9ab1-4a8c-b8ec-3bc4fb937cd8
-  tls: true
-  flow: ''
-  udp: true
-  delay: 221.6
-- name: VLESS_free-server.techsonic.cloud_443
-  type: vless
-  server: free-server.techsonic.cloud
+  server: serena.ns.cloudflare.com
   port: 443
-  uuid: a4cb890e-8251-488e-9439-3403c9a58e55
+  uuid: f028a8c0-6763-4558-aee3-2563db9d7825
   tls: true
   flow: ''
   udp: true
-  delay: 223.9
-- name: VLESS_m42a.vip784.com_33801
+  delay: 236.5
+- name: VLESS_betty.ns.cloudflare.com_443
   type: vless
-  server: m42a.vip784.com
-  port: 33801
-  uuid: 5f5d90b3-1fdd-4b29-bddc-586c6d3e220e
+  server: betty.ns.cloudflare.com
+  port: 443
+  uuid: 94daa8ad-75ed-4dbf-a6de-d05036d98df5
   tls: true
   flow: ''
   udp: true
-  delay: 229.1
-- name: VLESS_m89a.vip784.com_33801
+  delay: 241.5
+- name: VLESS_delilah.ns.cloudflare.com_443
   type: vless
-  server: m89a.vip784.com
-  port: 33801
-  uuid: 5313b989-41c7-4878-b60c-50bf3353b7d3
+  server: delilah.ns.cloudflare.com
+  port: 443
+  uuid: d37d61da-e50d-4f7f-9969-7f0136f97953
   tls: true
   flow: ''
   udp: true
-  delay: 229.6
-- name: VLESS_m10a.vip784.com_33801
+  delay: 250.1
+- name: VLESS_cosmin.ns.cloudflare.com_443
   type: vless
-  server: m10a.vip784.com
-  port: 33801
-  uuid: da284625-10d0-4d38-8276-3f1b7a195e99
+  server: cosmin.ns.cloudflare.com
+  port: 443
+  uuid: 7270612b-49f6-4b04-999c-34d8263da767
   tls: true
   flow: ''
   udp: true
-  delay: 233.1
+  delay: 252.5
 - name: VLESS_170.64.232.45_28899
   type: vless
   server: 170.64.232.45
@@ -169,13 +133,49 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 246.5
-- name: VLESS_m57a.vip784.com_33801
+  delay: 255.3
+- name: VLESS_max26.musicdoon.ir_8080
   type: vless
-  server: m57a.vip784.com
-  port: 33801
-  uuid: f0ee92ea-68ac-4c13-8529-d302baaa9f0d
+  server: max26.musicdoon.ir
+  port: 8080
+  uuid: 817e76f9-0107-42bb-9552-979ddde5ff77
   tls: true
   flow: ''
   udp: true
-  delay: 274.6
+  delay: 274.2
+- name: VLESS_max44.musicdoon.ir_8080
+  type: vless
+  server: max44.musicdoon.ir
+  port: 8080
+  uuid: 817e76f9-0107-42bb-9552-979ddde5ff77
+  tls: true
+  flow: ''
+  udp: true
+  delay: 275.2
+- name: VLESS_max17.musicdoon.ir_8080
+  type: vless
+  server: max17.musicdoon.ir
+  port: 8080
+  uuid: 817e76f9-0107-42bb-9552-979ddde5ff77
+  tls: true
+  flow: ''
+  udp: true
+  delay: 297.5
+- name: VLESS_max21.musicdoon.ir_8080
+  type: vless
+  server: max21.musicdoon.ir
+  port: 8080
+  uuid: 817e76f9-0107-42bb-9552-979ddde5ff77
+  tls: true
+  flow: ''
+  udp: true
+  delay: 303.0
+- name: VLESS_2-germany.geodema.network_8443
+  type: vless
+  server: 2-germany.geodema.network
+  port: 8443
+  uuid: eb7c7631-6c7c-4f34-a65a-974b4565d01d
+  tls: true
+  flow: ''
+  udp: true
+  delay: 304.7
