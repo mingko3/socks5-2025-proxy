@@ -1,29 +1,43 @@
 proxies:
-- name: 🇹🇷[openproxylist.com] vmess-TR
+- name: 🇺🇸 US_175
   type: vmess
-  server: 45.89.52.207
-  port: 39651
-  uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
+  server: fa.fxlcn.com
+  port: 45237
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
   tls: false
   network: tcp
   ws-opts:
-    path: ''
+    path: /
     headers:
-      Host: ''
-  delay: 1148.4
-- name: 美国 CloudFlare节点
+      Host: fa.fxlcn.com
+  delay: 538.7
+- name: 🇷🇺 RU_148
   type: vmess
-  server: yx1.xn--11x.org
-  port: 2052
-  uuid: 705a4b47-c2d7-4c0e-8963-e52a18a4070b
+  server: ye.fxlcn.com
+  port: 45245
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
   tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ye.fxlcn.com
+  delay: 552.0
+- name: 🇹🇭[openproxylist.com] vmess-TH
+  type: vmess
+  server: n1749032917.kzxds.cn
+  port: 443
+  uuid: cd66eeea-643f-4826-a4f3-0d2f57a5ad06
+  alterId: 0
+  cipher: auto
+  tls: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: 2112136940.online.video.downloader.0123456789ru.xn--11x.org
-  delay: 1647.5
+      Host: n1749032917.kzxds.cn
+  delay: 634.5
