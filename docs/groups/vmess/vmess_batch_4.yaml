@@ -1,8 +1,8 @@
 proxies:
-- name: 🇺🇸 US_175
+- name: 🇺🇸 US_195
   type: vmess
   server: fa.fxlcn.com
-  port: 45237
+  port: 45247
   uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
@@ -11,13 +11,13 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: fa.fxlcn.com
-  delay: 538.7
-- name: 🇷🇺 RU_148
+      Host: ''
+  delay: 682.9
+- name: 🇳🇱[openproxylist.com] vmess-NL
   type: vmess
-  server: ye.fxlcn.com
-  port: 45245
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 0
   cipher: auto
   tls: false
@@ -25,19 +25,33 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: ye.fxlcn.com
-  delay: 552.0
-- name: 🇹🇭[openproxylist.com] vmess-TH
+      Host: v30.hdacd.com
+  delay: 721.2
+- name: 美国 CloudFlare节点
   type: vmess
-  server: n1749032917.kzxds.cn
+  server: cf.fovi.tk
   port: 443
-  uuid: cd66eeea-643f-4826-a4f3-0d2f57a5ad06
+  uuid: bf67437e-6c90-45ca-abc2-c7240a5ce2aa
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
-    path: /
+    path: /eisasqa
     headers:
-      Host: n1749032917.kzxds.cn
-  delay: 634.5
+      Host: foxpol.fovi.tk
+  delay: 807.9
+- name: 🇺🇸 US_179
+  type: vmess
+  server: aflzzul.meiquankongjian.com
+  port: 51515
+  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /564dfa20/
+    headers:
+      Host: aflzzul.meiquankongjian.com
+  delay: 945.8
