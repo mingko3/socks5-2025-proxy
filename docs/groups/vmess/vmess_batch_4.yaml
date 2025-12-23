@@ -1,15 +1,57 @@
 proxies:
-- name: 🇫🇷 FR_43
+- name: 🇺🇸 US_195
   type: vmess
-  server: 45.136.12.37
-  port: 38141
-  uuid: fd291be6-b48d-43a1-da38-66c7f80e2f80
+  server: lt.fxlcn.com
+  port: 45231
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
   tls: false
-  network: none
+  network: tcp
   ws-opts:
     path: /
     headers:
       Host: ''
-  delay: 1248.3
+  delay: 415.6
+- name: 🇺🇸 US_194
+  type: vmess
+  server: lt.fxlcn.com
+  port: 45291
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 430.1
+- name: 🇺🇸 US_196
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45237
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fa.fxlcn.com
+  delay: 664.0
+- name: 🇺🇸 US_193
+  type: vmess
+  server: fa.fxlcn.com
+  port: 45247
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 685.1
