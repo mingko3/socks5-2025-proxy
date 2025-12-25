@@ -1,18 +1,4 @@
 proxies:
-- name: 🇦🇹[openproxylist.com] vmess-AT
-  type: vmess
-  server: 172.66.40.99
-  port: 443
-  uuid: 305e9e74-dc3a-11f0-84da-abeeaa5a5248
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /vpnjantit?telegram-id---v2box-v2/www.speedtest.net:443?ed=2048
-    headers:
-      Host: turkye.looloolooloo.com
-  delay: 1.9
 - name: 英国 V2CROSS.COM
   type: vmess
   server: 82.198.246.97
@@ -25,51 +11,9 @@ proxies:
   ws-opts:
     path: ''
     headers:
-      Host: trojan.burgerip.co.uk
-  delay: 9.0
-- name: 🇺🇸 US_177
-  type: vmess
-  server: 216.227.168.157
-  port: 45258
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: lt.fxlcn.com
-  delay: 9.0
-- name: 🇺🇸 US_175
-  type: vmess
-  server: 216.227.168.157
-  port: 45417
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
       Host: ''
-  delay: 9.5
+  delay: 8.8
 - name: 🇺🇸 US_182
-  type: vmess
-  server: 216.227.168.157
-  port: 45263
-  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 10.2
-- name: 🇺🇸 US_193
   type: vmess
   server: 216.227.168.157
   port: 45294
@@ -82,7 +26,49 @@ proxies:
     path: /
     headers:
       Host: lt.fxlcn.com
-  delay: 11.6
+  delay: 14.4
+- name: 🇺🇸 US_173
+  type: vmess
+  server: 216.227.168.157
+  port: 45263
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 14.7
+- name: 🇺🇸 US_181
+  type: vmess
+  server: 216.227.168.157
+  port: 45258
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: lt.fxlcn.com
+  delay: 14.7
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: sy4.620720.xyz
+  port: 443
+  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sy4.620720.xyz
+  delay: 18.4
 - name: 美国 CloudFlare节点
   type: vmess
   server: t1.620720.xyz
@@ -96,22 +82,36 @@ proxies:
     path: /
     headers:
       Host: t1.620720.xyz
-  delay: 39.5
-- name: 🇺🇸 US_170
+  delay: 20.8
+- name: 🇺🇸 US_167
   type: vmess
-  server: 216.238.86.158
-  port: 34460
-  uuid: 90be214d-048c-4ea2-a602-b8e4d4e51e36
+  server: 216.227.168.157
+  port: 45417
+  uuid: 469e0b31-30c3-4dab-800d-711232634ce1
   alterId: 0
   cipher: auto
   tls: false
-  network: none
+  network: tcp
   ws-opts:
     path: /
     headers:
       Host: ''
-  delay: 49.6
-- name: 🇺🇸 US_168
+  delay: 24.6
+- name: 美国 CloudFlare节点
+  type: vmess
+  server: hgtrojan.zabc.net
+  port: 2083
+  uuid: e6395c20-4571-4b34-d6b1-55a5d36e49ea
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /e6395c20
+    headers:
+      Host: ''
+  delay: 25.3
+- name: 🇺🇸 US_160
   type: vmess
   server: 216.238.87.47
   port: 27502
@@ -124,12 +124,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 53.7
-- name: 🇺🇸 US_178
+  delay: 49.0
+- name: 🇺🇸 US_168
   type: vmess
-  server: 47.253.228.138
-  port: 22524
-  uuid: 80845fcc-f862-45fe-c1d3-0a7120373712
+  server: 216.238.86.158
+  port: 34460
+  uuid: 90be214d-048c-4ea2-a602-b8e4d4e51e36
   alterId: 0
   cipher: auto
   tls: false
@@ -138,8 +138,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 62.0
-- name: 🇺🇸 US_181
+  delay: 49.4
+- name: 🇺🇸 US_171
   type: vmess
   server: 15.235.83.228
   port: 443
@@ -152,8 +152,22 @@ proxies:
     path: /linkvws
     headers:
       Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-  delay: 64.8
-- name: 🇺🇸 US_174
+  delay: 64.6
+- name: 🇺🇸 US_169
+  type: vmess
+  server: 148.113.176.192
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: linkvws
+    headers:
+      Host: fapeng.org
+  delay: 64.9
+- name: 🇺🇸 US_164
   type: vmess
   server: 15.235.50.172
   port: 443
@@ -166,21 +180,7 @@ proxies:
     path: /linkvws
     headers:
       Host: baradiha.com
-  delay: 66.3
-- name: 🏁 ZZ_232
-  type: vmess
-  server: 134.195.198.147
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: ''
-  delay: 66.6
+  delay: 65.3
 - name: 🇺🇸 US_176
   type: vmess
   server: 15.235.83.227
@@ -194,12 +194,26 @@ proxies:
     path: /linkvws
     headers:
       Host: mankadmu.com
-  delay: 67.1
-- name: 🇺🇸 US_180
+  delay: 66.0
+- name: 🏁 ZZ_224
   type: vmess
-  server: 47.253.197.26
-  port: 12056
-  uuid: dd7be7f1-38ff-45e6-f1e5-b20c2190f527
+  server: 134.195.198.147
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: ''
+  delay: 66.2
+- name: 🇺🇸 US_162
+  type: vmess
+  server: 47.253.228.138
+  port: 22524
+  uuid: 80845fcc-f862-45fe-c1d3-0a7120373712
   alterId: 0
   cipher: auto
   tls: false
@@ -222,22 +236,8 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 69.3
-- name: 🇺🇸 US_195
-  type: vmess
-  server: 148.113.176.192
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: linkvws
-    headers:
-      Host: fapeng.org
-  delay: 71.8
-- name: 🇺🇸 US_164
+  delay: 69.5
+- name: 🇺🇸 US_178
   type: vmess
   server: 38.99.82.193
   port: 443
@@ -250,8 +250,22 @@ proxies:
     path: /linkvws
     headers:
       Host: tilebani.com
-  delay: 72.2
-- name: 🇧🇪 BE_34
+  delay: 71.6
+- name: 🇯🇵 JP_74
+  type: vmess
+  server: cgroup.node1.v.nodelist-airport.com
+  port: 53231
+  uuid: 8f3a835c-8a45-480d-ae35-1deb2c52dcae
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: cgroup.node1.v.nodelist-airport.com
+  delay: 124.2
+- name: 🇧🇪 BE_25
   type: vmess
   server: 57.128.189.240
   port: 443
@@ -264,18 +278,4 @@ proxies:
     path: /linkvws
     headers:
       Host: ''
-  delay: 141.7
-- name: 🇫🇷 FR_45
-  type: vmess
-  server: 91.134.8.101
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /linkvws
-    headers:
-      Host: ''
-  delay: 144.1
+  delay: 142.0

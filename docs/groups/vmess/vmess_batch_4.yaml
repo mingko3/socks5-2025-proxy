@@ -1,5 +1,5 @@
 proxies:
-- name: 🇷🇺 RU_144
+- name: 🇷🇺 RU_140
   type: vmess
   server: fa.fxlcn.com
   port: 45215
@@ -12,46 +12,60 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 558.7
-- name: 🇺🇸 US_194
+  delay: 307.4
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 52512
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  server: n1747624280.lie5d.cyou
+  port: 443
+  uuid: 49dcf4b4-81eb-4fe2-91d3-86dc2e27ced5
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1747624280.lie5d.cyou
+  delay: 370.7
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: n1761214906.wpg27.xyz
+  port: 443
+  uuid: c28a6258-7baa-40fc-8a51-87f59c847cd7
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1761214906.wpg27.xyz
+  delay: 394.2
+- name: 🇳🇱[openproxylist.com] vmess-NL
+  type: vmess
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 0
   cipher: auto
   tls: false
-  network: ws
+  network: tcp
   ws-opts:
-    path: /564dfa20/
+    path: /
     headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 917.1
-- name: 🇺🇸 US_191
+      Host: v30.hdacd.com
+  delay: 398.9
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 52511
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  server: n1761214911.74qxv.top
+  port: 443
+  uuid: 372c1939-299d-4946-9633-5ffa971f8b67
   alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
-    path: /564dfa20/
+    path: /
     headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 918.1
-- name: 🇺🇸 US_192
-  type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 52513
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /564dfa20/
-    headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 918.7
+      Host: n1761214911.74qxv.top
+  delay: 535.1
