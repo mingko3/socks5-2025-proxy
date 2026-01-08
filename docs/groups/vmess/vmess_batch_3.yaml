@@ -1,19 +1,5 @@
 proxies:
-- name: 🇭🇰 HK_77
-  type: vmess
-  server: 156.245.232.15
-  port: 28985
-  uuid: cbe408ad-cc35-4e4e-efca-ac5c095bb99d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: none
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 217.5
-- name: 🇸🇬 SG_175
+- name: 🇸🇬 SG_166
   type: vmess
   server: 8.218.105.196
   port: 52752
@@ -26,7 +12,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 220.7
+  delay: 211.2
+- name: 🇭🇰 HK_72
+  type: vmess
+  server: 156.245.232.15
+  port: 28985
+  uuid: cbe408ad-cc35-4e4e-efca-ac5c095bb99d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: none
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 212.9
 - name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
   server: 150.109.11.193
@@ -40,8 +40,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 229.2
-- name: 🇯🇵 JP_102
+  delay: 218.6
+- name: 🇯🇵 JP_94
   type: vmess
   server: seoul03.zgjok.com
   port: 443
@@ -54,12 +54,12 @@ proxies:
     path: /
     headers:
       Host: seoul03.zgjok.com
-  delay: 249.9
-- name: 🇭🇰 HK_61
+  delay: 219.0
+- name: 🇭🇰 HK_60
   type: vmess
   server: hkt.gotochinatown.net
   port: 80
-  uuid: 9cccea7a-b6ab-11eb-a0fc-f23c913c8d2b
+  uuid: bb85e074-b0c2-11ea-ad28-f23c913c8d2b
   alterId: 2
   cipher: auto
   tls: false
@@ -67,65 +67,9 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 254.6
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: zula.ir
-  port: 8080
-  uuid: nasnet
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /nasnet/cdn?ed=2560
-    headers:
-      Host: nasnet-511952424.mcitel.co
-  delay: 266.9
-- name: 🇯🇵 JP_103
-  type: vmess
-  server: cgroup.node1.v.nodelist-airport.com
-  port: 53231
-  uuid: 8f3a835c-8a45-480d-ae35-1deb2c52dcae
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: cgroup.node1.v.nodelist-airport.com
-  delay: 281.6
-- name: 🇺🇸 US_193
-  type: vmess
-  server: cgroup.node3.v.nodelist-airport.com
-  port: 24321
-  uuid: 8f3a835c-8a45-480d-ae35-1deb2c52dcae
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: cgroup.node3.v.nodelist-airport.com
-  delay: 284.8
-- name: 🇺🇸 US_198
-  type: vmess
-  server: n1753598452.wpg27.xyz
-  port: 443
-  uuid: 4f23eb7c-ef2f-43b0-90dd-f2b8a75954a5
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1753598452.wpg27.xyz
-  delay: 432.8
-- name: 🇫🇷 FR_43
+      Host: ''
+  delay: 345.9
+- name: 🇫🇷 FR_42
   type: vmess
   server: 45.136.12.37
   port: 20521
@@ -138,49 +82,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 602.3
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: n1761214908.wpg27.xyz
-  port: 443
-  uuid: 3514a93f-bb26-4442-8f99-971b2ff3388a
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1761214908.wpg27.xyz
-  delay: 685.2
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: n1761214907.74qxv.top
-  port: 443
-  uuid: 4c17399f-c93d-4527-8ace-5bdc2f0901f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1761214907.74qxv.top
-  delay: 929.2
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: n1761214918.74qxv.top
-  port: 443
-  uuid: b141803a-209c-47bd-be6e-14d6bc1e96be
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1761214918.74qxv.top
-  delay: 962.5
+  delay: 591.2
 - name: 🇫🇷 FR_44
   type: vmess
   server: 45.136.12.37
@@ -194,4 +96,18 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1522.4
+  delay: 640.9
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: n1761214918.74qxv.top
+  port: 443
+  uuid: b141803a-209c-47bd-be6e-14d6bc1e96be
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1761214918.74qxv.top
+  delay: 664.8
