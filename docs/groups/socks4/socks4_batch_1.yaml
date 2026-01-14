@@ -1,25 +1,67 @@
 proxies:
+- name: SOCKS4_172.64.79.60_443
+  type: socks4
+  server: 172.64.79.60
+  port: 443
+  udp: false
+  delay: 1.5
+- name: SOCKS4_104.18.26.90_8880
+  type: socks4
+  server: 104.18.26.90
+  port: 8880
+  udp: false
+  delay: 1.5
+- name: SOCKS4_104.21.56.44_80
+  type: socks4
+  server: 104.21.56.44
+  port: 80
+  udp: false
+  delay: 1.6
 - name: SOCKS4_104.18.41.51_80
   type: socks4
   server: 104.18.41.51
   port: 80
   udp: false
   delay: 1.6
-- name: SOCKS4_104.21.56.44_80
+- name: SOCKS4_104.21.30.167_443
   type: socks4
-  server: 104.21.56.44
-  port: 80
-  udp: false
-  delay: 1.7
-- name: SOCKS4_172.64.79.60_443
-  type: socks4
-  server: 172.64.79.60
+  server: 104.21.30.167
   port: 443
   udp: false
-  delay: 1.9
+  delay: 1.6
+- name: SOCKS4_5.10.214.5_443
+  type: socks4
+  server: 5.10.214.5
+  port: 443
+  udp: false
+  delay: 1.7
+- name: SOCKS4_104.21.112.1_443
+  type: socks4
+  server: 104.21.112.1
+  port: 443
+  udp: false
+  delay: 1.7
+- name: SOCKS4_188.114.98.224_2087
+  type: socks4
+  server: 188.114.98.224
+  port: 2087
+  udp: false
+  delay: 1.8
 - name: SOCKS4_173.245.59.132_2053
   type: socks4
   server: 173.245.59.132
+  port: 2053
+  udp: false
+  delay: 1.9
+- name: SOCKS4_104.21.80.1_443
+  type: socks4
+  server: 104.21.80.1
+  port: 443
+  udp: false
+  delay: 1.9
+- name: SOCKS4_104.21.44.185_2053
+  type: socks4
+  server: 104.21.44.185
   port: 2053
   udp: false
   delay: 2.0
@@ -28,94 +70,52 @@ proxies:
   server: 188.114.98.224
   port: 443
   udp: false
-  delay: 2.1
-- name: SOCKS4_5.10.214.5_443
+  delay: 2.2
+- name: SOCKS4_216.105.168.18_443
   type: socks4
-  server: 5.10.214.5
+  server: 216.105.168.18
   port: 443
   udp: false
-  delay: 2.6
-- name: SOCKS4_188.114.98.224_2087
+  delay: 8.7
+- name: SOCKS4_154.17.24.29_443
   type: socks4
-  server: 188.114.98.224
-  port: 2087
-  udp: false
-  delay: 2.7
-- name: SOCKS4_104.21.30.167_443
-  type: socks4
-  server: 104.21.30.167
+  server: 154.17.24.29
   port: 443
   udp: false
-  delay: 2.9
-- name: SOCKS4_166.88.159.58_443
+  delay: 9.0
+- name: SOCKS4_15.204.28.84_11201
   type: socks4
-  server: 166.88.159.58
-  port: 443
-  udp: false
-  delay: 3.0
-- name: SOCKS4_104.21.112.1_443
-  type: socks4
-  server: 104.21.112.1
-  port: 443
-  udp: false
-  delay: 3.3
-- name: SOCKS4_104.21.44.185_2053
-  type: socks4
-  server: 104.21.44.185
-  port: 2053
-  udp: false
-  delay: 4.0
-- name: SOCKS4_104.21.80.1_443
-  type: socks4
-  server: 104.21.80.1
-  port: 443
-  udp: false
-  delay: 4.0
-- name: SOCKS4_198.57.27.27_12990
-  type: socks4
-  server: 198.57.27.27
-  port: 12990
-  udp: false
-  delay: 12.8
-- name: SOCKS4_104.129.194.44_10336
-  type: socks4
-  server: 104.129.194.44
-  port: 10336
-  udp: false
-  delay: 16.6
-- name: SOCKS4_147.135.77.6_11201
-  type: socks4
-  server: 147.135.77.6
+  server: 15.204.28.84
   port: 11201
   udp: false
-  delay: 16.8
-- name: SOCKS4_104.129.194.43_10336
+  delay: 16.0
+- name: SOCKS4_15.204.74.40_13021
   type: socks4
-  server: 104.129.194.43
-  port: 10336
+  server: 15.204.74.40
+  port: 13021
   udp: false
-  delay: 17.1
-- name: SOCKS4_217.77.3.68_28954
+  delay: 17.2
+- name: SOCKS4_66.94.125.222_43742
   type: socks4
-  server: 217.77.3.68
-  port: 28954
+  server: 66.94.125.222
+  port: 43742
   udp: false
-  delay: 19.0
-- name: SOCKS4_37.19.198.244_443
+  delay: 19.3
+- name: SOCKS4_85.239.232.127_10026
   type: socks4
-  server: 37.19.198.244
-  port: 443
+  server: 85.239.232.127
+  port: 10026
   udp: false
-  delay: 19.6
-- name: SOCKS4_148.113.143.102_11201
+  delay: 19.4
+- name: SOCKS4_66.94.113.2_27115
   type: socks4
-  server: 148.113.143.102
-  port: 11201
-  udp: false
-  delay: 19.6
-- name: SOCKS4_51.161.80.138_12743
-  type: socks4
-  server: 51.161.80.138
-  port: 12743
+  server: 66.94.113.2
+  port: 27115
   udp: false
   delay: 19.6
+- name: SOCKS4_38.96.254.102_18509
+  type: socks4
+  server: 38.96.254.102
+  port: 18509
+  udp: false
+  delay: 24.3
