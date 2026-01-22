@@ -1,49 +1,67 @@
 proxies:
-- name: VLESS_82.97.252.100_4443
+- name: VLESS_65.109.178.83_443
   type: vless
-  server: 82.97.252.100
-  port: 4443
-  uuid: 3f688b2a-373a-4be1-846d-b159404b73b2
-  tls: true
-  flow: ''
-  udp: true
-  delay: 139.3
-- name: VLESS_95.163.250.213_443
-  type: vless
-  server: 95.163.250.213
+  server: 65.109.178.83
   port: 443
-  uuid: 62770d79-dc4d-07d0-b01c-ea30399725aa
+  uuid: 7b148add-4438-426e-a583-50f11e7bd0e4
   tls: true
   flow: ''
   udp: true
-  delay: 141.0
-- name: VLESS_95.174.92.156_443
+  delay: 122.7
+- name: VLESS_176.120.67.95_8443
   type: vless
-  server: 95.174.92.156
+  server: 176.120.67.95
+  port: 8443
+  uuid: d0dea598-9047-4567-a934-84c2797c0978
+  tls: true
+  flow: ''
+  udp: true
+  delay: 125.7
+- name: VLESS_176.120.67.77_8443
+  type: vless
+  server: 176.120.67.77
+  port: 8443
+  uuid: d0dea598-9047-4567-a934-84c2797c0978
+  tls: true
+  flow: ''
+  udp: true
+  delay: 132.8
+- name: VLESS_176.109.104.107_443
+  type: vless
+  server: 176.109.104.107
   port: 443
   uuid: cc61ea7c-92f2-4c2d-b272-32cfe8fdf99f
   tls: true
   flow: ''
   udp: true
-  delay: 146.2
-- name: VLESS_84.201.148.218_47014
+  delay: 136.6
+- name: VLESS_chatgpt.com_443
   type: vless
-  server: 84.201.148.218
+  server: chatgpt.com
+  port: 443
+  uuid: 1fd1a427-ed60-4713-fbc1-ae9244d9790c
+  tls: true
+  flow: ''
+  udp: true
+  delay: 144.8
+- name: VLESS_84.252.138.149_47014
+  type: vless
+  server: 84.252.138.149
   port: 47014
   uuid: 95abaefc-7861-417a-81b7-166cb788ce1a
   tls: true
   flow: ''
   udp: true
-  delay: 150.1
-- name: VLESS_51.250.38.137_4443
+  delay: 147.1
+- name: VLESS_45.89.109.25_18278
   type: vless
-  server: 51.250.38.137
-  port: 4443
-  uuid: 71031aa1-067e-425e-97f5-37875f838a10
+  server: 45.89.109.25
+  port: 18278
+  uuid: 7a30b7fc-4868-4d1d-84b8-16a3d3df0139
   tls: true
   flow: ''
   udp: true
-  delay: 151.8
+  delay: 151.5
 - name: VLESS_185.234.57.169_443
   type: vless
   server: 185.234.57.169
@@ -52,7 +70,16 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 160.5
+  delay: 153.0
+- name: VLESS_185.234.57.207_443
+  type: vless
+  server: 185.234.57.207
+  port: 443
+  uuid: dd92c4f8-be88-4c61-84eb-d261f798071e
+  tls: true
+  flow: ''
+  udp: true
+  delay: 153.1
 - name: VLESS_167.172.83.42_11441
   type: vless
   server: 167.172.83.42
@@ -61,43 +88,16 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 212.0
-- name: VLESS_chatgpt.com_443
+  delay: 225.7
+- name: VLESS_operator.chatgpt.com_8080
   type: vless
-  server: chatgpt.com
-  port: 443
-  uuid: ff188c84-49a9-4cc6-b3f7-4f8bdc7571ec
+  server: operator.chatgpt.com
+  port: 8080
+  uuid: e3e47430-46f4-40ea-b754-5fc30cc997af
   tls: true
   flow: ''
   udp: true
-  delay: 305.2
-- name: VLESS_openai.com_443
-  type: vless
-  server: openai.com
-  port: 443
-  uuid: fef4a93d-eb4f-4657-b56b-32a0dc060045
-  tls: true
-  flow: ''
-  udp: true
-  delay: 318.6
-- name: VLESS_chatgpt.com_2096
-  type: vless
-  server: chatgpt.com
-  port: 2096
-  uuid: 7947bfb3-bb9a-4eee-a544-cb05aad24b13
-  tls: true
-  flow: ''
-  udp: true
-  delay: 354.4
-- name: VLESS_rohin.ns.cloudflare.com_443
-  type: vless
-  server: rohin.ns.cloudflare.com
-  port: 443
-  uuid: c9b0932d-8d1c-43c5-b64b-e9a74719c76d
-  tls: true
-  flow: ''
-  udp: true
-  delay: 391.4
+  delay: 252.0
 - name: VLESS_ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz_443
   type: vless
   server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
@@ -106,25 +106,34 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 499.2
-- name: VLESS_ip-range.coin.name.ng_8443
+  delay: 268.1
+- name: VLESS_chatgpt.com_2096
   type: vless
-  server: ip-range.coin.name.ng
-  port: 8443
-  uuid: ccbe6b7c-9264-40c4-8bc1-ef8f6205d7a4
+  server: chatgpt.com
+  port: 2096
+  uuid: 7947bfb3-bb9a-4eee-a544-cb05aad24b13
   tls: true
   flow: ''
   udp: true
-  delay: 532.5
-- name: VLESS_doprax.fxgoldensignals.com_58153
+  delay: 269.9
+- name: VLESS_dfg.octopusss.net_22955
   type: vless
-  server: doprax.fxgoldensignals.com
-  port: 58153
-  uuid: 14fe2c89-af11-4b7d-cc08-9641f0f2d8ee
+  server: dfg.octopusss.net
+  port: 22955
+  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
   tls: true
   flow: ''
   udp: true
-  delay: 583.4
+  delay: 404.2
+- name: VLESS_rohin.ns.cloudflare.com_443
+  type: vless
+  server: rohin.ns.cloudflare.com
+  port: 443
+  uuid: c9b0932d-8d1c-43c5-b64b-e9a74719c76d
+  tls: true
+  flow: ''
+  udp: true
+  delay: 427.8
 - name: VLESS_octopusss5.info_22955
   type: vless
   server: octopusss5.info
@@ -133,4 +142,22 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 700.4
+  delay: 510.7
+- name: VLESS_ip-range.coin.name.ng_8443
+  type: vless
+  server: ip-range.coin.name.ng
+  port: 8443
+  uuid: ccbe6b7c-9264-40c4-8bc1-ef8f6205d7a4
+  tls: true
+  flow: ''
+  udp: true
+  delay: 555.3
+- name: VLESS_de23.ariyanln.com_7945
+  type: vless
+  server: de23.ariyanln.com
+  port: 7945
+  uuid: 7d12bf9a-63d6-4989-a27b-c9ddb2d6c0b6
+  tls: true
+  flow: ''
+  udp: true
+  delay: 583.4
