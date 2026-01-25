@@ -1,19 +1,47 @@
 proxies:
-- name: 🇭🇰[openproxylist.com] vmess-HK
+- name: 🇭🇰 HK_53
   type: vmess
-  server: n1761214902.wpg27.xyz
-  port: 443
-  uuid: 469e9a38-b64e-46c3-9793-234158942d3b
+  server: 45.207.157.29
+  port: 13852
+  uuid: 845764df-ecb3-4b13-bed2-bf1551b68e9a
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: none
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 210.4
+- name: 🇰🇷[openproxylist.com] vmess-KR
+  type: vmess
+  server: dv4.789900.xyz
+  port: 2096
+  uuid: 0c8f3e29-4ec9-4ba6-a6ef-4487873f5d05
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
+    path: /0c8f3e29-4ec9-4ba6-a6ef-4487873f5d05-vm
+    headers:
+      Host: dv4.789900.xyz
+  delay: 214.6
+- name: 🇺🇸 US_149
+  type: vmess
+  server: 206.119.191.9
+  port: 7100
+  uuid: 10853485-26e1-477b-d257-58a3f4873db3
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: none
+  ws-opts:
     path: /
     headers:
-      Host: n1761214902.wpg27.xyz
-  delay: 488.4
-- name: 🏳[openproxylist.com] vmess-
+      Host: ''
+  delay: 223.9
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: n1761214912.wpg27.xyz
   port: 443
@@ -26,21 +54,7 @@ proxies:
     path: /
     headers:
       Host: n1761214912.wpg27.xyz
-  delay: 499.6
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: n1761214904.wpg27.xyz
-  port: 443
-  uuid: 7f6f64ae-3778-434c-adfc-95cb67ee8b73
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1761214904.wpg27.xyz
-  delay: 638.7
+  delay: 459.5
 - name: 🏳[openproxylist.com] vmess-
   type: vmess
   server: n1761214919.mv7wh.tech
@@ -54,26 +68,12 @@ proxies:
     path: /
     headers:
       Host: n1761214919.mv7wh.tech
-  delay: 678.1
-- name: 🇭🇰 HK_54
+  delay: 462.0
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: 45.207.157.29
-  port: 13852
-  uuid: 845764df-ecb3-4b13-bed2-bf1551b68e9a
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: none
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 729.0
-- name: 美国 CloudFlare节点
-  type: vmess
-  server: c7.620720.xyz
-  port: 8443
-  uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+  server: n1761214902.wpg27.xyz
+  port: 443
+  uuid: 469e9a38-b64e-46c3-9793-234158942d3b
   alterId: 0
   cipher: auto
   tls: true
@@ -81,8 +81,64 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: c7.620720.xyz
-  delay: 759.3
+      Host: n1761214902.wpg27.xyz
+  delay: 481.1
+- name: 🇬🇧[openproxylist.com] vmess-GB
+  type: vmess
+  server: cf-proxy.202507.xyz
+  port: 443
+  uuid: fa8c811b-7bd3-4c04-b9dd-c701698f1efd
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: gb.202507.xyz
+  delay: 611.8
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: v12.hdacd.com
+  port: 30812
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: v12.hdacd.com
+  delay: 646.2
+- name: 🇭🇰 HK_52
+  type: vmess
+  server: hkt.gotochinatown.net
+  port: 80
+  uuid: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: hkt.gotochinatown.net
+  delay: 773.7
+- name: 🇯🇵 JP_63
+  type: vmess
+  server: seoul03.zgjok.com
+  port: 443
+  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: seoul03.zgjok.com
+  delay: 787.1
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: n1747624282.lie5d.cyou
@@ -96,92 +152,36 @@ proxies:
     path: /
     headers:
       Host: n1747624282.lie5d.cyou
-  delay: 905.0
-- name: 🇭🇰[openproxylist.com] vmess-HK
+  delay: 997.7
+- name: 🇺🇸 US_154
   type: vmess
-  server: n1761214910.74qxv.top
-  port: 443
-  uuid: 011c4670-cdde-44fb-b9be-8a1e27af26c9
+  server: aflzzul.meiquankongjian.com
+  port: 52513
+  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
   alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1761214910.74qxv.top
-  delay: 906.3
-- name: 🇭🇰 HK_55
-  type: vmess
-  server: hkt.gotochinatown.net
-  port: 80
-  uuid: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9
-  alterId: 2
   cipher: auto
   tls: false
   network: ws
   ws-opts:
-    path: /
+    path: /564dfa20/
     headers:
-      Host: hkt.gotochinatown.net
-  delay: 1035.5
-- name: 🇭🇰[openproxylist.com] vmess-HK
+      Host: aflzzul.meiquankongjian.com
+  delay: 1423.0
+- name: 🇺🇸 US_153
   type: vmess
-  server: n1761214918.74qxv.top
-  port: 443
-  uuid: b141803a-209c-47bd-be6e-14d6bc1e96be
+  server: aflzzul.meiquankongjian.com
+  port: 52511
+  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   network: ws
   ws-opts:
-    path: /
+    path: /564dfa20/
     headers:
-      Host: n1761214918.74qxv.top
-  delay: 1048.3
-- name: 🇯🇵 JP_65
-  type: vmess
-  server: seoul03.zgjok.com
-  port: 443
-  uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: seoul03.zgjok.com
-  delay: 1115.2
-- name: 🇺🇸 US_154
-  type: vmess
-  server: n1753598452.wpg27.xyz
-  port: 443
-  uuid: 4f23eb7c-ef2f-43b0-90dd-f2b8a75954a5
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1753598452.wpg27.xyz
-  delay: 1263.8
-- name: 日本 V2CROSS.COM
-  type: vmess
-  server: n1747624271.lie5d.cyou
-  port: 443
-  uuid: a231ba8b-8871-416c-813b-e2240bc66bb2
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1747624271.lie5d.cyou
-  delay: 1343.9
-- name: 🇺🇸 US_152
+      Host: aflzzul.meiquankongjian.com
+  delay: 1428.3
+- name: 美国 CloudFlare节点
   type: vmess
   server: cf.090227.xyz
   port: 443
@@ -194,4 +194,4 @@ proxies:
     path: /
     headers:
       Host: sgal.dagrate.eu.org
-  delay: 1802.9
+  delay: 1634.6
