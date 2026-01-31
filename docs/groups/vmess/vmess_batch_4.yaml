@@ -1,15 +1,43 @@
 proxies:
-- name: 🇭🇰 HK_65
+- name: 🇺🇸 US_170
   type: vmess
-  server: hkt.gotochinatown.net
-  port: 80
-  uuid: b585dac6-dc69-11ef-9f1c-f23c913c8d2b
-  alterId: 2
+  server: cf.090227.xyz
+  port: 443
+  uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
+  alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: broadcastlv.chat.bilibili.com
-  delay: 1294.2
+      Host: sgal.dagrate.eu.org
+  delay: 901.5
+- name: 🇺🇸 US_169
+  type: vmess
+  server: aflzzul.meiquankongjian.com
+  port: 52513
+  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /564dfa20/
+    headers:
+      Host: aflzzul.meiquankongjian.com
+  delay: 935.9
+- name: 🇺🇸 US_167
+  type: vmess
+  server: aflzzul.meiquankongjian.com
+  port: 52511
+  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /564dfa20/
+    headers:
+      Host: aflzzul.meiquankongjian.com
+  delay: 939.8
