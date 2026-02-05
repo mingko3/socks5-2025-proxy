@@ -1,12 +1,20 @@
 proxies:
-- name: SS_103.163.218.2_989
+- name: SS_beesyar.org_8080
   type: ss
-  server: 103.163.218.2
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
+  server: beesyar.org
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: 1RWwXhwfAB5gAEozU4G2Pg
   udp: true
-  delay: 430.6
+  delay: 839.0
+- name: SS_exchange.gameaurela.click_52952
+  type: ss
+  server: exchange.gameaurela.click
+  port: 52952
+  cipher: chacha20-ietf-poly1305
+  password: LMSNh21TrXjR2ok25Q2nE8ENT2zoBmPvka3RCCUAHZELCnWoekVjvaf89qwcRkdbxEfep2bc2aUtmnxqvF1ayQRez1JHjULj
+  udp: true
+  delay: 946.7
 - name: SS_162.19.214.191_59724
   type: ss
   server: 162.19.214.191
@@ -14,4 +22,12 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: e7yQKOelKM4UIJCZYLrzQX
   udp: true
-  delay: 1125.2
+  delay: 1189.8
+- name: SS_promo18v.bystrivpn.ru_443
+  type: ss
+  server: promo18v.bystrivpn.ru
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: dAHM1pm8ag7KdlrUylQi6t
+  udp: true
+  delay: 1512.8
