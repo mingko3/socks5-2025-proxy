@@ -1,5 +1,61 @@
 proxies:
-- name: 🇺🇸 US_107
+- name: 🇺🇸 US_124
+  type: vmess
+  server: n1761214919.mv7wh.tech
+  port: 443
+  uuid: c592f040-faff-47dc-a464-9bccf2dd4e7b
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1761214919.mv7wh.tech
+  delay: 1502.0
+- name: 🇸🇬 SG_99
+  type: vmess
+  server: n1761214911.74qxv.top
+  port: 443
+  uuid: 372c1939-299d-4946-9633-5ffa971f8b67
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1761214911.74qxv.top
+  delay: 1572.3
+- name: 🇯🇵 JP_74
+  type: vmess
+  server: n1753598448.74qxv.top
+  port: 443
+  uuid: 3cd6f849-078e-4da9-8080-a2791b51b766
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1753598448.74qxv.top
+  delay: 1661.0
+- name: 🇺🇸 US_126
+  type: vmess
+  server: n1753598452.wpg27.xyz
+  port: 443
+  uuid: 4f23eb7c-ef2f-43b0-90dd-f2b8a75954a5
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1753598452.wpg27.xyz
+  delay: 1687.5
+- name: 🇺🇸 US_115
   type: vmess
   server: n1761214908.wpg27.xyz
   port: 443
@@ -12,4 +68,32 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 749.6
+  delay: 1697.2
+- name: 🇺🇸 US_120
+  type: vmess
+  server: aflzzul.meiquankongjian.com
+  port: 52513
+  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /564dfa20/
+    headers:
+      Host: aflzzul.meiquankongjian.com
+  delay: 1969.1
+- name: 🇺🇸 US_113
+  type: vmess
+  server: aflzzul.meiquankongjian.com
+  port: 52511
+  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /564dfa20/
+    headers:
+      Host: aflzzul.meiquankongjian.com
+  delay: 1971.2
