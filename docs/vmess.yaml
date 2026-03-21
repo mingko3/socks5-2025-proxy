@@ -1,5 +1,5 @@
 proxies:
-- name: 🏁 ZZ_132
+- name: 🏁 ZZ_131
   type: vmess
   server: 134.195.198.147
   port: 443
@@ -12,8 +12,22 @@ proxies:
     path: /linkvws
     headers:
       Host: ''
-  delay: 19.1
-- name: 🇺🇸 US_92
+  delay: 19.2
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: cxsfvn.uhomdex.shop
+  port: 443
+  uuid: bb6e260e-b80d-4365-b252-9fbe466f1f34
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cxsfvn.uhomdex.shop
+  delay: 35.5
+- name: 🇺🇸 US_93
   type: vmess
   server: 216.238.87.47
   port: 27502
@@ -26,7 +40,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 47.3
+  delay: 58.2
 - name: 英国 V2CROSS.COM
   type: vmess
   server: 82.198.246.97
@@ -40,7 +54,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 66.6
+  delay: 75.3
 - name: 🇬🇧[openproxylist.com] vmess-GB
   type: vmess
   server: 66.163.117.58
@@ -54,7 +68,35 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 111.1
+  delay: 94.2
+- name: 🇳🇱[openproxylist.com] vmess-NL
+  type: vmess
+  server: 51.158.151.24
+  port: 20104
+  uuid: 40e306a6-7cab-40ac-a085-a961895eb11b
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /arki
+    headers:
+      Host: ''
+  delay: 101.6
+- name: 🇫🇷[openproxylist.com] vmess-FR
+  type: vmess
+  server: 94.232.247.164
+  port: 44030
+  uuid: 22c396a3-95da-4be8-beef-834d17d75784
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 104.0
 - name: 🇮🇹[openproxylist.com] vmess-IT
   type: vmess
   server: 45.92.70.236
@@ -68,21 +110,35 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 119.7
-- name: 🇳🇱[openproxylist.com] vmess-NL
+  delay: 104.4
+- name: 🇪🇸[openproxylist.com] vmess-ES
   type: vmess
-  server: cg1d05.waimaojd.com
-  port: 443
-  uuid: 6abe3ac8-e1f8-4b24-bb67-191bc23b5fab
+  server: 85.90.217.42
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 113.4
+- name: 🇬🇧[openproxylist.com] vmess-GB
+  type: vmess
+  server: fsdns1.ectunnelvpn.me
+  port: 80
+  uuid: 6b2d86e5-df05-4511-a79f-82d53ce99b36
+  alterId: 0
+  cipher: auto
+  tls: false
   network: ws
   ws-opts:
-    path: /api/v1/graphql
+    path: /vmess
     headers:
-      Host: cg1d05.waimaojd.com
-  delay: 124.6
+      Host: fsdns1.ectunnelvpn.me
+  delay: 118.8
 - name: 🇯🇵 JP_49
   type: vmess
   server: 47.74.52.195
@@ -96,22 +152,8 @@ proxies:
     path: /
     headers:
       Host: n1753598448.74qxv.top
-  delay: 147.5
-- name: 🇸🇬 SG_72
-  type: vmess
-  server: 8.218.52.5
-  port: 443
-  uuid: 1f2daf43-ff90-4df9-9276-dfb8486d72bc
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1761214915.mv7wh.tech
-  delay: 190.0
-- name: 🇺🇸 US_88
+  delay: 149.6
+- name: 🇺🇸 US_91
   type: vmess
   server: 47.243.95.187
   port: 443
@@ -124,8 +166,8 @@ proxies:
     path: /
     headers:
       Host: n1761214906.wpg27.xyz
-  delay: 194.2
-- name: 🇬🇧 GB_41
+  delay: 190.2
+- name: 🇬🇧 GB_43
   type: vmess
   server: 82.21.80.224
   port: 17310
@@ -138,7 +180,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 206.6
+  delay: 208.1
 - name: 🇦🇪[openproxylist.com] vmess-AE
   type: vmess
   server: cg1c15.waimaojd.com
@@ -152,54 +194,12 @@ proxies:
     path: /api/v1/graphql
     headers:
       Host: cg1c15.waimaojd.com
-  delay: 254.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
+  delay: 234.9
+- name: 🇺🇸 US_88
   type: vmess
-  server: cn01.365cloud8754.com
-  port: 6001
-  uuid: db75bc92-4e32-48dd-b792-d7a8b707626c
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: cn01.365cloud8754.com
-  delay: 503.6
-- name: 🇯🇵[openproxylist.com] vmess-JP
-  type: vmess
-  server: t.cnmjcn.cyou
-  port: 16617
-  uuid: 42355be2-af61-4b3b-866c-d3c5ea8748c5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: febce1d29a8a4c68e016e0bec83fa245.mobgslb.tbcache.com
-  delay: 562.7
-- name: 🇺🇸 US_89
-  type: vmess
-  server: cf.090227.xyz
+  server: n1761214908.wpg27.xyz
   port: 443
-  uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sgal.dagrate.eu.org
-  delay: 890.4
-- name: 🇸🇬 SG_69
-  type: vmess
-  server: n1761214905.wpg27.xyz
-  port: 443
-  uuid: b1d3007c-441a-42d5-84b5-20301c46fa2c
+  uuid: 3514a93f-bb26-4442-8f99-971b2ff3388a
   alterId: 0
   cipher: auto
   tls: true
@@ -208,7 +208,49 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1045.7
+  delay: 459.1
+- name: 🇮🇩[openproxylist.com] vmess-ID
+  type: vmess
+  server: neva.azlan.biz.id
+  port: 443
+  uuid: 8072298f-cd28-4a61-8e05-5879c84b9100
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: neva.azlan.biz.id
+  delay: 505.0
+- name: 🇸🇬 SG_71
+  type: vmess
+  server: n1752248946.4u9ma.icu
+  port: 443
+  uuid: ef167986-d154-4409-88b1-757efb6ae823
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1752248946.4u9ma.icu
+  delay: 585.4
+- name: 🇺🇸 US_89
+  type: vmess
+  server: n1753101272.lie5d.cyou
+  port: 443
+  uuid: 568a3e7a-c13e-4205-af30-e75ec3e5c778
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1753101272.lie5d.cyou
+  delay: 592.6
 - name: 🇯🇵 JP_50
   type: vmess
   server: n1753598448.74qxv.top
@@ -222,40 +264,12 @@ proxies:
     path: /
     headers:
       Host: n1753598448.74qxv.top
-  delay: 1185.5
+  delay: 604.1
 - name: 🇸🇬 SG_70
   type: vmess
-  server: n1752248946.4u9ma.icu
+  server: n1761214905.wpg27.xyz
   port: 443
-  uuid: ef167986-d154-4409-88b1-757efb6ae823
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1752248946.4u9ma.icu
-  delay: 1203.7
-- name: 🇸🇬 SG_71
-  type: vmess
-  server: n1761214911.74qxv.top
-  port: 443
-  uuid: 372c1939-299d-4946-9633-5ffa971f8b67
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1761214911.74qxv.top
-  delay: 1331.1
-- name: 🇺🇸 US_93
-  type: vmess
-  server: n1761214908.wpg27.xyz
-  port: 443
-  uuid: 3514a93f-bb26-4442-8f99-971b2ff3388a
+  uuid: b1d3007c-441a-42d5-84b5-20301c46fa2c
   alterId: 0
   cipher: auto
   tls: true
@@ -264,12 +278,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1333.1
-- name: 🇸🇬 SG_73
+  delay: 654.0
+- name: 🇺🇸 US_92
   type: vmess
-  server: n1761214910.74qxv.top
+  server: n1761214912.wpg27.xyz
   port: 443
-  uuid: 011c4670-cdde-44fb-b9be-8a1e27af26c9
+  uuid: 4f86a909-836d-4643-b650-d812144a1fa9
   alterId: 0
   cipher: auto
   tls: true
@@ -277,9 +291,9 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: n1761214910.74qxv.top
-  delay: 1401.1
-- name: 🇺🇸 US_95
+      Host: ''
+  delay: 717.3
+- name: 🇺🇸 US_90
   type: vmess
   server: n1753598452.wpg27.xyz
   port: 443
@@ -292,12 +306,12 @@ proxies:
     path: /
     headers:
       Host: n1753598452.wpg27.xyz
-  delay: 1438.1
+  delay: 819.1
 - name: 🇺🇸 US_94
   type: vmess
-  server: n1761214919.mv7wh.tech
+  server: cf.090227.xyz
   port: 443
-  uuid: c592f040-faff-47dc-a464-9bccf2dd4e7b
+  uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
   alterId: 0
   cipher: auto
   tls: true
@@ -305,19 +319,19 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: n1761214919.mv7wh.tech
-  delay: 1464.4
-- name: 🇺🇸 US_90
+      Host: sgal.dagrate.eu.org
+  delay: 1046.5
+- name: 🇸🇬 SG_72
   type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 51515
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  server: n1761214911.74qxv.top
+  port: 443
+  uuid: 372c1939-299d-4946-9633-5ffa971f8b67
   alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
-    path: /564dfa20/
+    path: /
     headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 1594.5
+      Host: n1761214911.74qxv.top
+  delay: 1927.3
