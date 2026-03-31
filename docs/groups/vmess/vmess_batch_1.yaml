@@ -1,18 +1,18 @@
 proxies:
-- name: 🏁 ZZ_113
+- name: 英国 V2CROSS.COM
   type: vmess
-  server: 134.195.198.147
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  server: 82.198.246.46
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
-  tls: true
-  network: ws
+  tls: false
+  network: tcp
   ws-opts:
-    path: /linkvws
+    path: /
     headers:
       Host: ''
-  delay: 20.6
+  delay: 39.2
 - name: 英国 V2CROSS.COM
   type: vmess
   server: 82.198.246.97
@@ -26,7 +26,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 64.4
+  delay: 39.6
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 43.8
 - name: 🇬🇧[openproxylist.com] vmess-GB
   type: vmess
   server: 66.163.117.58
@@ -40,21 +54,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 77.9
-- name: 🇬🇧 GB_40
-  type: vmess
-  server: 82.21.80.224
-  port: 17310
-  uuid: 656920dc-ed05-4f41-8c49-bdff41e383a9
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: none
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 220.3
+  delay: 126.4
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: 103.229.124.3
@@ -68,7 +68,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 229.2
+  delay: 188.4
+- name: 🇬🇧 GB_40
+  type: vmess
+  server: 82.21.80.224
+  port: 17310
+  uuid: 656920dc-ed05-4f41-8c49-bdff41e383a9
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: none
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 200.1
 - name: 🇰🇷[openproxylist.com] vmess-KR
   type: vmess
   server: chuncheon03.zgjok.com
@@ -82,7 +96,7 @@ proxies:
     path: /
     headers:
       Host: chuncheon03.zgjok.com
-  delay: 589.2
+  delay: 308.8
 - name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
   server: v12.hdacd.com
@@ -93,7 +107,7 @@ proxies:
   tls: false
   network: tcp
   ws-opts:
-    path: /
+    path: /?ed=2048@V2Ray_hiddify10--https://t.me/V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--https://t.me/V2Ray_hiddify10
     headers:
       Host: 2001:bc8:32d7:302::10
-  delay: 596.0
+  delay: 670.8
