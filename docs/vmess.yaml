@@ -1,32 +1,4 @@
 proxies:
-- name: 英国 V2CROSS.COM
-  type: vmess
-  server: 82.198.246.46
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 39.2
-- name: 英国 V2CROSS.COM
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 39.6
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 82.198.246.250
@@ -40,7 +12,77 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 43.8
+  delay: 9.4
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.46
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 9.4
+- name: 英国 V2CROSS.COM
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 14.2
+- name: 🇦🇪[openproxylist.com] vmess-AE
+  type: vmess
+  server: cg1c15.waimaojd.com
+  port: 443
+  uuid: 4378a67e-d277-44b5-a99b-a947fff1ee21
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /api/v1/graphql
+    headers:
+      Host: cg1c15.waimaojd.com
+  delay: 66.0
+- name: 🏁 ZZ_160
+  type: vmess
+  server: 134.195.198.147
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /linkvws
+    headers:
+      Host: ''
+  delay: 78.8
+- name: 🇯🇵[openproxylist.com] vmess-JP
+  type: vmess
+  server: 50.114.113.203
+  port: 26231
+  uuid: d56c09d1-0487-4697-94fa-c1186fb530a6
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /arki
+    headers:
+      Host: ''
+  delay: 115.2
 - name: 🇬🇧[openproxylist.com] vmess-GB
   type: vmess
   server: 66.163.117.58
@@ -54,22 +96,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 126.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 103.229.124.3
-  port: 20521
-  uuid: 292e9c90-25b3-4ff5-b98a-9ef5877714ab
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 188.4
-- name: 🇬🇧 GB_40
+  delay: 130.3
+- name: 🇬🇧 GB_42
   type: vmess
   server: 82.21.80.224
   port: 17310
@@ -82,7 +110,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 200.1
+  delay: 178.1
 - name: 🇰🇷[openproxylist.com] vmess-KR
   type: vmess
   server: chuncheon03.zgjok.com
@@ -96,7 +124,49 @@ proxies:
     path: /
     headers:
       Host: chuncheon03.zgjok.com
-  delay: 308.8
+  delay: 187.9
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: 103.229.124.3
+  port: 20521
+  uuid: 292e9c90-25b3-4ff5-b98a-9ef5877714ab
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 228.1
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: 35.240.225.23
+  port: 8880
+  uuid: c5dd6680-64ad-4f04-9952-49d94984f9eb
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 303.7
+- name: 🇭🇰 HK_48
+  type: vmess
+  server: hkt.gotochinatown.net
+  port: 80
+  uuid: de003c72-0157-11ef-86da-f23c91cfbbc9
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 312.4
 - name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
   server: v12.hdacd.com
@@ -107,7 +177,21 @@ proxies:
   tls: false
   network: tcp
   ws-opts:
-    path: /?ed=2048@V2Ray_hiddify10--https://t.me/V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--https://t.me/V2Ray_hiddify10
+    path: /?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560
     headers:
-      Host: 2001:bc8:32d7:302::10
-  delay: 670.8
+      Host: AZERB.NET
+  delay: 575.0
+- name: 🇯🇵 JP_77
+  type: vmess
+  server: zrjfw-g06.jp04-1d-vm0.entry.fr0528.art
+  port: 449
+  uuid: 95062dc1-df89-3922-ae56-4ccffc712ed2
+  alterId: 1
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: zrjfw-g06.jp04-1d-vm0.entry.fr0528.art
+  delay: 769.9
