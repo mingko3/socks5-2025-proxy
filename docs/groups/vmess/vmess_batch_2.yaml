@@ -1,6 +1,20 @@
 proxies:
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
+  server: n1753348736.lie5d.cyou
+  port: 443
+  uuid: f267eac3-dfb4-45be-a480-7e1847ca04ab
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1753348736.lie5d.cyou
+  delay: 782.5
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
   server: n1753356378.4u9ma.icu
   port: 443
   uuid: 37b20639-0d6e-46f2-9db5-472201b10cdd
@@ -12,46 +26,18 @@ proxies:
     path: /
     headers:
       Host: n1753356378.4u9ma.icu
-  delay: 545.3
-- name: 🇺🇸 US_113
+  delay: 1003.0
+- name: 🇵🇪[openproxylist.com] vmess-PE
   type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 52511
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
+  server: pe1.bctuo.top
+  port: 443
+  uuid: 31801968-9877-4ef5-be87-56503c34a69d
   alterId: 0
   cipher: auto
   tls: false
-  network: ws
+  network: tcp
   ws-opts:
-    path: /564dfa20/
+    path: ''
     headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 561.4
-- name: 🇺🇸 US_112
-  type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 52513
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /564dfa20/
-    headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 561.9
-- name: 亚太地区 V2CROSS.COM
-  type: vmess
-  server: aflzzul.meiquankongjian.com
-  port: 52512
-  uuid: 342bacfd-2b8f-3f49-a16e-439db5b0b9d5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /564dfa20/
-    headers:
-      Host: aflzzul.meiquankongjian.com
-  delay: 636.7
+      Host: ''
+  delay: 1611.9
