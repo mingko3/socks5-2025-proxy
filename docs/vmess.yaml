@@ -1,18 +1,4 @@
 proxies:
-- name: 🇺🇸US_115
-  type: vmess
-  server: 172.64.152.23
-  port: 8443
-  uuid: 19e52bf4-1b7d-4bd4-ae66-6ca024436c17
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /gbt
-    headers:
-      Host: frsys.fl-dl.com
-  delay: 22.8
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 47.90.244.153
@@ -26,8 +12,22 @@ proxies:
     path: /ws
     headers:
       Host: ''
-  delay: 27.6
-- name: 🇺🇸US_116
+  delay: 2.8
+- name: 🇦🇹[openproxylist.com] vmess-AT
+  type: vmess
+  server: ::ffff:bc72:6200
+  port: 443
+  uuid: ffece2a9-0296-46a9-8db8-742d29d240ff
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: E2ciWyh2PFlbIzNXI08qRFt0Z1QRSCcxVixNBVdZBTchOXswf20xLX0HR2ZGFxh0
+    headers:
+      Host: www.mydriverlicence.com
+  delay: 6.0
+- name: 🇺🇸US_119
   type: vmess
   server: 67.220.85.46
   port: 18000
@@ -40,7 +40,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 28.6
+  delay: 8.2
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 107.175.91.118
@@ -54,147 +54,7 @@ proxies:
     path: /v2ray-wisp
     headers:
       Host: ''
-  delay: 29.3
-- name: 🇬🇧GB_42
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 38.2
-- name: 🇬🇧GB_44
-  type: vmess
-  server: 82.198.246.46
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 38.7
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 82.198.246.37
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 39.2
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 82.198.246.214
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ads.x5.ru
-  delay: 39.7
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 82.198.246.9
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 43.7
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 44.7
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 67.220.72.237
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 1
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 45.1
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 82.198.246.233
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 45.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 103.143.238.196
-  port: 21879
-  uuid: 1e1a6b3b-14b2-4ae4-9aa9-880ba5dff6fa
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /vmesswss
-    headers:
-      Host: ''
-  delay: 49.2
-- name: 🇦🇪[openproxylist.com] vmess-AE
-  type: vmess
-  server: ae135.cowjump.site
-  port: 443
-  uuid: 0bf1cead-bdd4-4692-b3d4-6866ccb9f37a
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ae135.cowjump.site
-  delay: 54.0
+  delay: 35.3
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: jp248.cowjump.site
@@ -208,12 +68,26 @@ proxies:
     path: /
     headers:
       Host: jp248.cowjump.site
-  delay: 87.6
-- name: 🇬🇧[openproxylist.com] vmess-GB
+  delay: 55.8
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: 66.163.117.58
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  server: 103.143.238.196
+  port: 21879
+  uuid: 1e1a6b3b-14b2-4ae4-9aa9-880ba5dff6fa
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /vmesswss
+    headers:
+      Host: ''
+  delay: 61.0
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   tls: false
@@ -222,7 +96,119 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 100.6
+  delay: 63.1
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 67.220.72.237
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 1
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 65.5
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.46
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 66.3
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.214
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fra34.chasem2026sud.com
+  delay: 67.2
+- name: 🇦🇪[openproxylist.com] vmess-AE
+  type: vmess
+  server: ae135.cowjump.site
+  port: 443
+  uuid: 0bf1cead-bdd4-4692-b3d4-6866ccb9f37a
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ae135.cowjump.site
+  delay: 67.6
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fra34.chasem2026sud.com
+  delay: 68.1
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.9
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fra34.chasem2026sud.com
+  delay: 70.7
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 71.8
+- name: 英国 V2CROSS.COM
+  type: vmess
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 73.9
 - name: 🇪🇸[openproxylist.com] vmess-ES
   type: vmess
   server: 85.90.217.42
@@ -236,7 +222,21 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 118.1
+  delay: 80.1
+- name: 🇬🇧[openproxylist.com] vmess-GB
+  type: vmess
+  server: 66.163.117.58
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 87.4
 - name: 🇮🇹[openproxylist.com] vmess-IT
   type: vmess
   server: 45.92.70.236
@@ -250,77 +250,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 125.0
-- name: 🇧🇷[openproxylist.com] vmess-BR
-  type: vmess
-  server: 172.233.17.76
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 1
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 144.6
-- name: 🇹🇷[openproxylist.com] vmess-TR
-  type: vmess
-  server: 5.188.190.252
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 1
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 156.5
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 43.132.192.16
-  port: 9527
-  uuid: ae862e1d-3b8c-443a-027b-37c6c69ef43c
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 175.6
-- name: 🇹🇼[openproxylist.com] vmess-TW
-  type: vmess
-  server: 165.154.195.38
-  port: 35034
-  uuid: 959a8caf-4cea-43d0-a548-3628e7ddfafc
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 179.2
-- name: 🇰🇷[openproxylist.com] vmess-KR
-  type: vmess
-  server: kr01.a0a.xyz
-  port: 19568
-  uuid: 641500bf-92f9-4720-e2e7-579a8f7dbb04
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: kr01.a0a.xyz
-  delay: 215.6
+  delay: 88.5
 - name: 🇬🇧[openproxylist.com] vmess-GB
   type: vmess
   server: fsdns1.ectunnelvpn.me
@@ -334,21 +264,49 @@ proxies:
     path: /vmess
     headers:
       Host: fsdns1.ectunnelvpn.me
-  delay: 301.2
-- name: 🇰🇷[openproxylist.com] vmess-KR
+  delay: 89.1
+- name: 🇧🇷[openproxylist.com] vmess-BR
   type: vmess
-  server: chuncheon03.zgjok.com
-  port: 443
-  uuid: 81d5cac4-d039-4874-9a20-c391f580012d
-  alterId: 0
+  server: 172.233.17.76
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 1
   cipher: auto
-  tls: true
-  network: ws
+  tls: false
+  network: tcp
   ws-opts:
     path: /
     headers:
-      Host: chuncheon03.zgjok.com
-  delay: 302.8
+      Host: ''
+  delay: 112.8
+- name: 🇹🇷[openproxylist.com] vmess-TR
+  type: vmess
+  server: 5.188.190.252
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 122.9
+- name: 🇯🇵[openproxylist.com] vmess-JP
+  type: vmess
+  server: jp01.a0a.xyz
+  port: 80
+  uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: jp01.a0a.xyz
+  delay: 186.3
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 10.a400.top
@@ -362,12 +320,54 @@ proxies:
     path: /
     headers:
       Host: 10.a400.top
-  delay: 372.3
-- name: 🇭🇰[openproxylist.com] vmess-HK
+  delay: 221.3
+- name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
-  server: n1753356378.4u9ma.icu
+  server: 35.240.225.23
+  port: 8880
+  uuid: c5dd6680-64ad-4f04-9952-49d94984f9eb
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 222.0
+- name: 🇲🇾[openproxylist.com] vmess-MY
+  type: vmess
+  server: 47.250.153.136
+  port: 26181
+  uuid: 7249c3be-85ad-46fb-ab98-c4a07f4a724d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 47.250.153.136
+  delay: 225.2
+- name: 🇰🇷[openproxylist.com] vmess-KR
+  type: vmess
+  server: kr01.a0a.xyz
+  port: 19568
+  uuid: 641500bf-92f9-4720-e2e7-579a8f7dbb04
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /cctv13.m3u8
+    headers:
+      Host: kr01.a0a.xyz
+  delay: 250.3
+- name: 🇰🇷[openproxylist.com] vmess-KR
+  type: vmess
+  server: chuncheon03.zgjok.com
   port: 443
-  uuid: 37b20639-0d6e-46f2-9db5-472201b10cdd
+  uuid: 81d5cac4-d039-4874-9a20-c391f580012d
   alterId: 0
   cipher: auto
   tls: true
@@ -375,36 +375,8 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: n1753356378.4u9ma.icu
-  delay: 487.2
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: n1753101277.4u9ma.icu
-  port: 443
-  uuid: 6ea48dfe-7de2-45dc-9267-d4d9effad9fc
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1753101277.4u9ma.icu
-  delay: 493.0
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: n1753348736.lie5d.cyou
-  port: 443
-  uuid: f267eac3-dfb4-45be-a480-7e1847ca04ab
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1753348736.lie5d.cyou
-  delay: 532.8
+      Host: chuncheon03.zgjok.com
+  delay: 282.5
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: n1761296889.4u9ma.icu
@@ -418,21 +390,7 @@ proxies:
     path: /
     headers:
       Host: n1761296889.4u9ma.icu
-  delay: 539.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: efan.dnsefan04881.com
-  port: 7754
-  uuid: 009e558d-3cf4-49d8-b5e4-82c9e14fe1a4
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: efan.dnsefan04881.com
-  delay: 549.4
+  delay: 424.1
 - name: 香港 电讯盈科有限公司
   type: vmess
   server: vm51544542.dns8656815.com
@@ -446,11 +404,11 @@ proxies:
     path: /
     headers:
       Host: vm51544542.dns8656815.com
-  delay: 689.3
-- name: 🇭🇰HK_58
+  delay: 478.3
+- name: 🇨🇳CN_05
   type: vmess
-  server: v4.hdacd.com
-  port: 30804
+  server: v35.hdacd.com
+  port: 30835
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -460,12 +418,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 707.1
-- name: 🇳🇱[openproxylist.com] vmess-NL
+  delay: 490.0
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: v30.hdacd.com
-  port: 30830
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: efan.dnsefan04881.com
+  port: 7754
+  uuid: 009e558d-3cf4-49d8-b5e4-82c9e14fe1a4
   alterId: 0
   cipher: auto
   tls: false
@@ -473,23 +431,9 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: 51aa8f7.hf.glados-config.net
-  delay: 783.8
-- name: 🇭🇰HK_59
-  type: vmess
-  server: v8.hdacd.com
-  port: 30808
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 865.7
-- name: 🇭🇰HK_57
+      Host: efan.dnsefan04881.com
+  delay: 496.9
+- name: 🇭🇰HK_55
   type: vmess
   server: v29.hdacd.com
   port: 30829
@@ -502,8 +446,64 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 899.4
-- name: 🇮🇷IR_66
+  delay: 512.5
+- name: 🇨🇳CN_06
+  type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 513.7
+- name: 🇭🇰HK_56
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 561.4
+- name: 🇳🇱[openproxylist.com] vmess-NL
+  type: vmess
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: fra34.chasem2026sud.com
+  delay: 637.1
+- name: 🇺🇸US_120
+  type: vmess
+  server: n1753101277.4u9ma.icu
+  port: 443
+  uuid: 6ea48dfe-7de2-45dc-9267-d4d9effad9fc
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1753101277.4u9ma.icu
+  delay: 766.5
+- name: 🇮🇷IR_64
   type: vmess
   server: v36.hdacd.com
   port: 30836
@@ -516,18 +516,18 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 998.6
-- name: 🇺🇸 US_108
+  delay: 875.1
+- name: 🇮🇷IR_63
   type: vmess
-  server: cf.090227.xyz
-  port: 443
-  uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
-  alterId: 0
+  server: v9.hdacd.com
+  port: 30809
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
-  tls: true
-  network: ws
+  tls: false
+  network: tcp
   ws-opts:
     path: /
     headers:
-      Host: sgal.dagrate.eu.org
-  delay: 1081.1
+      Host: ''
+  delay: 975.1
