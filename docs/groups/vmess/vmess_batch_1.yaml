@@ -1,5 +1,5 @@
 proxies:
-- name: 🇺🇸US_130
+- name: 🇺🇸US_138
   type: vmess
   server: 172.64.152.23
   port: 8443
@@ -12,7 +12,7 @@ proxies:
     path: /gbt
     headers:
       Host: frsys.fl-dl.com
-  delay: 2.9
+  delay: 2.1
 - name: 🇦🇹[openproxylist.com] vmess-AT
   type: vmess
   server: ::ffff:bc72:6200
@@ -26,22 +26,8 @@ proxies:
     path: E2ciWyh2PFlbIzNXI08qRFt0Z1QRSCcxVixNBVdZBTchOXswf20xLX0HR2ZGFxh0
     headers:
       Host: www.mydriverlicence.com
-  delay: 3.4
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: www.shopify.com
-  port: 80
-  uuid: 3171ac5c-d746-4298-82e0-d46f2f5aa51f
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /danfeng
-    headers:
-      Host: de.gfw.hidns.co
-  delay: 9.8
-- name: 🏁ZZ_459
+  delay: 6.7
+- name: 🏁ZZ_464
   type: vmess
   server: 134.195.196.211
   port: 18000
@@ -54,21 +40,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 16.4
-- name: 🇺🇸US_129
-  type: vmess
-  server: 67.220.85.46
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 19.9
+  delay: 13.0
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 67.220.95.3
@@ -82,7 +54,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 20.9
+  delay: 18.2
+- name: 🇺🇸US_135
+  type: vmess
+  server: 67.220.85.46
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 22.4
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 216.106.183.35
@@ -96,7 +82,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 21.4
+  delay: 24.9
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 107.175.91.118
@@ -110,22 +96,22 @@ proxies:
     path: /v2ray-wisp
     headers:
       Host: ''
-  delay: 27.9
-- name: 🇭🇰[openproxylist.com] vmess-HK
+  delay: 27.0
+- name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: www.visa.com
-  port: 443
-  uuid: 67f4b8ff-15cf-3ec9-b09d-c31a4728c652
+  server: www.shopify.com
+  port: 80
+  uuid: 3171ac5c-d746-4298-82e0-d46f2f5aa51f
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   network: ws
   ws-opts:
-    path: /data
+    path: /danfeng
     headers:
-      Host: download.windows11.dpdns.org
-  delay: 31.8
-- name: 🇺🇸US_127
+      Host: de.gfw.hidns.co
+  delay: 31.0
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 67.220.72.237
   port: 22324
@@ -135,41 +121,27 @@ proxies:
   tls: false
   network: tcp
   ws-opts:
-    path: /
+    path: ''
     headers:
       Host: ''
-  delay: 45.2
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 103.143.238.196
-  port: 21879
-  uuid: 1e1a6b3b-14b2-4ae4-9aa9-880ba5dff6fa
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /vmesswss
-    headers:
-      Host: ''
-  delay: 49.8
+  delay: 47.7
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 43.162.105.30
+  port: 10022
+  uuid: 91a988dc-99d5-4c0d-a999-a1d4dd72ad21
   alterId: 0
   cipher: auto
   tls: false
-  network: tcp
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: ''
-  delay: 64.3
-- name: 🇬🇧GB_45
+      Host: us1-ss.flyparts.cn
+  delay: 48.1
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: 82.198.246.97
+  server: 82.198.246.37
   port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
@@ -180,7 +152,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 64.3
+  delay: 70.7
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 82.198.246.9
@@ -193,11 +165,11 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: fra35.chasem2026sud.com
-  delay: 64.7
-- name: 🇺🇸[openproxylist.com] vmess-US
+      Host: ''
+  delay: 71.0
+- name: 🇬🇧GB_47
   type: vmess
-  server: 82.198.246.37
+  server: 82.198.246.97
   port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
@@ -205,10 +177,10 @@ proxies:
   tls: false
   network: tcp
   ws-opts:
-    path: ''
+    path: /
     headers:
       Host: ''
-  delay: 66.5
+  delay: 71.3
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 82.198.246.46
@@ -222,7 +194,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 67.4
+  delay: 71.8
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 82.198.246.233
@@ -235,8 +207,8 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: HL-FREEDOM-1.UNDEF.NETWORK
-  delay: 68.2
+      Host: ''
+  delay: 73.4
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 82.198.246.214
@@ -250,12 +222,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 70.8
+  delay: 73.6
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: us02.bctuo.top
-  port: 1443
-  uuid: 31801968-9877-4ef5-be87-56503c34a69d
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   tls: false
@@ -264,10 +236,10 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 71.5
-- name: 🇬🇧[openproxylist.com] vmess-GB
+  delay: 76.4
+- name: 🇵🇹PT_93
   type: vmess
-  server: 66.163.117.58
+  server: 45.92.70.236
   port: 22324
   uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
@@ -278,4 +250,32 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 95.8
+  delay: 112.8
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: sanjose01.zgjok.com
+  port: 443
+  uuid: 96d21cfe-b264-4bf3-8349-fb076d40837e
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sanjose01.zgjok.com
+  delay: 117.3
+- name: 🇧🇷[openproxylist.com] vmess-BR
+  type: vmess
+  server: 172.233.17.76
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 1
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 138.7
