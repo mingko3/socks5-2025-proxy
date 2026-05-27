@@ -1,31 +1,49 @@
 proxies:
-- name: VLESS_47.81.36.237_443
+- name: VLESS_vpn.smartrahand.com_2026
   type: vless
-  server: 47.81.36.237
+  server: vpn.smartrahand.com
+  port: 2026
+  uuid: 491bd18b-c1d1-4ec4-94d2-e1a13193d4da
+  tls: true
+  flow: ''
+  udp: true
+  delay: 386.4
+- name: VLESS_ip.sb_443
+  type: vless
+  server: ip.sb
   port: 443
-  uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
+  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
   tls: true
   flow: ''
   udp: true
-  delay: 219.6
-- name: VLESS_cdn.cdnjst.org_443
+  delay: 390.2
+- name: VLESS_dns.dressforida.monster_443
   type: vless
-  server: cdn.cdnjst.org
+  server: dns.dressforida.monster
   port: 443
-  uuid: ae852d97-85f5-45cf-82a4-254eba345480
+  uuid: 79149019-5abe-46f9-91ae-e1e7d1d2c408
   tls: true
   flow: ''
   udp: true
-  delay: 354.3
-- name: VLESS_fi.gryaz-vpn.com_34572
+  delay: 395.3
+- name: VLESS_snapp.ir_80
   type: vless
-  server: fi.gryaz-vpn.com
-  port: 34572
-  uuid: abcd6b4c-2d85-4de5-be7f-62791b0f5085
+  server: snapp.ir
+  port: 80
+  uuid: 9cdf541f-b8a0-4270-8d31-542bb0961485
   tls: true
   flow: ''
   udp: true
-  delay: 440.6
+  delay: 407.1
+- name: VLESS_swe-8t.freeonline.pro_443
+  type: vless
+  server: swe-8t.freeonline.pro
+  port: 443
+  uuid: 980231fb-4372-5c81-b696-20aa34d33af0
+  tls: true
+  flow: ''
+  udp: true
+  delay: 437.6
 - name: VLESS_r1.mizulina.top_22231
   type: vless
   server: r1.mizulina.top
@@ -34,13 +52,4 @@ proxies:
   tls: true
   flow: ''
   udp: true
-  delay: 526.3
-- name: VLESS_62.133.60.194_8443
-  type: vless
-  server: 62.133.60.194
-  port: 8443
-  uuid: 10e82fcc-94ec-4d09-8855-579bb55b77e4
-  tls: true
-  flow: ''
-  udp: true
-  delay: 1158.4
+  delay: 491.1
