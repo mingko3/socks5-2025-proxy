@@ -1,22 +1,8 @@
 proxies:
-- name: 🇺🇸US_135
+- name: 🇨🇳CN_10
   type: vmess
-  server: n1753101277.4u9ma.icu
-  port: 443
-  uuid: 6ea48dfe-7de2-45dc-9267-d4d9effad9fc
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: n1753101277.4u9ma.icu
-  delay: 549.2
-- name: 🇮🇷IR_69
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
+  server: v35.hdacd.com
+  port: 30835
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -26,8 +12,22 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 557.8
-- name: 🇮🇷IR_70
+  delay: 674.5
+- name: 亚太地区 V2CROSS.COM
+  type: vmess
+  server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
+  port: 10123
+  uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
+  delay: 857.8
+- name: 🇮🇷IR_62
   type: vmess
   server: v6.hdacd.com
   port: 30806
@@ -40,4 +40,18 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 590.8
+  delay: 912.9
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: de5.taskflowhub.org
+  port: 2053
+  uuid: ca58b165-0f7d-49aa-9fae-a017e8a0f884
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 1334.7
