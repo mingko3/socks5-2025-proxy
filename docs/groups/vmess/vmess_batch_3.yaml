@@ -1,4 +1,32 @@
 proxies:
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: gtm-sg-cc54q7d1q01.365cloud0285.com
+  port: 6001
+  uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: gtm-sg-cc54q7d1q01.365cloud0285.com
+  delay: 215.8
+- name: 🇮🇳[openproxylist.com] vmess-IN
+  type: vmess
+  server: 172.232.103.186
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 253.4
 - name: 🇹🇼[openproxylist.com] vmess-TW
   type: vmess
   server: world.t.51guangtaobao.com
@@ -9,16 +37,16 @@ proxies:
   tls: false
   network: tcp
   ws-opts:
-    path: ''
+    path: /
     headers:
-      Host: ''
-  delay: 572.3
-- name: 🇬🇧 GB_22
+      Host: world.t.51guangtaobao.com
+  delay: 382.1
+- name: 🇭🇰HK_50
   type: vmess
-  server: v30.hdacd.com
-  port: 30830
+  server: v10.hdacd.com
+  port: 30807
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
+  alterId: 2
   cipher: auto
   tls: false
   network: tcp
@@ -26,7 +54,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 674.2
+  delay: 399.9
+- name: 🇨🇳CN_07
+  type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 715.4
 - name: 🇳🇱[openproxylist.com] vmess-NL
   type: vmess
   server: renderer-stream-1-411.mirra.now
@@ -40,4 +82,18 @@ proxies:
     path: /api/v1/gpu-stream/socket
     headers:
       Host: renderer-stream-1-411.mirra.now
-  delay: 1013.3
+  delay: 845.9
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
+  port: 10011
+  uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
+  delay: 1053.4
