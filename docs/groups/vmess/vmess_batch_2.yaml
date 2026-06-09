@@ -1,5 +1,47 @@
 proxies:
-- name: 🇺🇸US_109
+- name: 🇺🇸US_125
+  type: vmess
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 191.0
+- name: 🏁ZZ_138
+  type: vmess
+  server: 103.182.97.12
+  port: 30806
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 196.9
+- name: 🇷🇺RU_85
+  type: vmess
+  server: 213.156.141.52
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 207.4
+- name: 🇺🇸US_124
   type: vmess
   server: 172.232.103.186
   port: 22324
@@ -12,11 +54,11 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 207.5
-- name: 🇭🇰HK_46
+  delay: 212.5
+- name: 🇮🇷IR_59
   type: vmess
-  server: v10.hdacd.com
-  port: 30807
+  server: v6.hdacd.com
+  port: 30806
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -26,36 +68,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 290.4
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: nlt.reata.ir
-  port: 1020
-  uuid: 6244c41a-f4c1-4733-a654-c38f7729b13c
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 527.5
-- name: 🇨🇳CN_07
-  type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 622.9
-- name: 🇬🇧 GB_19
+  delay: 659.7
+- name: 🇬🇧 GB_22
   type: vmess
   server: v30.hdacd.com
   port: 30830
@@ -68,8 +82,50 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 696.3
-- name: 🇺🇸 US_92
+  delay: 667.6
+- name: 🇨🇳CN_06
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 672.7
+- name: 🇭🇰HK_51
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 757.3
+- name: 🇳🇱[openproxylist.com] vmess-NL
+  type: vmess
+  server: renderer-stream-1-411.mirra.now
+  port: 443
+  uuid: df9c9355-b02c-4c12-909d-0dbeb725d52b
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-1-411.mirra.now
+  delay: 846.7
+- name: 🇺🇸 US_102
   type: vmess
   server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
   port: 10020
@@ -82,4 +138,18 @@ proxies:
     path: /
     headers:
       Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
-  delay: 798.4
+  delay: 1105.9
+- name: 🇺🇸 US_103
+  type: vmess
+  server: 1b267619c4812cc46ee281747884ca50.qos.onl
+  port: 10034
+  uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
+  delay: 1255.9
