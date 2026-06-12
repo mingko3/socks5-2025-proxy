@@ -1,5 +1,19 @@
 proxies:
-- name: 🇷🇺RU_80
+- name: 🇮🇱IL_56
+  type: vmess
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 231.3
+- name: 🇷🇺RU_84
   type: vmess
   server: 213.156.141.52
   port: 22324
@@ -12,13 +26,13 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 237.3
-- name: 🇺🇸US_117
+  delay: 239.1
+- name: 🇭🇰HK_51
   type: vmess
-  server: 172.232.103.186
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
   tls: false
   network: tcp
@@ -26,8 +40,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 249.9
-- name: 🇺🇸 US_98
+  delay: 384.6
+- name: 🇺🇸 US_102
   type: vmess
   server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
   port: 10020
@@ -40,8 +54,8 @@ proxies:
     path: /
     headers:
       Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
-  delay: 389.5
-- name: 🇬🇧 GB_21
+  delay: 653.1
+- name: 🇬🇧 GB_18
   type: vmess
   server: v30.hdacd.com
   port: 30830
@@ -54,18 +68,4 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 849.2
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
-  port: 10011
-  uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
-  delay: 1006.0
+  delay: 785.7
