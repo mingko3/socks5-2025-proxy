@@ -1,5 +1,5 @@
 proxies:
-- name: 🇷🇺RU_91
+- name: 🇷🇺RU_85
   type: vmess
   server: 213.156.141.52
   port: 22324
@@ -12,102 +12,18 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 205.6
-- name: 🇺🇸US_125
+  delay: 235.6
+- name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
-  server: 47.250.135.244
-  port: 10000
-  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  server: 8.211.149.30
+  port: 443
+  uuid: bc82b8e0-026b-4b7e-8fa7-69977b6d9dc0
   alterId: 0
   cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 206.2
-- name: 🇺🇸US_129
-  type: vmess
-  server: 172.232.103.186
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 229.4
-- name: 🇭🇰HK_56
-  type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 532.8
-- name: 🇳🇱[openproxylist.com] vmess-NL
-  type: vmess
-  server: myvpshosting.name.ng
-  port: 80
-  uuid: 96408f9a-df03-448b-b7e4-ec8e2c216682
-  alterId: 0
-  cipher: auto
-  tls: false
+  tls: true
   network: ws
   ws-opts:
-    path: /vmess
+    path: /ws/
     headers:
-      Host: myvpshosting.name.ng
-  delay: 545.3
-- name: 🇨🇳CN_09
-  type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 635.6
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
-  port: 10020
-  uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
-  delay: 828.3
-- name: 🇷🇺[openproxylist.com] vmess-RU
-  type: vmess
-  server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
-  port: 10057
-  uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
-  delay: 844.5
+      Host: polartime.link
+  delay: 1166.6
