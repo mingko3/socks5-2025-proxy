@@ -1,44 +1,52 @@
 proxies:
-- name: SS_193.29.139.157_8080
+- name: SS_82.38.31.149_8080
   type: ss
-  server: 193.29.139.157
+  server: 82.38.31.149
   port: 8080
   cipher: chacha20-ietf-poly1305
-  password: cvII85TrW6n0OGyfpHVS1u
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  delay: 115.1
-- name: SS_149.22.87.241_443
+  delay: 111.2
+- name: SS_82.38.31.2_8080
   type: ss
-  server: 149.22.87.241
+  server: 82.38.31.2
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  delay: 111.8
+- name: SS_82.38.31.35_8080
+  type: ss
+  server: 82.38.31.35
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
+  udp: true
+  delay: 111.9
+- name: SS_82.38.31.192_8080
+  type: ss
+  server: 82.38.31.192
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  udp: true
+  delay: 111.9
+- name: SS_82.38.31.15_443
+  type: ss
+  server: 82.38.31.15
   port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  delay: 151.8
-- name: SS_149.22.87.204_443
+  delay: 112.2
+- name: SS_82.38.31.208_8080
   type: ss
-  server: 149.22.87.204
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
+  server: 82.38.31.208
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-  delay: 152.0
-- name: SS_47.79.144.115_40003
-  type: ss
-  server: 47.79.144.115
-  port: 40003
-  cipher: aes-256-gcm
-  password: GTZI5AbjNAeWQG0oVNptvWJogHNKiiKA
-  udp: true
-  delay: 153.9
-- name: SS_149.22.87.240_443
-  type: ss
-  server: 149.22.87.240
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 154.1
+  delay: 114.1
 - name: SS_103.106.228.175_8009
   type: ss
   server: 103.106.228.175
@@ -46,47 +54,47 @@ proxies:
   cipher: aes-256-gcm
   password: XKFKl2rULjIp74
   udp: true
-  delay: 157.8
-- name: SS_185.213.23.63_990
+  delay: 156.6
+- name: SS_149.22.87.241_443
   type: ss
-  server: 185.213.23.63
-  port: 990
-  cipher: chacha20-ietf-poly1305
-  password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-  udp: true
-  delay: 171.7
-- name: SS_102.133.165.160_16233
-  type: ss
-  server: 102.133.165.160
-  port: 16233
-  cipher: chacha20-ietf-poly1305
-  password: Xsy8Ox4yOV3xLlpxtjzs3X
-  udp: true
-  delay: 211.7
-- name: SS_102.37.156.224_443
-  type: ss
-  server: 102.37.156.224
+  server: 149.22.87.241
   port: 443
-  cipher: chacha20-ietf-poly1305
-  password: aduB9HGxQHjA2SBMRjkHX6
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 215.3
-- name: SS_149.104.109.74_21273
+  delay: 156.9
+- name: SS_149.22.87.240_443
   type: ss
-  server: 149.104.109.74
-  port: 21273
-  cipher: chacha20-ietf-poly1305
-  password: Ll6cYfXM5DzQbdtMMb72A_jqVnNljU3yqe
+  server: 149.22.87.240
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 256.3
-- name: SS_r3mrcg001269pz2.cybervena.com_50099
+  delay: 157.2
+- name: SS_149.22.87.204_443
   type: ss
-  server: r3mrcg001269pz2.cybervena.com
-  port: 50099
-  cipher: chacha20-ietf-poly1305
-  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  server: 149.22.87.204
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 282.9
+  delay: 157.3
+- name: SS_47.79.144.115_40003
+  type: ss
+  server: 47.79.144.115
+  port: 40003
+  cipher: aes-256-gcm
+  password: GTZI5AbjNAeWQG0oVNptvWJogHNKiiKA
+  udp: true
+  delay: 158.6
+- name: SS_38.180.197.41_8080
+  type: ss
+  server: 38.180.197.41
+  port: 8080
+  cipher: aes-256-gcm
+  password: KixLvKzwjekG00rm
+  udp: true
+  delay: 184.6
 - name: SS_141.164.45.187_6679
   type: ss
   server: 141.164.45.187
@@ -94,7 +102,39 @@ proxies:
   cipher: aes-256-gcm
   password: TEzjfAYq2IjtuoS
   udp: true
-  delay: 345.3
+  delay: 202.0
+- name: SS_r3mrcg001269pz2.cybervena.com_50099
+  type: ss
+  server: r3mrcg001269pz2.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  udp: true
+  delay: 204.8
+- name: SS_102.37.156.224_443
+  type: ss
+  server: 102.37.156.224
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: aduB9HGxQHjA2SBMRjkHX6
+  udp: true
+  delay: 217.0
+- name: SS_102.133.165.160_16233
+  type: ss
+  server: 102.133.165.160
+  port: 16233
+  cipher: chacha20-ietf-poly1305
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  udp: true
+  delay: 217.9
+- name: SS_r3mrcg00129437x.cybervena.com_50099
+  type: ss
+  server: r3mrcg00129437x.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  udp: true
+  delay: 222.1
 - name: SS_download.riferoser.icu_56594
   type: ss
   server: download.riferoser.icu
@@ -102,4 +142,20 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: mzeMYBJYp4Bo7nA1qYLvv7QG73igtAA85nt4pr8A9ntx2qhDfYgRtiJ7iH7VrcneQKNmtvpbsvvFKPaUATYELi18iH56Ttr4
   udp: true
-  delay: 430.8
+  delay: 231.0
+- name: SS_149.104.109.74_21273
+  type: ss
+  server: 149.104.109.74
+  port: 21273
+  cipher: chacha20-ietf-poly1305
+  password: Ll6cYfXM5DzQbdtMMb72A_jqVnNljU3yqe
+  udp: true
+  delay: 251.1
+- name: SS_r3mrcg001286ek2.cybervena.com_50099
+  type: ss
+  server: r3mrcg001286ek2.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  udp: true
+  delay: 271.9

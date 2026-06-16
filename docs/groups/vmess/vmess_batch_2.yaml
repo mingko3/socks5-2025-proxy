@@ -1,7 +1,21 @@
 proxies:
-- name: 🇷🇺RU_85
+- name: 🇮🇱IL_65
   type: vmess
-  server: 213.156.141.52
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 233.5
+- name: 🇺🇸US_129
+  type: vmess
+  server: 172.232.103.186
   port: 22324
   uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
@@ -12,18 +26,32 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 235.6
-- name: 🇯🇵[openproxylist.com] vmess-JP
+  delay: 277.3
+- name: 🇭🇰HK_59
   type: vmess
-  server: 8.211.149.30
-  port: 443
-  uuid: bc82b8e0-026b-4b7e-8fa7-69977b6d9dc0
+  server: v8.hdacd.com
+  port: 30808
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 658.6
+- name: 🇬🇧 GB_29
+  type: vmess
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 0
   cipher: auto
-  tls: true
-  network: ws
+  tls: false
+  network: tcp
   ws-opts:
-    path: /ws/
+    path: /
     headers:
-      Host: polartime.link
-  delay: 1166.6
+      Host: ''
+  delay: 692.6
