@@ -1,19 +1,33 @@
 proxies:
-- name: 🇮🇱IL_65
+- name: 美国 Alabanza
   type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  server: 65.109.221.245
+  port: 33366
+  uuid: 2ee7eb26-8118-4d0a-a300-8d0edcfde6e5
   alterId: 0
   cipher: auto
   tls: false
   network: tcp
   ws-opts:
+    path: /Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN/Begoo_VPN
+    headers:
+      Host: ''
+  delay: 177.2
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: 89.167.82.102
+  port: 4443
+  uuid: 88553247-c1c8-4e80-9db6-56bff7efc33b
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
     path: /
     headers:
       Host: ''
-  delay: 233.5
-- name: 🇺🇸US_129
+  delay: 177.3
+- name: 🇺🇸US_125
   type: vmess
   server: 172.232.103.186
   port: 22324
@@ -26,11 +40,11 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 277.3
-- name: 🇭🇰HK_59
+  delay: 199.2
+- name: 🇨🇳CN_07
   type: vmess
-  server: v8.hdacd.com
-  port: 30808
+  server: v35.hdacd.com
+  port: 30835
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -40,8 +54,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 658.6
-- name: 🇬🇧 GB_29
+  delay: 397.4
+- name: 🇬🇧 GB_22
   type: vmess
   server: v30.hdacd.com
   port: 30830
@@ -54,4 +68,46 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 692.6
+  delay: 397.6
+- name: 🇮🇷IR_62
+  type: vmess
+  server: v9.hdacd.com
+  port: 30809
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 435.9
+- name: 🇨🇳CN_08
+  type: vmess
+  server: v24.hdacd.com
+  port: 30824
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 460.5
+- name: 🇨🇳CN_09
+  type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 481.4
