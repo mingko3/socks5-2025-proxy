@@ -6,56 +6,14 @@ proxies:
   uuid: d7c13e10-2ba9-4677-a877-d9e9d1738394
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   network: tcp
   ws-opts:
     path: /
     headers:
       Host: varzesh3.com
-  delay: 220.3
-- name: 🇺🇸US_134
-  type: vmess
-  server: 172.232.103.186
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 237.8
-- name: 🇳🇱[openproxylist.com] vmess-NL
-  type: vmess
-  server: myvpshosting.name.ng
-  port: 80
-  uuid: 96408f9a-df03-448b-b7e4-ec8e2c216682
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /vmess
-    headers:
-      Host: myvpshosting.name.ng
-  delay: 267.5
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: nlt.reata.ir
-  port: 1020
-  uuid: 6244c41a-f4c1-4733-a654-c38f7729b13c
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 417.0
-- name: 🇭🇰HK_61
+  delay: 421.7
+- name: 🇭🇰HK_58
   type: vmess
   server: v10.hdacd.com
   port: 30807
@@ -68,36 +26,22 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 505.2
-- name: 🇭🇰HK_59
+  delay: 635.3
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: v8.hdacd.com
-  port: 30808
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 529.9
-- name: 🇬🇧 GB_22
-  type: vmess
-  server: v30.hdacd.com
-  port: 30830
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: atiins.com.tr
+  port: 443
+  uuid: 97775936-05ea-4fea-8562-e9eb98559790
   alterId: 0
   cipher: auto
-  tls: false
+  tls: true
   network: tcp
   ws-opts:
     path: /
     headers:
       Host: ''
-  delay: 548.4
-- name: 🇨🇳CN_07
+  delay: 762.2
+- name: 🇨🇳CN_11
   type: vmess
   server: v24.hdacd.com
   port: 30824
@@ -110,64 +54,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 577.5
-- name: 🇭🇰HK_60
-  type: vmess
-  server: v4.hdacd.com
-  port: 30804
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 606.2
-- name: 🇨🇳CN_09
-  type: vmess
-  server: v45.hdacd.com
-  port: 30845
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 627.0
-- name: 🇮🇷IR_71
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 706.2
-- name: 🇨🇳CN_08
-  type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 750.6
-- name: 🇮🇷IR_73
+  delay: 806.8
+- name: 🇮🇷IR_67
   type: vmess
   server: v9.hdacd.com
   port: 30809
@@ -180,11 +68,25 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 794.7
-- name: 🇮🇷IR_72
+  delay: 976.0
+- name: 🇬🇧 GB_26
   type: vmess
-  server: v6.hdacd.com
-  port: 30806
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 990.9
+- name: 🇨🇳CN_12
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -194,18 +96,32 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 924.8
-- name: 🇯🇵[openproxylist.com] vmess-JP
+  delay: 1117.3
+- name: 🇺🇸 US_108
   type: vmess
-  server: 8.211.149.30
-  port: 443
-  uuid: bc82b8e0-026b-4b7e-8fa7-69977b6d9dc0
+  server: 66.163.117.58
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   alterId: 0
   cipher: auto
-  tls: true
-  network: ws
+  tls: false
+  network: tcp
   ws-opts:
-    path: /ws/
+    path: /
     headers:
-      Host: polartime.link
-  delay: 1185.9
+      Host: ''
+  delay: 1164.3
+- name: 🇮🇷IR_68
+  type: vmess
+  server: v36.hdacd.com
+  port: 30836
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 1336.7
