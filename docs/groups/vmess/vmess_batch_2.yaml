@@ -1,19 +1,5 @@
 proxies:
-- name: 🇻🇳[openproxylist.com] vmess-VN
-  type: vmess
-  server: 160.250.247.70
-  port: 49178
-  uuid: d7c13e10-2ba9-4677-a877-d9e9d1738394
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: varzesh3.com
-  delay: 421.7
-- name: 🇭🇰HK_58
+- name: 🇭🇰HK_57
   type: vmess
   server: v10.hdacd.com
   port: 30807
@@ -26,7 +12,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 635.3
+  delay: 313.8
+- name: 🇻🇳[openproxylist.com] vmess-VN
+  type: vmess
+  server: 160.250.247.70
+  port: 49178
+  uuid: d7c13e10-2ba9-4677-a877-d9e9d1738394
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: varzesh3.com
+  delay: 531.0
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: atiins.com.tr
@@ -40,88 +40,4 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 762.2
-- name: 🇨🇳CN_11
-  type: vmess
-  server: v24.hdacd.com
-  port: 30824
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 806.8
-- name: 🇮🇷IR_67
-  type: vmess
-  server: v9.hdacd.com
-  port: 30809
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 976.0
-- name: 🇬🇧 GB_26
-  type: vmess
-  server: v30.hdacd.com
-  port: 30830
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 990.9
-- name: 🇨🇳CN_12
-  type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 1117.3
-- name: 🇺🇸 US_108
-  type: vmess
-  server: 66.163.117.58
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 1164.3
-- name: 🇮🇷IR_68
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 1336.7
+  delay: 848.8
