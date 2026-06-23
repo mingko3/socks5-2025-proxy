@@ -1,5 +1,33 @@
 proxies:
-- name: 🇭🇰HK_57
+- name: 🇮🇱IL_64
+  type: vmess
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 231.2
+- name: 🇮🇱IL_65
+  type: vmess
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 232.0
+- name: 🇭🇰HK_58
   type: vmess
   server: v10.hdacd.com
   port: 30807
@@ -12,7 +40,77 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 313.8
+  delay: 310.8
+- name: 🇨🇳CN_09
+  type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 443.0
+- name: 🇭🇰HK_57
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 464.5
+- name: 🇮🇷IR_68
+  type: vmess
+  server: v6.hdacd.com
+  port: 30806
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 498.6
+- name: 🇬🇧 GB_22
+  type: vmess
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 501.6
+- name: 🇭🇰HK_59
+  type: vmess
+  server: v29.hdacd.com
+  port: 30829
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 622.7
 - name: 🇻🇳[openproxylist.com] vmess-VN
   type: vmess
   server: 160.250.247.70
@@ -20,24 +118,24 @@ proxies:
   uuid: d7c13e10-2ba9-4677-a877-d9e9d1738394
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
   network: tcp
   ws-opts:
     path: /
     headers:
       Host: varzesh3.com
-  delay: 531.0
-- name: 🇺🇸[openproxylist.com] vmess-US
+  delay: 921.0
+- name: 🇮🇷IR_67
   type: vmess
-  server: atiins.com.tr
-  port: 443
-  uuid: 97775936-05ea-4fea-8562-e9eb98559790
-  alterId: 0
+  server: v9.hdacd.com
+  port: 30809
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
-  tls: true
+  tls: false
   network: tcp
   ws-opts:
     path: /
     headers:
       Host: ''
-  delay: 848.8
+  delay: 982.9
