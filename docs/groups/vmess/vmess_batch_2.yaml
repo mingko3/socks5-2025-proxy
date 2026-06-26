@@ -1,5 +1,33 @@
 proxies:
-- name: 🇬🇧 GB_13
+- name: 🇺🇸 US_90
+  type: vmess
+  server: 66.163.117.58
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 237.2
+- name: 🇭🇰HK_55
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 394.1
+- name: 🇬🇧 GB_22
   type: vmess
   server: v30.hdacd.com
   port: 30830
@@ -12,18 +40,18 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 330.7
-- name: 🇻🇳[openproxylist.com] vmess-VN
+  delay: 424.0
+- name: 🇮🇷IR_63
   type: vmess
-  server: 160.250.247.70
-  port: 49178
-  uuid: d7c13e10-2ba9-4677-a877-d9e9d1738394
-  alterId: 0
+  server: v36.hdacd.com
+  port: 30836
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
   cipher: auto
   tls: false
   network: tcp
   ws-opts:
     path: /
     headers:
-      Host: varzesh3.com
-  delay: 1400.6
+      Host: ''
+  delay: 1445.4
