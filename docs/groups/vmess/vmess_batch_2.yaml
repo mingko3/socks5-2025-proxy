@@ -1,4 +1,18 @@
 proxies:
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: spt.reata.ir
+  port: 1020
+  uuid: a8022edb-0bd7-4f86-b70d-20f7f8a59814
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: spt.reata.ir
+  delay: 283.5
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: n1747624274.4u9ma.icu
@@ -12,12 +26,26 @@ proxies:
     path: /
     headers:
       Host: n1747624274.4u9ma.icu
-  delay: 644.1
-- name: 🇺🇸 US_89
+  delay: 443.5
+- name: 🇭🇰HK_58
   type: vmess
-  server: 66.163.117.58
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 494.3
+- name: 🇹🇼[openproxylist.com] vmess-TW
+  type: vmess
+  server: tttttt.ly123.edu.kg
+  port: 11886
+  uuid: 77ac8771-e16a-4b4f-becd-81750057c8ad
   alterId: 0
   cipher: auto
   tls: false
@@ -26,4 +54,4 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1214.0
+  delay: 496.5

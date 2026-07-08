@@ -1,117 +1,5 @@
 proxies:
-- name: 🇬🇧GB_43
-  type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 8.4
-- name: 🇬🇧GB_42
-  type: vmess
-  server: 82.198.246.37
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 8.9
-- name: 🇬🇧GB_44
-  type: vmess
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 9.5
-- name: 🇬🇧GB_45
-  type: vmess
-  server: 82.198.246.9
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 9.8
-- name: 🇬🇧GB_46
-  type: vmess
-  server: 82.198.246.233
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 9.8
-- name: 🇺🇸US_102
-  type: vmess
-  server: 67.220.72.237
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
-  alterId: 1
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 30.2
-- name: 🇺🇸US_100
-  type: vmess
-  server: 107.175.91.118
-  port: 443
-  uuid: 1bb1f95f-7425-4442-93f7-8fc1bd1a2001
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /v2ray-wisp
-    headers:
-      Host: ''
-  delay: 49.5
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: phoenix0202.zgjok.com
-  port: 443
-  uuid: d9c36b55-447a-4484-882b-d799f5301681
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /d9c36b55-447a-4484-882b-d799f5301681
-    headers:
-      Host: phoenix0202.zgjok.com
-  delay: 55.0
-- name: 🏁ZZ_110
+- name: 🏁ZZ_111
   type: vmess
   server: 134.195.196.211
   port: 18000
@@ -124,7 +12,21 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 59.1
+  delay: 13.0
+- name: 🇺🇸 US_88
+  type: vmess
+  server: 67.220.95.3
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 16.7
 - name: 🇺🇸US_101
   type: vmess
   server: 67.220.85.46
@@ -138,8 +40,22 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 66.1
-- name: 🇺🇸US_99
+  delay: 23.2
+- name: 🇺🇸US_104
+  type: vmess
+  server: 107.175.91.118
+  port: 443
+  uuid: 1bb1f95f-7425-4442-93f7-8fc1bd1a2001
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /v2ray-wisp
+    headers:
+      Host: ''
+  delay: 23.4
+- name: 🇺🇸US_102
   type: vmess
   server: 38.110.1.246
   port: 18000
@@ -152,12 +68,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 66.8
-- name: 🇺🇸 US_86
+  delay: 32.4
+- name: 🇬🇧GB_43
   type: vmess
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  server: 82.198.246.37
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   tls: false
@@ -166,12 +82,12 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 66.9
-- name: 🇯🇵JP_66
+  delay: 49.8
+- name: 🇬🇧GB_45
   type: vmess
-  server: 172.104.80.66
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
   cipher: auto
   tls: false
@@ -180,63 +96,91 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 106.7
-- name: 🇯🇵[openproxylist.com] vmess-JP
+  delay: 50.0
+- name: 🇬🇧GB_46
   type: vmess
-  server: 157.85.230.247
-  port: 2052
-  uuid: 85357d35-492e-4814-835a-aba4cb7f00ad
+  server: 82.198.246.97
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 50.0
+- name: 🇬🇧GB_44
+  type: vmess
+  server: 82.198.246.250
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 50.1
+- name: 🇬🇧GB_47
+  type: vmess
+  server: 82.198.246.9
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 50.2
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 165.140.216.142
+  port: 443
+  uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 56.3
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 216.36.115.182
+  port: 48885
+  uuid: 929f4b3b-60ed-4c7d-e94e-243ee9bbc743
   alterId: 0
   cipher: auto
   tls: false
   network: ws
   ws-opts:
-    path: 85357d35-492e-4814-835a-aba4cb7f00ad-vm
-    headers:
-      Host: www.bing.com
-  delay: 120.2
-- name: 🇮🇱IL_62
-  type: vmess
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
     path: /
     headers:
       Host: ''
-  delay: 167.2
-- name: 🇮🇱IL_63
+  delay: 62.4
+- name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 167.5
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: n1747624274.4u9ma.icu
-  port: 443
-  uuid: d8daf507-a4ac-4eea-8399-8f0cd071eb52
+  server: 178.104.66.83
+  port: 8880
+  uuid: 6cd9c576-a21a-49a1-b922-f7daf1f2bfe4
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
-    path: /
+    path: /ray
     headers:
-      Host: n1747624274.4u9ma.icu
-  delay: 569.4
+      Host: ''
+  delay: 113.1
 - name: 🇹🇷[openproxylist.com] vmess-TR
   type: vmess
   server: 155.103.71.163
@@ -250,8 +194,36 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 1231.4
-- name: 🇺🇸 US_85
+  delay: 143.2
+- name: 🇯🇵JP_67
+  type: vmess
+  server: 172.104.80.66
+  port: 22324
+  uuid: 04621bae-ab36-11ec-b909-0242ac120002
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 144.8
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: phoenix0202.zgjok.com
+  port: 443
+  uuid: d9c36b55-447a-4484-882b-d799f5301681
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /d9c36b55-447a-4484-882b-d799f5301681
+    headers:
+      Host: phoenix0202.zgjok.com
+  delay: 153.3
+- name: 🇺🇸 US_89
   type: vmess
   server: 66.163.117.58
   port: 22324
@@ -264,4 +236,102 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1271.2
+  delay: 196.0
+- name: 🇮🇱IL_63
+  type: vmess
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 207.3
+- name: 🇮🇱IL_64
+  type: vmess
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 208.2
+- name: 🇺🇸US_103
+  type: vmess
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 215.3
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: spt.reata.ir
+  port: 1020
+  uuid: a8022edb-0bd7-4f86-b70d-20f7f8a59814
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: spt.reata.ir
+  delay: 283.5
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: n1747624274.4u9ma.icu
+  port: 443
+  uuid: d8daf507-a4ac-4eea-8399-8f0cd071eb52
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1747624274.4u9ma.icu
+  delay: 443.5
+- name: 🇭🇰HK_58
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 494.3
+- name: 🇹🇼[openproxylist.com] vmess-TW
+  type: vmess
+  server: tttttt.ly123.edu.kg
+  port: 11886
+  uuid: 77ac8771-e16a-4b4f-becd-81750057c8ad
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 496.5
