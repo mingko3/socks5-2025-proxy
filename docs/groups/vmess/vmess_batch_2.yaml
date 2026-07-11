@@ -1,19 +1,33 @@
 proxies:
-- name: 🇹🇷[openproxylist.com] vmess-TR
+- name: 🇺🇸US_114
   type: vmess
-  server: 155.103.71.163
-  port: 2026
-  uuid: b2fcc775-1579-4b4b-9fe8-f8dde771c861
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
   alterId: 0
   cipher: auto
   tls: false
   network: tcp
   ws-opts:
-    path: ''
+    path: /
     headers:
       Host: ''
-  delay: 189.7
-- name: 🇺🇸 US_90
+  delay: 214.6
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: kiri1.dlweb.info
+  port: 23793
+  uuid: 17483fa4-f518-4886-b85e-a5abd76f7314
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: varzesh3.com
+  delay: 215.6
+- name: 🇺🇸 US_98
   type: vmess
   server: 66.163.117.58
   port: 22324
@@ -26,8 +40,36 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 254.8
-- name: 🇭🇰HK_60
+  delay: 220.1
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: me.echo-license.gr
+  port: 14991
+  uuid: fbd2b2f1-af4a-4e5f-9556-af37edea9db5
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: play.google.com
+  delay: 325.5
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: n1747624260.4u9ma.icu
+  port: 443
+  uuid: eee8cb72-7eab-4034-a308-ed06cb07e003
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: n1747624260.4u9ma.icu
+  delay: 444.4
+- name: 🇭🇰HK_67
   type: vmess
   server: v10.hdacd.com
   port: 30807
@@ -40,4 +82,60 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 627.4
+  delay: 746.9
+- name: 🇨🇳CN_14
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 824.9
+- name: 🇭🇰HK_66
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 832.8
+- name: 🇨🇳CN_13
+  type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 906.7
+- name: 🇭🇰HK_65
+  type: vmess
+  server: v8.hdacd.com
+  port: 30808
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 971.0
