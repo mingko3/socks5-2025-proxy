@@ -1,20 +1,20 @@
 proxies:
-- name: SS_83.217.9.17_25232
+- name: SS_149.22.87.240_443
   type: ss
-  server: 83.217.9.17
-  port: 25232
-  cipher: chacha20-ietf-poly1305
-  password: 0GAK2b9gkqBatuxi2cswmH
+  server: 149.22.87.240
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 181.3
-- name: SS_102.133.165.160_16233
+  delay: 145.0
+- name: SS_141.164.45.187_6679
   type: ss
-  server: 102.133.165.160
-  port: 16233
-  cipher: chacha20-ietf-poly1305
-  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  server: 141.164.45.187
+  port: 6679
+  cipher: aes-256-gcm
+  password: TEzjfAYq2IjtuoS
   udp: true
-  delay: 273.6
+  delay: 172.3
 - name: SS_102.37.156.224_443
   type: ss
   server: 102.37.156.224
@@ -22,7 +22,15 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: aduB9HGxQHjA2SBMRjkHX6
   udp: true
-  delay: 280.8
+  delay: 231.4
+- name: SS_102.133.165.160_16233
+  type: ss
+  server: 102.133.165.160
+  port: 16233
+  cipher: chacha20-ietf-poly1305
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  udp: true
+  delay: 235.2
 - name: SS_tinkered-pennies-puppies.freesocks.work_443
   type: ss
   server: tinkered-pennies-puppies.freesocks.work
@@ -30,7 +38,7 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: hbGrpfvNrJsUmKmPbR3iY2
   udp: true
-  delay: 634.7
+  delay: 262.3
 - name: SS_r3mrcg001286ek2.cybervena.com_50099
   type: ss
   server: r3mrcg001286ek2.cybervena.com
@@ -38,7 +46,15 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
   udp: true
-  delay: 693.3
+  delay: 399.4
+- name: SS_r3mrcg001287h3p.cybervena.com_50099
+  type: ss
+  server: r3mrcg001287h3p.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  udp: true
+  delay: 402.4
 - name: SS_r3mrcg00129437x.cybervena.com_50099
   type: ss
   server: r3mrcg00129437x.cybervena.com
@@ -46,4 +62,4 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
   udp: true
-  delay: 697.7
+  delay: 496.6
