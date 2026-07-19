@@ -1,10 +1,10 @@
 proxies:
-- name: 🇭🇰HK_79
+- name: 🇮🇱IL_93
   type: vmess
-  server: v8.hdacd.com
-  port: 30808
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
   cipher: auto
   tls: false
   network: tcp
@@ -12,13 +12,13 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 622.3
-- name: 🇨🇳CN_29
+  delay: 220.6
+- name: 🇮🇱IL_94
   type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
   cipher: auto
   tls: false
   network: tcp
@@ -26,8 +26,78 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 626.6
-- name: 🇨🇳CN_28
+  delay: 222.3
+- name: 🇺🇸US_177
+  type: vmess
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 225.2
+- name: 🇯🇵JP_99
+  type: vmess
+  server: family.bucket.x9.kfc-520.com
+  port: 10050
+  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 832.3
+- name: 🇯🇵JP_100
+  type: vmess
+  server: family.bucket.x9.kfc-520.com
+  port: 10049
+  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: raw
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 833.7
+- name: 🇯🇵JP_102
+  type: vmess
+  server: family.bucket.x9.kfc-520.com
+  port: 10043
+  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 841.5
+- name: 🇯🇵JP_101
+  type: vmess
+  server: family.bucket.x9.kfc-520.com
+  port: 10038
+  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: raw
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 842.0
+- name: 🇨🇳CN_22
   type: vmess
   server: v24.hdacd.com
   port: 30824
@@ -40,8 +110,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 646.0
-- name: 🇭🇰HK_78
+  delay: 862.1
+- name: 🇭🇰HK_81
   type: vmess
   server: v10.hdacd.com
   port: 30807
@@ -54,8 +124,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 670.2
-- name: 🇨🇳CN_30
+  delay: 863.3
+- name: 🇨🇳CN_20
   type: vmess
   server: v33.hdacd.com
   port: 30833
@@ -68,8 +138,50 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 699.5
-- name: 🇮🇷IR_90
+  delay: 873.0
+- name: 🇨🇳CN_21
+  type: vmess
+  server: v45.hdacd.com
+  port: 30845
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 922.8
+- name: 🇭🇰HK_82
+  type: vmess
+  server: v29.hdacd.com
+  port: 30829
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 956.0
+- name: 🇮🇷IR_96
+  type: vmess
+  server: v6.hdacd.com
+  port: 30806
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 1023.1
+- name: 🇮🇷IR_95
   type: vmess
   server: v9.hdacd.com
   port: 30809
@@ -82,18 +194,4 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 722.4
-- name: 🇭🇰HK_80
-  type: vmess
-  server: v4.hdacd.com
-  port: 30804
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 757.6
+  delay: 1028.6
