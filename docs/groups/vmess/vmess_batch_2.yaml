@@ -1,187 +1,19 @@
 proxies:
-- name: 🇮🇱IL_93
+- name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  server: cs.ktmcn.net
+  port: 12883
+  uuid: 78f2e8f0-68ea-438e-84ec-d58c9416c680
   alterId: 0
   cipher: auto
   tls: false
-  network: tcp
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: ''
-  delay: 220.6
-- name: 🇮🇱IL_94
-  type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 222.3
-- name: 🇺🇸US_177
-  type: vmess
-  server: 47.250.135.244
-  port: 10000
-  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 225.2
-- name: 🇯🇵JP_99
-  type: vmess
-  server: family.bucket.x9.kfc-520.com
-  port: 10050
-  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 832.3
-- name: 🇯🇵JP_100
-  type: vmess
-  server: family.bucket.x9.kfc-520.com
-  port: 10049
-  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: raw
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 833.7
-- name: 🇯🇵JP_102
-  type: vmess
-  server: family.bucket.x9.kfc-520.com
-  port: 10043
-  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 841.5
-- name: 🇯🇵JP_101
-  type: vmess
-  server: family.bucket.x9.kfc-520.com
-  port: 10038
-  uuid: 1dc73529-f030-3ac5-ad64-f7666b9a51bc
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: raw
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 842.0
-- name: 🇨🇳CN_22
-  type: vmess
-  server: v24.hdacd.com
-  port: 30824
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 862.1
-- name: 🇭🇰HK_81
-  type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 863.3
-- name: 🇨🇳CN_20
-  type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 873.0
-- name: 🇨🇳CN_21
-  type: vmess
-  server: v45.hdacd.com
-  port: 30845
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 922.8
-- name: 🇭🇰HK_82
-  type: vmess
-  server: v29.hdacd.com
-  port: 30829
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 956.0
-- name: 🇮🇷IR_96
-  type: vmess
-  server: v6.hdacd.com
-  port: 30806
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 1023.1
-- name: 🇮🇷IR_95
+      Host: baidu.com
+  delay: 700.1
+- name: 🇮🇷IR_79
   type: vmess
   server: v9.hdacd.com
   port: 30809
@@ -194,4 +26,32 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1028.6
+  delay: 976.4
+- name: 🇭🇰HK_65
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 980.7
+- name: 🇻🇳[openproxylist.com] vmess-VN
+  type: vmess
+  server: 103.166.184.134
+  port: 27467
+  uuid: 93637105-bcea-4a68-b089-1bb6091f0b16
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: speedtest.net
+  delay: 1292.1
