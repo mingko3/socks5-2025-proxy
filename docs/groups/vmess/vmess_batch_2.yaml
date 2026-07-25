@@ -1,5 +1,19 @@
 proxies:
-- name: 🇮🇷IR_81
+- name: 🇨🇳CN_13
+  type: vmess
+  server: v24.hdacd.com
+  port: 30824
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 852.4
+- name: 🇮🇷IR_77
   type: vmess
   server: v6.hdacd.com
   port: 30806
@@ -12,11 +26,11 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1013.0
-- name: 🇭🇰HK_66
+  delay: 895.0
+- name: 🇨🇳CN_11
   type: vmess
-  server: v4.hdacd.com
-  port: 30804
+  server: v45.hdacd.com
+  port: 30845
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -26,18 +40,4 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1035.6
-- name: 🇨🇳CN_10
-  type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 1163.5
+  delay: 1801.8
