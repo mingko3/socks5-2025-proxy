@@ -1,4 +1,28 @@
 proxies:
+- name: SS_157.22.240.141_57925
+  type: ss
+  server: 157.22.240.141
+  port: 57925
+  cipher: chacha20-ietf-poly1305
+  password: FXpDf7WV6lfD6n9hpz7HF2
+  udp: true
+  delay: 125.8
+- name: SS_149.22.87.204_443
+  type: ss
+  server: 149.22.87.204
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 159.1
+- name: SS_149.22.87.240_443
+  type: ss
+  server: 149.22.87.240
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 159.3
 - name: SS_149.22.87.241_443
   type: ss
   server: 149.22.87.241
@@ -7,86 +31,14 @@ proxies:
   password: shadowsocks
   udp: true
   delay: 159.4
-- name: SS_149.22.87.204_443
+- name: SS_103.149.182.105_8388
   type: ss
-  server: 149.22.87.204
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 159.9
-- name: SS_149.22.87.240_443
-  type: ss
-  server: 149.22.87.240
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 159.9
-- name: SS_103.149.183.12_8388
-  type: ss
-  server: 103.149.183.12
+  server: 103.149.182.105
   port: 8388
   cipher: chacha20-ietf
   password: asd123456
   udp: true
-  delay: 200.7
-- name: SS_102.37.156.224_443
-  type: ss
-  server: 102.37.156.224
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: aduB9HGxQHjA2SBMRjkHX6
-  udp: true
-  delay: 215.5
-- name: SS_102.133.165.160_16233
-  type: ss
-  server: 102.133.165.160
-  port: 16233
-  cipher: chacha20-ietf-poly1305
-  password: Xsy8Ox4yOV3xLlpxtjzs3X
-  udp: true
-  delay: 215.7
-- name: SS_141.164.45.187_6679
-  type: ss
-  server: 141.164.45.187
-  port: 6679
-  cipher: aes-256-gcm
-  password: TEzjfAYq2IjtuoS
-  udp: true
-  delay: 231.1
-- name: SS_103.36.91.32_8388
-  type: ss
-  server: 103.36.91.32
-  port: 8388
-  cipher: chacha20-ietf
-  password: asd123456
-  udp: true
-  delay: 243.6
-- name: SS_r3mrcg00129437x.cybervena.com_50099
-  type: ss
-  server: r3mrcg00129437x.cybervena.com
-  port: 50099
-  cipher: chacha20-ietf-poly1305
-  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-  udp: true
-  delay: 518.6
-- name: SS_r3mrcg001286ek2.cybervena.com_50099
-  type: ss
-  server: r3mrcg001286ek2.cybervena.com
-  port: 50099
-  cipher: chacha20-ietf-poly1305
-  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-  udp: true
-  delay: 534.8
-- name: SS_namrcg001640lrm.cybervena.com_50099
-  type: ss
-  server: namrcg001640lrm.cybervena.com
-  port: 50099
-  cipher: chacha20-ietf-poly1305
-  password: a9a0d092-6f0e-4701-81ee-454643d6d506
-  udp: true
-  delay: 552.9
+  delay: 200.5
 - name: SS_103.149.183.80_8388
   type: ss
   server: 103.149.183.80
@@ -94,4 +46,68 @@ proxies:
   cipher: chacha20-ietf
   password: asd123456
   udp: true
-  delay: 1216.0
+  delay: 207.4
+- name: SS_103.149.183.113_8388
+  type: ss
+  server: 103.149.183.113
+  port: 8388
+  cipher: chacha20-ietf
+  password: asd123456
+  udp: true
+  delay: 207.5
+- name: SS_103.141.221.124_8388
+  type: ss
+  server: 103.141.221.124
+  port: 8388
+  cipher: chacha20-ietf
+  password: asd123456
+  udp: true
+  delay: 207.5
+- name: SS_103.149.183.12_8388
+  type: ss
+  server: 103.149.183.12
+  port: 8388
+  cipher: chacha20-ietf
+  password: asd123456
+  udp: true
+  delay: 207.8
+- name: SS_102.133.165.160_16233
+  type: ss
+  server: 102.133.165.160
+  port: 16233
+  cipher: chacha20-ietf-poly1305
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  udp: true
+  delay: 215.8
+- name: SS_102.37.156.224_443
+  type: ss
+  server: 102.37.156.224
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: aduB9HGxQHjA2SBMRjkHX6
+  udp: true
+  delay: 216.2
+- name: SS_141.164.45.187_6679
+  type: ss
+  server: 141.164.45.187
+  port: 6679
+  cipher: aes-256-gcm
+  password: TEzjfAYq2IjtuoS
+  udp: true
+  delay: 223.0
+- name: SS_namrcg001640lrm.cybervena.com_50099
+  type: ss
+  server: namrcg001640lrm.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: a9a0d092-6f0e-4701-81ee-454643d6d506
+  udp: true
+  delay: 883.9
+- name: SS_r3mrcg001287h3p.cybervena.com_50099
+  type: ss
+  server: r3mrcg001287h3p.cybervena.com
+  port: 50099
+  cipher: chacha20-ietf-poly1305
+  password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  udp: true
+  delay: 885.1
