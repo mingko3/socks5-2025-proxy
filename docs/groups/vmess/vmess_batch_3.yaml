@@ -1,49 +1,7 @@
 proxies:
-- name: 🇨🇳CN_09
-  type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 1533.1
-- name: 🇨🇳CN_08
-  type: vmess
-  server: v24.hdacd.com
-  port: 30824
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 1534.1
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 69.63.204.31
-  port: 2082
-  uuid: 542bd1db-f5e7-4c81-a08a-d95da62a914b
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: 542bd1db-f5e7-4c81-a08a-d95da62a914b-vm
-    headers:
-      Host: www.bing.com
-  delay: 1633.8
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: lcv8v9l7oyamxxfz.v.3dns.vip
+  server: ejomsxptp19apygl.v.3dns.vip
   port: 443
   uuid: f23bb427c1f94373876c2f43e9f790f3
   alterId: 0
@@ -53,5 +11,19 @@ proxies:
   ws-opts:
     path: /ws-vmess
     headers:
-      Host: lcv8v9l7OyamxxfZ.v.3dns.vip
-  delay: 1930.9
+      Host: ejOMsxPtP19APyGL.v.3dns.vip
+  delay: 1893.3
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: drbkg16egf3fzlm3.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: DrBKg16eGf3FZlM3.v.3dns.vip
+  delay: 1911.6

@@ -1,12 +1,4 @@
 proxies:
-- name: SS_82.38.31.34_8080
-  type: ss
-  server: 82.38.31.34
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  delay: 154.4
 - name: SS_82.38.31.48_8080
   type: ss
   server: 82.38.31.48
@@ -14,47 +6,7 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  delay: 154.4
-- name: SS_82.38.31.155_8080
-  type: ss
-  server: 82.38.31.155
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  delay: 155.2
-- name: SS_82.38.31.219_8080
-  type: ss
-  server: 82.38.31.219
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  delay: 155.2
-- name: SS_82.38.31.192_8080
-  type: ss
-  server: 82.38.31.192
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  delay: 155.6
-- name: SS_82.38.31.210_8080
-  type: ss
-  server: 82.38.31.210
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: k1dBOmOB4oqi7Ump37a1bQ
-  udp: true
-  delay: 155.8
-- name: SS_82.38.31.46_8080
-  type: ss
-  server: 82.38.31.46
-  port: 8080
-  cipher: chacha20-ietf-poly1305
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  udp: true
-  delay: 155.9
+  delay: 113.1
 - name: SS_82.38.31.194_8080
   type: ss
   server: 82.38.31.194
@@ -62,31 +14,15 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
   udp: true
-  delay: 157.1
-- name: SS_103.149.183.12_8388
+  delay: 113.1
+- name: SS_193.29.139.204_8080
   type: ss
-  server: 103.149.183.12
-  port: 8388
-  cipher: chacha20-ietf
-  password: asd123456
+  server: 193.29.139.204
+  port: 8080
+  cipher: chacha20-ietf-poly1305
+  password: oZIoA69Q8yhcQV8ka3Pa3A
   udp: true
-  delay: 157.6
-- name: SS_103.149.183.80_8388
-  type: ss
-  server: 103.149.183.80
-  port: 8388
-  cipher: chacha20-ietf
-  password: asd123456
-  udp: true
-  delay: 157.7
-- name: SS_103.149.182.79_8388
-  type: ss
-  server: 103.149.182.79
-  port: 8388
-  cipher: chacha20-ietf
-  password: asd123456
-  udp: true
-  delay: 157.7
+  delay: 115.0
 - name: SS_13.53.198.63_443
   type: ss
   server: 13.53.198.63
@@ -94,15 +30,55 @@ proxies:
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-  delay: 158.7
-- name: SS_102.133.165.160_16233
+  delay: 119.3
+- name: SS_149.22.87.204_443
   type: ss
-  server: 102.133.165.160
-  port: 16233
-  cipher: chacha20-ietf-poly1305
-  password: Xsy8Ox4yOV3xLlpxtjzs3X
+  server: 149.22.87.204
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 262.0
+  delay: 144.6
+- name: SS_149.22.87.240_443
+  type: ss
+  server: 149.22.87.240
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 145.0
+- name: SS_149.22.87.241_443
+  type: ss
+  server: 149.22.87.241
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 145.5
+- name: SS_103.149.182.79_8388
+  type: ss
+  server: 103.149.182.79
+  port: 8388
+  cipher: chacha20-ietf
+  password: asd123456
+  udp: true
+  delay: 187.7
+- name: SS_103.149.182.105_8388
+  type: ss
+  server: 103.149.182.105
+  port: 8388
+  cipher: chacha20-ietf
+  password: asd123456
+  udp: true
+  delay: 191.6
+- name: SS_103.141.221.124_8388
+  type: ss
+  server: 103.141.221.124
+  port: 8388
+  cipher: chacha20-ietf
+  password: asd123456
+  udp: true
+  delay: 193.4
 - name: SS_102.37.156.224_443
   type: ss
   server: 102.37.156.224
@@ -110,20 +86,12 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: aduB9HGxQHjA2SBMRjkHX6
   udp: true
-  delay: 262.3
-- name: SS_ss.041.node-for-bigairport.win_16688
+  delay: 231.4
+- name: SS_102.133.165.160_16233
   type: ss
-  server: ss.041.node-for-bigairport.win
-  port: 16688
+  server: 102.133.165.160
+  port: 16233
   cipher: chacha20-ietf-poly1305
-  password: 792e0bdb-01db-450c-94c4-925151eb396e
+  password: Xsy8Ox4yOV3xLlpxtjzs3X
   udp: true
-  delay: 1270.4
-- name: SS_Vpna.Poorifast.ir_1080
-  type: ss
-  server: Vpna.Poorifast.ir
-  port: 1080
-  cipher: chacha20-ietf-poly1305
-  password: rYfi4cQ3z7zts7BO4-Y9_A
-  udp: true
-  delay: 1550.3
+  delay: 235.7
