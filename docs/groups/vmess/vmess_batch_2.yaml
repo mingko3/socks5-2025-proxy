@@ -1,10 +1,10 @@
 proxies:
-- name: 🇬🇧 GB_50
+- name: 🇭🇰HK_66
   type: vmess
-  server: v30.hdacd.com
-  port: 30830
+  server: v4.hdacd.com
+  port: 30804
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 0
+  alterId: 2
   cipher: auto
   tls: false
   network: tcp
@@ -12,8 +12,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 875.5
-- name: 🇮🇷IR_104
+  delay: 775.8
+- name: 🇮🇷IR_74
   type: vmess
   server: v6.hdacd.com
   port: 30806
@@ -26,11 +26,11 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 877.8
-- name: 🇭🇰HK_90
+  delay: 777.0
+- name: 🇨🇳CN_14
   type: vmess
-  server: v10.hdacd.com
-  port: 30807
+  server: v45.hdacd.com
+  port: 30845
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 2
   cipher: auto
@@ -40,4 +40,32 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 881.9
+  delay: 778.7
+- name: 🇨🇳CN_15
+  type: vmess
+  server: v35.hdacd.com
+  port: 30835
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 788.0
+- name: 🇮🇷IR_75
+  type: vmess
+  server: v9.hdacd.com
+  port: 30809
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 816.2
