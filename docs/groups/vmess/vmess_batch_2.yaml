@@ -1,15 +1,85 @@
 proxies:
-- name: 🇮🇳[openproxylist.com] vmess-IN
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16626
-  uuid: b02552e1-524c-4d4e-ac8a-ceba8e31cb8e
+  server: select-us.ddnskunlun.com
+  port: 9027
+  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
   alterId: 0
   cipher: auto
   tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: select-us.ddnskunlun.com
+  delay: 392.3
+- name: 🇮🇳[openproxylist.com] vmess-IN
+  type: vmess
+  server: board-04.ddnskunlun.com
+  port: 11973
+  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: board-04.ddnskunlun.com
+  delay: 392.9
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: select-us.ddnskunlun.com
+  port: 9028
+  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 399.8
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: 366-1095.rabbitpro-in-3.com
+  port: 29006
+  uuid: e351d6d8-c167-3e07-8fda-3f2f4ec0760b
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 502.5
+- name: 🇵🇱[openproxylist.com] vmess-PL
+  type: vmess
+  server: 366-1095.rabbitpro-in-3.com
+  port: 29081
+  uuid: e351d6d8-c167-3e07-8fda-3f2f4ec0760b
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: 366-1095.rabbitpro-in-3.com
+  delay: 510.6
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: n1761296892.4u9ma.icu
+  port: 443
+  uuid: d6db128f-42b9-40b1-b979-5e0095fa593c
+  alterId: 0
+  cipher: auto
+  tls: true
   network: ws
   ws-opts:
     path: /
     headers:
-      Host: 84879cab658d49d9a985aa85c9f1a362.mobgslb.tbcache.com
-  delay: 525.4
+      Host: n1761296892.4u9ma.icu
+  delay: 737.7
