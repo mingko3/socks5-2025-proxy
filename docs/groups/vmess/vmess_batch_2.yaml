@@ -1,60 +1,4 @@
 proxies:
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 156.245.232.239
-  port: 35043
-  uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 216.8
-- name: 🇮🇱IL_62
-  type: vmess
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 220.5
-- name: 🇮🇱IL_61
-  type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 220.9
-- name: 🇺🇸US_112
-  type: vmess
-  server: 47.250.135.244
-  port: 10000
-  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 228.8
 - name: 🇬🇧[openproxylist.com] vmess-GB
   type: vmess
   server: node-uk.connectsuite.org
@@ -68,7 +12,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 252.3
+  delay: 230.8
 - name: 🇹🇭[openproxylist.com] vmess-TH
   type: vmess
   server: www.true.th
@@ -82,18 +26,32 @@ proxies:
     path: /htun
     headers:
       Host: d7pu5mzr9c4b0.cloudfront.net
-  delay: 659.5
-- name: 🇹🇷[openproxylist.com] vmess-TR
+  delay: 516.0
+- name: 🇬🇧 GB_19
   type: vmess
-  server: 193.111.78.106
-  port: 58304
-  uuid: 26b6fd32-04e6-43ff-a065-bea36f748655
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   alterId: 0
   cipher: auto
   tls: false
-  network: ws
+  network: tcp
   ws-opts:
     path: /
     headers:
       Host: ''
-  delay: 1178.3
+  delay: 620.9
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: wwafj5lhl6bi8au9.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: ''
+  delay: 1230.5
