@@ -1,14 +1,32 @@
 proxies:
+- name: SOCKS4_104.18.42.98_2095
+  type: socks4
+  server: 104.18.42.98
+  port: 2095
+  udp: false
+  delay: 1.6
+- name: SOCKS4_151.101.56.7_443
+  type: socks4
+  server: 151.101.56.7
+  port: 443
+  udp: false
+  delay: 2.2
+- name: SOCKS4_199.232.78.159_443
+  type: socks4
+  server: 199.232.78.159
+  port: 443
+  udp: false
+  delay: 2.4
 - name: SOCKS4_104.21.56.44_80
   type: socks4
   server: 104.21.56.44
   port: 80
   udp: false
   delay: 2.5
-- name: SOCKS4_199.232.78.159_443
+- name: SOCKS4_141.193.213.20_8443
   type: socks4
-  server: 199.232.78.159
-  port: 443
+  server: 141.193.213.20
+  port: 8443
   udp: false
   delay: 2.5
 - name: SOCKS4_173.245.59.132_2053
@@ -16,106 +34,88 @@ proxies:
   server: 173.245.59.132
   port: 2053
   udp: false
-  delay: 2.8
-- name: SOCKS4_172.67.202.17_2095
+  delay: 3.3
+- name: SOCKS4_212.104.128.189_443
   type: socks4
-  server: 172.67.202.17
-  port: 2095
-  udp: false
-  delay: 2.8
-- name: SOCKS4_8.6.112.0_443
-  type: socks4
-  server: 8.6.112.0
+  server: 212.104.128.189
   port: 443
   udp: false
-  delay: 2.9
-- name: SOCKS4_88.216.69.144_443
+  delay: 3.5
+- name: SOCKS4_23.252.104.131_54321
   type: socks4
-  server: 88.216.69.144
+  server: 23.252.104.131
+  port: 54321
+  udp: false
+  delay: 7.8
+- name: SOCKS4_104.18.152.77_443
+  type: socks4
+  server: 104.18.152.77
   port: 443
   udp: false
-  delay: 3.2
-- name: SOCKS4_104.20.6.134_443
-  type: socks4
-  server: 104.20.6.134
-  port: 443
-  udp: false
-  delay: 3.6
-- name: SOCKS4_104.26.14.137_443
-  type: socks4
-  server: 104.26.14.137
-  port: 443
-  udp: false
-  delay: 3.9
-- name: SOCKS4_104.18.22.63_443
-  type: socks4
-  server: 104.18.22.63
-  port: 443
-  udp: false
-  delay: 4.0
-- name: SOCKS4_86.38.214.205_443
-  type: socks4
-  server: 86.38.214.205
-  port: 443
-  udp: false
-  delay: 4.1
-- name: SOCKS4_91.206.71.8_80
-  type: socks4
-  server: 91.206.71.8
-  port: 80
-  udp: false
-  delay: 4.3
-- name: SOCKS4_104.18.152.187_443
-  type: socks4
-  server: 104.18.152.187
-  port: 443
-  udp: false
-  delay: 5.1
-- name: SOCKS4_104.16.97.215_8880
-  type: socks4
-  server: 104.16.97.215
-  port: 8880
-  udp: false
-  delay: 5.3
-- name: SOCKS4_155.46.167.30_8880
-  type: socks4
-  server: 155.46.167.30
-  port: 8880
-  udp: false
-  delay: 6.0
-- name: SOCKS4_104.18.152.103_443
-  type: socks4
-  server: 104.18.152.103
-  port: 443
-  udp: false
-  delay: 6.1
-- name: SOCKS4_216.24.57.1_443
-  type: socks4
-  server: 216.24.57.1
-  port: 443
-  udp: false
-  delay: 6.3
-- name: SOCKS4_15.204.247.124_2375
-  type: socks4
-  server: 15.204.247.124
-  port: 2375
-  udp: false
-  delay: 17.5
+  delay: 8.1
 - name: SOCKS4_37.19.198.244_443
   type: socks4
   server: 37.19.198.244
   port: 443
   udp: false
-  delay: 19.4
+  delay: 8.2
+- name: SOCKS4_104.20.6.134_443
+  type: socks4
+  server: 104.20.6.134
+  port: 443
+  udp: false
+  delay: 8.2
+- name: SOCKS4_104.16.174.6_443
+  type: socks4
+  server: 104.16.174.6
+  port: 443
+  udp: false
+  delay: 8.4
+- name: SOCKS4_165.215.250.14_443
+  type: socks4
+  server: 165.215.250.14
+  port: 443
+  udp: false
+  delay: 8.8
+- name: SOCKS4_104.16.174.117_443
+  type: socks4
+  server: 104.16.174.117
+  port: 443
+  udp: false
+  delay: 9.0
+- name: SOCKS4_31.185.108.50_8880
+  type: socks4
+  server: 31.185.108.50
+  port: 8880
+  udp: false
+  delay: 9.2
+- name: SOCKS4_104.16.174.109_443
+  type: socks4
+  server: 104.16.174.109
+  port: 443
+  udp: false
+  delay: 9.2
+- name: SOCKS4_104.18.152.204_443
+  type: socks4
+  server: 104.18.152.204
+  port: 443
+  udp: false
+  delay: 9.5
+- name: SOCKS4_64.49.67.164_5678
+  type: socks4
+  server: 64.49.67.164
+  port: 5678
+  udp: false
+  delay: 9.6
 - name: SOCKS4_169.40.42.104_443
   type: socks4
   server: 169.40.42.104
   port: 443
   udp: false
-  delay: 19.4
-- name: SOCKS4_162.243.102.207_9764
+  delay: 9.6
+- name: SOCKS4_104.21.46.3_443
   type: socks4
-  server: 162.243.102.207
-  port: 9764
+  server: 104.21.46.3
+  port: 443
   udp: false
-  delay: 26.0
+  delay: 9.6
