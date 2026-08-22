@@ -1,9 +1,23 @@
 proxies:
-- name: 🇩🇪[openproxylist.com] vmess-DE
+- name: 🇳🇱[openproxylist.com] vmess-NL
   type: vmess
-  server: 91.107.153.232
-  port: 45002
-  uuid: 518814fb-79a7-4e6f-ae8a-ab5bf0e77381
+  server: 23.137.249.110
+  port: 30011
+  uuid: a7aee69e-6e02-47d1-8172-701866bbb28c
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 140.3
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: 43.228.126.187
+  port: 47630
+  uuid: 9e5c6ebf-35f9-49a3-9f12-cba2b7cdbccb
   alterId: 0
   cipher: auto
   tls: false
@@ -12,35 +26,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 108.4
-- name: 🇯🇵[openproxylist.com] vmess-JP
-  type: vmess
-  server: tokyo02.zgjok.com
-  port: 443
-  uuid: 3fe113f9-e564-4111-b8c7-11f597687689
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 211.2
-- name: 🇹🇼[openproxylist.com] vmess-TW
-  type: vmess
-  server: 2.27.174.110
-  port: 794
-  uuid: fd2c3c77-1984-4f7c-befe-efba034e1f3c
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 229.8
+  delay: 200.8
 - name: 🇨🇳[openproxylist.com] vmess-CN
   type: vmess
   server: 112.132.215.108
@@ -54,32 +40,4 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 260.1
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: deapp.jisuyun.top
-  port: 2053
-  uuid: 9a1a05d9-69be-45d3-e326-c6621edf7b31
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /devm
-    headers:
-      Host: deapp.jisuyun.top
-  delay: 387.4
-- name: 🇸🇬[openproxylist.com] vmess-SG
-  type: vmess
-  server: node.socks5.kdns.fr
-  port: 443
-  uuid: 3abf004b-aec7-4da9-b47c-8ebdfa3e005c
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /3abf004b-aec7-4da9-b47c-8ebdfa3e005c-vm
-    headers:
-      Host: brake-substance-shared-dual.trycloudflare.com
-  delay: 549.0
+  delay: 203.5
