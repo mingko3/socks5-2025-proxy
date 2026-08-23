@@ -1,18 +1,18 @@
 proxies:
-- name: 🇳🇱[openproxylist.com] vmess-NL
+- name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
-  server: 23.137.249.110
-  port: 30011
-  uuid: a7aee69e-6e02-47d1-8172-701866bbb28c
+  server: tokyo02.zgjok.com
+  port: 443
+  uuid: 3fe113f9-e564-4111-b8c7-11f597687689
   alterId: 0
   cipher: auto
   tls: true
-  network: tcp
+  network: ws
   ws-opts:
-    path: ''
+    path: /
     headers:
       Host: ''
-  delay: 140.3
+  delay: 177.6
 - name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
   server: 43.228.126.187
@@ -26,7 +26,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 200.8
+  delay: 210.5
 - name: 🇨🇳[openproxylist.com] vmess-CN
   type: vmess
   server: 112.132.215.108
@@ -40,4 +40,4 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 203.5
+  delay: 214.2
