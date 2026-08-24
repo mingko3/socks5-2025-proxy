@@ -1,23 +1,23 @@
 proxies:
-- name: 🇯🇵[openproxylist.com] vmess-JP
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: tokyo02.zgjok.com
+  server: rush-t2tvv.ceeopp.site
   port: 443
-  uuid: 3fe113f9-e564-4111-b8c7-11f597687689
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
-    path: /
+    path: /video/ke716z/7x219hzy.m3u8
     headers:
-      Host: ''
-  delay: 177.6
-- name: 🇸🇬[openproxylist.com] vmess-SG
+      Host: rush-t2tvv.ceeopp.site
+  delay: 70.9
+- name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: 43.228.126.187
-  port: 47630
-  uuid: 9e5c6ebf-35f9-49a3-9f12-cba2b7cdbccb
+  server: 165.140.216.142
+  port: 443
+  uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
   alterId: 0
   cipher: auto
   tls: false
@@ -26,7 +26,21 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 210.5
+  delay: 74.1
+- name: 🇫🇮[openproxylist.com] vmess-FI
+  type: vmess
+  server: 65.109.211.136
+  port: 33120
+  uuid: e951ae39-2240-40ca-be13-9f862c3de3ce
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 137.7
 - name: 🇨🇳[openproxylist.com] vmess-CN
   type: vmess
   server: 112.132.215.108
@@ -40,4 +54,32 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 214.2
+  delay: 255.0
+- name: 🇹🇷[openproxylist.com] vmess-TR
+  type: vmess
+  server: dashboard.aframarket.top
+  port: 5384
+  uuid: cfd42ad2-6fc7-443f-994e-10e3d7df24d1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 402.9
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: wwafj5lhl6bi8au9.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: ''
+  delay: 855.5
