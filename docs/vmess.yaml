@@ -12,7 +12,7 @@ proxies:
     path: /video/ke716z/7x219hzy.m3u8
     headers:
       Host: rush-t2tvv.ceeopp.site
-  delay: 70.9
+  delay: 31.5
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: 165.140.216.142
@@ -26,12 +26,26 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 74.1
-- name: 🇫🇮[openproxylist.com] vmess-FI
+  delay: 75.1
+- name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: 65.109.211.136
-  port: 33120
-  uuid: e951ae39-2240-40ca-be13-9f862c3de3ce
+  server: deapp.jisuyun.top
+  port: 2053
+  uuid: 9a1a05d9-69be-45d3-e326-c6621edf7b31
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /devm
+    headers:
+      Host: deapp.jisuyun.top
+  delay: 123.2
+- name: 🇬🇧[openproxylist.com] vmess-GB
+  type: vmess
+  server: node-uk.connectsuite.org
+  port: 2053
+  uuid: 72f2cbe4-2874-45b7-b6aa-b93077c10c72
   alterId: 0
   cipher: auto
   tls: true
@@ -40,7 +54,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 137.7
+  delay: 198.2
 - name: 🇨🇳[openproxylist.com] vmess-CN
   type: vmess
   server: 112.132.215.108
@@ -54,21 +68,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 255.0
-- name: 🇹🇷[openproxylist.com] vmess-TR
-  type: vmess
-  server: dashboard.aframarket.top
-  port: 5384
-  uuid: cfd42ad2-6fc7-443f-994e-10e3d7df24d1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 402.9
+  delay: 257.5
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: wwafj5lhl6bi8au9.v.3dns.vip
@@ -82,4 +82,18 @@ proxies:
     path: /ws-vmess
     headers:
       Host: ''
-  delay: 855.5
+  delay: 298.9
+- name: 🇨🇦[openproxylist.com] vmess-CA
+  type: vmess
+  server: board-02.ddnskunlun.com
+  port: 11985
+  uuid: a8bcce43-abda-315b-8e81-e3e65bcb3d07
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: board-02.ddnskunlun.com
+  delay: 397.7
