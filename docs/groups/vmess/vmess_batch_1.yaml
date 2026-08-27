@@ -1,4 +1,18 @@
 proxies:
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: 188.114.97.3
+  port: 443
+  uuid: a04c5cd0-fef7-4d85-8901-ae3163889c54
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /vmess
+    headers:
+      Host: sg-new.vpnjatim.eu.cc
+  delay: 20.0
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: rush-t2tvv.ceeopp.site
@@ -12,7 +26,49 @@ proxies:
     path: /video/ke716z/7x219hzy.m3u8
     headers:
       Host: rush-t2tvv.ceeopp.site
-  delay: 71.9
+  delay: 35.6
+- name: 🇯🇵[openproxylist.com] vmess-JP
+  type: vmess
+  server: 155.248.176.44
+  port: 55216
+  uuid: 154dbc39-0921-cf11-29bd-156c5000d763
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 106.7
+- name: 🇬🇧[openproxylist.com] vmess-GB
+  type: vmess
+  server: 51.38.71.147
+  port: 2053
+  uuid: 72f2cbe4-2874-45b7-b6aa-b93077c10c72
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 145.3
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: 91.107.155.9
+  port: 59076
+  uuid: 8c692a4d-d223-470a-92b3-00c4b189ca73
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 155.7
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: 162.19.204.71
@@ -26,7 +82,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 94.9
+  delay: 157.5
 - name: 🇫🇷[openproxylist.com] vmess-FR
   type: vmess
   server: 62.210.127.120
@@ -40,21 +96,7 @@ proxies:
     path: /github.com/Alvin9999-newpac/fanqiang
     headers:
       Host: engage.cloudflareclient.com
-  delay: 96.3
-- name: 🇫🇮[openproxylist.com] vmess-FI
-  type: vmess
-  server: 65.109.211.136
-  port: 33120
-  uuid: d9c919c2-872e-429d-a680-1e6c6bfe681b
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 125.5
+  delay: 160.1
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: newrelax.relaxedboy.online
@@ -68,21 +110,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 156.0
-- name: 🇫🇮[openproxylist.com] vmess-FI
-  type: vmess
-  server: 7.bmi.ir.varzesh3.com.de
-  port: 8080
-  uuid: 52230779-9708-4da7-a7af-ed9b7342ff54
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /f9bGbG7ZNy5L0tdQpUbLXHHIAlGv
-    headers:
-      Host: excoino.com
-  delay: 228.5
+  delay: 171.1
 - name: 🇨🇳[openproxylist.com] vmess-CN
   type: vmess
   server: 112.132.215.108
@@ -96,21 +124,21 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 249.6
-- name: 美国 CloudFlare节点
+  delay: 195.8
+- name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: rush-w1niu.teeopp.online
-  port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  server: deapp.jisuyun.top
+  port: 2053
+  uuid: 9a1a05d9-69be-45d3-e326-c6621edf7b31
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
-    path: /video/v4sx3q/zxzrurkc.m3u8
+    path: /devm
     headers:
-      Host: rush-w1niu.teeopp.online
-  delay: 304.4
+      Host: deapp.jisuyun.top
+  delay: 246.2
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: wwafj5lhl6bi8au9.v.3dns.vip
@@ -124,7 +152,21 @@ proxies:
     path: /ws-vmess
     headers:
       Host: ''
-  delay: 760.2
+  delay: 555.0
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: renderer-stream-2-62.mirra.now
+  port: 443
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: ''
+  delay: 610.1
 - name: 🇸🇬[openproxylist.com] vmess-SG
   type: vmess
   server: x-ui.zxhh.top
@@ -138,18 +180,4 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 1135.2
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: renderer-stream-2-62.mirra.now
-  port: 443
-  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /api/v1/gpu-stream/socket
-    headers:
-      Host: renderer-stream-2-62.mirra.now
-  delay: 1257.9
+  delay: 748.0
