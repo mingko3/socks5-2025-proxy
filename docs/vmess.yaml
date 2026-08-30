@@ -1,18 +1,18 @@
 proxies:
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
-  server: rush-t2tvv.ceeopp.site
+  server: 165.140.216.142
   port: 443
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
   alterId: 0
   cipher: auto
-  tls: true
-  network: ws
+  tls: false
+  network: tcp
   ws-opts:
-    path: /video/ke716z/7x219hzy.m3u8
+    path: /LevikoConfig
     headers:
-      Host: rush-t2tvv.ceeopp.site
-  delay: 80.2
+      Host: LevikoConfig
+  delay: 52.6
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: 172.238.96.215
@@ -26,40 +26,12 @@ proxies:
     path: /devm
     headers:
       Host: deapp.jisuyun.top
-  delay: 104.2
+  delay: 109.4
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: 162.19.204.71
-  port: 1234
-  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 104.6
-- name: 🇫🇷[openproxylist.com] vmess-FR
-  type: vmess
-  server: 62.210.127.120
-  port: 23388
-  uuid: 3a966d20-7b9d-48cc-ba2c-8d38161b6d3a
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /github.com/Alvin9999-newpac/fanqiang
-    headers:
-      Host: ''
-  delay: 108.3
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: newrelax.relaxedboy.online
-  port: 110
-  uuid: 8e9687fc-a3a7-414a-8676-8e2136797cfe
+  server: 116.203.54.241
+  port: 443
+  uuid: 15247720-17e1-4ea3-9150-b9350099d9fa
   alterId: 0
   cipher: auto
   tls: false
@@ -68,7 +40,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 157.9
+  delay: 116.4
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: 155.248.176.44
@@ -82,21 +54,35 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 165.7
-- name: 🇯🇵[openproxylist.com] vmess-JP
+  delay: 146.4
+- name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
-  server: p4.cnb.linuxlh.xin
-  port: 16617
-  uuid: 6ee2a7ba-cd92-427f-ac4f-2f8d284e316c
+  server: newrelax.relaxedboy.online
+  port: 110
+  uuid: 8e9687fc-a3a7-414a-8676-8e2136797cfe
   alterId: 0
   cipher: auto
-  tls: true
-  network: ws
+  tls: false
+  network: tcp
   ws-opts:
     path: /
     headers:
-      Host: 5b22547ba5cc9b83a7a9534b4a7cf9ea.mobgslb.tbcache.com
-  delay: 409.4
+      Host: ''
+  delay: 160.4
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: 13.250.114.194
+  port: 8443
+  uuid: 9dcb8d73-cc0b-4fcc-a12d-d7affb56267c
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 196.3
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: renderer-stream-2-62.mirra.now
@@ -109,19 +95,5 @@ proxies:
   ws-opts:
     path: /api/v1/gpu-stream/socket
     headers:
-      Host: renderer-stream-2-62.mirra.now
-  delay: 775.7
-- name: 🇹🇷[openproxylist.com] vmess-TR
-  type: vmess
-  server: linux.makuturkonline.ir
-  port: 2087
-  uuid: e8c4193b-ad9b-4536-bc16-dc5ea6c49b48
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
       Host: ''
-  delay: 1326.1
+  delay: 675.6
