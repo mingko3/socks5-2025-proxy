@@ -12,7 +12,7 @@ proxies:
     path: /
     headers:
       Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-  delay: 826.2
+  delay: 429.5
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: renderer-stream-2-62.mirra.now
@@ -26,4 +26,32 @@ proxies:
     path: /api/v1/gpu-stream/socket
     headers:
       Host: ''
-  delay: 1172.5
+  delay: 526.1
+- name: 🇿🇦[openproxylist.com] vmess-ZA
+  type: vmess
+  server: za-a-zzy.glnyhlgc.com
+  port: 443
+  uuid: 5583af50-f464-4df6-e2ef-34592311e5c6
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /about/7678
+    headers:
+      Host: ''
+  delay: 526.9
+- name: 🇹🇷[openproxylist.com] vmess-TR
+  type: vmess
+  server: sacda.tr.snapeurop.com
+  port: 80
+  uuid: a17be1ef-d5bc-41a1-aeac-b02345823f07
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sacda.tr.snapeurop.com
+  delay: 817.5
