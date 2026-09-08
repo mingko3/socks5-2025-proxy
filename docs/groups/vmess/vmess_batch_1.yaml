@@ -1,7 +1,7 @@
 proxies:
-- name: 🇬🇧GB_89
+- name: 🇬🇧GB_87
   type: vmess
-  server: 82.198.246.233
+  server: 82.198.246.250
   port: 180
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
   alterId: 0
@@ -12,8 +12,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 8.5
-- name: 🇬🇧GB_88
+  delay: 8.6
+- name: 🇬🇧GB_84
   type: vmess
   server: 82.198.246.37
   port: 180
@@ -27,7 +27,21 @@ proxies:
     headers:
       Host: ''
   delay: 8.8
-- name: 🇬🇧GB_87
+- name: 🇬🇧GB_85
+  type: vmess
+  server: 82.198.246.233
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 8.9
+- name: 🇬🇧GB_86
   type: vmess
   server: 82.198.246.97
   port: 180
@@ -40,22 +54,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 9.4
-- name: 🇬🇧GB_86
-  type: vmess
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 11.3
-- name: 🇺🇸US_193
+  delay: 8.9
+- name: 🇺🇸US_249
   type: vmess
   server: 107.175.91.118
   port: 443
@@ -68,8 +68,8 @@ proxies:
     path: /v2ray-wisp
     headers:
       Host: ''
-  delay: 27.5
-- name: 🇺🇸US_192
+  delay: 25.1
+- name: 🇺🇸US_247
   type: vmess
   server: 67.220.72.237
   port: 22324
@@ -82,8 +82,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 31.0
-- name: 🇺🇸US_196
+  delay: 39.2
+- name: 🇺🇸US_246
   type: vmess
   server: 38.110.1.246
   port: 18000
@@ -96,8 +96,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 53.6
-- name: 🇺🇸US_194
+  delay: 50.0
+- name: 🇺🇸US_245
   type: vmess
   server: 67.220.95.3
   port: 18000
@@ -110,8 +110,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 56.2
-- name: 🇺🇸US_195
+  delay: 51.6
+- name: 🇺🇸US_248
   type: vmess
   server: 67.220.85.46
   port: 18000
@@ -124,8 +124,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 56.6
-- name: 🏁ZZ_239
+  delay: 57.5
+- name: 🏁ZZ_298
   type: vmess
   server: 134.195.196.211
   port: 18000
@@ -138,21 +138,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 60.7
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: 193.168.200.207
-  port: 55136
-  uuid: fe0f6ae2-85e4-4815-9206-4209bc118e94
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: pull.free.video.10010.com
-  delay: 138.1
+  delay: 64.8
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: 45.32.57.118
@@ -166,7 +152,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 153.0
+  delay: 117.3
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: 155.248.176.44
@@ -180,35 +166,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 155.6
-- name: 🇮🇱IL_109
-  type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 175.2
-- name: 🇮🇱IL_108
-  type: vmess
-  server: 149.88.23.202
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 177.1
+  delay: 117.7
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: 108.165.236.142
@@ -222,7 +180,63 @@ proxies:
     path: /api/v1/gpu-stream/socket
     headers:
       Host: renderer-stream-2-62.mirra.now
-  delay: 187.6
+  delay: 147.0
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: 162.19.204.71
+  port: 1234
+  uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 152.7
+- name: 🇳🇱[openproxylist.com] vmess-NL
+  type: vmess
+  server: 78.17.71.236
+  port: 33736
+  uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /vmess-ws
+    headers:
+      Host: ''
+  delay: 158.9
+- name: 🇮🇱IL_104
+  type: vmess
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 178.9
+- name: 🇮🇱IL_103
+  type: vmess
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 183.4
 - name: 🇺🇸[openproxylist.com] vmess-US
   type: vmess
   server: newrelax.relaxedboy.online
@@ -236,35 +250,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 209.1
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 143.14.189.125
-  port: 21316
-  uuid: 116f6ecd-275e-4b50-921d-780e78a526cb
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: pull.free.video.10010.com
-  delay: 210.7
-- name: 🇭🇰HK_95
-  type: vmess
-  server: v4.hdacd.com
-  port: 30804
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 223.2
+  delay: 185.9
 - name: 🇹🇭[openproxylist.com] vmess-TH
   type: vmess
   server: 118.193.57.167
@@ -278,4 +264,18 @@ proxies:
     path: /d46bf492
     headers:
       Host: ''
-  delay: 251.3
+  delay: 215.9
+- name: 🇯🇵[openproxylist.com] vmess-JP
+  type: vmess
+  server: oc.imfun.fun
+  port: 18112
+  uuid: ad45f8f6-0f0a-4cc4-b907-c4582407dc94
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: oc.imfun.fun
+  delay: 341.3
