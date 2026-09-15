@@ -1,18 +1,32 @@
 proxies:
-- name: 🇹🇭[openproxylist.com] vmess-TH
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: 118.193.57.167
-  port: 49667
-  uuid: d46bf492-45f4-4c33-82d1-ea2a1cb54eb6
+  server: hk01.653ebeeb-5f60-4be5-958d-7bf4839cdccd.ef6616fd-5b06-482f-9d64-183745659cbf.byteprivatelink.com
+  port: 443
+  uuid: f018361c-3d66-4635-80c9-22be36b70ac4
   alterId: 0
   cipher: auto
-  tls: false
-  network: ws
+  tls: true
+  network: grpc
   ws-opts:
-    path: /d46bf492
+    path: '12306'
     headers:
       Host: ''
-  delay: 378.3
+  delay: 193.2
+- name: 🇨🇳[openproxylist.com] vmess-CN
+  type: vmess
+  server: 112.132.215.108
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 197.0
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: oc.imfun.fun
@@ -25,19 +39,19 @@ proxies:
   ws-opts:
     path: /
     headers:
-      Host: oc.imfun.fun
-  delay: 550.4
-- name: 🇮🇷IR_86
+      Host: null
+  delay: 216.7
+- name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: v6.hdacd.com
-  port: 30806
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  server: wwafj5lhl6bi8au9.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
   cipher: auto
-  tls: false
-  network: tcp
+  tls: true
+  network: ws
   ws-opts:
-    path: /
+    path: /ws-vmess
     headers:
-      Host: ''
-  delay: 1169.9
+      Host: wwafj5LHl6bI8aU9.v.3dns.vip
+  delay: 773.8
