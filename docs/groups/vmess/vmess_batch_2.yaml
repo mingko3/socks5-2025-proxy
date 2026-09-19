@@ -1,32 +1,4 @@
 proxies:
-- name: 🇧🇷[openproxylist.com] vmess-BR
-  type: vmess
-  server: zfd-boardv2.kunlun01dns.com
-  port: 16314
-  uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 302.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: zfd-hkv2.kunlun01dns.com
-  port: 16113
-  uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 312.2
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: zfd-hkv2.kunlun01dns.com
@@ -40,11 +12,11 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 312.9
+  delay: 386.3
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: zfd-hkv1.kunlun01dns.com
-  port: 16114
+  server: zfd-hkv2.kunlun01dns.com
+  port: 16112
   uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
   alterId: 0
   cipher: auto
@@ -54,35 +26,7 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 361.8
-- name: 🇯🇵[openproxylist.com] vmess-JP
-  type: vmess
-  server: zfd-jpv2.kunlun01dns.com
-  port: 16122
-  uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 373.2
-- name: 🇹🇼[openproxylist.com] vmess-TW
-  type: vmess
-  server: 7dba81fc3a0b.oylfmxz.cn
-  port: 443
-  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 7dba81fc3a0b.oylfmxz.cn
-  delay: 783.7
+  delay: 386.6
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: oc.imfun.fun
@@ -96,4 +40,46 @@ proxies:
     path: /
     headers:
       Host: null
-  delay: 1053.3
+  delay: 427.2
+- name: 🇭🇰HK_77
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 537.7
+- name: 🇨🇳CN_29
+  type: vmess
+  server: v30.hdacd.com
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 839.7
+- name: 🇨🇳CN_28
+  type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 842.3
