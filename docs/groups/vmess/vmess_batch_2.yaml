@@ -1,8 +1,22 @@
 proxies:
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
-  server: zfd-hkv2.kunlun01dns.com
-  port: 16115
+  server: dog-hk.kunlun01dns.com
+  port: 21020
+  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 396.4
+- name: 🇨🇭[openproxylist.com] vmess-CH
+  type: vmess
+  server: zfd-boardv2.kunlun01dns.com
+  port: 16284
   uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
   alterId: 0
   cipher: auto
@@ -12,11 +26,11 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 386.3
+  delay: 415.0
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: zfd-hkv2.kunlun01dns.com
-  port: 16112
+  port: 16113
   uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
   alterId: 0
   cipher: auto
@@ -26,7 +40,21 @@ proxies:
     path: ''
     headers:
       Host: ''
-  delay: 386.6
+  delay: 448.7
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: zfd-hkv1.kunlun01dns.com
+  port: 16114
+  uuid: 0802ac03-7973-39ef-a019-ba02de6c01e1
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 632.9
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: oc.imfun.fun
@@ -40,46 +68,32 @@ proxies:
     path: /
     headers:
       Host: null
-  delay: 427.2
-- name: 🇭🇰HK_77
+  delay: 816.7
+- name: 🇹🇼[openproxylist.com] vmess-TW
   type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 537.7
-- name: 🇨🇳CN_29
-  type: vmess
-  server: v30.hdacd.com
-  port: 30830
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: dee2309db4se3g5sds35g4s3dg.oylfmxz.cn
+  port: 443
+  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
   alterId: 0
   cipher: auto
-  tls: false
-  network: tcp
+  tls: true
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: ''
-  delay: 839.7
-- name: 🇨🇳CN_28
+      Host: dee2309db4se3g5sds35g4s3dg.oylfmxz.cn
+  delay: 839.3
+- name: 🇹🇼[openproxylist.com] vmess-TW
   type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  server: dee2309db4944c248b6d4372c6641e25.oylfmxz.cn
+  port: 443
+  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
+  alterId: 0
   cipher: auto
-  tls: false
-  network: tcp
+  tls: true
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: ''
-  delay: 842.3
+      Host: dee2309db4944c248b6d4372c6641e25.oylfmxz.cn
+  delay: 1047.7
