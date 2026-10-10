@@ -1,4 +1,18 @@
 proxies:
+- name: 🇨🇳CN_35
+  type: vmess
+  server: sbgfgov.vip6.wogacnmnagfwgov.com
+  port: 11206
+  uuid: 605956ee-544d-308e-8b90-51e67c6ea8da
+  alterId: 2
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 1188.5
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: qtkdr8jxe3wefxjm.v.3dns.vip
@@ -12,60 +26,4 @@ proxies:
     path: /ws-vmess
     headers:
       Host: ''
-  delay: 625.3
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: nycqg19zkwacpm1b.v.3dns.vip
-  port: 443
-  uuid: f23bb427c1f94373876c2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: NYcQg19zkwaCPM1B.v.3dns.vip
-  delay: 781.5
-- name: 🇳🇱[openproxylist.com] vmess-NL
-  type: vmess
-  server: nl-2a972c8052.shamanapp.online
-  port: 33736
-  uuid: 1281acca-f21d-475c-bf04-eccbee7f8df2
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /vmess-ws
-    headers:
-      Host: ''
-  delay: 787.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: ex1ogt73nzpqkac2.v.3dns.vip
-  port: 443
-  uuid: f23bb427c1f94373876c2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: null
-  delay: 824.4
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: i2psm3knof5qjjix.v.3dns.vip
-  port: 443
-  uuid: f23bb427c1f94373876c2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: ''
-  delay: 1171.9
+  delay: 1819.5
