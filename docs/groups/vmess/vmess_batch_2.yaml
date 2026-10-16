@@ -1,15 +1,29 @@
 proxies:
-- name: 🏁ZZ_32
+- name: 🇨🇳[openproxylist.com] vmess-CN
   type: vmess
-  server: cdn.sfacg.uk
-  port: 2083
-  uuid: ac251237-576f-40c8-a543-554960c958b1
+  server: 39.108.113.127
+  port: 10086
+  uuid: 4fc543d5-23ce-4556-ae2b-01685edd4397
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 1213.9
+- name: 🏳[openproxylist.com] vmess-
+  type: vmess
+  server: qtkdr8jxe3wefxjm.v.3dns.vip
+  port: 443
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
   alterId: 0
   cipher: auto
   tls: true
   network: ws
   ws-opts:
-    path: /or3
+    path: /ws-vmess
     headers:
-      Host: or3.sfacg.uk
-  delay: 1389.5
+      Host: qTKDR8jXE3wEFxJM.v.3dns.vip
+  delay: 1679.2
