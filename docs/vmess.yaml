@@ -1,4 +1,32 @@
 proxies:
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 104.21.7.133
+  port: 80
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws?ed=2048
+    headers:
+      Host: vmess.lbw666.dpdns.org
+  delay: 17.7
+- name: 🇲🇾[openproxylist.com] vmess-MY
+  type: vmess
+  server: 104.21.23.80
+  port: 443
+  uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /KualaLumpur1
+    headers:
+      Host: my.lovehk.xyz
+  delay: 17.8
 - name: 🇬🇧[openproxylist.com] vmess-GB
   type: vmess
   server: 172.67.137.209
@@ -12,8 +40,50 @@ proxies:
     path: /London31
     headers:
       Host: ukl.lovehk.xyz
-  delay: 13.6
-- name: 🇺🇸US_111
+  delay: 17.8
+- name: 🇦🇺[openproxylist.com] vmess-AU
+  type: vmess
+  server: 172.67.195.146
+  port: 443
+  uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /Sydney3
+    headers:
+      Host: aus.lovehk.xyz
+  delay: 17.9
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 154.64.239.22
+  port: 26421
+  uuid: 9fa732d6-dcd6-47bb-c255-094bad71765d
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 17.9
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: node8.liudonghoe.com
+  port: 443
+  uuid: 47050e4e-965d-41ca-976d-73c1f11e6905
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /hoe8
+    headers:
+      Host: node8.liudonghoe.com
+  delay: 48.5
+- name: 🇺🇸US_113
   type: vmess
   server: 38.110.1.246
   port: 18000
@@ -26,8 +96,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 36.2
-- name: 🇺🇸US_109
+  delay: 49.5
+- name: 🇺🇸US_114
   type: vmess
   server: 67.220.95.3
   port: 18000
@@ -40,8 +110,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 36.4
-- name: 🇺🇸US_108
+  delay: 51.6
+- name: 🇺🇸US_115
   type: vmess
   server: 67.220.85.46
   port: 18000
@@ -54,8 +124,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 41.6
-- name: 🏁ZZ_122
+  delay: 56.8
+- name: 🏁ZZ_128
   type: vmess
   server: 134.195.196.211
   port: 18000
@@ -68,36 +138,8 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 46.0
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 38.45.66.187
-  port: 12288
-  uuid: ae6672dd-ff20-453f-ed98-47a078bd0cbc
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 105.2
-- name: 🇮🇱IL_62
-  type: vmess
-  server: 149.88.23.207
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: ''
-  delay: 192.2
-- name: 🇮🇱IL_61
+  delay: 60.9
+- name: 🇮🇱IL_65
   type: vmess
   server: 149.88.23.202
   port: 18000
@@ -110,8 +152,22 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 199.1
-- name: 🇺🇸US_110
+  delay: 177.0
+- name: 🇮🇱IL_66
+  type: vmess
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 179.9
+- name: 🇺🇸US_112
   type: vmess
   server: 47.250.135.244
   port: 10000
@@ -124,119 +180,7 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 199.8
-- name: 🇨🇳[openproxylist.com] vmess-CN
-  type: vmess
-  server: 120.48.133.162
-  port: 10086
-  uuid: 4fc543d5-23ce-4556-ae2b-01685edd4397
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 228.3
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: dog-us.kunlun01dns.com
-  port: 21009
-  uuid: 9464ca40-dd75-3742-a628-d931a9f413b2
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-  delay: 298.8
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: us5-1.998998.best
-  port: 443
-  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /androirfdsreoightrjh?ed=2560
-    headers:
-      Host: server4.9966338.xyz
-  delay: 309.3
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: cf.090227.xyz
-  port: 443
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /ws?ed=2048
-    headers:
-      Host: vmess.lbw666.dpdns.org
-  delay: 316.0
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: vah4urdzl3jdx5r2.v.3dns.vip
-  port: 443
-  uuid: f23bb427c1f94373876c2f43e9f790f3
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: ''
-  delay: 681.6
-- name: 🇪🇪[openproxylist.com] vmess-EE
-  type: vmess
-  server: eu3.998998.best
-  port: 443
-  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /aiaiai
-    headers:
-      Host: server40.9966338.xyz
-  delay: 722.0
-- name: 🇰🇷[openproxylist.com] vmess-KR
-  type: vmess
-  server: jp4.998998.best
-  port: 443
-  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /vvvvvvvvv
-    headers:
-      Host: nat12.9966338.xyz
-  delay: 1045.1
-- name: 🇩🇪[openproxylist.com] vmess-DE
-  type: vmess
-  server: de.zhou-yufan.com
-  port: 443
-  uuid: f38e591d-d13a-4c30-9763-6be3ad65f3ec
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: tcp
-  ws-opts:
-    path: ''
-    headers:
-      Host: de.zhou-yufan.com
-  delay: 1059.1
+  delay: 180.7
 - name: 🇯🇵[openproxylist.com] vmess-JP
   type: vmess
   server: oc.imfun.fun
@@ -250,4 +194,74 @@ proxies:
     path: /
     headers:
       Host: null
-  delay: 1624.8
+  delay: 226.3
+- name: 🇰🇷[openproxylist.com] vmess-KR
+  type: vmess
+  server: jp4.998998.best
+  port: 443
+  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /vvvvvvvvv
+    headers:
+      Host: nat12.9966338.xyz
+  delay: 399.0
+- name: 🇳🇱[openproxylist.com] vmess-NL
+  type: vmess
+  server: nl-2a972c8052.shamanapp.online
+  port: 33736
+  uuid: 1281acca-f21d-475c-bf04-eccbee7f8df2
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /vmess-ws
+    headers:
+      Host: ''
+  delay: 547.6
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: vah4urdzl3jdx5r2.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: vah4urdzl3jdx5r2.v.3dns.vip
+  delay: 615.5
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: de-d21e56c13c.shamanapp.online
+  port: 33744
+  uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /ShamanVMESS2026
+    headers:
+      Host: de-d21e56c13c.shamanapp.online:33744
+  delay: 744.9
+- name: 🇩🇪[openproxylist.com] vmess-DE
+  type: vmess
+  server: de.zhou-yufan.com
+  port: 443
+  uuid: f38e591d-d13a-4c30-9763-6be3ad65f3ec
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: de.zhou-yufan.com
+  delay: 899.8
