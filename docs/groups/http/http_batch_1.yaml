@@ -1,43 +1,67 @@
 proxies:
-- name: HTTP_172.64.79.1_443
+- name: HTTP_146.75.59.186_443
   type: http
-  server: 172.64.79.1
+  server: 146.75.59.186
+  port: 443
+  udp: false
+  delay: 1.6
+- name: HTTP_172.66.40.99_443
+  type: http
+  server: 172.66.40.99
+  port: 443
+  udp: false
+  delay: 1.8
+- name: HTTP_172.67.71.122_443
+  type: http
+  server: 172.67.71.122
+  port: 443
+  udp: false
+  delay: 1.8
+- name: HTTP_185.230.230.18_19999
+  type: http
+  server: 185.230.230.18
+  port: 19999
+  udp: false
+  delay: 1.9
+- name: HTTP_104.20.6.134_443
+  type: http
+  server: 104.20.6.134
   port: 443
   udp: false
   delay: 2.0
-- name: HTTP_104.17.139.37_443
+- name: HTTP_188.114.98.0_443
   type: http
-  server: 104.17.139.37
+  server: 188.114.98.0
   port: 443
   udp: false
-  delay: 2.2
-- name: HTTP_104.16.250.207_443
+  delay: 2.3
+- name: HTTP_172.64.150.43_443
   type: http
-  server: 104.16.250.207
-  port: 443
-  udp: false
-  delay: 2.4
-- name: HTTP_104.17.29.46_443
-  type: http
-  server: 104.17.29.46
+  server: 172.64.150.43
   port: 443
   udp: false
   delay: 2.4
-- name: HTTP_108.162.194.134_443
+- name: HTTP_104.18.151.172_443
   type: http
-  server: 108.162.194.134
+  server: 104.18.151.172
+  port: 443
+  udp: false
+  delay: 2.5
+- name: HTTP_162.159.140.116_443
+  type: http
+  server: 162.159.140.116
+  port: 443
+  udp: false
+  delay: 2.6
+- name: HTTP_162.159.130.234_443
+  type: http
+  server: 162.159.130.234
   port: 443
   udp: false
   delay: 2.7
-- name: HTTP_104.17.167.134_443
+- name: HTTP_104.18.89.52_443
   type: http
-  server: 104.17.167.134
-  port: 443
-  udp: false
-  delay: 2.8
-- name: HTTP_104.17.147.22_443
-  type: http
-  server: 104.17.147.22
+  server: 104.18.89.52
   port: 443
   udp: false
   delay: 3.1
@@ -46,76 +70,52 @@ proxies:
   server: 45.86.51.18
   port: 19999
   udp: false
-  delay: 16.6
+  delay: 3.9
+- name: HTTP_45.138.100.248_10443
+  type: http
+  server: 45.138.100.248
+  port: 10443
+  udp: false
+  delay: 7.5
 - name: HTTP_193.151.163.18_19999
   type: http
   server: 193.151.163.18
   port: 19999
   udp: false
-  delay: 19.2
-- name: HTTP_45.138.100.248_14430
+  delay: 8.0
+- name: HTTP_147.45.60.160_8444
   type: http
-  server: 45.138.100.248
-  port: 14430
+  server: 147.45.60.160
+  port: 8444
   udp: false
-  delay: 20.0
-- name: HTTP_185.230.230.18_19999
-  type: http
-  server: 185.230.230.18
-  port: 19999
-  udp: false
-  delay: 22.7
-- name: HTTP_66.70.179.198_2053
-  type: http
-  server: 66.70.179.198
-  port: 2053
-  udp: false
-  delay: 23.5
-- name: HTTP_185.215.132.18_19999
-  type: http
-  server: 185.215.132.18
-  port: 19999
-  udp: false
-  delay: 24.6
+  delay: 14.6
 - name: HTTP_185.215.132.9_19999
   type: http
   server: 185.215.132.9
   port: 19999
   udp: false
-  delay: 25.6
-- name: HTTP_64.42.181.102_12996
+  delay: 14.7
+- name: HTTP_185.215.132.18_19999
   type: http
-  server: 64.42.181.102
-  port: 12996
+  server: 185.215.132.18
+  port: 19999
   udp: false
-  delay: 31.2
+  delay: 15.1
+- name: HTTP_195.211.98.43_443
+  type: http
+  server: 195.211.98.43
+  port: 443
+  udp: false
+  delay: 18.0
 - name: HTTP_193.151.160.18_19999
   type: http
   server: 193.151.160.18
   port: 19999
   udp: false
-  delay: 37.3
+  delay: 27.0
 - name: HTTP_193.151.160.9_19999
   type: http
   server: 193.151.160.9
   port: 19999
   udp: false
-  delay: 37.9
-- name: HTTP_66.23.203.21_59689
-  type: http
-  server: 66.23.203.21
-  port: 59689
-  udp: false
-  delay: 38.7
-- name: HTTP_50.233.111.162_32100
-  type: http
-  server: 50.233.111.162
-  port: 32100
-  udp: false
-  delay: 44.2
-- name: HTTP_45.61.149.205_8443
-  type: http
-  server: 45.61.149.205
-  port: 8443
-  udp: false
-  delay: 48.7
+  delay: 27.9
