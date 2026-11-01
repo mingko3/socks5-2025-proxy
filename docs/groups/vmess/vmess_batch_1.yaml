@@ -1,7 +1,49 @@
 proxies:
+- name: 🏁ZZ_103
+  type: vmess
+  server: 134.195.196.211
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 23.4
+- name: 🇬🇧[openproxylist.com] vmess-GB
+  type: vmess
+  server: 172.67.221.77
+  port: 443
+  uuid: 83b09a64-1eaf-4c4d-89ed-866d4b6b8115
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /truth
+    headers:
+      Host: www.ubuntuupdates.com
+  delay: 24.9
+- name: 🇺🇸US_95
+  type: vmess
+  server: 67.220.85.46
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 30.6
 - name: 🇨🇦[openproxylist.com] vmess-CA
   type: vmess
-  server: 188.114.96.1
+  server: www.windowsmsidownloads.com
   port: 443
   uuid: 80be2deb-3b27-4775-9bd1-7f2a2b9c261b
   alterId: 0
@@ -11,36 +53,8 @@ proxies:
   ws-opts:
     path: /truth
     headers:
-      Host: www.windowsmsidownloads.com
-  delay: 8.9
-- name: 🏳[openproxylist.com] vmess-
-  type: vmess
-  server: 104.21.15.251
-  port: 443
-  uuid: ba1116e2-8c2f-4e3d-8e50-c954360cf970
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /truth
-    headers:
-      Host: www.windowssearchtools.com
-  delay: 9.3
-- name: 🇺🇸[openproxylist.com] vmess-US
-  type: vmess
-  server: 43.130.35.53
-  port: 10087
-  uuid: 8e93b009-f1af-448a-b8ef-b110849a35f0
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: tcp
-  ws-opts:
-    path: /
-    headers:
-      Host: null
-  delay: 17.2
+      Host: ''
+  delay: 55.1
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: www.gptcloudai.com
@@ -54,12 +68,12 @@ proxies:
     path: /truth
     headers:
       Host: www.gptcloudai.com
-  delay: 62.0
-- name: 🇬🇧[openproxylist.com] vmess-GB
+  delay: 70.0
+- name: 🇫🇷[openproxylist.com] vmess-FR
   type: vmess
-  server: www.ubuntuupdates.com
+  server: www.windowssearchtools.com
   port: 443
-  uuid: 83b09a64-1eaf-4c4d-89ed-866d4b6b8115
+  uuid: ba1116e2-8c2f-4e3d-8e50-c954360cf970
   alterId: 0
   cipher: auto
   tls: true
@@ -67,37 +81,9 @@ proxies:
   ws-opts:
     path: /truth
     headers:
-      Host: www.ubuntuupdates.com
-  delay: 76.3
-- name: 🇵🇱[openproxylist.com] vmess-PL
-  type: vmess
-  server: 132.145.80.230
-  port: 80
-  uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: 132.145.80.230
-  delay: 129.2
-- name: 🇭🇰[openproxylist.com] vmess-HK
-  type: vmess
-  server: 47.243.167.44
-  port: 443
-  uuid: 78b3f149-f037-465d-b2fb-11adb6f73ff8
-  alterId: 0
-  cipher: auto
-  tls: true
-  network: ws
-  ws-opts:
-    path: /ws-vmess
-    headers:
-      Host: rhHiErkwRf6fHs2H.v.3dns.vip
-  delay: 154.0
-- name: 🏳[openproxylist.com] vmess-
+      Host: ''
+  delay: 83.7
+- name: 🇷🇺[openproxylist.com] vmess-RU
   type: vmess
   server: 158.160.180.165
   port: 24212
@@ -110,21 +96,91 @@ proxies:
     path: /
     headers:
       Host: ''
-  delay: 168.0
-- name: 🏁ZZ_33
+  delay: 172.3
+- name: 🇰🇷[openproxylist.com] vmess-KR
   type: vmess
-  server: cdn.sfacg.uk
-  port: 2083
-  uuid: ac251237-576f-40c8-a543-554960c958b1
+  server: 129.154.61.196
+  port: 800
+  uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
   alterId: 0
   cipher: auto
-  tls: true
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 181.5
+- name: 🇭🇰[openproxylist.com] vmess-HK
+  type: vmess
+  server: 101.32.8.251
+  port: 50001
+  uuid: 5706beb5-479b-475d-b557-00309327e9cc
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+  delay: 190.4
+- name: 🇮🇱IL_52
+  type: vmess
+  server: 149.88.23.202
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 195.6
+- name: 🇮🇱IL_51
+  type: vmess
+  server: 149.88.23.207
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 197.9
+- name: 🇺🇸US_93
+  type: vmess
+  server: 47.250.135.244
+  port: 10000
+  uuid: aedc66b8-99d7-4a21-8310-61870e7f870d
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 204.6
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: mdk.mdmekjll.best
+  port: 80
+  uuid: 6E571484-4166-4699-8F58-B34A1823691F
+  alterId: 0
+  cipher: auto
+  tls: false
   network: ws
   ws-opts:
-    path: /or3
+    path: /game/resources
     headers:
-      Host: or3.sfacg.uk
-  delay: 288.5
+      Host: mdk.mdmekjll.best
+  delay: 342.6
 - name: 🇩🇪[openproxylist.com] vmess-DE
   type: vmess
   server: de.zhou-yufan.com
@@ -135,10 +191,10 @@ proxies:
   tls: true
   network: tcp
   ws-opts:
-    path: /
+    path: ''
     headers:
-      Host: de.zhou-yufan.com
-  delay: 470.3
+      Host: ''
+  delay: 566.8
 - name: 🇭🇰[openproxylist.com] vmess-HK
   type: vmess
   server: euu1yalfmcqvljex.v.3dns.vip
@@ -152,4 +208,46 @@ proxies:
     path: /ws-vmess
     headers:
       Host: euu1yalfmcqvljex.v.3dns.vip
-  delay: 783.5
+  delay: 653.6
+- name: 🇸🇬[openproxylist.com] vmess-SG
+  type: vmess
+  server: wjofhsqteueywxeq.v.3dns.vip
+  port: 443
+  uuid: a9f4de8b-68f1-44b6-b6a2-1db60940503a
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: wjofhsqteueywxeq.v.3dns.vip
+  delay: 873.4
+- name: 🇺🇸US_94
+  type: vmess
+  server: 38.110.1.246
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: ''
+  delay: 1047.8
+- name: 🇺🇸[openproxylist.com] vmess-US
+  type: vmess
+  server: 43.130.35.53
+  port: 10087
+  uuid: 8e93b009-f1af-448a-b8ef-b110849a35f0
+  alterId: 0
+  cipher: auto
+  tls: true
+  network: tcp
+  ws-opts:
+    path: /
+    headers:
+      Host: null
+  delay: 1094.9
