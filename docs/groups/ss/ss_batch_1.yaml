@@ -1,60 +1,4 @@
 proxies:
-- name: SS_149.22.95.183_443
-  type: ss
-  server: 149.22.95.183
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 8.4
-- name: SS_216.105.168.18_443
-  type: ss
-  server: 216.105.168.18
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: hCCWOcIsK5wrFz4OX70rWf
-  udp: true
-  delay: 31.3
-- name: SS_156.146.38.168_443
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 50.3
-- name: SS_156.146.38.170_443
-  type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 55.6
-- name: SS_156.146.38.167_443
-  type: ss
-  server: 156.146.38.167
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 56.3
-- name: SS_15.204.247.206_4444
-  type: ss
-  server: 15.204.247.206
-  port: 4444
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-  udp: true
-  delay: 59.4
-- name: SS_37.19.198.160_443
-  type: ss
-  server: 37.19.198.160
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 62.5
 - name: SS_173.244.56.9_443
   type: ss
   server: 173.244.56.9
@@ -62,31 +6,7 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 62.5
-- name: SS_37.19.198.243_443
-  type: ss
-  server: 37.19.198.243
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 62.7
-- name: SS_37.19.198.244_443
-  type: ss
-  server: 37.19.198.244
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 62.7
-- name: SS_37.19.198.236_443
-  type: ss
-  server: 37.19.198.236
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 63.3
+  delay: 10.1
 - name: SS_173.244.56.6_443
   type: ss
   server: 173.244.56.6
@@ -94,31 +14,79 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 64.5
-- name: SS_149.22.87.240_443
+  delay: 10.2
+- name: SS_216.105.168.18_443
   type: ss
-  server: 149.22.87.240
+  server: 216.105.168.18
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: hCCWOcIsK5wrFz4OX70rWf
+  udp: true
+  delay: 11.4
+- name: SS_156.146.38.167_443
+  type: ss
+  server: 156.146.38.167
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 97.1
-- name: SS_149.22.87.204_443
+  delay: 24.3
+- name: SS_156.146.38.168_443
   type: ss
-  server: 149.22.87.204
+  server: 156.146.38.168
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 97.4
-- name: SS_149.22.87.241_443
+  delay: 24.6
+- name: SS_156.146.38.170_443
   type: ss
-  server: 149.22.87.241
+  server: 156.146.38.170
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 97.8
+  delay: 27.6
+- name: SS_149.22.95.183_443
+  type: ss
+  server: 149.22.95.183
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 40.5
+- name: SS_37.19.198.243_443
+  type: ss
+  server: 37.19.198.243
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 55.5
+- name: SS_37.19.198.236_443
+  type: ss
+  server: 37.19.198.236
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 55.7
+- name: SS_37.19.198.160_443
+  type: ss
+  server: 37.19.198.160
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 55.7
+- name: SS_37.19.198.244_443
+  type: ss
+  server: 37.19.198.244
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 55.8
 - name: SS_198.98.53.130_443
   type: ss
   server: 198.98.53.130
@@ -126,23 +94,39 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: eDfN7SODQceIOmIAbtJJtK
   udp: true
-  delay: 112.8
-- name: SS_141.164.45.187_6679
+  delay: 59.2
+- name: SS_15.204.247.206_4444
   type: ss
-  server: 141.164.45.187
-  port: 6679
+  server: 15.204.247.206
+  port: 4444
   cipher: aes-256-gcm
-  password: TEzjfAYq2IjtuoS
+  password: pKEW8JPByTVTLtM
   udp: true
-  delay: 120.5
-- name: SS_84.247.155.196_80
+  delay: 60.3
+- name: SS_149.22.87.240_443
   type: ss
-  server: 84.247.155.196
-  port: 80
-  cipher: aes-256-gcm
-  password: 3eOFeNssde7PYYMv
+  server: 149.22.87.240
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 124.7
+  delay: 107.8
+- name: SS_149.22.87.241_443
+  type: ss
+  server: 149.22.87.241
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 108.1
+- name: SS_149.22.87.204_443
+  type: ss
+  server: 149.22.87.204
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 108.1
 - name: SS_84.247.155.196_443
   type: ss
   server: 84.247.155.196
@@ -150,7 +134,15 @@ proxies:
   cipher: aes-256-gcm
   password: 3eOFeNssde7PYYMv
   udp: true
-  delay: 125.3
+  delay: 108.4
+- name: SS_84.247.155.196_80
+  type: ss
+  server: 84.247.155.196
+  port: 80
+  cipher: aes-256-gcm
+  password: 3eOFeNssde7PYYMv
+  udp: true
+  delay: 115.9
 - name: SS_5.188.181.201_9019
   type: ss
   server: 5.188.181.201
@@ -158,4 +150,12 @@ proxies:
   cipher: aes-256-cfb
   password: GA9KzeEgvfxNrgmM
   udp: true
-  delay: 139.5
+  delay: 117.3
+- name: SS_5.188.181.201_9001
+  type: ss
+  server: 5.188.181.201
+  port: 9001
+  cipher: aes-256-cfb
+  password: UkXRsXvR6buDMG2Y
+  udp: true
+  delay: 117.3
