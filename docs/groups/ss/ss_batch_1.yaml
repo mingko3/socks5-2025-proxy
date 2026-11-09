@@ -1,28 +1,4 @@
 proxies:
-- name: SS_149.22.95.183_443
-  type: ss
-  server: 149.22.95.183
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 7.8
-- name: SS_173.244.56.9_443
-  type: ss
-  server: 173.244.56.9
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 38.0
-- name: SS_216.105.168.18_443
-  type: ss
-  server: 216.105.168.18
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: hCCWOcIsK5wrFz4OX70rWf
-  udp: true
-  delay: 38.1
 - name: SS_173.244.56.6_443
   type: ss
   server: 173.244.56.6
@@ -30,15 +6,15 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 38.3
-- name: SS_167.88.62.203_19999
+  delay: 9.9
+- name: SS_173.244.56.9_443
   type: ss
-  server: 167.88.62.203
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  server: 173.244.56.9
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 46.2
+  delay: 11.1
 - name: SS_156.146.38.167_443
   type: ss
   server: 156.146.38.167
@@ -46,7 +22,7 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 49.6
+  delay: 24.1
 - name: SS_156.146.38.170_443
   type: ss
   server: 156.146.38.170
@@ -54,7 +30,15 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 52.9
+  delay: 24.1
+- name: SS_167.88.62.203_19999
+  type: ss
+  server: 167.88.62.203
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 26.1
 - name: SS_156.146.38.168_443
   type: ss
   server: 156.146.38.168
@@ -62,15 +46,15 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 53.0
-- name: SS_15.204.247.206_4444
+  delay: 26.4
+- name: SS_149.22.95.183_443
   type: ss
-  server: 15.204.247.206
-  port: 4444
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
+  server: 149.22.95.183
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 60.1
+  delay: 45.1
 - name: SS_37.19.198.243_443
   type: ss
   server: 37.19.198.243
@@ -78,23 +62,7 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 62.7
-- name: SS_37.19.198.244_443
-  type: ss
-  server: 37.19.198.244
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 62.8
-- name: SS_37.19.198.160_443
-  type: ss
-  server: 37.19.198.160
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 63.0
+  delay: 55.6
 - name: SS_37.19.198.236_443
   type: ss
   server: 37.19.198.236
@@ -102,15 +70,23 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 63.2
-- name: SSR_ssr2.762988.xyz_33336
+  delay: 56.2
+- name: SS_37.19.198.160_443
   type: ss
-  server: ssr2.762988.xyz
-  port: 33336
-  cipher: chacha20-ietf
-  password: dongtaiwang.com
+  server: 37.19.198.160
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 63.6
+  delay: 56.5
+- name: SS_37.19.198.244_443
+  type: ss
+  server: 37.19.198.244
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 56.5
 - name: SS_198.98.53.130_443
   type: ss
   server: 198.98.53.130
@@ -118,23 +94,31 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: eDfN7SODQceIOmIAbtJJtK
   udp: true
-  delay: 66.1
-- name: SS_149.22.87.204_443
+  delay: 57.4
+- name: SS_15.204.247.206_4444
   type: ss
-  server: 149.22.87.204
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
+  server: 15.204.247.206
+  port: 4444
+  cipher: aes-256-gcm
+  password: pKEW8JPByTVTLtM
   udp: true
-  delay: 97.1
-- name: SS_149.22.87.240_443
+  delay: 60.0
+- name: SS_137.184.174.93_8080
   type: ss
-  server: 149.22.87.240
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
+  server: 137.184.174.93
+  port: 8080
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
   udp: true
-  delay: 98.1
+  delay: 74.4
+- name: SSR_ssr2.762988.xyz_33336
+  type: ss
+  server: ssr2.762988.xyz
+  port: 33336
+  cipher: chacha20-ietf
+  password: dongtaiwang.com
+  udp: true
+  delay: 79.5
 - name: SS_149.22.87.241_443
   type: ss
   server: 149.22.87.241
@@ -142,15 +126,23 @@ proxies:
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 98.4
-- name: SS_84.247.155.196_80
+  delay: 108.4
+- name: SS_149.22.87.204_443
   type: ss
-  server: 84.247.155.196
-  port: 80
-  cipher: aes-256-gcm
-  password: 3eOFeNssde7PYYMv
+  server: 149.22.87.204
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
   udp: true
-  delay: 99.5
+  delay: 108.5
+- name: SS_149.22.87.240_443
+  type: ss
+  server: 149.22.87.240
+  port: 443
+  cipher: aes-128-gcm
+  password: shadowsocks
+  udp: true
+  delay: 108.8
 - name: SS_84.247.155.196_443
   type: ss
   server: 84.247.155.196
@@ -158,4 +150,12 @@ proxies:
   cipher: aes-256-gcm
   password: 3eOFeNssde7PYYMv
   udp: true
-  delay: 100.0
+  delay: 114.6
+- name: SS_84.247.155.196_80
+  type: ss
+  server: 84.247.155.196
+  port: 80
+  cipher: aes-256-gcm
+  password: 3eOFeNssde7PYYMv
+  udp: true
+  delay: 116.6
