@@ -1,36 +1,4 @@
 proxies:
-- name: SS_15.204.247.206_4444
-  type: ss
-  server: 15.204.247.206
-  port: 4444
-  cipher: aes-256-gcm
-  password: pKEW8JPByTVTLtM
-  udp: true
-  delay: 2.9
-- name: SS_37.19.198.236_443
-  type: ss
-  server: 37.19.198.236
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 7.0
-- name: SS_37.19.198.160_443
-  type: ss
-  server: 37.19.198.160
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 7.0
-- name: SS_198.98.53.130_443
-  type: ss
-  server: 198.98.53.130
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: eDfN7SODQceIOmIAbtJJtK
-  udp: true
-  delay: 8.4
 - name: SS_167.88.62.203_19999
   type: ss
   server: 167.88.62.203
@@ -38,63 +6,31 @@ proxies:
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-  delay: 31.9
-- name: SS_156.146.38.170_443
+  delay: 50.3
+- name: SSR_ssr2.762988.xyz_33336
   type: ss
-  server: 156.146.38.170
-  port: 443
+  server: ssr2.762988.xyz
+  port: 33336
+  cipher: chacha20-ietf
+  password: dongtaiwang.com
+  udp: true
+  delay: 82.5
+- name: SS_168.138.205.100_53758
+  type: ss
+  server: 168.138.205.100
+  port: 53758
   cipher: aes-128-gcm
-  password: shadowsocks
+  password: Bwlqh7GcFB
   udp: true
-  delay: 34.1
-- name: SS_156.146.38.167_443
+  delay: 104.5
+- name: SS_jpa.123069.xyz_53758
   type: ss
-  server: 156.146.38.167
-  port: 443
+  server: jpa.123069.xyz
+  port: 53758
   cipher: aes-128-gcm
-  password: shadowsocks
+  password: Bwlqh7GcFB
   udp: true
-  delay: 37.5
-- name: SS_156.146.38.168_443
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-  delay: 38.2
-- name: SS_94.156.250.148_7001
-  type: ss
-  server: 94.156.250.148
-  port: 7001
-  cipher: aes-256-gcm
-  password: RexnBgU7EV5ADxG
-  udp: true
-  delay: 76.4
-- name: SS_5.188.181.201_9005
-  type: ss
-  server: 5.188.181.201
-  port: 9005
-  cipher: aes-256-cfb
-  password: ZET59LF6DvCC8KVt
-  udp: true
-  delay: 78.0
-- name: SS_5.188.181.201_9031
-  type: ss
-  server: 5.188.181.201
-  port: 9031
-  cipher: aes-256-cfb
-  password: BwcAUZk8hUFAkDGN
-  udp: true
-  delay: 78.9
-- name: SS_5.188.181.201_9027
-  type: ss
-  server: 5.188.181.201
-  port: 9027
-  cipher: aes-256-cfb
-  password: EXN3S3eQpjE7EJu8
-  udp: true
-  delay: 79.1
+  delay: 133.4
 - name: SS_5.188.181.201_9037
   type: ss
   server: 5.188.181.201
@@ -102,15 +38,7 @@ proxies:
   cipher: aes-256-cfb
   password: TN2YqghxeFDKZfLU
   udp: true
-  delay: 79.3
-- name: SS_5.188.181.201_9042
-  type: ss
-  server: 5.188.181.201
-  port: 9042
-  cipher: aes-256-cfb
-  password: S7KwUu7yBy58S3Ga
-  udp: true
-  delay: 79.3
+  delay: 138.8
 - name: SS_5.188.181.201_9041
   type: ss
   server: 5.188.181.201
@@ -118,44 +46,116 @@ proxies:
   cipher: aes-256-cfb
   password: U6qnYRhfyDmn8sgn
   udp: true
-  delay: 79.4
-- name: SS_5.188.181.201_9014
+  delay: 139.8
+- name: SS_141.98.101.178_443
   type: ss
-  server: 5.188.181.201
-  port: 9014
-  cipher: aes-256-cfb
-  password: KnJGad3FqTvjqbaX
-  udp: true
-  delay: 79.5
-- name: SS_5.188.181.201_9001
-  type: ss
-  server: 5.188.181.201
-  port: 9001
-  cipher: aes-256-cfb
-  password: UkXRsXvR6buDMG2Y
-  udp: true
-  delay: 79.7
-- name: SS_5.188.181.201_9011
-  type: ss
-  server: 5.188.181.201
-  port: 9011
-  cipher: aes-256-cfb
-  password: M3t2ZEQcMGRWBjRa
-  udp: true
-  delay: 79.8
-- name: SS_5.188.181.201_9054
-  type: ss
-  server: 5.188.181.201
-  port: 9054
-  cipher: aes-256-cfb
-  password: VcFuyXvND2yQWSFY
-  udp: true
-  delay: 80.2
-- name: SS_158.173.20.171_443
-  type: ss
-  server: 158.173.20.171
+  server: 141.98.101.178
   port: 443
   cipher: aes-128-gcm
   password: shadowsocks
   udp: true
-  delay: 86.8
+  delay: 142.6
+- name: SS_5.188.181.201_9031
+  type: ss
+  server: 5.188.181.201
+  port: 9031
+  cipher: aes-256-cfb
+  password: BwcAUZk8hUFAkDGN
+  udp: true
+  delay: 143.1
+- name: SS_5.188.181.201_9042
+  type: ss
+  server: 5.188.181.201
+  port: 9042
+  cipher: aes-256-cfb
+  password: S7KwUu7yBy58S3Ga
+  udp: true
+  delay: 145.7
+- name: SSR_109.104.153.43_33336
+  type: ss
+  server: 109.104.153.43
+  port: 33336
+  cipher: chacha20-ietf
+  password: dongtaiwang.com
+  udp: true
+  delay: 149.6
+- name: SS_217.30.10.70_9020
+  type: ss
+  server: 217.30.10.70
+  port: 9020
+  cipher: aes-256-cfb
+  password: BNmAXXxAHYpTRdzu
+  udp: true
+  delay: 154.0
+- name: SS_217.30.10.70_9018
+  type: ss
+  server: 217.30.10.70
+  port: 9018
+  cipher: aes-256-cfb
+  password: fG2artUmHfNT2cX7
+  udp: true
+  delay: 159.8
+- name: SS_149.88.106.74_19999
+  type: ss
+  server: 149.88.106.74
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 160.6
+- name: SS_51.79.228.131_19999
+  type: ss
+  server: 51.79.228.131
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 161.1
+- name: SS_149.88.107.74_19999
+  type: ss
+  server: 149.88.107.74
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 161.3
+- name: SS_202.50.253.36_19999
+  type: ss
+  server: 202.50.253.36
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 161.4
+- name: SS_202.50.253.63_19999
+  type: ss
+  server: 202.50.253.63
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 161.5
+- name: SS_149.88.107.47_19999
+  type: ss
+  server: 149.88.107.47
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 161.7
+- name: SS_217.30.10.70_9040
+  type: ss
+  server: 217.30.10.70
+  port: 9040
+  cipher: aes-256-cfb
+  password: p9z5BVADH2YFs3MN
+  udp: true
+  delay: 162.7
+- name: SS_202.50.253.81_19999
+  type: ss
+  server: 202.50.253.81
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+  delay: 163.5
